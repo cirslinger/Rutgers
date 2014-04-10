@@ -1,0 +1,1809 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>madgraph.interface.madgraph_interface.MadGraphCmd</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="madgraph-module.html">Package&nbsp;madgraph</a> ::
+        <a href="madgraph.interface-module.html">Package&nbsp;interface</a> ::
+        <a href="madgraph.interface.madgraph_interface-module.html">Module&nbsp;madgraph_interface</a> ::
+        Class&nbsp;MadGraphCmd
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="madgraph.interface.madgraph_interface.MadGraphCmd-class.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS DESCRIPTION ==================== -->
+<h1 class="epydoc">Class MadGraphCmd</h1><p class="nomargin-top"><span class="codelink"><a href="madgraph.interface.madgraph_interface-pysrc.html#MadGraphCmd">source&nbsp;code</a></span></p>
+<pre class="base-tree">
+                  object --+        
+                           |        
+        <a href="madgraph.interface.extended_cmd.HelpCmd-class.html">extended_cmd.HelpCmd</a> --+    
+                               |    
+                       <a href="madgraph.interface.madgraph_interface.HelpToCmd-class.html">HelpToCmd</a> --+
+                                   |
+                  object --+       |
+                           |       |
+       <a href="madgraph.interface.extended_cmd.CheckCmd-class.html">extended_cmd.CheckCmd</a> --+   |
+                               |   |
+                <a href="madgraph.interface.madgraph_interface.CheckValidForCmd-class.html">CheckValidForCmd</a> --+
+                                   |
+                  object --+       |
+                           |       |
+    <a href="madgraph.interface.extended_cmd.CompleteCmd-class.html">extended_cmd.CompleteCmd</a> --+   |
+                               |   |
+                  <a href="madgraph.interface.madgraph_interface.CompleteForCmd-class.html">CompleteForCmd</a> --+
+                                   |
+              object --+           |
+                       |           |
+   <a href="madgraph.interface.extended_cmd.CheckCmd-class.html">extended_cmd.CheckCmd</a> --+       |
+                           |       |
+              object --+   |       |
+                       |   |       |
+    <a href="madgraph.interface.extended_cmd.HelpCmd-class.html">extended_cmd.HelpCmd</a> --+       |
+                           |       |
+              object --+   |       |
+                       |   |       |
+<a href="madgraph.interface.extended_cmd.CompleteCmd-class.html">extended_cmd.CompleteCmd</a> --+       |
+                           |       |
+             cmd.Cmd --+   |       |
+                       |   |       |
+   <a href="madgraph.interface.extended_cmd.BasicCmd-class.html">extended_cmd.BasicCmd</a> --+       |
+                           |       |
+            <a href="madgraph.interface.extended_cmd.Cmd-class.html">extended_cmd.Cmd</a> --+   |
+                               |   |
+                     <a href="madgraph.interface.madgraph_interface.CmdExtended-class.html">CmdExtended</a> --+
+                                   |
+                                  <strong class="uidshort">MadGraphCmd</strong>
+</pre>
+
+<dl><dt>Known Subclasses:</dt>
+<dd>
+      <ul class="subclass-list">
+<li><a href="madgraph.interface.master_interface.MasterCmd-class.html">master_interface.MasterCmd</a></li><li>, <a href="madgraph.interface.madgraph_interface.MadGraphCmdWeb-class.html">MadGraphCmdWeb</a></li>  </ul>
+</dd></dl>
+
+<hr />
+<p>The command line processor of MadGraph</p>
+
+<!-- ==================== NESTED CLASSES ==================== -->
+<a name="section-NestedClasses"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Nested Classes</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-NestedClasses"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="madgraph.interface.madgraph_interface.CheckValidForCmd-class.html">CheckValidForCmd</a></code></b>:
+      <code><a href="madgraph.interface.madgraph_interface.CheckValidForCmd.RWError-class.html">RWError</a></code>
+      </p>
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="madgraph.interface.madgraph_interface.CmdExtended-class.html">CmdExtended</a></code></b>:
+      <code><a href="madgraph.MadGraph5Error-class.html">ConfigurationError</a></code>,
+      <code><a href="madgraph.InvalidCmd-class.html">InvalidCmd</a></code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== INSTANCE METHODS ==================== -->
+<a name="section-InstanceMethods"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Instance Methods</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-InstanceMethods"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="madgraph.interface.madgraph_interface.MadGraphCmd-class.html#preloop" class="summary-sig-name">preloop</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      Initializing before starting the main loop</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="madgraph.interface.madgraph_interface-pysrc.html#MadGraphCmd.preloop">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="madgraph.interface.madgraph_interface.MadGraphCmd-class.html#__init__" class="summary-sig-name">__init__</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">mgme_dir</span>=<span class="summary-sig-default"><code class="variable-quote">'</code><code class="variable-string"></code><code class="variable-quote">'</code></span>,
+        <span class="summary-sig-arg">*completekey</span>,
+        <span class="summary-sig-arg">**stdin</span>)</span><br />
+      add a tracker of the history</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="madgraph.interface.madgraph_interface-pysrc.html#MadGraphCmd.__init__">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="madgraph.interface.madgraph_interface.MadGraphCmd-class.html#do_quit" class="summary-sig-name">do_quit</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">line</span>)</span><br />
+      Do quit</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="madgraph.interface.madgraph_interface-pysrc.html#MadGraphCmd.do_quit">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="do_add"></a><span class="summary-sig-name">do_add</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">line</span>)</span><br />
+      Generate an amplitude for a given process and add to existing 
+      amplitudes</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="madgraph.interface.madgraph_interface-pysrc.html#MadGraphCmd.do_add">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="do_define"></a><span class="summary-sig-name">do_define</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">line</span>,
+        <span class="summary-sig-arg">log</span>=<span class="summary-sig-default">True</span>)</span><br />
+      Define a multiparticle</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="madgraph.interface.madgraph_interface-pysrc.html#MadGraphCmd.do_define">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="madgraph.interface.madgraph_interface.MadGraphCmd-class.html#do_display" class="summary-sig-name">do_display</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">line</span>,
+        <span class="summary-sig-arg">output</span>=<span class="summary-sig-default">sys.stdout</span>)</span><br />
+      Display current internal status</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="madgraph.interface.madgraph_interface-pysrc.html#MadGraphCmd.do_display">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="multiparticle_string"></a><span class="summary-sig-name">multiparticle_string</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">key</span>)</span><br />
+      Returns a nicely formatted string for the multiparticle</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="madgraph.interface.madgraph_interface-pysrc.html#MadGraphCmd.multiparticle_string">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="do_tutorial"></a><span class="summary-sig-name">do_tutorial</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">line</span>)</span><br />
+      Activate/deactivate the tutorial mode.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="madgraph.interface.madgraph_interface-pysrc.html#MadGraphCmd.do_tutorial">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="draw"></a><span class="summary-sig-name">draw</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">line</span>)</span><br />
+      draw the Feynman diagram for the given process</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="madgraph.interface.madgraph_interface-pysrc.html#MadGraphCmd.draw">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="do_check"></a><span class="summary-sig-name">do_check</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">line</span>)</span><br />
+      Check a given process or set of processes</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="madgraph.interface.madgraph_interface-pysrc.html#MadGraphCmd.do_check">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="do_generate"></a><span class="summary-sig-name">do_generate</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">line</span>)</span><br />
+      Generate an amplitude for a given process</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="madgraph.interface.madgraph_interface-pysrc.html#MadGraphCmd.do_generate">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="madgraph.interface.madgraph_interface.MadGraphCmd-class.html#extract_process" class="summary-sig-name">extract_process</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">line</span>,
+        <span class="summary-sig-arg">proc_number</span>=<span class="summary-sig-default">0</span>,
+        <span class="summary-sig-arg">overall_orders</span>=<span class="summary-sig-default"><code class="variable-group">{</code><code class="variable-group">}</code></span>)</span><br />
+      Extract a process definition from a string.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="madgraph.interface.madgraph_interface-pysrc.html#MadGraphCmd.extract_process">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="madgraph.interface.madgraph_interface.MadGraphCmd-class.html#extract_particle_ids" class="summary-sig-name">extract_particle_ids</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">args</span>)</span><br />
+      Extract particle ids from a list of particle names.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="madgraph.interface.madgraph_interface-pysrc.html#MadGraphCmd.extract_particle_ids">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="madgraph.interface.madgraph_interface.MadGraphCmd-class.html#optimize_order" class="summary-sig-name">optimize_order</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">pdg_list</span>)</span><br />
+      Optimize the order of particles in a pdg list, so that
+similar particles are next to each other.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="madgraph.interface.madgraph_interface-pysrc.html#MadGraphCmd.optimize_order">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="madgraph.interface.madgraph_interface.MadGraphCmd-class.html#extract_decay_chain_process" class="summary-sig-name">extract_decay_chain_process</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">line</span>,
+        <span class="summary-sig-arg">level_down</span>=<span class="summary-sig-default">False</span>)</span><br />
+      Recursively extract a decay chain process definition from a string.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="madgraph.interface.madgraph_interface-pysrc.html#MadGraphCmd.extract_decay_chain_process">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="do_import"></a><span class="summary-sig-name">do_import</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">line</span>)</span><br />
+      Import files with external formats</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="madgraph.interface.madgraph_interface-pysrc.html#MadGraphCmd.do_import">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="import_ufo_model"></a><span class="summary-sig-name">import_ufo_model</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">model_name</span>)</span><br />
+      import the UFO model</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="madgraph.interface.madgraph_interface-pysrc.html#MadGraphCmd.import_ufo_model">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="process_model"></a><span class="summary-sig-name">process_model</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      Set variables _particle_names and _couplings for tab completion, 
+      define multiparticles</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="madgraph.interface.madgraph_interface-pysrc.html#MadGraphCmd.process_model">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="import_mg4_proc_card"></a><span class="summary-sig-name">import_mg4_proc_card</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">filepath</span>)</span><br />
+      read a V4 proc card, convert it and run it in mg5</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="madgraph.interface.madgraph_interface-pysrc.html#MadGraphCmd.import_mg4_proc_card">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="add_default_multiparticles"></a><span class="summary-sig-name">add_default_multiparticles</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      add default particle from file interface.multiparticles_default.txt</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="madgraph.interface.madgraph_interface-pysrc.html#MadGraphCmd.add_default_multiparticles">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="do_install"></a><span class="summary-sig-name">do_install</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">line</span>)</span><br />
+      Install optional package from the MG suite.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="madgraph.interface.madgraph_interface-pysrc.html#MadGraphCmd.do_install">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="madgraph.interface.madgraph_interface.MadGraphCmd-class.html#install_update" class="summary-sig-name">install_update</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">args</span>,
+        <span class="summary-sig-arg">wget</span>)</span><br />
+      check if the current version of mg5 is up-to-date.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="madgraph.interface.madgraph_interface-pysrc.html#MadGraphCmd.install_update">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="madgraph.interface.madgraph_interface.MadGraphCmd-class.html#set_configuration" class="summary-sig-name">set_configuration</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">config_path</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">final</span>=<span class="summary-sig-default">True</span>)</span><br />
+      assign all configuration variable from file 
+      ./input/mg5_configuration.txt.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="madgraph.interface.madgraph_interface-pysrc.html#MadGraphCmd.set_configuration">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="check_for_export_dir"></a><span class="summary-sig-name">check_for_export_dir</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">filepath</span>)</span><br />
+      Check if the files is in a valid export directory and assign it to 
+      export path if if is</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="madgraph.interface.madgraph_interface-pysrc.html#MadGraphCmd.check_for_export_dir">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="do_launch"></a><span class="summary-sig-name">do_launch</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">line</span>)</span><br />
+      Ask for editing the parameter and then Execute the code 
+      (madevent/standalone/...)</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="madgraph.interface.madgraph_interface-pysrc.html#MadGraphCmd.do_launch">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="do_load"></a><span class="summary-sig-name">do_load</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">line</span>)</span><br />
+      Not in help: Load information from file</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="madgraph.interface.madgraph_interface-pysrc.html#MadGraphCmd.do_load">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="do_customize_model"></a><span class="summary-sig-name">do_customize_model</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">line</span>)</span><br />
+      create a restriction card in a interactive way</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="madgraph.interface.madgraph_interface-pysrc.html#MadGraphCmd.do_customize_model">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="madgraph.interface.madgraph_interface.MadGraphCmd-class.html#do_save" class="summary-sig-name">do_save</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">line</span>,
+        <span class="summary-sig-arg">check</span>=<span class="summary-sig-default">True</span>,
+        <span class="summary-sig-arg">to_keep</span>=<span class="summary-sig-default"><code class="variable-group">{</code><code class="variable-group">}</code></span>,
+        <span class="summary-sig-arg">log</span>=<span class="summary-sig-default">True</span>)</span><br />
+      Not in help: Save information to file</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="madgraph.interface.madgraph_interface-pysrc.html#MadGraphCmd.do_save">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="do_set"></a><span class="summary-sig-name">do_set</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">line</span>,
+        <span class="summary-sig-arg">log</span>=<span class="summary-sig-default">True</span>)</span><br />
+      Set an option, which will be default for coming generations/outputs</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="madgraph.interface.madgraph_interface-pysrc.html#MadGraphCmd.do_set">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="post_set"></a><span class="summary-sig-name">post_set</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">stop</span>,
+        <span class="summary-sig-arg">line</span>)</span><br />
+      Check if we need to save this in the option file</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="madgraph.interface.madgraph_interface-pysrc.html#MadGraphCmd.post_set">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="do_open"></a><span class="summary-sig-name">do_open</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">line</span>)</span><br />
+      Open a text file/ eps file / html file</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="madgraph.interface.madgraph_interface-pysrc.html#MadGraphCmd.do_open">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="do_output"></a><span class="summary-sig-name">do_output</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">line</span>)</span><br />
+      Initialize a new Template or reinitialize one</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="madgraph.interface.madgraph_interface-pysrc.html#MadGraphCmd.do_output">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="export"></a><span class="summary-sig-name">export</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">nojpeg</span>=<span class="summary-sig-default">False</span>,
+        <span class="summary-sig-arg">main_file_name</span>=<span class="summary-sig-default"><code class="variable-quote">'</code><code class="variable-string"></code><code class="variable-quote">'</code></span>)</span><br />
+      Export a generated amplitude to file</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="madgraph.interface.madgraph_interface-pysrc.html#MadGraphCmd.export">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="finalize"></a><span class="summary-sig-name">finalize</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">nojpeg</span>,
+        <span class="summary-sig-arg">online</span>=<span class="summary-sig-default">False</span>)</span><br />
+      Make the html output, write proc_card_mg5.dat and create 
+      madevent.tar.gz for a MadEvent directory</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="madgraph.interface.madgraph_interface-pysrc.html#MadGraphCmd.finalize">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="madgraph.interface.madgraph_interface.MadGraphCmd-class.html#do_help" class="summary-sig-name">do_help</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">line</span>)</span><br />
+      propose some usefull possible action</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="madgraph.interface.madgraph_interface-pysrc.html#MadGraphCmd.do_help">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="madgraph.interface.madgraph_interface.HelpToCmd-class.html">HelpToCmd</a></code></b>:
+      <code><a href="madgraph.interface.madgraph_interface.HelpToCmd-class.html#help_add">help_add</a></code>,
+      <code><a href="madgraph.interface.madgraph_interface.HelpToCmd-class.html#help_check">help_check</a></code>,
+      <code><a href="madgraph.interface.madgraph_interface.HelpToCmd-class.html#help_customize_model">help_customize_model</a></code>,
+      <code><a href="madgraph.interface.madgraph_interface.HelpToCmd-class.html#help_define">help_define</a></code>,
+      <code><a href="madgraph.interface.madgraph_interface.HelpToCmd-class.html#help_display">help_display</a></code>,
+      <code><a href="madgraph.interface.madgraph_interface.HelpToCmd-class.html#help_generate">help_generate</a></code>,
+      <code><a href="madgraph.interface.madgraph_interface.HelpToCmd-class.html#help_import">help_import</a></code>,
+      <code><a href="madgraph.interface.madgraph_interface.HelpToCmd-class.html#help_install">help_install</a></code>,
+      <code><a href="madgraph.interface.madgraph_interface.HelpToCmd-class.html#help_launch">help_launch</a></code>,
+      <code><a href="madgraph.interface.madgraph_interface.HelpToCmd-class.html#help_load">help_load</a></code>,
+      <code><a href="madgraph.interface.madgraph_interface.HelpToCmd-class.html#help_open">help_open</a></code>,
+      <code><a href="madgraph.interface.madgraph_interface.HelpToCmd-class.html#help_output">help_output</a></code>,
+      <code><a href="madgraph.interface.madgraph_interface.HelpToCmd-class.html#help_save">help_save</a></code>,
+      <code><a href="madgraph.interface.madgraph_interface.HelpToCmd-class.html#help_set">help_set</a></code>,
+      <code><a href="madgraph.interface.madgraph_interface.HelpToCmd-class.html#help_tutorial">help_tutorial</a></code>
+      </p>
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="madgraph.interface.madgraph_interface.CheckValidForCmd-class.html">CheckValidForCmd</a></code></b>:
+      <code><a href="madgraph.interface.madgraph_interface.CheckValidForCmd-class.html#check_add">check_add</a></code>,
+      <code><a href="madgraph.interface.madgraph_interface.CheckValidForCmd-class.html#check_check">check_check</a></code>,
+      <code><a href="madgraph.interface.madgraph_interface.CheckValidForCmd-class.html#check_customize_model">check_customize_model</a></code>,
+      <code><a href="madgraph.interface.madgraph_interface.CheckValidForCmd-class.html#check_define">check_define</a></code>,
+      <code><a href="madgraph.interface.madgraph_interface.CheckValidForCmd-class.html#check_display">check_display</a></code>,
+      <code><a href="madgraph.interface.madgraph_interface.CheckValidForCmd-class.html#check_draw">check_draw</a></code>,
+      <code><a href="madgraph.interface.madgraph_interface.CheckValidForCmd-class.html#check_generate">check_generate</a></code>,
+      <code><a href="madgraph.interface.madgraph_interface.CheckValidForCmd-class.html#check_import">check_import</a></code>,
+      <code><a href="madgraph.interface.madgraph_interface.CheckValidForCmd-class.html#check_install">check_install</a></code>,
+      <code><a href="madgraph.interface.madgraph_interface.CheckValidForCmd-class.html#check_launch">check_launch</a></code>,
+      <code><a href="madgraph.interface.madgraph_interface.CheckValidForCmd-class.html#check_load">check_load</a></code>,
+      <code><a href="madgraph.interface.madgraph_interface.CheckValidForCmd-class.html#check_open">check_open</a></code>,
+      <code><a href="madgraph.interface.madgraph_interface.CheckValidForCmd-class.html#check_output">check_output</a></code>,
+      <code><a href="madgraph.interface.madgraph_interface.CheckValidForCmd-class.html#check_process_format">check_process_format</a></code>,
+      <code><a href="madgraph.interface.madgraph_interface.CheckValidForCmd-class.html#check_save">check_save</a></code>,
+      <code><a href="madgraph.interface.madgraph_interface.CheckValidForCmd-class.html#check_set">check_set</a></code>,
+      <code><a href="madgraph.interface.madgraph_interface.CheckValidForCmd-class.html#find_import_type">find_import_type</a></code>,
+      <code><a href="madgraph.interface.madgraph_interface.CheckValidForCmd-class.html#find_output_type">find_output_type</a></code>,
+      <code><a href="madgraph.interface.madgraph_interface.CheckValidForCmd-class.html#get_default_path">get_default_path</a></code>
+      </p>
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="madgraph.interface.madgraph_interface.CompleteForCmd-class.html">CompleteForCmd</a></code></b>:
+      <code><a href="madgraph.interface.madgraph_interface.CompleteForCmd-class.html#aloha_complete_output">aloha_complete_output</a></code>,
+      <code><a href="madgraph.interface.madgraph_interface.CompleteForCmd-class.html#complete_add">complete_add</a></code>,
+      <code><a href="madgraph.interface.madgraph_interface.CompleteForCmd-class.html#complete_check">complete_check</a></code>,
+      <code><a href="madgraph.interface.madgraph_interface.CompleteForCmd-class.html#complete_customize_model">complete_customize_model</a></code>,
+      <code><a href="madgraph.interface.madgraph_interface.CompleteForCmd-class.html#complete_define">complete_define</a></code>,
+      <code><a href="madgraph.interface.madgraph_interface.CompleteForCmd-class.html#complete_display">complete_display</a></code>,
+      <code><a href="madgraph.interface.madgraph_interface.CompleteForCmd-class.html#complete_draw">complete_draw</a></code>,
+      <code><a href="madgraph.interface.madgraph_interface.CompleteForCmd-class.html#complete_generate">complete_generate</a></code>,
+      <code><a href="madgraph.interface.madgraph_interface.CompleteForCmd-class.html#complete_import">complete_import</a></code>,
+      <code><a href="madgraph.interface.madgraph_interface.CompleteForCmd-class.html#complete_install">complete_install</a></code>,
+      <code><a href="madgraph.interface.madgraph_interface.CompleteForCmd-class.html#complete_launch">complete_launch</a></code>,
+      <code><a href="madgraph.interface.madgraph_interface.CompleteForCmd-class.html#complete_load">complete_load</a></code>,
+      <code><a href="madgraph.interface.madgraph_interface.CompleteForCmd-class.html#complete_open">complete_open</a></code>,
+      <code><a href="madgraph.interface.madgraph_interface.CompleteForCmd-class.html#complete_output">complete_output</a></code>,
+      <code><a href="madgraph.interface.madgraph_interface.CompleteForCmd-class.html#complete_save">complete_save</a></code>,
+      <code><a href="madgraph.interface.madgraph_interface.CompleteForCmd-class.html#complete_set">complete_set</a></code>,
+      <code><a href="madgraph.interface.madgraph_interface.CompleteForCmd-class.html#complete_tutorial">complete_tutorial</a></code>,
+      <code><a href="madgraph.interface.madgraph_interface.CompleteForCmd-class.html#find_restrict_card">find_restrict_card</a></code>,
+      <code><a href="madgraph.interface.madgraph_interface.CompleteForCmd-class.html#model_completion">model_completion</a></code>
+      </p>
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="madgraph.interface.madgraph_interface.CmdExtended-class.html">CmdExtended</a></code></b>:
+      <code><a href="madgraph.interface.madgraph_interface.CmdExtended-class.html#get_history_header">get_history_header</a></code>,
+      <code><a href="madgraph.interface.madgraph_interface.CmdExtended-class.html#postcmd">postcmd</a></code>
+      </p>
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="madgraph.interface.extended_cmd.Cmd-class.html">extended_cmd.Cmd</a></code></b>:
+      <code><a href="madgraph.interface.extended_cmd.Cmd-class.html#ask">ask</a></code>,
+      <code><a href="madgraph.interface.extended_cmd.Cmd-class.html#avoid_history_duplicate">avoid_history_duplicate</a></code>,
+      <code><a href="madgraph.interface.extended_cmd.Cmd-class.html#check_answer_in_input_file">check_answer_in_input_file</a></code>,
+      <code><a href="madgraph.interface.extended_cmd.Cmd-class.html#clean_history">clean_history</a></code>,
+      <code><a href="madgraph.interface.extended_cmd.Cmd-class.html#compile">compile</a></code>,
+      <code><a href="madgraph.interface.extended_cmd.Cmd-class.html#default">default</a></code>,
+      <code><a href="madgraph.interface.extended_cmd.Cmd-class.html#define_child_cmd_interface">define_child_cmd_interface</a></code>,
+      <code><a href="madgraph.interface.extended_cmd.Cmd-class.html#do_EOF">do_EOF</a></code>,
+      <code><a href="madgraph.interface.extended_cmd.Cmd-class.html#do_exit">do_exit</a></code>,
+      <code><a href="madgraph.interface.extended_cmd.Cmd-class.html#do_history">do_history</a></code>,
+      <code><a href="madgraph.interface.extended_cmd.Cmd-class.html#emptyline">emptyline</a></code>,
+      <code><a href="madgraph.interface.extended_cmd.Cmd-class.html#exec_cmd">exec_cmd</a></code>,
+      <code><a href="madgraph.interface.extended_cmd.Cmd-class.html#get_stored_line">get_stored_line</a></code>,
+      <code><a href="madgraph.interface.extended_cmd.Cmd-class.html#import_command_file">import_command_file</a></code>,
+      <code><a href="madgraph.interface.extended_cmd.Cmd-class.html#nice_config_error">nice_config_error</a></code>,
+      <code><a href="madgraph.interface.extended_cmd.Cmd-class.html#nice_error_handling">nice_error_handling</a></code>,
+      <code><a href="madgraph.interface.extended_cmd.Cmd-class.html#nice_user_error">nice_user_error</a></code>,
+      <code><a href="madgraph.interface.extended_cmd.Cmd-class.html#onecmd">onecmd</a></code>,
+      <code><a href="madgraph.interface.extended_cmd.Cmd-class.html#onecmd_orig">onecmd_orig</a></code>,
+      <code><a href="madgraph.interface.extended_cmd.Cmd-class.html#postloop">postloop</a></code>,
+      <code><a href="madgraph.interface.extended_cmd.Cmd-class.html#precmd">precmd</a></code>,
+      <code><a href="madgraph.interface.extended_cmd.Cmd-class.html#run_cmd">run_cmd</a></code>,
+      <code><a href="madgraph.interface.extended_cmd.Cmd-class.html#stop_on_keyboard_stop">stop_on_keyboard_stop</a></code>,
+      <code><a href="madgraph.interface.extended_cmd.Cmd-class.html#store_line">store_line</a></code>,
+      <code><a href="madgraph.interface.extended_cmd.Cmd-class.html#write_configuration">write_configuration</a></code>
+      </p>
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="madgraph.interface.extended_cmd.CheckCmd-class.html">extended_cmd.CheckCmd</a></code></b>:
+      <code><a href="madgraph.interface.extended_cmd.CheckCmd-class.html#check_history">check_history</a></code>
+      </p>
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="madgraph.interface.extended_cmd.HelpCmd-class.html">extended_cmd.HelpCmd</a></code></b>:
+      <code><a href="madgraph.interface.extended_cmd.HelpCmd-class.html#help_EOF">help_EOF</a></code>,
+      <code><a href="madgraph.interface.extended_cmd.HelpCmd-class.html#help_help">help_help</a></code>,
+      <code><a href="madgraph.interface.extended_cmd.HelpCmd-class.html#help_history">help_history</a></code>,
+      <code><a href="madgraph.interface.extended_cmd.HelpCmd-class.html#help_quit">help_quit</a></code>
+      </p>
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="madgraph.interface.extended_cmd.CompleteCmd-class.html">extended_cmd.CompleteCmd</a></code></b>:
+      <code><a href="madgraph.interface.extended_cmd.CompleteCmd-class.html#complete_history">complete_history</a></code>
+      </p>
+    <p class="indent-wrapped-lines"><b>Inherited from <code>object</code></b>:
+      <code>__delattr__</code>,
+      <code>__format__</code>,
+      <code>__getattribute__</code>,
+      <code>__hash__</code>,
+      <code>__new__</code>,
+      <code>__reduce__</code>,
+      <code>__reduce_ex__</code>,
+      <code>__repr__</code>,
+      <code>__setattr__</code>,
+      <code>__sizeof__</code>,
+      <code>__str__</code>,
+      <code>__subclasshook__</code>
+      </p>
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="madgraph.interface.extended_cmd.BasicCmd-class.html">extended_cmd.BasicCmd</a></code></b>:
+      <code><a href="madgraph.interface.extended_cmd.BasicCmd-class.html#complete">complete</a></code>,
+      <code><a href="madgraph.interface.extended_cmd.BasicCmd-class.html#deal_multiple_categories">deal_multiple_categories</a></code>,
+      <code><a href="madgraph.interface.extended_cmd.BasicCmd-class.html#getTerminalSize">getTerminalSize</a></code>,
+      <code><a href="madgraph.interface.extended_cmd.BasicCmd-class.html#print_suggestions">print_suggestions</a></code>
+      </p>
+    <p class="indent-wrapped-lines"><b>Inherited from <code>cmd.Cmd</code></b>:
+      <code>cmdloop</code>,
+      <code>columnize</code>,
+      <code>complete_help</code>,
+      <code>completedefault</code>,
+      <code>completenames</code>,
+      <code>get_names</code>,
+      <code>parseline</code>,
+      <code>print_topics</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== STATIC METHODS ==================== -->
+<a name="section-StaticMethods"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Static Methods</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-StaticMethods"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="madgraph.interface.extended_cmd.Cmd-class.html">extended_cmd.Cmd</a></code></b>:
+      <code><a href="madgraph.interface.extended_cmd.Cmd-class.html#timed_input">timed_input</a></code>
+      </p>
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="madgraph.interface.extended_cmd.BasicCmd-class.html">extended_cmd.BasicCmd</a></code></b>:
+      <code><a href="madgraph.interface.extended_cmd.BasicCmd-class.html#list_completion">list_completion</a></code>,
+      <code><a href="madgraph.interface.extended_cmd.BasicCmd-class.html#path_completion">path_completion</a></code>,
+      <code><a href="madgraph.interface.extended_cmd.BasicCmd-class.html#split_arg">split_arg</a></code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS VARIABLES ==================== -->
+<a name="section-ClassVariables"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Class Variables</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-ClassVariables"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="writing_dir"></a><span class="summary-name">writing_dir</span> = <code title="'.'"><code class="variable-quote">'</code><code class="variable-string">.</code><code class="variable-quote">'</code></code>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="madgraph.interface.madgraph_interface.MadGraphCmd-class.html#_display_opts" class="summary-name" onclick="show_private();">_display_opts</a> = <code title="['particles',
+ 'interactions',
+ 'processes',
+ 'diagrams',
+ 'diagrams_text',
+ 'multiparticles',
+ 'couplings',
+ 'lorentz',
+..."><code class="variable-group">[</code><code class="variable-quote">'</code><code class="variable-string">particles</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">interactions</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">processes</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">di</code><code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="_add_opts"></a><span class="summary-name">_add_opts</span> = <code title="['process']"><code class="variable-group">[</code><code class="variable-quote">'</code><code class="variable-string">process</code><code class="variable-quote">'</code><code class="variable-group">]</code></code>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="_save_opts"></a><span class="summary-name">_save_opts</span> = <code title="['model', 'processes', 'options']"><code class="variable-group">[</code><code class="variable-quote">'</code><code class="variable-string">model</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">processes</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">options</code><code class="variable-quote">'</code><code class="variable-group">]</code></code>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="_tutorial_opts"></a><span class="summary-name">_tutorial_opts</span> = <code title="['start', 'stop']"><code class="variable-group">[</code><code class="variable-quote">'</code><code class="variable-string">start</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">stop</code><code class="variable-quote">'</code><code class="variable-group">]</code></code>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="madgraph.interface.madgraph_interface.MadGraphCmd-class.html#_check_opts" class="summary-name" onclick="show_private();">_check_opts</a> = <code title="['full', 'permutation', 'gauge', 'lorentz_invariance']"><code class="variable-group">[</code><code class="variable-quote">'</code><code class="variable-string">full</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">permutation</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">gauge</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">lorentz_invari</code><code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="madgraph.interface.madgraph_interface.MadGraphCmd-class.html#_import_formats" class="summary-name" onclick="show_private();">_import_formats</a> = <code title="['model_v4', 'model', 'proc_v4', 'command', 'banner']"><code class="variable-group">[</code><code class="variable-quote">'</code><code class="variable-string">model_v4</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">model</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">proc_v4</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">command</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="madgraph.interface.madgraph_interface.MadGraphCmd-class.html#_install_opts" class="summary-name" onclick="show_private();">_install_opts</a> = <code title="['pythia-pgs',
+ 'Delphes',
+ 'MadAnalysis',
+ 'ExRootAnalysis',
+ 'update',
+ 'Delphes2']"><code class="variable-group">[</code><code class="variable-quote">'</code><code class="variable-string">pythia-pgs</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">Delphes</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">MadAnalysis</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">ExRo</code><code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="_v4_export_formats"></a><span class="summary-name">_v4_export_formats</span> = <code title="['madevent', 'standalone', 'matrix']"><code class="variable-group">[</code><code class="variable-quote">'</code><code class="variable-string">madevent</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">standalone</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">matrix</code><code class="variable-quote">'</code><code class="variable-group">]</code></code>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="madgraph.interface.madgraph_interface.MadGraphCmd-class.html#_export_formats" class="summary-name" onclick="show_private();">_export_formats</a> = <code title="['madevent',
+ 'standalone',
+ 'matrix',
+ 'standalone_cpp',
+ 'pythia8',
+ 'aloha']"><code class="variable-group">[</code><code class="variable-quote">'</code><code class="variable-string">madevent</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">standalone</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">matrix</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">standa</code><code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="madgraph.interface.madgraph_interface.MadGraphCmd-class.html#_set_options" class="summary-name" onclick="show_private();">_set_options</a> = <code title="['group_subprocesses',
+ 'ignore_six_quark_processes',
+ 'stdout_level',
+ 'fortran_compiler',
+ 'gauge',
+ 'complex_mass_scheme']"><code class="variable-group">[</code><code class="variable-quote">'</code><code class="variable-string">group_subprocesses</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">ignore_six_quark_proces</code><code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="madgraph.interface.madgraph_interface.MadGraphCmd-class.html#options_configuration" class="summary-name">options_configuration</a> = <code title="{'auto_update': 7,
+ 'cluster_queue': None,
+ 'cluster_temp_path': None,
+ 'cluster_type': 'condor',
+ 'delphes_path': './Delphes',
+ 'eps_viewer': None,
+ 'exrootanalysis_path': './ExRootAnalysis',
+ 'fortran_compiler': None,
+..."><code class="variable-group">{</code><code class="variable-quote">'</code><code class="variable-string">auto_update</code><code class="variable-quote">'</code><code class="variable-op">: </code>7<code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">cluster_queue</code><code class="variable-quote">'</code><code class="variable-op">: </code>No<code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="madgraph.interface.madgraph_interface.MadGraphCmd-class.html#options_madgraph" class="summary-name">options_madgraph</a> = <code title="{'complex_mass_scheme': False,
+ 'gauge': 'unitary',
+ 'group_subprocesses': 'Auto',
+ 'ignore_six_quark_processes': False,
+ 'stdout_level': None}"><code class="variable-group">{</code><code class="variable-quote">'</code><code class="variable-string">complex_mass_scheme</code><code class="variable-quote">'</code><code class="variable-op">: </code>False<code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">gauge</code><code class="variable-quote">'</code><code class="variable-op">: </code><code class="variable-quote">'</code><code class="variable-string">un</code><code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="madgraph.interface.madgraph_interface.MadGraphCmd-class.html#options_madevent" class="summary-name">options_madevent</a> = <code title="{'automatic_html_opening': True, 'nb_core': None, 'run_mode': 2}"><code class="variable-group">{</code><code class="variable-quote">'</code><code class="variable-string">automatic_html_opening</code><code class="variable-quote">'</code><code class="variable-op">: </code>True<code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">nb_core</code><code class="variable-quote">'</code><code class="variable-op">:</code><code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="_curr_model"></a><span class="summary-name">_curr_model</span> = <code title="None">None</code><br />
+      hash(x)
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="_curr_amps"></a><span class="summary-name">_curr_amps</span> = <code title="[]">[]</code>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="madgraph.interface.madgraph_interface.MadGraphCmd-class.html#_curr_matrix_elements" class="summary-name" onclick="show_private();">_curr_matrix_elements</a> = <code title="{
+    'matrix_elements': []
+}"><code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="_curr_fortran_model"></a><span class="summary-name">_curr_fortran_model</span> = <code title="None">None</code><br />
+      hash(x)
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="_curr_cpp_model"></a><span class="summary-name">_curr_cpp_model</span> = <code title="None">None</code><br />
+      hash(x)
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="_curr_exporter"></a><span class="summary-name">_curr_exporter</span> = <code title="None">None</code><br />
+      hash(x)
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="_done_export"></a><span class="summary-name">_done_export</span> = <code title="False">False</code>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="madgraph.interface.madgraph_interface.CmdExtended-class.html">CmdExtended</a></code></b>:
+      <code><a href="madgraph.interface.madgraph_interface.CmdExtended-class.html#config_debug">config_debug</a></code>,
+      <code><a href="madgraph.interface.madgraph_interface.CmdExtended-class.html#debug_output">debug_output</a></code>,
+      <code><a href="madgraph.interface.madgraph_interface.CmdExtended-class.html#error_debug">error_debug</a></code>,
+      <code><a href="madgraph.interface.madgraph_interface.CmdExtended-class.html#keyboard_stop_msg">keyboard_stop_msg</a></code>,
+      <code><a href="madgraph.interface.madgraph_interface.CmdExtended-class.html#next_possibility">next_possibility</a></code>
+      </p>
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="madgraph.interface.extended_cmd.Cmd-class.html">extended_cmd.Cmd</a></code></b>:
+      <code><a href="madgraph.interface.extended_cmd.Cmd-class.html#helporder">helporder</a></code>,
+      <code><a href="madgraph.interface.extended_cmd.Cmd-class.html#history_header">history_header</a></code>
+      </p>
+    <p class="indent-wrapped-lines"><b>Inherited from <code>cmd.Cmd</code></b>:
+      <code>doc_header</code>,
+      <code>doc_leader</code>,
+      <code>identchars</code>,
+      <code>intro</code>,
+      <code>lastcmd</code>,
+      <code>misc_header</code>,
+      <code>nohelp</code>,
+      <code>prompt</code>,
+      <code>ruler</code>,
+      <code>undoc_header</code>,
+      <code>use_rawinput</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== PROPERTIES ==================== -->
+<a name="section-Properties"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Properties</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-Properties"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code>object</code></b>:
+      <code>__class__</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== METHOD DETAILS ==================== -->
+<a name="section-MethodDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Method Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-MethodDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="preloop"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">preloop</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="madgraph.interface.madgraph_interface-pysrc.html#MadGraphCmd.preloop">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Initializing before starting the main loop</p>
+  <dl class="fields">
+    <dt>Overrides:
+        cmd.Cmd.preloop
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="__init__"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">__init__</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">mgme_dir</span>=<span class="sig-default"><code class="variable-quote">'</code><code class="variable-string"></code><code class="variable-quote">'</code></span>,
+        <span class="sig-arg">*completekey</span>,
+        <span class="sig-arg">**stdin</span>)</span>
+    <br /><em class="fname">(Constructor)</em>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="madgraph.interface.madgraph_interface-pysrc.html#MadGraphCmd.__init__">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>add a tracker of the history</p>
+  <dl class="fields">
+    <dt>Overrides:
+        cmd.Cmd.__init__
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="do_quit"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">do_quit</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">line</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="madgraph.interface.madgraph_interface-pysrc.html#MadGraphCmd.do_quit">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Do quit</p>
+  <dl class="fields">
+    <dt>Overrides:
+        <a href="madgraph.interface.extended_cmd.Cmd-class.html#do_quit">extended_cmd.Cmd.do_quit</a>
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="do_display"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">do_display</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">line</span>,
+        <span class="sig-arg">output</span>=<span class="sig-default">sys.stdout</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="madgraph.interface.madgraph_interface-pysrc.html#MadGraphCmd.do_display">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Display current internal status</p>
+  <dl class="fields">
+    <dt>Overrides:
+        <a href="madgraph.interface.extended_cmd.Cmd-class.html#do_display">extended_cmd.Cmd.do_display</a>
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="extract_process"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">extract_process</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">line</span>,
+        <span class="sig-arg">proc_number</span>=<span class="sig-default">0</span>,
+        <span class="sig-arg">overall_orders</span>=<span class="sig-default"><code class="variable-group">{</code><code class="variable-group">}</code></span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="madgraph.interface.madgraph_interface-pysrc.html#MadGraphCmd.extract_process">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Extract a process definition from a string. Returns a 
+  ProcessDefinition.</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="extract_particle_ids"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">extract_particle_ids</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">args</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="madgraph.interface.madgraph_interface-pysrc.html#MadGraphCmd.extract_particle_ids">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Extract particle ids from a list of particle names. If there are | in 
+  the list, this corresponds to an or-list, which is represented as a list 
+  of id lists. An or-list is used to allow multiple required s-channel 
+  propagators to be specified (e.g. Z/gamma).</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="optimize_order"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">optimize_order</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">pdg_list</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="madgraph.interface.madgraph_interface-pysrc.html#MadGraphCmd.optimize_order">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <pre class="literalblock">
+Optimize the order of particles in a pdg list, so that
+similar particles are next to each other. Sort according to:
+1. pdg &gt; 0, 2. spin, 3. color, 4. mass &gt; 0
+
+</pre>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="extract_decay_chain_process"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">extract_decay_chain_process</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">line</span>,
+        <span class="sig-arg">level_down</span>=<span class="sig-default">False</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="madgraph.interface.madgraph_interface-pysrc.html#MadGraphCmd.extract_decay_chain_process">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Recursively extract a decay chain process definition from a string. 
+  Returns a ProcessDefinition.</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="install_update"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">install_update</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">args</span>,
+        <span class="sig-arg">wget</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="madgraph.interface.madgraph_interface-pysrc.html#MadGraphCmd.install_update">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>check if the current version of mg5 is up-to-date. and allow user to 
+  install the latest version of MG5</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="set_configuration"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">set_configuration</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">config_path</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">final</span>=<span class="sig-default">True</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="madgraph.interface.madgraph_interface-pysrc.html#MadGraphCmd.set_configuration">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>assign all configuration variable from file 
+  ./input/mg5_configuration.txt. assign to default if not define</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="do_save"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">do_save</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">line</span>,
+        <span class="sig-arg">check</span>=<span class="sig-default">True</span>,
+        <span class="sig-arg">to_keep</span>=<span class="sig-default"><code class="variable-group">{</code><code class="variable-group">}</code></span>,
+        <span class="sig-arg">log</span>=<span class="sig-default">True</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="madgraph.interface.madgraph_interface-pysrc.html#MadGraphCmd.do_save">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Not in help: Save information to file</p>
+  <dl class="fields">
+    <dt>Overrides:
+        <a href="madgraph.interface.extended_cmd.Cmd-class.html#do_save">extended_cmd.Cmd.do_save</a>
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="do_help"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">do_help</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">line</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="madgraph.interface.madgraph_interface-pysrc.html#MadGraphCmd.do_help">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>propose some usefull possible action</p>
+  <dl class="fields">
+    <dt>Overrides:
+        cmd.Cmd.do_help
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== CLASS VARIABLE DETAILS ==================== -->
+<a name="section-ClassVariableDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Class Variable Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-ClassVariableDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="_display_opts"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">_display_opts</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+<code class="variable-group">[</code><code class="variable-quote">'</code><code class="variable-string">particles</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">interactions</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">processes</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">diagrams</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">diagrams_text</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">multiparticles</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">couplings</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">lorentz</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+<code class="variable-ellipsis">...</code>
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="_check_opts"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">_check_opts</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+<code class="variable-group">[</code><code class="variable-quote">'</code><code class="variable-string">full</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">permutation</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">gauge</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">lorentz_invariance</code><code class="variable-quote">'</code><code class="variable-group">]</code>
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="_import_formats"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">_import_formats</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+<code class="variable-group">[</code><code class="variable-quote">'</code><code class="variable-string">model_v4</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">model</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">proc_v4</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">command</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">banner</code><code class="variable-quote">'</code><code class="variable-group">]</code>
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="_install_opts"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">_install_opts</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+<code class="variable-group">[</code><code class="variable-quote">'</code><code class="variable-string">pythia-pgs</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">Delphes</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">MadAnalysis</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">ExRootAnalysis</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">update</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">Delphes2</code><code class="variable-quote">'</code><code class="variable-group">]</code>
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="_export_formats"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">_export_formats</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+<code class="variable-group">[</code><code class="variable-quote">'</code><code class="variable-string">madevent</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">standalone</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">matrix</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">standalone_cpp</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">pythia8</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">aloha</code><code class="variable-quote">'</code><code class="variable-group">]</code>
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="_set_options"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">_set_options</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+<code class="variable-group">[</code><code class="variable-quote">'</code><code class="variable-string">group_subprocesses</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">ignore_six_quark_processes</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">stdout_level</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">fortran_compiler</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">gauge</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">complex_mass_scheme</code><code class="variable-quote">'</code><code class="variable-group">]</code>
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="options_configuration"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">options_configuration</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+<code class="variable-group">{</code><code class="variable-quote">'</code><code class="variable-string">auto_update</code><code class="variable-quote">'</code><code class="variable-op">: </code>7<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">cluster_queue</code><code class="variable-quote">'</code><code class="variable-op">: </code>None<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">cluster_temp_path</code><code class="variable-quote">'</code><code class="variable-op">: </code>None<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">cluster_type</code><code class="variable-quote">'</code><code class="variable-op">: </code><code class="variable-quote">'</code><code class="variable-string">condor</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">delphes_path</code><code class="variable-quote">'</code><code class="variable-op">: </code><code class="variable-quote">'</code><code class="variable-string">./Delphes</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">eps_viewer</code><code class="variable-quote">'</code><code class="variable-op">: </code>None<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">exrootanalysis_path</code><code class="variable-quote">'</code><code class="variable-op">: </code><code class="variable-quote">'</code><code class="variable-string">./ExRootAnalysis</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">fortran_compiler</code><code class="variable-quote">'</code><code class="variable-op">: </code>None<code class="variable-op">,</code>
+<code class="variable-ellipsis">...</code>
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="options_madgraph"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">options_madgraph</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+<code class="variable-group">{</code><code class="variable-quote">'</code><code class="variable-string">complex_mass_scheme</code><code class="variable-quote">'</code><code class="variable-op">: </code>False<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">gauge</code><code class="variable-quote">'</code><code class="variable-op">: </code><code class="variable-quote">'</code><code class="variable-string">unitary</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">group_subprocesses</code><code class="variable-quote">'</code><code class="variable-op">: </code><code class="variable-quote">'</code><code class="variable-string">Auto</code><code class="variable-quote">'</code><code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">ignore_six_quark_processes</code><code class="variable-quote">'</code><code class="variable-op">: </code>False<code class="variable-op">,</code>
+ <code class="variable-quote">'</code><code class="variable-string">stdout_level</code><code class="variable-quote">'</code><code class="variable-op">: </code>None<code class="variable-group">}</code>
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="options_madevent"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">options_madevent</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+<code class="variable-group">{</code><code class="variable-quote">'</code><code class="variable-string">automatic_html_opening</code><code class="variable-quote">'</code><code class="variable-op">: </code>True<code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">nb_core</code><code class="variable-quote">'</code><code class="variable-op">: </code>None<code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">run_mode</code><code class="variable-quote">'</code><code class="variable-op">: </code>2<code class="variable-group">}</code>
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="_curr_matrix_elements"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">_curr_matrix_elements</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+{
+    'matrix_elements': []
+}
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Fri Jun 21 10:41:22 2013
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

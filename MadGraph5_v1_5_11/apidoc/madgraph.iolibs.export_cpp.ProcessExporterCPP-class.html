@@ -1,0 +1,805 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>madgraph.iolibs.export_cpp.ProcessExporterCPP</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="madgraph-module.html">Package&nbsp;madgraph</a> ::
+        <a href="madgraph.iolibs-module.html">Package&nbsp;iolibs</a> ::
+        <a href="madgraph.iolibs.export_cpp-module.html">Module&nbsp;export_cpp</a> ::
+        Class&nbsp;ProcessExporterCPP
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="madgraph.iolibs.export_cpp.ProcessExporterCPP-class.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS DESCRIPTION ==================== -->
+<h1 class="epydoc">Class ProcessExporterCPP</h1><p class="nomargin-top"><span class="codelink"><a href="madgraph.iolibs.export_cpp-pysrc.html#ProcessExporterCPP">source&nbsp;code</a></span></p>
+<pre class="base-tree">
+object --+
+         |
+        <strong class="uidshort">ProcessExporterCPP</strong>
+</pre>
+
+<dl><dt>Known Subclasses:</dt>
+<dd>
+      <ul class="subclass-list">
+<li><a href="madgraph.iolibs.export_cpp.ProcessExporterPythia8-class.html">ProcessExporterPythia8</a></li>  </ul>
+</dd></dl>
+
+<hr />
+<p>Class to take care of exporting a set of matrix elements to C++ 
+  format.</p>
+
+<!-- ==================== NESTED CLASSES ==================== -->
+<a name="section-NestedClasses"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Nested Classes</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-NestedClasses"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="madgraph.iolibs.export_cpp.ProcessExporterCPP.ProcessExporterCPPError-class.html" class="summary-name">ProcessExporterCPPError</a>
+    </td>
+  </tr>
+</table>
+<!-- ==================== INSTANCE METHODS ==================== -->
+<a name="section-InstanceMethods"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Instance Methods</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-InstanceMethods"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="madgraph.iolibs.export_cpp.ProcessExporterCPP-class.html#__init__" class="summary-sig-name">__init__</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">matrix_elements</span>,
+        <span class="summary-sig-arg">cpp_helas_call_writer</span>,
+        <span class="summary-sig-arg">process_string</span>=<span class="summary-sig-default"><code class="variable-quote">'</code><code class="variable-string"></code><code class="variable-quote">'</code></span>,
+        <span class="summary-sig-arg">process_number</span>=<span class="summary-sig-default">0</span>,
+        <span class="summary-sig-arg">path</span>=<span class="summary-sig-default"><code class="variable-quote">'</code><code class="variable-string">/Users/omatt/Documents/eclipse/madgraph5/MadGraph5_v1_5_11</code><code class="variable-quote">'</code></span>)</span><br />
+      Initiate with matrix elements, helas call writer, process string, 
+      path.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="madgraph.iolibs.export_cpp-pysrc.html#ProcessExporterCPP.__init__">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="generate_process_files"></a><span class="summary-sig-name">generate_process_files</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      Generate the .h and .cc files needed for C++, for the processes 
+      described by multi_matrix_element</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="madgraph.iolibs.export_cpp-pysrc.html#ProcessExporterCPP.generate_process_files">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="write_process_h_file"></a><span class="summary-sig-name">write_process_h_file</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">writer</span>)</span><br />
+      Write the class definition (.h) file for the process</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="madgraph.iolibs.export_cpp-pysrc.html#ProcessExporterCPP.write_process_h_file">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="write_process_cc_file"></a><span class="summary-sig-name">write_process_cc_file</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">writer</span>)</span><br />
+      Write the class member definition (.cc) file for the process 
+      described by matrix_element</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="madgraph.iolibs.export_cpp-pysrc.html#ProcessExporterCPP.write_process_cc_file">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="get_process_class_definitions"></a><span class="summary-sig-name">get_process_class_definitions</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      The complete class definition for the process</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="madgraph.iolibs.export_cpp-pysrc.html#ProcessExporterCPP.get_process_class_definitions">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="get_process_function_definitions"></a><span class="summary-sig-name">get_process_function_definitions</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      The complete Pythia 8 class definition for the process</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="madgraph.iolibs.export_cpp-pysrc.html#ProcessExporterCPP.get_process_function_definitions">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="get_process_name"></a><span class="summary-sig-name">get_process_name</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      Return process file name for the process in matrix_element</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="madgraph.iolibs.export_cpp-pysrc.html#ProcessExporterCPP.get_process_name">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="get_process_info_lines"></a><span class="summary-sig-name">get_process_info_lines</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">matrix_element</span>)</span><br />
+      Return info lines describing the processes for this matrix element</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="madgraph.iolibs.export_cpp-pysrc.html#ProcessExporterCPP.get_process_info_lines">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="get_initProc_lines"></a><span class="summary-sig-name">get_initProc_lines</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">matrix_element</span>,
+        <span class="summary-sig-arg">color_amplitudes</span>)</span><br />
+      Get initProc_lines for function definition for Pythia 8 .cc file</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="madgraph.iolibs.export_cpp-pysrc.html#ProcessExporterCPP.get_initProc_lines">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="get_reset_jamp_lines"></a><span class="summary-sig-name">get_reset_jamp_lines</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">color_amplitudes</span>)</span><br />
+      Get lines to reset jamps</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="madgraph.iolibs.export_cpp-pysrc.html#ProcessExporterCPP.get_reset_jamp_lines">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="get_calculate_wavefunctions"></a><span class="summary-sig-name">get_calculate_wavefunctions</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">wavefunctions</span>,
+        <span class="summary-sig-arg">amplitudes</span>)</span><br />
+      Return the lines for optimized calculation of the wavefunctions for 
+      all subprocesses</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="madgraph.iolibs.export_cpp-pysrc.html#ProcessExporterCPP.get_calculate_wavefunctions">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="get_sigmaKin_lines"></a><span class="summary-sig-name">get_sigmaKin_lines</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">color_amplitudes</span>)</span><br />
+      Get sigmaKin_lines for function definition for Pythia 8 .cc file</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="madgraph.iolibs.export_cpp-pysrc.html#ProcessExporterCPP.get_sigmaKin_lines">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="get_all_sigmaKin_lines"></a><span class="summary-sig-name">get_all_sigmaKin_lines</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">color_amplitudes</span>,
+        <span class="summary-sig-arg">class_name</span>)</span><br />
+      Get sigmaKin_process for all subprocesses for Pythia 8 .cc file</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="madgraph.iolibs.export_cpp-pysrc.html#ProcessExporterCPP.get_all_sigmaKin_lines">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="get_sigmaKin_single_process"></a><span class="summary-sig-name">get_sigmaKin_single_process</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">i</span>,
+        <span class="summary-sig-arg">matrix_element</span>)</span><br />
+      Write sigmaKin for each process</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="madgraph.iolibs.export_cpp-pysrc.html#ProcessExporterCPP.get_sigmaKin_single_process">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="get_matrix_single_process"></a><span class="summary-sig-name">get_matrix_single_process</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">i</span>,
+        <span class="summary-sig-arg">matrix_element</span>,
+        <span class="summary-sig-arg">color_amplitudes</span>,
+        <span class="summary-sig-arg">class_name</span>)</span><br />
+      Write matrix() for each process</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="madgraph.iolibs.export_cpp-pysrc.html#ProcessExporterCPP.get_matrix_single_process">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="get_sigmaHat_lines"></a><span class="summary-sig-name">get_sigmaHat_lines</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      Get sigmaHat_lines for function definition for Pythia 8 .cc file</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="madgraph.iolibs.export_cpp-pysrc.html#ProcessExporterCPP.get_sigmaHat_lines">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="get_helicity_matrix"></a><span class="summary-sig-name">get_helicity_matrix</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">matrix_element</span>)</span><br />
+      Return the Helicity matrix definition lines for this matrix element</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="madgraph.iolibs.export_cpp-pysrc.html#ProcessExporterCPP.get_helicity_matrix">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="get_den_factor_line"></a><span class="summary-sig-name">get_den_factor_line</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">matrix_element</span>)</span><br />
+      Return the denominator factor line for this matrix element</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="madgraph.iolibs.export_cpp-pysrc.html#ProcessExporterCPP.get_den_factor_line">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="madgraph.iolibs.export_cpp.ProcessExporterCPP-class.html#get_color_matrix_lines" class="summary-sig-name">get_color_matrix_lines</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">matrix_element</span>)</span><br />
+      Return the color matrix definition lines for this matrix element.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="madgraph.iolibs.export_cpp-pysrc.html#ProcessExporterCPP.get_color_matrix_lines">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="get_jamp_lines"></a><span class="summary-sig-name">get_jamp_lines</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">color_amplitudes</span>)</span><br />
+      Return the jamp = sum(fermionfactor * amp[i]) lines</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="madgraph.iolibs.export_cpp-pysrc.html#ProcessExporterCPP.get_jamp_lines">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code>object</code></b>:
+      <code>__delattr__</code>,
+      <code>__format__</code>,
+      <code>__getattribute__</code>,
+      <code>__hash__</code>,
+      <code>__new__</code>,
+      <code>__reduce__</code>,
+      <code>__reduce_ex__</code>,
+      <code>__repr__</code>,
+      <code>__setattr__</code>,
+      <code>__sizeof__</code>,
+      <code>__str__</code>,
+      <code>__subclasshook__</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== STATIC METHODS ==================== -->
+<a name="section-StaticMethods"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Static Methods</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-StaticMethods"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="get_model_name"></a><span class="summary-sig-name">get_model_name</span>(<span class="summary-sig-arg">name</span>)</span><br />
+      Replace - with _, + with _plus_ in a model name.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="madgraph.iolibs.export_cpp-pysrc.html#ProcessExporterCPP.get_model_name">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS VARIABLES ==================== -->
+<a name="section-ClassVariables"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Class Variables</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-ClassVariables"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="process_dir"></a><span class="summary-name">process_dir</span> = <code title="'.'"><code class="variable-quote">'</code><code class="variable-string">.</code><code class="variable-quote">'</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="include_dir"></a><span class="summary-name">include_dir</span> = <code title="'.'"><code class="variable-quote">'</code><code class="variable-string">.</code><code class="variable-quote">'</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="process_template_h"></a><span class="summary-name">process_template_h</span> = <code title="'cpp_process_h.inc'"><code class="variable-quote">'</code><code class="variable-string">cpp_process_h.inc</code><code class="variable-quote">'</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="process_template_cc"></a><span class="summary-name">process_template_cc</span> = <code title="'cpp_process_cc.inc'"><code class="variable-quote">'</code><code class="variable-string">cpp_process_cc.inc</code><code class="variable-quote">'</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="process_class_template"></a><span class="summary-name">process_class_template</span> = <code title="'cpp_process_class.inc'"><code class="variable-quote">'</code><code class="variable-string">cpp_process_class.inc</code><code class="variable-quote">'</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="madgraph.iolibs.export_cpp.ProcessExporterCPP-class.html#process_definition_template" class="summary-name">process_definition_template</a> = <code title="'cpp_process_function_definitions.inc'"><code class="variable-quote">'</code><code class="variable-string">cpp_process_function_definition</code><code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="process_wavefunction_template"></a><span class="summary-name">process_wavefunction_template</span> = <code title="'cpp_process_wavefunctions.inc'"><code class="variable-quote">'</code><code class="variable-string">cpp_process_wavefunctions.inc</code><code class="variable-quote">'</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="madgraph.iolibs.export_cpp.ProcessExporterCPP-class.html#process_sigmaKin_function_template" class="summary-name">process_sigmaKin_function_template</a> = <code title="'cpp_process_sigmaKin_function.inc'"><code class="variable-quote">'</code><code class="variable-string">cpp_process_sigmaKin_fun</code><code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+</table>
+<!-- ==================== PROPERTIES ==================== -->
+<a name="section-Properties"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Properties</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-Properties"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code>object</code></b>:
+      <code>__class__</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== METHOD DETAILS ==================== -->
+<a name="section-MethodDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Method Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-MethodDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="__init__"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">__init__</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">matrix_elements</span>,
+        <span class="sig-arg">cpp_helas_call_writer</span>,
+        <span class="sig-arg">process_string</span>=<span class="sig-default"><code class="variable-quote">'</code><code class="variable-string"></code><code class="variable-quote">'</code></span>,
+        <span class="sig-arg">process_number</span>=<span class="sig-default">0</span>,
+        <span class="sig-arg">path</span>=<span class="sig-default"><code class="variable-quote">'</code><code class="variable-string">/Users/omatt/Documents/eclipse/madgraph5/MadGraph5_v1_5_11</code><code class="variable-quote">'</code></span>)</span>
+    <br /><em class="fname">(Constructor)</em>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="madgraph.iolibs.export_cpp-pysrc.html#ProcessExporterCPP.__init__">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Initiate with matrix elements, helas call writer, process string, 
+  path. Generate the process .h and .cc files.</p>
+  <dl class="fields">
+    <dt>Overrides:
+        object.__init__
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="get_color_matrix_lines"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">get_color_matrix_lines</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">matrix_element</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="madgraph.iolibs.export_cpp-pysrc.html#ProcessExporterCPP.get_color_matrix_lines">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Return the color matrix definition lines for this matrix element. 
+  Split rows in chunks of size n.</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== CLASS VARIABLE DETAILS ==================== -->
+<a name="section-ClassVariableDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Class Variable Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-ClassVariableDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="process_definition_template"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">process_definition_template</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+<code class="variable-quote">'</code><code class="variable-string">cpp_process_function_definitions.inc</code><code class="variable-quote">'</code>
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="process_sigmaKin_function_template"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">process_sigmaKin_function_template</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+<code class="variable-quote">'</code><code class="variable-string">cpp_process_sigmaKin_function.inc</code><code class="variable-quote">'</code>
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Fri Jun 21 10:41:22 2013
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

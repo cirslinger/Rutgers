@@ -1,0 +1,1385 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>madgraph.interface.extended_cmd.Cmd</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="madgraph-module.html">Package&nbsp;madgraph</a> ::
+        <a href="madgraph.interface-module.html">Package&nbsp;interface</a> ::
+        <a href="madgraph.interface.extended_cmd-module.html">Module&nbsp;extended_cmd</a> ::
+        Class&nbsp;Cmd
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="madgraph.interface.extended_cmd.Cmd-class.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS DESCRIPTION ==================== -->
+<h1 class="epydoc">Class Cmd</h1><p class="nomargin-top"><span class="codelink"><a href="madgraph.interface.extended_cmd-pysrc.html#Cmd">source&nbsp;code</a></span></p>
+<pre class="base-tree">
+ object --+    
+          |    
+   <a href="madgraph.interface.extended_cmd.CheckCmd-class.html">CheckCmd</a> --+
+              |
+ object --+   |
+          |   |
+    <a href="madgraph.interface.extended_cmd.HelpCmd-class.html">HelpCmd</a> --+
+              |
+ object --+   |
+          |   |
+<a href="madgraph.interface.extended_cmd.CompleteCmd-class.html">CompleteCmd</a> --+
+              |
+cmd.Cmd --+   |
+          |   |
+   <a href="madgraph.interface.extended_cmd.BasicCmd-class.html">BasicCmd</a> --+
+              |
+             <strong class="uidshort">Cmd</strong>
+</pre>
+
+<dl><dt>Known Subclasses:</dt>
+<dd>
+      <ul class="subclass-list">
+<li><a href="madgraph.interface.extended_cmd.CmdShell-class.html">CmdShell</a></li><li>, <a href="madgraph.interface.madgraph_interface.CmdExtended-class.html">madgraph_interface.CmdExtended</a></li><li>, <a href="madgraph.interface.madevent_interface.CmdExtended-class.html">madevent_interface.CmdExtended</a></li>  </ul>
+</dd></dl>
+
+<hr />
+<p>Extension of the cmd.Cmd command line. This extensions supports line 
+  breaking, history, comments, internal call to cmdline, path 
+  completion,... this class should be MG5 independent</p>
+
+<!-- ==================== NESTED CLASSES ==================== -->
+<a name="section-NestedClasses"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Nested Classes</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-NestedClasses"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="madgraph.interface.extended_cmd.Cmd.InvalidCmd-class.html" class="summary-name">ConfigurationError</a><br />
+      expected error for wrong command
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="madgraph.interface.extended_cmd.Cmd.InvalidCmd-class.html" class="summary-name">InvalidCmd</a><br />
+      expected error for wrong command
+    </td>
+  </tr>
+</table>
+<!-- ==================== INSTANCE METHODS ==================== -->
+<a name="section-InstanceMethods"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Instance Methods</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-InstanceMethods"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="madgraph.interface.extended_cmd.Cmd-class.html#__init__" class="summary-sig-name">__init__</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">*arg</span>,
+        <span class="summary-sig-arg">**opt</span>)</span><br />
+      Init history and line continuation</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="madgraph.interface.extended_cmd-pysrc.html#Cmd.__init__">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="ask"></a><span class="summary-sig-name">ask</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">question</span>,
+        <span class="summary-sig-arg">default</span>,
+        <span class="summary-sig-arg">choices</span>=<span class="summary-sig-default"><code class="variable-group">[</code><code class="variable-group">]</code></span>,
+        <span class="summary-sig-arg">path_msg</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">timeout</span>=<span class="summary-sig-default">True</span>,
+        <span class="summary-sig-arg">fct_timeout</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">ask_class</span>=<span class="summary-sig-default">None</span>)</span><br />
+      ask a question with some pre-define possibility path info is</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="madgraph.interface.extended_cmd-pysrc.html#Cmd.ask">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="madgraph.interface.extended_cmd.Cmd-class.html#avoid_history_duplicate" class="summary-sig-name">avoid_history_duplicate</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">line</span>,
+        <span class="summary-sig-arg">no_break</span>=<span class="summary-sig-default"><code class="variable-group">[</code><code class="variable-group">]</code></span>)</span><br />
+      remove all line in history (but the last) starting with line.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="madgraph.interface.extended_cmd-pysrc.html#Cmd.avoid_history_duplicate">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="check_answer_in_input_file"></a><span class="summary-sig-name">check_answer_in_input_file</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">question_instance</span>,
+        <span class="summary-sig-arg">default</span>,
+        <span class="summary-sig-arg">path</span>=<span class="summary-sig-default">False</span>)</span><br />
+      Questions can have answer in output file (or not)</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="madgraph.interface.extended_cmd-pysrc.html#Cmd.check_answer_in_input_file">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="madgraph.interface.extended_cmd.Cmd-class.html#clean_history" class="summary-sig-name">clean_history</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">to_keep</span>=<span class="summary-sig-default"><code class="variable-group">[</code><code class="variable-quote">'</code><code class="variable-string">set</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">add</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">load</code><code class="variable-quote">'</code><code class="variable-group">]</code></span>,
+        <span class="summary-sig-arg">remove_bef_last</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">to_remove</span>=<span class="summary-sig-default"><code class="variable-group">[</code><code class="variable-quote">'</code><code class="variable-string">open</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">display</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">launch</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">check</code><code class="variable-quote">'</code><code class="variable-group">]</code></span>,
+        <span class="summary-sig-arg">allow_for_removal</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">keep_switch</span>=<span class="summary-sig-default">False</span>)</span><br />
+      Remove command in arguments from history.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="madgraph.interface.extended_cmd-pysrc.html#Cmd.clean_history">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="compile"></a><span class="summary-sig-name">compile</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">*args</span>,
+        <span class="summary-sig-arg">**opts</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="madgraph.interface.extended_cmd-pysrc.html#Cmd.compile">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="madgraph.interface.extended_cmd.Cmd-class.html#default" class="summary-sig-name">default</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">line</span>)</span><br />
+      Default action if line is not recognized</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="madgraph.interface.extended_cmd-pysrc.html#Cmd.default">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="define_child_cmd_interface"></a><span class="summary-sig-name">define_child_cmd_interface</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">obj_instance</span>,
+        <span class="summary-sig-arg">interface</span>=<span class="summary-sig-default">True</span>)</span><br />
+      Define a sub cmd_interface</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="madgraph.interface.extended_cmd-pysrc.html#Cmd.define_child_cmd_interface">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="do_EOF"></a><span class="summary-sig-name">do_EOF</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">line</span>)</span><br />
+      exit the mainloop()</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="madgraph.interface.extended_cmd-pysrc.html#Cmd.do_quit">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="do_display"></a><span class="summary-sig-name">do_display</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">line</span>,
+        <span class="summary-sig-arg">output</span>=<span class="summary-sig-default">sys.stdout</span>)</span><br />
+      Advanced commands: basic display</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="madgraph.interface.extended_cmd-pysrc.html#Cmd.do_display">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="do_exit"></a><span class="summary-sig-name">do_exit</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">line</span>)</span><br />
+      exit the mainloop()</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="madgraph.interface.extended_cmd-pysrc.html#Cmd.do_quit">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="madgraph.interface.extended_cmd.Cmd-class.html#do_help" class="summary-sig-name">do_help</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">line</span>)</span><br />
+      Not in help: propose some usefull possible action</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="madgraph.interface.extended_cmd-pysrc.html#Cmd.do_help">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="do_history"></a><span class="summary-sig-name">do_history</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">line</span>)</span><br />
+      write in a file the suite of command that was used</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="madgraph.interface.extended_cmd-pysrc.html#Cmd.do_history">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="do_quit"></a><span class="summary-sig-name">do_quit</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">line</span>)</span><br />
+      exit the mainloop()</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="madgraph.interface.extended_cmd-pysrc.html#Cmd.do_quit">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="do_save"></a><span class="summary-sig-name">do_save</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">line</span>,
+        <span class="summary-sig-arg">check</span>=<span class="summary-sig-default">True</span>)</span><br />
+      Save the configuration file</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="madgraph.interface.extended_cmd-pysrc.html#Cmd.do_save">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="madgraph.interface.extended_cmd.Cmd-class.html#emptyline" class="summary-sig-name">emptyline</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      If empty line, do nothing.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="madgraph.interface.extended_cmd-pysrc.html#Cmd.emptyline">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="exec_cmd"></a><span class="summary-sig-name">exec_cmd</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">line</span>,
+        <span class="summary-sig-arg">errorhandling</span>=<span class="summary-sig-default">False</span>,
+        <span class="summary-sig-arg">printcmd</span>=<span class="summary-sig-default">True</span>,
+        <span class="summary-sig-arg">precmd</span>=<span class="summary-sig-default">False</span>,
+        <span class="summary-sig-arg">postcmd</span>=<span class="summary-sig-default">True</span>,
+        <span class="summary-sig-arg">**opt</span>)</span><br />
+      for third party call, call the line with pre and postfix treatment 
+      without global error handling</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="madgraph.interface.extended_cmd-pysrc.html#Cmd.exec_cmd">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="get_history_header"></a><span class="summary-sig-name">get_history_header</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      Default history header</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="madgraph.interface.extended_cmd-pysrc.html#Cmd.get_history_header">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="get_stored_line"></a><span class="summary-sig-name">get_stored_line</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      return stored line and clean it</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="madgraph.interface.extended_cmd-pysrc.html#Cmd.get_stored_line">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="import_command_file"></a><span class="summary-sig-name">import_command_file</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">filepath</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="madgraph.interface.extended_cmd-pysrc.html#Cmd.import_command_file">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="nice_config_error"></a><span class="summary-sig-name">nice_config_error</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">error</span>,
+        <span class="summary-sig-arg">line</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="madgraph.interface.extended_cmd-pysrc.html#Cmd.nice_config_error">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="nice_error_handling"></a><span class="summary-sig-name">nice_error_handling</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">error</span>,
+        <span class="summary-sig-arg">line</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="madgraph.interface.extended_cmd-pysrc.html#Cmd.nice_error_handling">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="nice_user_error"></a><span class="summary-sig-name">nice_user_error</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">error</span>,
+        <span class="summary-sig-arg">line</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="madgraph.interface.extended_cmd-pysrc.html#Cmd.nice_user_error">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="madgraph.interface.extended_cmd.Cmd-class.html#onecmd" class="summary-sig-name">onecmd</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">line</span>,
+        <span class="summary-sig-arg">**opt</span>)</span><br />
+      catch all error and stop properly command accordingly</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="madgraph.interface.extended_cmd-pysrc.html#Cmd.onecmd">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="madgraph.interface.extended_cmd.Cmd-class.html#onecmd_orig" class="summary-sig-name">onecmd_orig</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">line</span>,
+        <span class="summary-sig-arg">**opt</span>)</span><br />
+      Interpret the argument as though it had been typed in response to the
+      prompt.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="madgraph.interface.extended_cmd-pysrc.html#Cmd.onecmd_orig">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="madgraph.interface.extended_cmd.Cmd-class.html#postcmd" class="summary-sig-name">postcmd</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">stop</span>,
+        <span class="summary-sig-arg">line</span>)</span><br />
+      finishing a command This looks if the command add a special post 
+      part.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="madgraph.interface.extended_cmd-pysrc.html#Cmd.postcmd">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="madgraph.interface.extended_cmd.Cmd-class.html#postloop" class="summary-sig-name">postloop</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      Hook method executed once when the cmdloop() method is about to 
+      return.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="madgraph.interface.extended_cmd-pysrc.html#Cmd.postloop">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="madgraph.interface.extended_cmd.Cmd-class.html#precmd" class="summary-sig-name">precmd</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">line</span>)</span><br />
+      A suite of additional function needed for in the cmd this implement 
+      history, line breaking, comment treatment,...</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="madgraph.interface.extended_cmd-pysrc.html#Cmd.precmd">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="run_cmd"></a><span class="summary-sig-name">run_cmd</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">line</span>)</span><br />
+      for third party call, call the line with pre and postfix treatment 
+      with global error handling</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="madgraph.interface.extended_cmd-pysrc.html#Cmd.run_cmd">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="stop_on_keyboard_stop"></a><span class="summary-sig-name">stop_on_keyboard_stop</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      action to perform to close nicely on a keyboard interupt</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="madgraph.interface.extended_cmd-pysrc.html#Cmd.stop_on_keyboard_stop">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="store_line"></a><span class="summary-sig-name">store_line</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">line</span>)</span><br />
+      store a line of the input file which should be executed by the higher
+      mother</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="madgraph.interface.extended_cmd-pysrc.html#Cmd.store_line">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="write_configuration"></a><span class="summary-sig-name">write_configuration</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">filepath</span>,
+        <span class="summary-sig-arg">basefile</span>,
+        <span class="summary-sig-arg">basedir</span>,
+        <span class="summary-sig-arg">to_keep</span>)</span><br />
+      Write the configuration file</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="madgraph.interface.extended_cmd-pysrc.html#Cmd.write_configuration">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="madgraph.interface.extended_cmd.CheckCmd-class.html">CheckCmd</a></code></b>:
+      <code><a href="madgraph.interface.extended_cmd.CheckCmd-class.html#check_history">check_history</a></code>,
+      <code><a href="madgraph.interface.extended_cmd.CheckCmd-class.html#check_save">check_save</a></code>
+      </p>
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="madgraph.interface.extended_cmd.HelpCmd-class.html">HelpCmd</a></code></b>:
+      <code><a href="madgraph.interface.extended_cmd.HelpCmd-class.html#help_EOF">help_EOF</a></code>,
+      <code><a href="madgraph.interface.extended_cmd.HelpCmd-class.html#help_display">help_display</a></code>,
+      <code><a href="madgraph.interface.extended_cmd.HelpCmd-class.html#help_help">help_help</a></code>,
+      <code><a href="madgraph.interface.extended_cmd.HelpCmd-class.html#help_history">help_history</a></code>,
+      <code><a href="madgraph.interface.extended_cmd.HelpCmd-class.html#help_quit">help_quit</a></code>,
+      <code><a href="madgraph.interface.extended_cmd.HelpCmd-class.html#help_save">help_save</a></code>
+      </p>
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="madgraph.interface.extended_cmd.CompleteCmd-class.html">CompleteCmd</a></code></b>:
+      <code><a href="madgraph.interface.extended_cmd.CompleteCmd-class.html#complete_display">complete_display</a></code>,
+      <code><a href="madgraph.interface.extended_cmd.CompleteCmd-class.html#complete_history">complete_history</a></code>,
+      <code><a href="madgraph.interface.extended_cmd.CompleteCmd-class.html#complete_save">complete_save</a></code>
+      </p>
+    <p class="indent-wrapped-lines"><b>Inherited from <code>object</code></b>:
+      <code>__delattr__</code>,
+      <code>__format__</code>,
+      <code>__getattribute__</code>,
+      <code>__hash__</code>,
+      <code>__new__</code>,
+      <code>__reduce__</code>,
+      <code>__reduce_ex__</code>,
+      <code>__repr__</code>,
+      <code>__setattr__</code>,
+      <code>__sizeof__</code>,
+      <code>__str__</code>,
+      <code>__subclasshook__</code>
+      </p>
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="madgraph.interface.extended_cmd.BasicCmd-class.html">BasicCmd</a></code></b>:
+      <code><a href="madgraph.interface.extended_cmd.BasicCmd-class.html#complete">complete</a></code>,
+      <code><a href="madgraph.interface.extended_cmd.BasicCmd-class.html#deal_multiple_categories">deal_multiple_categories</a></code>,
+      <code><a href="madgraph.interface.extended_cmd.BasicCmd-class.html#getTerminalSize">getTerminalSize</a></code>,
+      <code><a href="madgraph.interface.extended_cmd.BasicCmd-class.html#preloop">preloop</a></code>,
+      <code><a href="madgraph.interface.extended_cmd.BasicCmd-class.html#print_suggestions">print_suggestions</a></code>
+      </p>
+    <p class="indent-wrapped-lines"><b>Inherited from <code>cmd.Cmd</code></b>:
+      <code>cmdloop</code>,
+      <code>columnize</code>,
+      <code>complete_help</code>,
+      <code>completedefault</code>,
+      <code>completenames</code>,
+      <code>get_names</code>,
+      <code>parseline</code>,
+      <code>print_topics</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== STATIC METHODS ==================== -->
+<a name="section-StaticMethods"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Static Methods</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-StaticMethods"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="timed_input"></a><span class="summary-sig-name">timed_input</span>(<span class="summary-sig-arg">question</span>,
+        <span class="summary-sig-arg">default</span>,
+        <span class="summary-sig-arg">timeout</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">noerror</span>=<span class="summary-sig-default">True</span>,
+        <span class="summary-sig-arg">fct</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">fct_timeout</span>=<span class="summary-sig-default">None</span>)</span><br />
+      a question with a maximal time to answer take default otherwise</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="madgraph.interface.extended_cmd-pysrc.html#Cmd.timed_input">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="madgraph.interface.extended_cmd.BasicCmd-class.html">BasicCmd</a></code></b>:
+      <code><a href="madgraph.interface.extended_cmd.BasicCmd-class.html#list_completion">list_completion</a></code>,
+      <code><a href="madgraph.interface.extended_cmd.BasicCmd-class.html#path_completion">path_completion</a></code>,
+      <code><a href="madgraph.interface.extended_cmd.BasicCmd-class.html#split_arg">split_arg</a></code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS VARIABLES ==================== -->
+<a name="section-ClassVariables"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Class Variables</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-ClassVariables"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="_display_opts"></a><span class="summary-name">_display_opts</span> = <code title="['options', 'variable']"><code class="variable-group">[</code><code class="variable-quote">'</code><code class="variable-string">options</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">variable</code><code class="variable-quote">'</code><code class="variable-group">]</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="madgraph.interface.extended_cmd.Cmd-class.html#config_debug" class="summary-name">config_debug</a> = <code title="'''Please report this bug to developers
+
+           More information is found in \'%s\'.
+
+           Please attach this file to your report.'''"><code class="variable-quote">'</code><code class="variable-string">Please report this bug to developers\n\n      </code><code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="debug_output"></a><span class="summary-name">debug_output</span> = <code title="'debug'"><code class="variable-quote">'</code><code class="variable-string">debug</code><code class="variable-quote">'</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="madgraph.interface.extended_cmd.Cmd-class.html#error_debug" class="summary-name">error_debug</a> = <code title="'''Please report this bug to developers
+
+           More information is found in \'%s\'.
+
+           Please attach this file to your report.'''"><code class="variable-quote">'</code><code class="variable-string">Please report this bug to developers\n\n       </code><code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="helporder"></a><span class="summary-name">helporder</span> = <code title="['Documented commands']"><code class="variable-group">[</code><code class="variable-quote">'</code><code class="variable-string">Documented commands</code><code class="variable-quote">'</code><code class="variable-group">]</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="history_header"></a><span class="summary-name">history_header</span> = <code title="''"><code class="variable-quote">'</code><code class="variable-string"></code><code class="variable-quote">'</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="madgraph.interface.extended_cmd.Cmd-class.html#keyboard_stop_msg" class="summary-name">keyboard_stop_msg</a> = <code title="'''stopping all current operation
+            in order to quit the program please enter exit'''"><code class="variable-quote">'</code><code class="variable-string">stopping all current operation\n         </code><code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="next_possibility"></a><span class="summary-name">next_possibility</span> = <code title="{}"><code class="variable-group">{</code><code class="variable-group">}</code></code>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code>cmd.Cmd</code></b>:
+      <code>doc_header</code>,
+      <code>doc_leader</code>,
+      <code>identchars</code>,
+      <code>intro</code>,
+      <code>lastcmd</code>,
+      <code>misc_header</code>,
+      <code>nohelp</code>,
+      <code>prompt</code>,
+      <code>ruler</code>,
+      <code>undoc_header</code>,
+      <code>use_rawinput</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== PROPERTIES ==================== -->
+<a name="section-Properties"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Properties</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-Properties"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code>object</code></b>:
+      <code>__class__</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== METHOD DETAILS ==================== -->
+<a name="section-MethodDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Method Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-MethodDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="__init__"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">__init__</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">*arg</span>,
+        <span class="sig-arg">**opt</span>)</span>
+    <br /><em class="fname">(Constructor)</em>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="madgraph.interface.extended_cmd-pysrc.html#Cmd.__init__">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Init history and line continuation</p>
+  <dl class="fields">
+    <dt>Overrides:
+        cmd.Cmd.__init__
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="avoid_history_duplicate"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">avoid_history_duplicate</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">line</span>,
+        <span class="sig-arg">no_break</span>=<span class="sig-default"><code class="variable-group">[</code><code class="variable-group">]</code></span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="madgraph.interface.extended_cmd-pysrc.html#Cmd.avoid_history_duplicate">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>remove all line in history (but the last) starting with line. up to 
+  the point when a line didn't start by something in no_break. (reading in 
+  reverse order)</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="clean_history"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">clean_history</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">to_keep</span>=<span class="sig-default"><code class="variable-group">[</code><code class="variable-quote">'</code><code class="variable-string">set</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">add</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">load</code><code class="variable-quote">'</code><code class="variable-group">]</code></span>,
+        <span class="sig-arg">remove_bef_last</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">to_remove</span>=<span class="sig-default"><code class="variable-group">[</code><code class="variable-quote">'</code><code class="variable-string">open</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">display</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">launch</code><code class="variable-quote">'</code><code class="variable-op">, </code><code class="variable-quote">'</code><code class="variable-string">check</code><code class="variable-quote">'</code><code class="variable-group">]</code></span>,
+        <span class="sig-arg">allow_for_removal</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">keep_switch</span>=<span class="sig-default">False</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="madgraph.interface.extended_cmd-pysrc.html#Cmd.clean_history">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Remove command in arguments from history. All command before the last 
+  occurrence of  'remove_bef_last' (including it) will be removed (but if 
+  another options tells the opposite). 'to_keep' is a set of line to always
+  keep. 'to_remove' is a set of line to always remove (don't care about 
+  remove_bef_ status but keep_switch acts.). if 'allow_for_removal' is 
+  define only the command in that list can be remove of the history for 
+  older command that remove_bef_lb1. all parameter present in to_remove are
+  always remove even if they are not part of this list. keep_switch force 
+  to keep the statement remove_bef_??? which changes starts the removal 
+  mode.</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="default"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">default</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">line</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="madgraph.interface.extended_cmd-pysrc.html#Cmd.default">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Default action if line is not recognized</p>
+  <dl class="fields">
+    <dt>Overrides:
+        cmd.Cmd.default
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="do_help"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">do_help</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">line</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="madgraph.interface.extended_cmd-pysrc.html#Cmd.do_help">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Not in help: propose some usefull possible action</p>
+  <dl class="fields">
+    <dt>Overrides:
+        cmd.Cmd.do_help
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="emptyline"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">emptyline</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="madgraph.interface.extended_cmd-pysrc.html#Cmd.emptyline">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>If empty line, do nothing. Default is repeat previous command.</p>
+  <dl class="fields">
+    <dt>Overrides:
+        cmd.Cmd.emptyline
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="onecmd"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">onecmd</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">line</span>,
+        <span class="sig-arg">**opt</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="madgraph.interface.extended_cmd-pysrc.html#Cmd.onecmd">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>catch all error and stop properly command accordingly</p>
+  <dl class="fields">
+    <dt>Overrides:
+        cmd.Cmd.onecmd
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="onecmd_orig"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">onecmd_orig</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">line</span>,
+        <span class="sig-arg">**opt</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="madgraph.interface.extended_cmd-pysrc.html#Cmd.onecmd_orig">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Interpret the argument as though it had been typed in response to the 
+  prompt.</p>
+  <p>The return value is a flag indicating whether interpretation of 
+  commands by the interpreter should stop.</p>
+  <p>This allow to pass extra argument for internal call.</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="postcmd"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">postcmd</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">stop</span>,
+        <span class="sig-arg">line</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="madgraph.interface.extended_cmd-pysrc.html#Cmd.postcmd">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>finishing a command This looks if the command add a special post 
+  part.</p>
+  <dl class="fields">
+    <dt>Overrides:
+        cmd.Cmd.postcmd
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="postloop"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">postloop</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="madgraph.interface.extended_cmd-pysrc.html#Cmd.postloop">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Hook method executed once when the cmdloop() method is about to 
+  return.</p>
+  <dl class="fields">
+    <dt>Overrides:
+        cmd.Cmd.postloop
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="precmd"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">precmd</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">line</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="madgraph.interface.extended_cmd-pysrc.html#Cmd.precmd">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>A suite of additional function needed for in the cmd this implement 
+  history, line breaking, comment treatment,...</p>
+  <dl class="fields">
+    <dt>Overrides:
+        cmd.Cmd.precmd
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== CLASS VARIABLE DETAILS ==================== -->
+<a name="section-ClassVariableDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Class Variable Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-ClassVariableDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="config_debug"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">config_debug</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+<code class="variable-quote">'''</code><code class="variable-string">Please report this bug to developers</code>
+<code class="variable-string"></code>
+<code class="variable-string">           More information is found in \'%s\'.</code>
+<code class="variable-string"></code>
+<code class="variable-string">           Please attach this file to your report.</code><code class="variable-quote">'''</code>
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="error_debug"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">error_debug</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+<code class="variable-quote">'''</code><code class="variable-string">Please report this bug to developers</code>
+<code class="variable-string"></code>
+<code class="variable-string">           More information is found in \'%s\'.</code>
+<code class="variable-string"></code>
+<code class="variable-string">           Please attach this file to your report.</code><code class="variable-quote">'''</code>
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="keyboard_stop_msg"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">keyboard_stop_msg</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+<code class="variable-quote">'''</code><code class="variable-string">stopping all current operation</code>
+<code class="variable-string">            in order to quit the program please enter exit</code><code class="variable-quote">'''</code>
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Fri Jun 21 10:41:21 2013
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

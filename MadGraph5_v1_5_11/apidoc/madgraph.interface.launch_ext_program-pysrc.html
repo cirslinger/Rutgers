@@ -1,0 +1,1113 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>madgraph.interface.launch_ext_program</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="madgraph-module.html">Package&nbsp;madgraph</a> ::
+        <a href="madgraph.interface-module.html">Package&nbsp;interface</a> ::
+        Module&nbsp;launch_ext_program
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="madgraph.interface.launch_ext_program-pysrc.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<h1 class="epydoc">Source Code for <a href="madgraph.interface.launch_ext_program-module.html">Module madgraph.interface.launch_ext_program</a></h1>
+<pre class="py-src">
+<a name="L1"></a><tt class="py-lineno">  1</tt>  <tt class="py-line"><tt class="py-comment">################################################################################</tt> </tt>
+<a name="L2"></a><tt class="py-lineno">  2</tt>  <tt class="py-line"><tt class="py-comment">#</tt> </tt>
+<a name="L3"></a><tt class="py-lineno">  3</tt>  <tt class="py-line"><tt class="py-comment"># Copyright (c) 2009 The MadGraph Development team and Contributors</tt> </tt>
+<a name="L4"></a><tt class="py-lineno">  4</tt>  <tt class="py-line"><tt class="py-comment">#</tt> </tt>
+<a name="L5"></a><tt class="py-lineno">  5</tt>  <tt class="py-line"><tt class="py-comment"># This file is a part of the MadGraph 5 project, an application which </tt> </tt>
+<a name="L6"></a><tt class="py-lineno">  6</tt>  <tt class="py-line"><tt class="py-comment"># automatically generates Feynman diagrams and matrix elements for arbitrary</tt> </tt>
+<a name="L7"></a><tt class="py-lineno">  7</tt>  <tt class="py-line"><tt class="py-comment"># high-energy processes in the Standard Model and beyond.</tt> </tt>
+<a name="L8"></a><tt class="py-lineno">  8</tt>  <tt class="py-line"><tt class="py-comment">#</tt> </tt>
+<a name="L9"></a><tt class="py-lineno">  9</tt>  <tt class="py-line"><tt class="py-comment"># It is subject to the MadGraph license which should accompany this </tt> </tt>
+<a name="L10"></a><tt class="py-lineno"> 10</tt>  <tt class="py-line"><tt class="py-comment"># distribution.</tt> </tt>
+<a name="L11"></a><tt class="py-lineno"> 11</tt>  <tt class="py-line"><tt class="py-comment">#</tt> </tt>
+<a name="L12"></a><tt class="py-lineno"> 12</tt>  <tt class="py-line"><tt class="py-comment"># For more information, please visit: http://madgraph.phys.ucl.ac.be</tt> </tt>
+<a name="L13"></a><tt class="py-lineno"> 13</tt>  <tt class="py-line"><tt class="py-comment">#</tt> </tt>
+<a name="L14"></a><tt class="py-lineno"> 14</tt>  <tt class="py-line"><tt class="py-comment">################################################################################</tt> </tt>
+<a name="L15"></a><tt class="py-lineno"> 15</tt>  <tt class="py-line"> </tt>
+<a name="L16"></a><tt class="py-lineno"> 16</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">glob</tt> </tt>
+<a name="L17"></a><tt class="py-lineno"> 17</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">logging</tt> </tt>
+<a name="L18"></a><tt class="py-lineno"> 18</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">os</tt> </tt>
+<a name="L19"></a><tt class="py-lineno"> 19</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">pydoc</tt> </tt>
+<a name="L20"></a><tt class="py-lineno"> 20</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">re</tt> </tt>
+<a name="L21"></a><tt class="py-lineno"> 21</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">sys</tt> </tt>
+<a name="L22"></a><tt class="py-lineno"> 22</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">subprocess</tt> </tt>
+<a name="L23"></a><tt class="py-lineno"> 23</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">thread</tt> </tt>
+<a name="L24"></a><tt class="py-lineno"> 24</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">time</tt> </tt>
+<a name="L25"></a><tt class="py-lineno"> 25</tt>  <tt class="py-line"> </tt>
+<a name="L26"></a><tt class="py-lineno"> 26</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt id="link-0" class="py-name" targets="Package madgraph=madgraph-module.html"><a title="madgraph" class="py-name" href="#" onclick="return doclink('link-0', 'madgraph', 'link-0');">madgraph</a></tt><tt class="py-op">.</tt><tt id="link-1" class="py-name" targets="Package madgraph.iolibs=madgraph.iolibs-module.html"><a title="madgraph.iolibs" class="py-name" href="#" onclick="return doclink('link-1', 'iolibs', 'link-1');">iolibs</a></tt><tt class="py-op">.</tt><tt id="link-2" class="py-name" targets="Module madgraph.iolibs.files=madgraph.iolibs.files-module.html"><a title="madgraph.iolibs.files" class="py-name" href="#" onclick="return doclink('link-2', 'files', 'link-2');">files</a></tt> <tt class="py-keyword">as</tt> <tt id="link-3" class="py-name"><a title="madgraph.iolibs.files" class="py-name" href="#" onclick="return doclink('link-3', 'files', 'link-2');">files</a></tt> </tt>
+<a name="L27"></a><tt class="py-lineno"> 27</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt id="link-4" class="py-name"><a title="madgraph" class="py-name" href="#" onclick="return doclink('link-4', 'madgraph', 'link-0');">madgraph</a></tt><tt class="py-op">.</tt><tt id="link-5" class="py-name" targets="Package madgraph.interface=madgraph.interface-module.html"><a title="madgraph.interface" class="py-name" href="#" onclick="return doclink('link-5', 'interface', 'link-5');">interface</a></tt><tt class="py-op">.</tt><tt id="link-6" class="py-name" targets="Module madgraph.interface.extended_cmd=madgraph.interface.extended_cmd-module.html"><a title="madgraph.interface.extended_cmd" class="py-name" href="#" onclick="return doclink('link-6', 'extended_cmd', 'link-6');">extended_cmd</a></tt> <tt class="py-keyword">as</tt> <tt class="py-name">cmd</tt> </tt>
+<a name="L28"></a><tt class="py-lineno"> 28</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt id="link-7" class="py-name"><a title="madgraph" class="py-name" href="#" onclick="return doclink('link-7', 'madgraph', 'link-0');">madgraph</a></tt><tt class="py-op">.</tt><tt id="link-8" class="py-name"><a title="madgraph.interface" class="py-name" href="#" onclick="return doclink('link-8', 'interface', 'link-5');">interface</a></tt><tt class="py-op">.</tt><tt id="link-9" class="py-name" targets="Module madgraph.interface.madevent_interface=madgraph.interface.madevent_interface-module.html"><a title="madgraph.interface.madevent_interface" class="py-name" href="#" onclick="return doclink('link-9', 'madevent_interface', 'link-9');">madevent_interface</a></tt> <tt class="py-keyword">as</tt> <tt class="py-name">me_cmd</tt> </tt>
+<a name="L29"></a><tt class="py-lineno"> 29</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt id="link-10" class="py-name"><a title="madgraph" class="py-name" href="#" onclick="return doclink('link-10', 'madgraph', 'link-0');">madgraph</a></tt><tt class="py-op">.</tt><tt id="link-11" class="py-name" targets="Package madgraph.various=madgraph.various-module.html"><a title="madgraph.various" class="py-name" href="#" onclick="return doclink('link-11', 'various', 'link-11');">various</a></tt><tt class="py-op">.</tt><tt id="link-12" class="py-name" targets="Module madgraph.various.misc=madgraph.various.misc-module.html"><a title="madgraph.various.misc" class="py-name" href="#" onclick="return doclink('link-12', 'misc', 'link-12');">misc</a></tt> <tt class="py-keyword">as</tt> <tt id="link-13" class="py-name"><a title="madgraph.various.misc" class="py-name" href="#" onclick="return doclink('link-13', 'misc', 'link-12');">misc</a></tt> </tt>
+<a name="L30"></a><tt class="py-lineno"> 30</tt>  <tt class="py-line"> </tt>
+<a name="L31"></a><tt class="py-lineno"> 31</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-14" class="py-name"><a title="madgraph" class="py-name" href="#" onclick="return doclink('link-14', 'madgraph', 'link-0');">madgraph</a></tt> <tt class="py-keyword">import</tt> <tt id="link-15" class="py-name" targets="Variable madgraph.MG4DIR=madgraph-module.html#MG4DIR"><a title="madgraph.MG4DIR" class="py-name" href="#" onclick="return doclink('link-15', 'MG4DIR', 'link-15');">MG4DIR</a></tt><tt class="py-op">,</tt> <tt id="link-16" class="py-name" targets="Variable madgraph.MG5DIR=madgraph-module.html#MG5DIR"><a title="madgraph.MG5DIR" class="py-name" href="#" onclick="return doclink('link-16', 'MG5DIR', 'link-16');">MG5DIR</a></tt><tt class="py-op">,</tt> <tt id="link-17" class="py-name" targets="Class madgraph.MadGraph5Error=madgraph.MadGraph5Error-class.html"><a title="madgraph.MadGraph5Error" class="py-name" href="#" onclick="return doclink('link-17', 'MadGraph5Error', 'link-17');">MadGraph5Error</a></tt> </tt>
+<a name="L32"></a><tt class="py-lineno"> 32</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-18" class="py-name"><a title="madgraph" class="py-name" href="#" onclick="return doclink('link-18', 'madgraph', 'link-0');">madgraph</a></tt><tt class="py-op">.</tt><tt id="link-19" class="py-name"><a title="madgraph.iolibs" class="py-name" href="#" onclick="return doclink('link-19', 'iolibs', 'link-1');">iolibs</a></tt><tt class="py-op">.</tt><tt id="link-20" class="py-name"><a title="madgraph.iolibs.files" class="py-name" href="#" onclick="return doclink('link-20', 'files', 'link-2');">files</a></tt> <tt class="py-keyword">import</tt> <tt id="link-21" class="py-name" targets="Function madgraph.iolibs.files.cp()=madgraph.iolibs.files-module.html#cp"><a title="madgraph.iolibs.files.cp" class="py-name" href="#" onclick="return doclink('link-21', 'cp', 'link-21');">cp</a></tt> </tt>
+<a name="L33"></a><tt class="py-lineno"> 33</tt>  <tt class="py-line"> </tt>
+<a name="L34"></a><tt class="py-lineno"> 34</tt>  <tt class="py-line"> </tt>
+<a name="L35"></a><tt class="py-lineno"> 35</tt>  <tt class="py-line"> </tt>
+<a name="L36"></a><tt class="py-lineno"> 36</tt>  <tt class="py-line"><tt id="link-22" class="py-name" targets="Variable aloha.aloha_parsers.logger=aloha.aloha_parsers-module.html#logger,Variable aloha.create_aloha.logger=aloha.create_aloha-module.html#logger,Variable madgraph.core.base_objects.logger=madgraph.core.base_objects-module.html#logger,Variable madgraph.core.diagram_generation.logger=madgraph.core.diagram_generation-module.html#logger,Variable madgraph.core.helas_objects.logger=madgraph.core.helas_objects-module.html#logger,Variable madgraph.interface.extended_cmd.logger=madgraph.interface.extended_cmd-module.html#logger,Variable madgraph.interface.launch_ext_program.logger=madgraph.interface.launch_ext_program-module.html#logger,Variable madgraph.interface.madevent_interface.logger=madgraph.interface.madevent_interface-module.html#logger,Variable madgraph.interface.madgraph_interface.logger=madgraph.interface.madgraph_interface-module.html#logger,Variable madgraph.interface.master_interface.logger=madgraph.interface.master_interface-module.html#logger,Variable madgraph.iolibs.export_cpp.logger=madgraph.iolibs.export_cpp-module.html#logger,Variable madgraph.iolibs.export_python.logger=madgraph.iolibs.export_python-module.html#logger,Variable madgraph.iolibs.export_v4.logger=madgraph.iolibs.export_v4-module.html#logger,Variable madgraph.iolibs.files.logger=madgraph.iolibs.files-module.html#logger,Variable madgraph.iolibs.group_subprocs.logger=madgraph.iolibs.group_subprocs-module.html#logger,Variable madgraph.iolibs.import_v4.logger=madgraph.iolibs.import_v4-module.html#logger,Variable madgraph.iolibs.save_model.logger=madgraph.iolibs.save_model-module.html#logger,Variable madgraph.iolibs.ufo_expression_parsers.logger=madgraph.iolibs.ufo_expression_parsers-module.html#logger,Variable madgraph.various.banner.logger=madgraph.various.banner-module.html#logger,Variable madgraph.various.cluster.logger=madgraph.various.cluster-module.html#logger,Variable madgraph.various.combine_runs.logger=madgraph.various.combine_runs-module.html#logger,Variable madgraph.various.diagram_symmetry.logger=madgraph.various.diagram_symmetry-module.html#logger,Variable madgraph.various.misc.logger=madgraph.various.misc-module.html#logger,Variable madgraph.various.process_checks.logger=madgraph.various.process_checks-module.html#logger,Variable madgraph.various.sum_html.logger=madgraph.various.sum_html-module.html#logger,Variable models.check_param_card.logger=models.check_param_card-module.html#logger,Variable models.import_ufo.logger=models.import_ufo-module.html#logger,Variable models.model_reader.logger=models.model_reader-module.html#logger"><a title="aloha.aloha_parsers.logger
+aloha.create_aloha.logger
+madgraph.core.base_objects.logger
+madgraph.core.diagram_generation.logger
+madgraph.core.helas_objects.logger
+madgraph.interface.extended_cmd.logger
+madgraph.interface.launch_ext_program.logger
+madgraph.interface.madevent_interface.logger
+madgraph.interface.madgraph_interface.logger
+madgraph.interface.master_interface.logger
+madgraph.iolibs.export_cpp.logger
+madgraph.iolibs.export_python.logger
+madgraph.iolibs.export_v4.logger
+madgraph.iolibs.files.logger
+madgraph.iolibs.group_subprocs.logger
+madgraph.iolibs.import_v4.logger
+madgraph.iolibs.save_model.logger
+madgraph.iolibs.ufo_expression_parsers.logger
+madgraph.various.banner.logger
+madgraph.various.cluster.logger
+madgraph.various.combine_runs.logger
+madgraph.various.diagram_symmetry.logger
+madgraph.various.misc.logger
+madgraph.various.process_checks.logger
+madgraph.various.sum_html.logger
+models.check_param_card.logger
+models.import_ufo.logger
+models.model_reader.logger" class="py-name" href="#" onclick="return doclink('link-22', 'logger', 'link-22');">logger</a></tt> <tt class="py-op">=</tt> <tt class="py-name">logging</tt><tt class="py-op">.</tt><tt class="py-name">getLogger</tt><tt class="py-op">(</tt><tt class="py-string">'cmdprint.ext_program'</tt><tt class="py-op">)</tt> </tt>
+<a name="L37"></a><tt class="py-lineno"> 37</tt>  <tt class="py-line"> </tt>
+<a name="ExtLauncher"></a><div id="ExtLauncher-def"><a name="L38"></a><tt class="py-lineno"> 38</tt> <a class="py-toggle" href="#" id="ExtLauncher-toggle" onclick="return toggle('ExtLauncher');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="madgraph.interface.launch_ext_program.ExtLauncher-class.html">ExtLauncher</a><tt class="py-op">(</tt><tt class="py-base-class">object</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ExtLauncher-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="ExtLauncher-expanded"><a name="L39"></a><tt class="py-lineno"> 39</tt>  <tt class="py-line">    <tt class="py-docstring">""" Generic Class for executing external program """</tt> </tt>
+<a name="L40"></a><tt class="py-lineno"> 40</tt>  <tt class="py-line">     </tt>
+<a name="L41"></a><tt class="py-lineno"> 41</tt>  <tt class="py-line">    <tt id="link-23" class="py-name" targets="Variable madgraph.interface.launch_ext_program.ExtLauncher.program_dir=madgraph.interface.launch_ext_program.ExtLauncher-class.html#program_dir"><a title="madgraph.interface.launch_ext_program.ExtLauncher.program_dir" class="py-name" href="#" onclick="return doclink('link-23', 'program_dir', 'link-23');">program_dir</a></tt> <tt class="py-op">=</tt> <tt class="py-string">''</tt> </tt>
+<a name="L42"></a><tt class="py-lineno"> 42</tt>  <tt class="py-line">    <tt id="link-24" class="py-name" targets="Variable madgraph.interface.launch_ext_program.ExtLauncher.executable=madgraph.interface.launch_ext_program.ExtLauncher-class.html#executable"><a title="madgraph.interface.launch_ext_program.ExtLauncher.executable" class="py-name" href="#" onclick="return doclink('link-24', 'executable', 'link-24');">executable</a></tt> <tt class="py-op">=</tt> <tt class="py-string">''</tt>  <tt class="py-comment"># path from program_dir</tt> </tt>
+<a name="L43"></a><tt class="py-lineno"> 43</tt>  <tt class="py-line">     </tt>
+<a name="L44"></a><tt class="py-lineno"> 44</tt>  <tt class="py-line">    <tt id="link-25" class="py-name" targets="Variable madgraph.interface.launch_ext_program.ExtLauncher.force=madgraph.interface.launch_ext_program.ExtLauncher-class.html#force"><a title="madgraph.interface.launch_ext_program.ExtLauncher.force" class="py-name" href="#" onclick="return doclink('link-25', 'force', 'link-25');">force</a></tt> <tt class="py-op">=</tt> <tt class="py-name">False</tt> </tt>
+<a name="L45"></a><tt class="py-lineno"> 45</tt>  <tt class="py-line">     </tt>
+<a name="ExtLauncher.__init__"></a><div id="ExtLauncher.__init__-def"><a name="L46"></a><tt class="py-lineno"> 46</tt> <a class="py-toggle" href="#" id="ExtLauncher.__init__-toggle" onclick="return toggle('ExtLauncher.__init__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="madgraph.interface.launch_ext_program.ExtLauncher-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">cmd</tt><tt class="py-op">,</tt> <tt class="py-param">running_dir</tt><tt class="py-op">,</tt> <tt class="py-param">card_dir</tt><tt class="py-op">=</tt><tt class="py-string">''</tt><tt class="py-op">,</tt> <tt class="py-op">**</tt><tt class="py-param">options</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ExtLauncher.__init__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ExtLauncher.__init__-expanded"><a name="L47"></a><tt class="py-lineno"> 47</tt>  <tt class="py-line">        <tt class="py-docstring">""" initialize an object """</tt> </tt>
+<a name="L48"></a><tt class="py-lineno"> 48</tt>  <tt class="py-line">         </tt>
+<a name="L49"></a><tt class="py-lineno"> 49</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">running_dir</tt> <tt class="py-op">=</tt> <tt class="py-name">running_dir</tt> </tt>
+<a name="L50"></a><tt class="py-lineno"> 50</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">card_dir</tt> <tt class="py-op">=</tt> <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">path</tt><tt class="py-op">.</tt><tt class="py-name">join</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">running_dir</tt><tt class="py-op">,</tt> <tt class="py-name">card_dir</tt><tt class="py-op">)</tt> </tt>
+<a name="L51"></a><tt class="py-lineno"> 51</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">cmd_int</tt> <tt class="py-op">=</tt> <tt class="py-name">cmd</tt> </tt>
+<a name="L52"></a><tt class="py-lineno"> 52</tt>  <tt class="py-line">        <tt class="py-comment">#include/overwrite options</tt> </tt>
+<a name="L53"></a><tt class="py-lineno"> 53</tt>  <tt class="py-line">        <tt class="py-keyword">for</tt> <tt id="link-26" class="py-name" targets="Variable madgraph.iolibs.file_writers.CPPWriter.key=madgraph.iolibs.file_writers.CPPWriter-class.html#key"><a title="madgraph.iolibs.file_writers.CPPWriter.key" class="py-name" href="#" onclick="return doclink('link-26', 'key', 'link-26');">key</a></tt><tt class="py-op">,</tt><tt class="py-name">value</tt> <tt class="py-keyword">in</tt> <tt class="py-name">options</tt><tt class="py-op">.</tt><tt class="py-name">items</tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L54"></a><tt class="py-lineno"> 54</tt>  <tt class="py-line">            <tt class="py-name">setattr</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">,</tt> <tt id="link-27" class="py-name"><a title="madgraph.iolibs.file_writers.CPPWriter.key" class="py-name" href="#" onclick="return doclink('link-27', 'key', 'link-26');">key</a></tt><tt class="py-op">,</tt> <tt class="py-name">value</tt><tt class="py-op">)</tt> </tt>
+<a name="L55"></a><tt class="py-lineno"> 55</tt>  <tt class="py-line">             </tt>
+<a name="L56"></a><tt class="py-lineno"> 56</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">cards</tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-op">]</tt> <tt class="py-comment"># files can be modified (path from self.card_dir)</tt> </tt>
+</div><a name="L57"></a><tt class="py-lineno"> 57</tt>  <tt class="py-line">             </tt>
+<a name="ExtLauncher.run"></a><div id="ExtLauncher.run-def"><a name="L58"></a><tt class="py-lineno"> 58</tt> <a class="py-toggle" href="#" id="ExtLauncher.run-toggle" onclick="return toggle('ExtLauncher.run');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="madgraph.interface.launch_ext_program.ExtLauncher-class.html#run">run</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ExtLauncher.run-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ExtLauncher.run-expanded"><a name="L59"></a><tt class="py-lineno"> 59</tt>  <tt class="py-line">        <tt class="py-docstring">""" execute the main code """</tt> </tt>
+<a name="L60"></a><tt class="py-lineno"> 60</tt>  <tt class="py-line"> </tt>
+<a name="L61"></a><tt class="py-lineno"> 61</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-28" class="py-name" targets="Method madgraph.interface.launch_ext_program.ExtLauncher.prepare_run()=madgraph.interface.launch_ext_program.ExtLauncher-class.html#prepare_run,Method madgraph.interface.launch_ext_program.Pythia8Launcher.prepare_run()=madgraph.interface.launch_ext_program.Pythia8Launcher-class.html#prepare_run"><a title="madgraph.interface.launch_ext_program.ExtLauncher.prepare_run
+madgraph.interface.launch_ext_program.Pythia8Launcher.prepare_run" class="py-name" href="#" onclick="return doclink('link-28', 'prepare_run', 'link-28');">prepare_run</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt>         </tt>
+<a name="L62"></a><tt class="py-lineno"> 62</tt>  <tt class="py-line">        <tt class="py-keyword">for</tt> <tt class="py-name">card</tt> <tt class="py-keyword">in</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">cards</tt><tt class="py-op">:</tt> </tt>
+<a name="L63"></a><tt class="py-lineno"> 63</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-29" class="py-name" targets="Method madgraph.interface.launch_ext_program.ExtLauncher.treat_input_file()=madgraph.interface.launch_ext_program.ExtLauncher-class.html#treat_input_file"><a title="madgraph.interface.launch_ext_program.ExtLauncher.treat_input_file" class="py-name" href="#" onclick="return doclink('link-29', 'treat_input_file', 'link-29');">treat_input_file</a></tt><tt class="py-op">(</tt><tt class="py-name">card</tt><tt class="py-op">,</tt> <tt id="link-30" class="py-name" targets="Method madgraph.interface.extended_cmd.Cmd.default()=madgraph.interface.extended_cmd.Cmd-class.html#default,Method madgraph.interface.extended_cmd.SmartQuestion.default()=madgraph.interface.extended_cmd.SmartQuestion-class.html#default"><a title="madgraph.interface.extended_cmd.Cmd.default
+madgraph.interface.extended_cmd.SmartQuestion.default" class="py-name" href="#" onclick="return doclink('link-30', 'default', 'link-30');">default</a></tt> <tt class="py-op">=</tt> <tt class="py-string">'n'</tt><tt class="py-op">)</tt> </tt>
+<a name="L64"></a><tt class="py-lineno"> 64</tt>  <tt class="py-line"> </tt>
+<a name="L65"></a><tt class="py-lineno"> 65</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-31" class="py-name" targets="Method madgraph.interface.launch_ext_program.ExtLauncher.launch_program()=madgraph.interface.launch_ext_program.ExtLauncher-class.html#launch_program,Method madgraph.interface.launch_ext_program.MELauncher.launch_program()=madgraph.interface.launch_ext_program.MELauncher-class.html#launch_program,Method madgraph.interface.launch_ext_program.Pythia8Launcher.launch_program()=madgraph.interface.launch_ext_program.Pythia8Launcher-class.html#launch_program,Method madgraph.interface.launch_ext_program.SALauncher.launch_program()=madgraph.interface.launch_ext_program.SALauncher-class.html#launch_program"><a title="madgraph.interface.launch_ext_program.ExtLauncher.launch_program
+madgraph.interface.launch_ext_program.MELauncher.launch_program
+madgraph.interface.launch_ext_program.Pythia8Launcher.launch_program
+madgraph.interface.launch_ext_program.SALauncher.launch_program" class="py-name" href="#" onclick="return doclink('link-31', 'launch_program', 'link-31');">launch_program</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L66"></a><tt class="py-lineno"> 66</tt>  <tt class="py-line"> </tt>
+<a name="L67"></a><tt class="py-lineno"> 67</tt>  <tt class="py-line">         </tt>
+<a name="ExtLauncher.prepare_run"></a><div id="ExtLauncher.prepare_run-def"><a name="L68"></a><tt class="py-lineno"> 68</tt> <a class="py-toggle" href="#" id="ExtLauncher.prepare_run-toggle" onclick="return toggle('ExtLauncher.prepare_run');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="madgraph.interface.launch_ext_program.ExtLauncher-class.html#prepare_run">prepare_run</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ExtLauncher.prepare_run-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ExtLauncher.prepare_run-expanded"><a name="L69"></a><tt class="py-lineno"> 69</tt>  <tt class="py-line">        <tt class="py-docstring">""" aditional way to prepare the run"""</tt> </tt>
+<a name="L70"></a><tt class="py-lineno"> 70</tt>  <tt class="py-line">        <tt class="py-keyword">pass</tt> </tt>
+</div><a name="L71"></a><tt class="py-lineno"> 71</tt>  <tt class="py-line">     </tt>
+<a name="ExtLauncher.launch_program"></a><div id="ExtLauncher.launch_program-def"><a name="L72"></a><tt class="py-lineno"> 72</tt> <a class="py-toggle" href="#" id="ExtLauncher.launch_program-toggle" onclick="return toggle('ExtLauncher.launch_program');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="madgraph.interface.launch_ext_program.ExtLauncher-class.html#launch_program">launch_program</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ExtLauncher.launch_program-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ExtLauncher.launch_program-expanded"><a name="L73"></a><tt class="py-lineno"> 73</tt>  <tt class="py-line">        <tt class="py-docstring">"""launch the main program"""</tt> </tt>
+<a name="L74"></a><tt class="py-lineno"> 74</tt>  <tt class="py-line">        <tt class="py-name">subprocess</tt><tt class="py-op">.</tt><tt id="link-32" class="py-name" targets="Function madgraph.various.misc.call()=madgraph.various.misc-module.html#call"><a title="madgraph.various.misc.call" class="py-name" href="#" onclick="return doclink('link-32', 'call', 'link-32');">call</a></tt><tt class="py-op">(</tt><tt class="py-op">[</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-33" class="py-name"><a title="madgraph.interface.launch_ext_program.ExtLauncher.executable" class="py-name" href="#" onclick="return doclink('link-33', 'executable', 'link-24');">executable</a></tt><tt class="py-op">]</tt><tt class="py-op">,</tt> <tt class="py-name">cwd</tt><tt class="py-op">=</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">running_dir</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L75"></a><tt class="py-lineno"> 75</tt>  <tt class="py-line">     </tt>
+<a name="ExtLauncher.edit_file"></a><div id="ExtLauncher.edit_file-def"><a name="L76"></a><tt class="py-lineno"> 76</tt> <a class="py-toggle" href="#" id="ExtLauncher.edit_file-toggle" onclick="return toggle('ExtLauncher.edit_file');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="madgraph.interface.launch_ext_program.ExtLauncher-class.html#edit_file">edit_file</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">path</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ExtLauncher.edit_file-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ExtLauncher.edit_file-expanded"><a name="L77"></a><tt class="py-lineno"> 77</tt>  <tt class="py-line">        <tt class="py-docstring">"""edit a file"""</tt> </tt>
+<a name="L78"></a><tt class="py-lineno"> 78</tt>  <tt class="py-line"> </tt>
+<a name="L79"></a><tt class="py-lineno"> 79</tt>  <tt class="py-line">        <tt class="py-name">path</tt> <tt class="py-op">=</tt> <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">path</tt><tt class="py-op">.</tt><tt class="py-name">realpath</tt><tt class="py-op">(</tt><tt class="py-name">path</tt><tt class="py-op">)</tt> </tt>
+<a name="L80"></a><tt class="py-lineno"> 80</tt>  <tt class="py-line">        <tt id="link-34" class="py-name" targets="Class madgraph.various.misc.open_file=madgraph.various.misc.open_file-class.html"><a title="madgraph.various.misc.open_file" class="py-name" href="#" onclick="return doclink('link-34', 'open_file', 'link-34');">open_file</a></tt><tt class="py-op">(</tt><tt class="py-name">path</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L81"></a><tt class="py-lineno"> 81</tt>  <tt class="py-line">     </tt>
+<a name="L82"></a><tt class="py-lineno"> 82</tt>  <tt class="py-line"> </tt>
+<a name="L83"></a><tt class="py-lineno"> 83</tt>  <tt class="py-line">    <tt class="py-comment"># Treat Nicely the timeout</tt> </tt>
+<a name="ExtLauncher.timeout_fct"></a><div id="ExtLauncher.timeout_fct-def"><a name="L84"></a><tt class="py-lineno"> 84</tt> <a class="py-toggle" href="#" id="ExtLauncher.timeout_fct-toggle" onclick="return toggle('ExtLauncher.timeout_fct');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="madgraph.interface.launch_ext_program.ExtLauncher-class.html#timeout_fct">timeout_fct</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt><tt class="py-param">timeout</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ExtLauncher.timeout_fct-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ExtLauncher.timeout_fct-expanded"><a name="L85"></a><tt class="py-lineno"> 85</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">timeout</tt><tt class="py-op">:</tt> </tt>
+<a name="L86"></a><tt class="py-lineno"> 86</tt>  <tt class="py-line">            <tt class="py-comment"># avoid to always wait a given time for the next answer</tt> </tt>
+<a name="L87"></a><tt class="py-lineno"> 87</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-35" class="py-name"><a title="madgraph.interface.launch_ext_program.ExtLauncher.force" class="py-name" href="#" onclick="return doclink('link-35', 'force', 'link-25');">force</a></tt> <tt class="py-op">=</tt> <tt class="py-name">True</tt> </tt>
+</div><a name="L88"></a><tt class="py-lineno"> 88</tt>  <tt class="py-line">    </tt>
+<a name="ExtLauncher.ask"></a><div id="ExtLauncher.ask-def"><a name="L89"></a><tt class="py-lineno"> 89</tt> <a class="py-toggle" href="#" id="ExtLauncher.ask-toggle" onclick="return toggle('ExtLauncher.ask');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="madgraph.interface.launch_ext_program.ExtLauncher-class.html#ask">ask</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">question</tt><tt class="py-op">,</tt> <tt class="py-param">default</tt><tt class="py-op">,</tt> <tt class="py-param">choices</tt><tt class="py-op">=</tt><tt class="py-op">[</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> <tt class="py-param">path_msg</tt><tt class="py-op">=</tt><tt class="py-name">None</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ExtLauncher.ask-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ExtLauncher.ask-expanded"><a name="L90"></a><tt class="py-lineno"> 90</tt>  <tt class="py-line">        <tt class="py-docstring">"""nice handling of question"""</tt> </tt>
+<a name="L91"></a><tt class="py-lineno"> 91</tt>  <tt class="py-line">      </tt>
+<a name="L92"></a><tt class="py-lineno"> 92</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-keyword">not</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-36" class="py-name"><a title="madgraph.interface.launch_ext_program.ExtLauncher.force" class="py-name" href="#" onclick="return doclink('link-36', 'force', 'link-25');">force</a></tt><tt class="py-op">:</tt> </tt>
+<a name="L93"></a><tt class="py-lineno"> 93</tt>  <tt class="py-line">            <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">cmd_int</tt><tt class="py-op">.</tt><tt id="link-37" class="py-name" targets="Method madgraph.interface.extended_cmd.Cmd.ask()=madgraph.interface.extended_cmd.Cmd-class.html#ask,Method madgraph.interface.launch_ext_program.ExtLauncher.ask()=madgraph.interface.launch_ext_program.ExtLauncher-class.html#ask"><a title="madgraph.interface.extended_cmd.Cmd.ask
+madgraph.interface.launch_ext_program.ExtLauncher.ask" class="py-name" href="#" onclick="return doclink('link-37', 'ask', 'link-37');">ask</a></tt><tt class="py-op">(</tt><tt class="py-name">question</tt><tt class="py-op">,</tt> <tt id="link-38" class="py-name"><a title="madgraph.interface.extended_cmd.Cmd.default
+madgraph.interface.extended_cmd.SmartQuestion.default" class="py-name" href="#" onclick="return doclink('link-38', 'default', 'link-30');">default</a></tt><tt class="py-op">,</tt> <tt class="py-name">choices</tt><tt class="py-op">=</tt><tt class="py-name">choices</tt><tt class="py-op">,</tt>  </tt>
+<a name="L94"></a><tt class="py-lineno"> 94</tt>  <tt class="py-line">                                <tt class="py-name">path_msg</tt><tt class="py-op">=</tt><tt class="py-name">path_msg</tt><tt class="py-op">,</tt> <tt class="py-name">fct_timeout</tt><tt class="py-op">=</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-39" class="py-name" targets="Method madgraph.interface.launch_ext_program.ExtLauncher.timeout_fct()=madgraph.interface.launch_ext_program.ExtLauncher-class.html#timeout_fct"><a title="madgraph.interface.launch_ext_program.ExtLauncher.timeout_fct" class="py-name" href="#" onclick="return doclink('link-39', 'timeout_fct', 'link-39');">timeout_fct</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L95"></a><tt class="py-lineno"> 95</tt>  <tt class="py-line">        <tt class="py-keyword">else</tt><tt class="py-op">:</tt> </tt>
+<a name="L96"></a><tt class="py-lineno"> 96</tt>  <tt class="py-line">            <tt class="py-keyword">return</tt> <tt id="link-40" class="py-name" targets="Class str=str-class.html"><a title="str" class="py-name" href="#" onclick="return doclink('link-40', 'str', 'link-40');">str</a></tt><tt class="py-op">(</tt><tt id="link-41" class="py-name"><a title="madgraph.interface.extended_cmd.Cmd.default
+madgraph.interface.extended_cmd.SmartQuestion.default" class="py-name" href="#" onclick="return doclink('link-41', 'default', 'link-30');">default</a></tt><tt class="py-op">)</tt> </tt>
+</div><a name="L97"></a><tt class="py-lineno"> 97</tt>  <tt class="py-line">          </tt>
+<a name="L98"></a><tt class="py-lineno"> 98</tt>  <tt class="py-line">         </tt>
+<a name="ExtLauncher.treat_input_file"></a><div id="ExtLauncher.treat_input_file-def"><a name="L99"></a><tt class="py-lineno"> 99</tt> <a class="py-toggle" href="#" id="ExtLauncher.treat_input_file-toggle" onclick="return toggle('ExtLauncher.treat_input_file');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="madgraph.interface.launch_ext_program.ExtLauncher-class.html#treat_input_file">treat_input_file</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">filename</tt><tt class="py-op">,</tt> <tt class="py-param">default</tt><tt class="py-op">=</tt><tt class="py-name">None</tt><tt class="py-op">,</tt> <tt class="py-param">msg</tt><tt class="py-op">=</tt><tt class="py-string">''</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ExtLauncher.treat_input_file-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ExtLauncher.treat_input_file-expanded"><a name="L100"></a><tt class="py-lineno">100</tt>  <tt class="py-line">        <tt class="py-docstring">"""ask to edit a file"""</tt> </tt>
+<a name="L101"></a><tt class="py-lineno">101</tt>  <tt class="py-line">         </tt>
+<a name="L102"></a><tt class="py-lineno">102</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">msg</tt> <tt class="py-op">==</tt> <tt class="py-string">''</tt> <tt class="py-keyword">and</tt> <tt class="py-name">filename</tt> <tt class="py-op">==</tt> <tt class="py-string">'param_card.dat'</tt><tt class="py-op">:</tt> </tt>
+<a name="L103"></a><tt class="py-lineno">103</tt>  <tt class="py-line">            <tt class="py-name">msg</tt> <tt class="py-op">=</tt> \ </tt>
+<a name="L104"></a><tt class="py-lineno">104</tt>  <tt class="py-line">            <tt class="py-string">"""WARNING: If you edit this file don\'t forget to modify </tt> </tt>
+<a name="L105"></a><tt class="py-lineno">105</tt>  <tt class="py-line"><tt class="py-string">            consistently the different parameters, especially </tt> </tt>
+<a name="L106"></a><tt class="py-lineno">106</tt>  <tt class="py-line"><tt class="py-string">            the width of all particles."""</tt>  </tt>
+<a name="L107"></a><tt class="py-lineno">107</tt>  <tt class="py-line">                                          </tt>
+<a name="L108"></a><tt class="py-lineno">108</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-keyword">not</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-42" class="py-name"><a title="madgraph.interface.launch_ext_program.ExtLauncher.force" class="py-name" href="#" onclick="return doclink('link-42', 'force', 'link-25');">force</a></tt><tt class="py-op">:</tt> </tt>
+<a name="L109"></a><tt class="py-lineno">109</tt>  <tt class="py-line">            <tt class="py-keyword">if</tt> <tt class="py-name">msg</tt><tt class="py-op">:</tt>  <tt class="py-keyword">print</tt> <tt class="py-name">msg</tt> </tt>
+<a name="L110"></a><tt class="py-lineno">110</tt>  <tt class="py-line">            <tt class="py-name">question</tt> <tt class="py-op">=</tt> <tt class="py-string">'Do you want to edit file: %(card)s?'</tt> <tt class="py-op">%</tt> <tt class="py-op">{</tt><tt class="py-string">'card'</tt><tt class="py-op">:</tt><tt class="py-name">filename</tt><tt class="py-op">}</tt> </tt>
+<a name="L111"></a><tt class="py-lineno">111</tt>  <tt class="py-line">            <tt class="py-name">choices</tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-string">'y'</tt><tt class="py-op">,</tt> <tt class="py-string">'n'</tt><tt class="py-op">]</tt> </tt>
+<a name="L112"></a><tt class="py-lineno">112</tt>  <tt class="py-line">            <tt class="py-name">path_info</tt> <tt class="py-op">=</tt> <tt class="py-string">'path of the new %(card)s'</tt> <tt class="py-op">%</tt> <tt class="py-op">{</tt><tt class="py-string">'card'</tt><tt class="py-op">:</tt><tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">path</tt><tt class="py-op">.</tt><tt class="py-name">basename</tt><tt class="py-op">(</tt><tt class="py-name">filename</tt><tt class="py-op">)</tt><tt class="py-op">}</tt> </tt>
+<a name="L113"></a><tt class="py-lineno">113</tt>  <tt class="py-line">            <tt class="py-name">ans</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-43" class="py-name"><a title="madgraph.interface.extended_cmd.Cmd.ask
+madgraph.interface.launch_ext_program.ExtLauncher.ask" class="py-name" href="#" onclick="return doclink('link-43', 'ask', 'link-37');">ask</a></tt><tt class="py-op">(</tt><tt class="py-name">question</tt><tt class="py-op">,</tt> <tt id="link-44" class="py-name"><a title="madgraph.interface.extended_cmd.Cmd.default
+madgraph.interface.extended_cmd.SmartQuestion.default" class="py-name" href="#" onclick="return doclink('link-44', 'default', 'link-30');">default</a></tt><tt class="py-op">,</tt> <tt class="py-name">choices</tt><tt class="py-op">,</tt> <tt class="py-name">path_info</tt><tt class="py-op">)</tt> </tt>
+<a name="L114"></a><tt class="py-lineno">114</tt>  <tt class="py-line">        <tt class="py-keyword">else</tt><tt class="py-op">:</tt> </tt>
+<a name="L115"></a><tt class="py-lineno">115</tt>  <tt class="py-line">            <tt class="py-name">ans</tt> <tt class="py-op">=</tt> <tt id="link-45" class="py-name"><a title="madgraph.interface.extended_cmd.Cmd.default
+madgraph.interface.extended_cmd.SmartQuestion.default" class="py-name" href="#" onclick="return doclink('link-45', 'default', 'link-30');">default</a></tt> </tt>
+<a name="L116"></a><tt class="py-lineno">116</tt>  <tt class="py-line">         </tt>
+<a name="L117"></a><tt class="py-lineno">117</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">ans</tt> <tt class="py-op">==</tt> <tt class="py-string">'y'</tt><tt class="py-op">:</tt> </tt>
+<a name="L118"></a><tt class="py-lineno">118</tt>  <tt class="py-line">            <tt class="py-name">path</tt> <tt class="py-op">=</tt> <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">path</tt><tt class="py-op">.</tt><tt class="py-name">join</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">card_dir</tt><tt class="py-op">,</tt> <tt class="py-name">filename</tt><tt class="py-op">)</tt> </tt>
+<a name="L119"></a><tt class="py-lineno">119</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-46" class="py-name" targets="Method madgraph.interface.launch_ext_program.ExtLauncher.edit_file()=madgraph.interface.launch_ext_program.ExtLauncher-class.html#edit_file"><a title="madgraph.interface.launch_ext_program.ExtLauncher.edit_file" class="py-name" href="#" onclick="return doclink('link-46', 'edit_file', 'link-46');">edit_file</a></tt><tt class="py-op">(</tt><tt class="py-name">path</tt><tt class="py-op">)</tt> </tt>
+<a name="L120"></a><tt class="py-lineno">120</tt>  <tt class="py-line">        <tt class="py-keyword">elif</tt> <tt class="py-name">ans</tt> <tt class="py-op">==</tt> <tt class="py-string">'n'</tt><tt class="py-op">:</tt> </tt>
+<a name="L121"></a><tt class="py-lineno">121</tt>  <tt class="py-line">            <tt class="py-keyword">return</tt> </tt>
+<a name="L122"></a><tt class="py-lineno">122</tt>  <tt class="py-line">        <tt class="py-keyword">else</tt><tt class="py-op">:</tt> </tt>
+<a name="L123"></a><tt class="py-lineno">123</tt>  <tt class="py-line">            <tt class="py-name">path</tt> <tt class="py-op">=</tt> <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">path</tt><tt class="py-op">.</tt><tt class="py-name">join</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">card_dir</tt><tt class="py-op">,</tt> <tt class="py-name">filename</tt><tt class="py-op">)</tt> </tt>
+<a name="L124"></a><tt class="py-lineno">124</tt>  <tt class="py-line">            <tt id="link-47" class="py-name"><a title="madgraph.iolibs.files" class="py-name" href="#" onclick="return doclink('link-47', 'files', 'link-2');">files</a></tt><tt class="py-op">.</tt><tt id="link-48" class="py-name"><a title="madgraph.iolibs.files.cp" class="py-name" href="#" onclick="return doclink('link-48', 'cp', 'link-21');">cp</a></tt><tt class="py-op">(</tt><tt class="py-name">ans</tt><tt class="py-op">,</tt> <tt class="py-name">path</tt><tt class="py-op">)</tt> </tt>
+</div></div><a name="L125"></a><tt class="py-lineno">125</tt>  <tt class="py-line">             </tt>
+<a name="L126"></a><tt class="py-lineno">126</tt>  <tt class="py-line">    </tt>
+<a name="L127"></a><tt class="py-lineno">127</tt>  <tt class="py-line">                 </tt>
+<a name="L128"></a><tt class="py-lineno">128</tt>  <tt class="py-line">                     </tt>
+<a name="SALauncher"></a><div id="SALauncher-def"><a name="L129"></a><tt class="py-lineno">129</tt> <a class="py-toggle" href="#" id="SALauncher-toggle" onclick="return toggle('SALauncher');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="madgraph.interface.launch_ext_program.SALauncher-class.html">SALauncher</a><tt class="py-op">(</tt><tt class="py-base-class">ExtLauncher</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="SALauncher-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="SALauncher-expanded"><a name="L130"></a><tt class="py-lineno">130</tt>  <tt class="py-line">    <tt class="py-docstring">""" A class to launch a simple Standalone test """</tt> </tt>
+<a name="L131"></a><tt class="py-lineno">131</tt>  <tt class="py-line">     </tt>
+<a name="SALauncher.__init__"></a><div id="SALauncher.__init__-def"><a name="L132"></a><tt class="py-lineno">132</tt> <a class="py-toggle" href="#" id="SALauncher.__init__-toggle" onclick="return toggle('SALauncher.__init__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="madgraph.interface.launch_ext_program.SALauncher-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">cmd_int</tt><tt class="py-op">,</tt> <tt class="py-param">running_dir</tt><tt class="py-op">,</tt> <tt class="py-op">**</tt><tt class="py-param">options</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="SALauncher.__init__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="SALauncher.__init__-expanded"><a name="L133"></a><tt class="py-lineno">133</tt>  <tt class="py-line">        <tt class="py-docstring">""" initialize the StandAlone Version"""</tt> </tt>
+<a name="L134"></a><tt class="py-lineno">134</tt>  <tt class="py-line">         </tt>
+<a name="L135"></a><tt class="py-lineno">135</tt>  <tt class="py-line">        <tt id="link-49" class="py-name" targets="Class madgraph.interface.launch_ext_program.ExtLauncher=madgraph.interface.launch_ext_program.ExtLauncher-class.html"><a title="madgraph.interface.launch_ext_program.ExtLauncher" class="py-name" href="#" onclick="return doclink('link-49', 'ExtLauncher', 'link-49');">ExtLauncher</a></tt><tt class="py-op">.</tt><tt id="link-50" class="py-name" targets="Method aloha.aloha_lib.AddVariable.__init__()=aloha.aloha_lib.AddVariable-class.html#__init__,Method aloha.aloha_lib.Computation.__init__()=aloha.aloha_lib.Computation-class.html#__init__,Method aloha.aloha_lib.IndicesIterator.__init__()=aloha.aloha_lib.IndicesIterator-class.html#__init__,Method aloha.aloha_lib.LorentzObject.__init__()=aloha.aloha_lib.LorentzObject-class.html#__init__,Method aloha.aloha_lib.LorentzObjectRepresentation.__init__()=aloha.aloha_lib.LorentzObjectRepresentation-class.html#__init__,Method aloha.aloha_lib.MultContainer.__init__()=aloha.aloha_lib.MultContainer-class.html#__init__,Method aloha.aloha_lib.MultVariable.__init__()=aloha.aloha_lib.MultVariable-class.html#__init__,Method aloha.aloha_lib.SplitCoefficient.__init__()=aloha.aloha_lib.SplitCoefficient-class.html#__init__,Method aloha.aloha_object.DenominatorPropagator.__init__()=aloha.aloha_object.DenominatorPropagator-class.html#__init__,Method aloha.aloha_object.L_C.__init__()=aloha.aloha_object.L_C-class.html#__init__,Method aloha.aloha_object.L_Coup.__init__()=aloha.aloha_object.L_Coup-class.html#__init__,Method aloha.aloha_object.L_Epsilon.__init__()=aloha.aloha_object.L_Epsilon-class.html#__init__,Method aloha.aloha_object.L_FCT.__init__()=aloha.aloha_object.L_FCT-class.html#__init__,Method aloha.aloha_object.L_Gamma.__init__()=aloha.aloha_object.L_Gamma-class.html#__init__,Method aloha.aloha_object.L_Gamma5.__init__()=aloha.aloha_object.L_Gamma5-class.html#__init__,Method aloha.aloha_object.L_Identity.__init__()=aloha.aloha_object.L_Identity-class.html#__init__,Method aloha.aloha_object.L_Mass.__init__()=aloha.aloha_object.L_Mass-class.html#__init__,Method aloha.aloha_object.L_Metric.__init__()=aloha.aloha_object.L_Metric-class.html#__init__,Method aloha.aloha_object.L_OverMass2.__init__()=aloha.aloha_object.L_OverMass2-class.html#__init__,Method aloha.aloha_object.L_P.__init__()=aloha.aloha_object.L_P-class.html#__init__,Method aloha.aloha_object.L_PSlash.__init__()=aloha.aloha_object.L_PSlash-class.html#__init__,Method aloha.aloha_object.L_ProjM.__init__()=aloha.aloha_object.L_ProjM-class.html#__init__,Method aloha.aloha_object.L_ProjP.__init__()=aloha.aloha_object.L_ProjP-class.html#__init__,Method aloha.aloha_object.L_Scalar.__init__()=aloha.aloha_object.L_Scalar-class.html#__init__,Method aloha.aloha_object.L_Sigma.__init__()=aloha.aloha_object.L_Sigma-class.html#__init__,Method aloha.aloha_object.L_Spin2.__init__()=aloha.aloha_object.L_Spin2-class.html#__init__,Method aloha.aloha_object.L_Spin3Half.__init__()=aloha.aloha_object.L_Spin3Half-class.html#__init__,Method aloha.aloha_object.L_Spinor.__init__()=aloha.aloha_object.L_Spinor-class.html#__init__,Method aloha.aloha_object.L_Vector.__init__()=aloha.aloha_object.L_Vector-class.html#__init__,Method aloha.aloha_object.L_Width.__init__()=aloha.aloha_object.L_Width-class.html#__init__,Method aloha.aloha_parsers.UFOExpressionParser.__init__()=aloha.aloha_parsers.UFOExpressionParser-class.html#__init__,Method aloha.aloha_writers.ALOHAWriterForFortranLoop.__init__()=aloha.aloha_writers.ALOHAWriterForFortranLoop-class.html#__init__,Method aloha.aloha_writers.ALOHAWriterForFortranLoopQP.__init__()=aloha.aloha_writers.ALOHAWriterForFortranLoopQP-class.html#__init__,Method aloha.aloha_writers.ALOHAWriterForFortranQP.__init__()=aloha.aloha_writers.ALOHAWriterForFortranQP-class.html#__init__,Method aloha.aloha_writers.WriteALOHA.__init__()=aloha.aloha_writers.WriteALOHA-class.html#__init__,Method aloha.create_aloha.AbstractALOHAModel.__init__()=aloha.create_aloha.AbstractALOHAModel-class.html#__init__,Method aloha.create_aloha.AbstractRoutine.__init__()=aloha.create_aloha.AbstractRoutine-class.html#__init__,Method aloha.create_aloha.AbstractRoutineBuilder.__init__()=aloha.create_aloha.AbstractRoutineBuilder-class.html#__init__,Method aloha.create_aloha.CombineRoutineBuilder.__init__()=aloha.create_aloha.CombineRoutineBuilder-class.html#__init__,Method aloha.template_files.wavefunctions.WaveFunction.__init__()=aloha.template_files.wavefunctions.WaveFunction-class.html#__init__,Method madgraph.core.base_objects.ModelVariable.__init__()=madgraph.core.base_objects.ModelVariable-class.html#__init__,Method madgraph.core.base_objects.ParamCardVariable.__init__()=madgraph.core.base_objects.ParamCardVariable-class.html#__init__,Method madgraph.core.base_objects.PhysicsObject.__init__()=madgraph.core.base_objects.PhysicsObject-class.html#__init__,Method madgraph.core.base_objects.PhysicsObjectList.__init__()=madgraph.core.base_objects.PhysicsObjectList-class.html#__init__,Method madgraph.core.base_objects.VertexList.__init__()=madgraph.core.base_objects.VertexList-class.html#__init__,Method madgraph.core.color_algebra.ColorString.__init__()=madgraph.core.color_algebra.ColorString-class.html#__init__,Method madgraph.core.color_algebra.Epsilon.__init__()=madgraph.core.color_algebra.Epsilon-class.html#__init__,Method madgraph.core.color_algebra.EpsilonBar.__init__()=madgraph.core.color_algebra.EpsilonBar-class.html#__init__,Method madgraph.core.color_algebra.K6.__init__()=madgraph.core.color_algebra.K6-class.html#__init__,Method madgraph.core.color_algebra.K6Bar.__init__()=madgraph.core.color_algebra.K6Bar-class.html#__init__,Method madgraph.core.color_algebra.T.__init__()=madgraph.core.color_algebra.T-class.html#__init__,Method madgraph.core.color_algebra.T6.__init__()=madgraph.core.color_algebra.T6-class.html#__init__,Method madgraph.core.color_algebra.f.__init__()=madgraph.core.color_algebra.f-class.html#__init__,Method madgraph.core.color_amp.ColorBasis.__init__()=madgraph.core.color_amp.ColorBasis-class.html#__init__,Method madgraph.core.color_amp.ColorMatrix.__init__()=madgraph.core.color_amp.ColorMatrix-class.html#__init__,Method madgraph.core.diagram_generation.Amplitude.__init__()=madgraph.core.diagram_generation.Amplitude-class.html#__init__,Method madgraph.core.diagram_generation.DecayChainAmplitude.__init__()=madgraph.core.diagram_generation.DecayChainAmplitude-class.html#__init__,Method madgraph.core.diagram_generation.DiagramTag.__init__()=madgraph.core.diagram_generation.DiagramTag-class.html#__init__,Method madgraph.core.diagram_generation.DiagramTagChainLink.__init__()=madgraph.core.diagram_generation.DiagramTagChainLink-class.html#__init__,Method madgraph.core.diagram_generation.MultiProcess.__init__()=madgraph.core.diagram_generation.MultiProcess-class.html#__init__,Method madgraph.core.drawing.DiagramDrawer.__init__()=madgraph.core.drawing.DiagramDrawer-class.html#__init__,Method madgraph.core.drawing.DrawOption.__init__()=madgraph.core.drawing.DrawOption-class.html#__init__,Method madgraph.core.drawing.FeynmanDiagram.__init__()=madgraph.core.drawing.FeynmanDiagram-class.html#__init__,Method madgraph.core.drawing.FeynmanLine.__init__()=madgraph.core.drawing.FeynmanLine-class.html#__init__,Method madgraph.core.drawing.VertexPoint.__init__()=madgraph.core.drawing.VertexPoint-class.html#__init__,Method madgraph.core.helas_objects.HelasAmplitude.__init__()=madgraph.core.helas_objects.HelasAmplitude-class.html#__init__,Method madgraph.core.helas_objects.HelasDecayChainProcess.__init__()=madgraph.core.helas_objects.HelasDecayChainProcess-class.html#__init__,Method madgraph.core.helas_objects.HelasMatrixElement.__init__()=madgraph.core.helas_objects.HelasMatrixElement-class.html#__init__,Method madgraph.core.helas_objects.HelasMultiProcess.__init__()=madgraph.core.helas_objects.HelasMultiProcess-class.html#__init__,Method madgraph.core.helas_objects.HelasWavefunction.__init__()=madgraph.core.helas_objects.HelasWavefunction-class.html#__init__,Method madgraph.interface.coloring_logging.ColorFormatter.__init__()=madgraph.interface.coloring_logging.ColorFormatter-class.html#__init__,Method madgraph.interface.extended_cmd.Cmd.__init__()=madgraph.interface.extended_cmd.Cmd-class.html#__init__,Method madgraph.interface.extended_cmd.CmdFile.__init__()=madgraph.interface.extended_cmd.CmdFile-class.html#__init__,Method madgraph.interface.extended_cmd.SmartQuestion.__init__()=madgraph.interface.extended_cmd.SmartQuestion-class.html#__init__,Method madgraph.interface.launch_ext_program.ExtLauncher.__init__()=madgraph.interface.launch_ext_program.ExtLauncher-class.html#__init__,Method madgraph.interface.launch_ext_program.MELauncher.__init__()=madgraph.interface.launch_ext_program.MELauncher-class.html#__init__,Method madgraph.interface.launch_ext_program.Pythia8Launcher.__init__()=madgraph.interface.launch_ext_program.Pythia8Launcher-class.html#__init__,Method madgraph.interface.launch_ext_program.SALauncher.__init__()=madgraph.interface.launch_ext_program.SALauncher-class.html#__init__,Method madgraph.interface.madevent_interface.AskforEditCard.__init__()=madgraph.interface.madevent_interface.AskforEditCard-class.html#__init__,Method madgraph.interface.madevent_interface.CmdExtended.__init__()=madgraph.interface.madevent_interface.CmdExtended-class.html#__init__,Method madgraph.interface.madevent_interface.GridPackCmd.__init__()=madgraph.interface.madevent_interface.GridPackCmd-class.html#__init__,Method madgraph.interface.madevent_interface.MadEventCmd.__init__()=madgraph.interface.madevent_interface.MadEventCmd-class.html#__init__,Method madgraph.interface.madgraph_interface.CmdExtended.__init__()=madgraph.interface.madgraph_interface.CmdExtended-class.html#__init__,Method madgraph.interface.madgraph_interface.MadGraphCmd.__init__()=madgraph.interface.madgraph_interface.MadGraphCmd-class.html#__init__,Method madgraph.interface.master_interface.MasterCmdWeb.__init__()=madgraph.interface.master_interface.MasterCmdWeb-class.html#__init__,Method madgraph.interface.master_interface.Switcher.__init__()=madgraph.interface.master_interface.Switcher-class.html#__init__,Method madgraph.iolibs.drawing_eps.MultiEpsDiagramDrawer.__init__()=madgraph.iolibs.drawing_eps.MultiEpsDiagramDrawer-class.html#__init__,Method madgraph.iolibs.export_cpp.ProcessExporterCPP.__init__()=madgraph.iolibs.export_cpp.ProcessExporterCPP-class.html#__init__,Method madgraph.iolibs.export_cpp.ProcessExporterPythia8.__init__()=madgraph.iolibs.export_cpp.ProcessExporterPythia8-class.html#__init__,Method madgraph.iolibs.export_cpp.UFOModelConverterCPP.__init__()=madgraph.iolibs.export_cpp.UFOModelConverterCPP-class.html#__init__,Method madgraph.iolibs.export_python.ProcessExporterPython.__init__()=madgraph.iolibs.export_python.ProcessExporterPython-class.html#__init__,Method madgraph.iolibs.export_v4.ProcessExporterFortran.__init__()=madgraph.iolibs.export_v4.ProcessExporterFortran-class.html#__init__,Method madgraph.iolibs.export_v4.UFO_model_to_mg4.__init__()=madgraph.iolibs.export_v4.UFO_model_to_mg4-class.html#__init__,Method madgraph.iolibs.file_writers.FileWriter.__init__()=madgraph.iolibs.file_writers.FileWriter-class.html#__init__,Method madgraph.iolibs.gen_infohtml.make_info_html.__init__()=madgraph.iolibs.gen_infohtml.make_info_html-class.html#__init__,Method madgraph.iolibs.helas_call_writers.HelasCallWriter.__init__()=madgraph.iolibs.helas_call_writers.HelasCallWriter-class.html#__init__,Method madgraph.iolibs.import_v4.ProcCardv4Reader.__init__()=madgraph.iolibs.import_v4.ProcCardv4Reader-class.html#__init__,Method madgraph.iolibs.import_v4.ProcessInfo.__init__()=madgraph.iolibs.import_v4.ProcessInfo-class.html#__init__,Method madgraph.iolibs.ufo_expression_parsers.UFOExpressionParser.__init__()=madgraph.iolibs.ufo_expression_parsers.UFOExpressionParser-class.html#__init__,Method madgraph.various.banner.Banner.__init__()=madgraph.various.banner.Banner-class.html#__init__,Method madgraph.various.banner.RunCard.__init__()=madgraph.various.banner.RunCard-class.html#__init__,Method madgraph.various.cluster.Cluster.__init__()=madgraph.various.cluster.Cluster-class.html#__init__,Method madgraph.various.combine_runs.CombineRuns.__init__()=madgraph.various.combine_runs.CombineRuns-class.html#__init__,Method madgraph.various.gen_crossxhtml.AllResults.__init__()=madgraph.various.gen_crossxhtml.AllResults-class.html#__init__,Method madgraph.various.gen_crossxhtml.OneTagResults.__init__()=madgraph.various.gen_crossxhtml.OneTagResults-class.html#__init__,Method madgraph.various.gen_crossxhtml.RunResults.__init__()=madgraph.various.gen_crossxhtml.RunResults-class.html#__init__,Method madgraph.various.lhe_parser.Event.__init__()=madgraph.various.lhe_parser.Event-class.html#__init__,Method madgraph.various.lhe_parser.EventFile.__init__()=madgraph.various.lhe_parser.EventFile-class.html#__init__,Method madgraph.various.lhe_parser.Particle.__init__()=madgraph.various.lhe_parser.Particle-class.html#__init__,Method madgraph.various.misc.BackRead.__init__()=madgraph.various.misc.BackRead-class.html#__init__,Method madgraph.various.misc.open_file.__init__()=madgraph.various.misc.open_file-class.html#__init__,Method madgraph.various.process_checks.MatrixElementEvaluator.__init__()=madgraph.various.process_checks.MatrixElementEvaluator-class.html#__init__,Method madgraph.various.rambo.DoubleFortranList.__init__()=madgraph.various.rambo.DoubleFortranList-class.html#__init__,Method madgraph.various.rambo.FortranList.__init__()=madgraph.various.rambo.FortranList-class.html#__init__,Method madgraph.various.sum_html.Combine_results.__init__()=madgraph.various.sum_html.Combine_results-class.html#__init__,Method madgraph.various.sum_html.OneResult.__init__()=madgraph.various.sum_html.OneResult-class.html#__init__,Method models.build_restriction_lib.Category.__init__()=models.build_restriction_lib.Category-class.html#__init__,Method models.build_restriction_lib.Rule.__init__()=models.build_restriction_lib.Rule-class.html#__init__,Method models.check_param_card.Block.__init__()=models.check_param_card.Block-class.html#__init__,Method models.check_param_card.ParamCard.__init__()=models.check_param_card.ParamCard-class.html#__init__,Method models.check_param_card.ParamCardRule.__init__()=models.check_param_card.ParamCardRule-class.html#__init__,Method models.check_param_card.Parameter.__init__()=models.check_param_card.Parameter-class.html#__init__,Method models.import_ufo.OrganizeModelExpression.__init__()=models.import_ufo.OrganizeModelExpression-class.html#__init__,Method models.import_ufo.UFOMG5Converter.__init__()=models.import_ufo.UFOMG5Converter-class.html#__init__,Method models.model_reader.Alphas_Runner.__init__()=models.model_reader.Alphas_Runner-class.html#__init__,Method models.write_param_card.ParamCardWriter.__init__()=models.write_param_card.ParamCardWriter-class.html#__init__"><a title="aloha.aloha_lib.AddVariable.__init__
+aloha.aloha_lib.Computation.__init__
+aloha.aloha_lib.IndicesIterator.__init__
+aloha.aloha_lib.LorentzObject.__init__
+aloha.aloha_lib.LorentzObjectRepresentation.__init__
+aloha.aloha_lib.MultContainer.__init__
+aloha.aloha_lib.MultVariable.__init__
+aloha.aloha_lib.SplitCoefficient.__init__
+aloha.aloha_object.DenominatorPropagator.__init__
+aloha.aloha_object.L_C.__init__
+aloha.aloha_object.L_Coup.__init__
+aloha.aloha_object.L_Epsilon.__init__
+aloha.aloha_object.L_FCT.__init__
+aloha.aloha_object.L_Gamma.__init__
+aloha.aloha_object.L_Gamma5.__init__
+aloha.aloha_object.L_Identity.__init__
+aloha.aloha_object.L_Mass.__init__
+aloha.aloha_object.L_Metric.__init__
+aloha.aloha_object.L_OverMass2.__init__
+aloha.aloha_object.L_P.__init__
+aloha.aloha_object.L_PSlash.__init__
+aloha.aloha_object.L_ProjM.__init__
+aloha.aloha_object.L_ProjP.__init__
+aloha.aloha_object.L_Scalar.__init__
+aloha.aloha_object.L_Sigma.__init__
+aloha.aloha_object.L_Spin2.__init__
+aloha.aloha_object.L_Spin3Half.__init__
+aloha.aloha_object.L_Spinor.__init__
+aloha.aloha_object.L_Vector.__init__
+aloha.aloha_object.L_Width.__init__
+aloha.aloha_parsers.UFOExpressionParser.__init__
+aloha.aloha_writers.ALOHAWriterForFortranLoop.__init__
+aloha.aloha_writers.ALOHAWriterForFortranLoopQP.__init__
+aloha.aloha_writers.ALOHAWriterForFortranQP.__init__
+aloha.aloha_writers.WriteALOHA.__init__
+aloha.create_aloha.AbstractALOHAModel.__init__
+aloha.create_aloha.AbstractRoutine.__init__
+aloha.create_aloha.AbstractRoutineBuilder.__init__
+aloha.create_aloha.CombineRoutineBuilder.__init__
+aloha.template_files.wavefunctions.WaveFunction.__init__
+madgraph.core.base_objects.ModelVariable.__init__
+madgraph.core.base_objects.ParamCardVariable.__init__
+madgraph.core.base_objects.PhysicsObject.__init__
+madgraph.core.base_objects.PhysicsObjectList.__init__
+madgraph.core.base_objects.VertexList.__init__
+madgraph.core.color_algebra.ColorString.__init__
+madgraph.core.color_algebra.Epsilon.__init__
+madgraph.core.color_algebra.EpsilonBar.__init__
+madgraph.core.color_algebra.K6.__init__
+madgraph.core.color_algebra.K6Bar.__init__
+madgraph.core.color_algebra.T.__init__
+madgraph.core.color_algebra.T6.__init__
+madgraph.core.color_algebra.f.__init__
+madgraph.core.color_amp.ColorBasis.__init__
+madgraph.core.color_amp.ColorMatrix.__init__
+madgraph.core.diagram_generation.Amplitude.__init__
+madgraph.core.diagram_generation.DecayChainAmplitude.__init__
+madgraph.core.diagram_generation.DiagramTag.__init__
+madgraph.core.diagram_generation.DiagramTagChainLink.__init__
+madgraph.core.diagram_generation.MultiProcess.__init__
+madgraph.core.drawing.DiagramDrawer.__init__
+madgraph.core.drawing.DrawOption.__init__
+madgraph.core.drawing.FeynmanDiagram.__init__
+madgraph.core.drawing.FeynmanLine.__init__
+madgraph.core.drawing.VertexPoint.__init__
+madgraph.core.helas_objects.HelasAmplitude.__init__
+madgraph.core.helas_objects.HelasDecayChainProcess.__init__
+madgraph.core.helas_objects.HelasMatrixElement.__init__
+madgraph.core.helas_objects.HelasMultiProcess.__init__
+madgraph.core.helas_objects.HelasWavefunction.__init__
+madgraph.interface.coloring_logging.ColorFormatter.__init__
+madgraph.interface.extended_cmd.Cmd.__init__
+madgraph.interface.extended_cmd.CmdFile.__init__
+madgraph.interface.extended_cmd.SmartQuestion.__init__
+madgraph.interface.launch_ext_program.ExtLauncher.__init__
+madgraph.interface.launch_ext_program.MELauncher.__init__
+madgraph.interface.launch_ext_program.Pythia8Launcher.__init__
+madgraph.interface.launch_ext_program.SALauncher.__init__
+madgraph.interface.madevent_interface.AskforEditCard.__init__
+madgraph.interface.madevent_interface.CmdExtended.__init__
+madgraph.interface.madevent_interface.GridPackCmd.__init__
+madgraph.interface.madevent_interface.MadEventCmd.__init__
+madgraph.interface.madgraph_interface.CmdExtended.__init__
+madgraph.interface.madgraph_interface.MadGraphCmd.__init__
+madgraph.interface.master_interface.MasterCmdWeb.__init__
+madgraph.interface.master_interface.Switcher.__init__
+madgraph.iolibs.drawing_eps.MultiEpsDiagramDrawer.__init__
+madgraph.iolibs.export_cpp.ProcessExporterCPP.__init__
+madgraph.iolibs.export_cpp.ProcessExporterPythia8.__init__
+madgraph.iolibs.export_cpp.UFOModelConverterCPP.__init__
+madgraph.iolibs.export_python.ProcessExporterPython.__init__
+madgraph.iolibs.export_v4.ProcessExporterFortran.__init__
+madgraph.iolibs.export_v4.UFO_model_to_mg4.__init__
+madgraph.iolibs.file_writers.FileWriter.__init__
+madgraph.iolibs.gen_infohtml.make_info_html.__init__
+madgraph.iolibs.helas_call_writers.HelasCallWriter.__init__
+madgraph.iolibs.import_v4.ProcCardv4Reader.__init__
+madgraph.iolibs.import_v4.ProcessInfo.__init__
+madgraph.iolibs.ufo_expression_parsers.UFOExpressionParser.__init__
+madgraph.various.banner.Banner.__init__
+madgraph.various.banner.RunCard.__init__
+madgraph.various.cluster.Cluster.__init__
+madgraph.various.combine_runs.CombineRuns.__init__
+madgraph.various.gen_crossxhtml.AllResults.__init__
+madgraph.various.gen_crossxhtml.OneTagResults.__init__
+madgraph.various.gen_crossxhtml.RunResults.__init__
+madgraph.various.lhe_parser.Event.__init__
+madgraph.various.lhe_parser.EventFile.__init__
+madgraph.various.lhe_parser.Particle.__init__
+madgraph.various.misc.BackRead.__init__
+madgraph.various.misc.open_file.__init__
+madgraph.various.process_checks.MatrixElementEvaluator.__init__
+madgraph.various.rambo.DoubleFortranList.__init__
+madgraph.various.rambo.FortranList.__init__
+madgraph.various.sum_html.Combine_results.__init__
+madgraph.various.sum_html.OneResult.__init__
+models.build_restriction_lib.Category.__init__
+models.build_restriction_lib.Rule.__init__
+models.check_param_card.Block.__init__
+models.check_param_card.ParamCard.__init__
+models.check_param_card.ParamCardRule.__init__
+models.check_param_card.Parameter.__init__
+models.import_ufo.OrganizeModelExpression.__init__
+models.import_ufo.UFOMG5Converter.__init__
+models.model_reader.Alphas_Runner.__init__
+models.write_param_card.ParamCardWriter.__init__" class="py-name" href="#" onclick="return doclink('link-50', '__init__', 'link-50');">__init__</a></tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">,</tt> <tt class="py-name">cmd_int</tt><tt class="py-op">,</tt> <tt class="py-name">running_dir</tt><tt class="py-op">,</tt> <tt class="py-string">'./Cards'</tt><tt class="py-op">,</tt> <tt class="py-op">**</tt><tt class="py-name">options</tt><tt class="py-op">)</tt> </tt>
+<a name="L136"></a><tt class="py-lineno">136</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">cards</tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-string">'param_card.dat'</tt><tt class="py-op">]</tt> </tt>
+</div><a name="L137"></a><tt class="py-lineno">137</tt>  <tt class="py-line"> </tt>
+<a name="L138"></a><tt class="py-lineno">138</tt>  <tt class="py-line">     </tt>
+<a name="SALauncher.launch_program"></a><div id="SALauncher.launch_program-def"><a name="L139"></a><tt class="py-lineno">139</tt> <a class="py-toggle" href="#" id="SALauncher.launch_program-toggle" onclick="return toggle('SALauncher.launch_program');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="madgraph.interface.launch_ext_program.SALauncher-class.html#launch_program">launch_program</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="SALauncher.launch_program-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="SALauncher.launch_program-expanded"><a name="L140"></a><tt class="py-lineno">140</tt>  <tt class="py-line">        <tt class="py-docstring">"""launch the main program"""</tt> </tt>
+<a name="L141"></a><tt class="py-lineno">141</tt>  <tt class="py-line">        <tt class="py-name">sub_path</tt> <tt class="py-op">=</tt> <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">path</tt><tt class="py-op">.</tt><tt class="py-name">join</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">running_dir</tt><tt class="py-op">,</tt> <tt class="py-string">'SubProcesses'</tt><tt class="py-op">)</tt> </tt>
+<a name="L142"></a><tt class="py-lineno">142</tt>  <tt class="py-line">        <tt class="py-keyword">for</tt> <tt class="py-name">path</tt> <tt class="py-keyword">in</tt> <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">listdir</tt><tt class="py-op">(</tt><tt class="py-name">sub_path</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L143"></a><tt class="py-lineno">143</tt>  <tt class="py-line">            <tt class="py-keyword">if</tt> <tt class="py-name">path</tt><tt class="py-op">.</tt><tt class="py-name">startswith</tt><tt class="py-op">(</tt><tt class="py-string">'P'</tt><tt class="py-op">)</tt> <tt class="py-keyword">and</tt> \ </tt>
+<a name="L144"></a><tt class="py-lineno">144</tt>  <tt class="py-line">                                   <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">path</tt><tt class="py-op">.</tt><tt class="py-name">isdir</tt><tt class="py-op">(</tt><tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">path</tt><tt class="py-op">.</tt><tt class="py-name">join</tt><tt class="py-op">(</tt><tt class="py-name">sub_path</tt><tt class="py-op">,</tt> <tt class="py-name">path</tt><tt class="py-op">)</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L145"></a><tt class="py-lineno">145</tt>  <tt class="py-line">                <tt class="py-name">cur_path</tt> <tt class="py-op">=</tt>  <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">path</tt><tt class="py-op">.</tt><tt class="py-name">join</tt><tt class="py-op">(</tt><tt class="py-name">sub_path</tt><tt class="py-op">,</tt> <tt class="py-name">path</tt><tt class="py-op">)</tt> </tt>
+<a name="L146"></a><tt class="py-lineno">146</tt>  <tt class="py-line">                <tt class="py-comment"># make</tt> </tt>
+<a name="L147"></a><tt class="py-lineno">147</tt>  <tt class="py-line">                <tt id="link-51" class="py-name"><a title="madgraph.various.misc" class="py-name" href="#" onclick="return doclink('link-51', 'misc', 'link-12');">misc</a></tt><tt class="py-op">.</tt><tt id="link-52" class="py-name" targets="Method madgraph.interface.extended_cmd.Cmd.compile()=madgraph.interface.extended_cmd.Cmd-class.html#compile,Function madgraph.various.misc.compile()=madgraph.various.misc-module.html#compile"><a title="madgraph.interface.extended_cmd.Cmd.compile
+madgraph.various.misc.compile" class="py-name" href="#" onclick="return doclink('link-52', 'compile', 'link-52');">compile</a></tt><tt class="py-op">(</tt><tt class="py-name">cwd</tt><tt class="py-op">=</tt><tt class="py-name">cur_path</tt><tt class="py-op">,</tt> <tt class="py-name">mode</tt><tt class="py-op">=</tt><tt class="py-string">'unknown'</tt><tt class="py-op">)</tt> </tt>
+<a name="L148"></a><tt class="py-lineno">148</tt>  <tt class="py-line">                <tt class="py-comment"># check</tt> </tt>
+<a name="L149"></a><tt class="py-lineno">149</tt>  <tt class="py-line">                <tt class="py-name">subprocess</tt><tt class="py-op">.</tt><tt id="link-53" class="py-name"><a title="madgraph.various.misc.call" class="py-name" href="#" onclick="return doclink('link-53', 'call', 'link-32');">call</a></tt><tt class="py-op">(</tt><tt class="py-op">[</tt><tt class="py-string">'./check'</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> <tt class="py-name">cwd</tt><tt class="py-op">=</tt><tt class="py-name">cur_path</tt><tt class="py-op">)</tt> </tt>
+</div></div><a name="L150"></a><tt class="py-lineno">150</tt>  <tt class="py-line">                 </tt>
+<a name="L151"></a><tt class="py-lineno">151</tt>  <tt class="py-line">         </tt>
+<a name="MELauncher"></a><div id="MELauncher-def"><a name="L152"></a><tt class="py-lineno">152</tt> <a class="py-toggle" href="#" id="MELauncher-toggle" onclick="return toggle('MELauncher');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="madgraph.interface.launch_ext_program.MELauncher-class.html">MELauncher</a><tt class="py-op">(</tt><tt class="py-base-class">ExtLauncher</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="MELauncher-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="MELauncher-expanded"><a name="L153"></a><tt class="py-lineno">153</tt>  <tt class="py-line">    <tt class="py-docstring">"""A class to launch MadEvent run"""</tt> </tt>
+<a name="L154"></a><tt class="py-lineno">154</tt>  <tt class="py-line">     </tt>
+<a name="MELauncher.__init__"></a><div id="MELauncher.__init__-def"><a name="L155"></a><tt class="py-lineno">155</tt> <a class="py-toggle" href="#" id="MELauncher.__init__-toggle" onclick="return toggle('MELauncher.__init__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="madgraph.interface.launch_ext_program.MELauncher-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">running_dir</tt><tt class="py-op">,</tt> <tt class="py-param">cmd_int</tt> <tt class="py-op">,</tt> <tt class="py-param">unit</tt><tt class="py-op">=</tt><tt class="py-string">'pb'</tt><tt class="py-op">,</tt> <tt class="py-op">**</tt><tt class="py-param">option</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="MELauncher.__init__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="MELauncher.__init__-expanded"><a name="L156"></a><tt class="py-lineno">156</tt>  <tt class="py-line">        <tt class="py-docstring">""" initialize the StandAlone Version"""</tt> </tt>
+<a name="L157"></a><tt class="py-lineno">157</tt>  <tt class="py-line"> </tt>
+<a name="L158"></a><tt class="py-lineno">158</tt>  <tt class="py-line">        <tt id="link-54" class="py-name"><a title="madgraph.interface.launch_ext_program.ExtLauncher" class="py-name" href="#" onclick="return doclink('link-54', 'ExtLauncher', 'link-49');">ExtLauncher</a></tt><tt class="py-op">.</tt><tt id="link-55" class="py-name"><a title="aloha.aloha_lib.AddVariable.__init__
+aloha.aloha_lib.Computation.__init__
+aloha.aloha_lib.IndicesIterator.__init__
+aloha.aloha_lib.LorentzObject.__init__
+aloha.aloha_lib.LorentzObjectRepresentation.__init__
+aloha.aloha_lib.MultContainer.__init__
+aloha.aloha_lib.MultVariable.__init__
+aloha.aloha_lib.SplitCoefficient.__init__
+aloha.aloha_object.DenominatorPropagator.__init__
+aloha.aloha_object.L_C.__init__
+aloha.aloha_object.L_Coup.__init__
+aloha.aloha_object.L_Epsilon.__init__
+aloha.aloha_object.L_FCT.__init__
+aloha.aloha_object.L_Gamma.__init__
+aloha.aloha_object.L_Gamma5.__init__
+aloha.aloha_object.L_Identity.__init__
+aloha.aloha_object.L_Mass.__init__
+aloha.aloha_object.L_Metric.__init__
+aloha.aloha_object.L_OverMass2.__init__
+aloha.aloha_object.L_P.__init__
+aloha.aloha_object.L_PSlash.__init__
+aloha.aloha_object.L_ProjM.__init__
+aloha.aloha_object.L_ProjP.__init__
+aloha.aloha_object.L_Scalar.__init__
+aloha.aloha_object.L_Sigma.__init__
+aloha.aloha_object.L_Spin2.__init__
+aloha.aloha_object.L_Spin3Half.__init__
+aloha.aloha_object.L_Spinor.__init__
+aloha.aloha_object.L_Vector.__init__
+aloha.aloha_object.L_Width.__init__
+aloha.aloha_parsers.UFOExpressionParser.__init__
+aloha.aloha_writers.ALOHAWriterForFortranLoop.__init__
+aloha.aloha_writers.ALOHAWriterForFortranLoopQP.__init__
+aloha.aloha_writers.ALOHAWriterForFortranQP.__init__
+aloha.aloha_writers.WriteALOHA.__init__
+aloha.create_aloha.AbstractALOHAModel.__init__
+aloha.create_aloha.AbstractRoutine.__init__
+aloha.create_aloha.AbstractRoutineBuilder.__init__
+aloha.create_aloha.CombineRoutineBuilder.__init__
+aloha.template_files.wavefunctions.WaveFunction.__init__
+madgraph.core.base_objects.ModelVariable.__init__
+madgraph.core.base_objects.ParamCardVariable.__init__
+madgraph.core.base_objects.PhysicsObject.__init__
+madgraph.core.base_objects.PhysicsObjectList.__init__
+madgraph.core.base_objects.VertexList.__init__
+madgraph.core.color_algebra.ColorString.__init__
+madgraph.core.color_algebra.Epsilon.__init__
+madgraph.core.color_algebra.EpsilonBar.__init__
+madgraph.core.color_algebra.K6.__init__
+madgraph.core.color_algebra.K6Bar.__init__
+madgraph.core.color_algebra.T.__init__
+madgraph.core.color_algebra.T6.__init__
+madgraph.core.color_algebra.f.__init__
+madgraph.core.color_amp.ColorBasis.__init__
+madgraph.core.color_amp.ColorMatrix.__init__
+madgraph.core.diagram_generation.Amplitude.__init__
+madgraph.core.diagram_generation.DecayChainAmplitude.__init__
+madgraph.core.diagram_generation.DiagramTag.__init__
+madgraph.core.diagram_generation.DiagramTagChainLink.__init__
+madgraph.core.diagram_generation.MultiProcess.__init__
+madgraph.core.drawing.DiagramDrawer.__init__
+madgraph.core.drawing.DrawOption.__init__
+madgraph.core.drawing.FeynmanDiagram.__init__
+madgraph.core.drawing.FeynmanLine.__init__
+madgraph.core.drawing.VertexPoint.__init__
+madgraph.core.helas_objects.HelasAmplitude.__init__
+madgraph.core.helas_objects.HelasDecayChainProcess.__init__
+madgraph.core.helas_objects.HelasMatrixElement.__init__
+madgraph.core.helas_objects.HelasMultiProcess.__init__
+madgraph.core.helas_objects.HelasWavefunction.__init__
+madgraph.interface.coloring_logging.ColorFormatter.__init__
+madgraph.interface.extended_cmd.Cmd.__init__
+madgraph.interface.extended_cmd.CmdFile.__init__
+madgraph.interface.extended_cmd.SmartQuestion.__init__
+madgraph.interface.launch_ext_program.ExtLauncher.__init__
+madgraph.interface.launch_ext_program.MELauncher.__init__
+madgraph.interface.launch_ext_program.Pythia8Launcher.__init__
+madgraph.interface.launch_ext_program.SALauncher.__init__
+madgraph.interface.madevent_interface.AskforEditCard.__init__
+madgraph.interface.madevent_interface.CmdExtended.__init__
+madgraph.interface.madevent_interface.GridPackCmd.__init__
+madgraph.interface.madevent_interface.MadEventCmd.__init__
+madgraph.interface.madgraph_interface.CmdExtended.__init__
+madgraph.interface.madgraph_interface.MadGraphCmd.__init__
+madgraph.interface.master_interface.MasterCmdWeb.__init__
+madgraph.interface.master_interface.Switcher.__init__
+madgraph.iolibs.drawing_eps.MultiEpsDiagramDrawer.__init__
+madgraph.iolibs.export_cpp.ProcessExporterCPP.__init__
+madgraph.iolibs.export_cpp.ProcessExporterPythia8.__init__
+madgraph.iolibs.export_cpp.UFOModelConverterCPP.__init__
+madgraph.iolibs.export_python.ProcessExporterPython.__init__
+madgraph.iolibs.export_v4.ProcessExporterFortran.__init__
+madgraph.iolibs.export_v4.UFO_model_to_mg4.__init__
+madgraph.iolibs.file_writers.FileWriter.__init__
+madgraph.iolibs.gen_infohtml.make_info_html.__init__
+madgraph.iolibs.helas_call_writers.HelasCallWriter.__init__
+madgraph.iolibs.import_v4.ProcCardv4Reader.__init__
+madgraph.iolibs.import_v4.ProcessInfo.__init__
+madgraph.iolibs.ufo_expression_parsers.UFOExpressionParser.__init__
+madgraph.various.banner.Banner.__init__
+madgraph.various.banner.RunCard.__init__
+madgraph.various.cluster.Cluster.__init__
+madgraph.various.combine_runs.CombineRuns.__init__
+madgraph.various.gen_crossxhtml.AllResults.__init__
+madgraph.various.gen_crossxhtml.OneTagResults.__init__
+madgraph.various.gen_crossxhtml.RunResults.__init__
+madgraph.various.lhe_parser.Event.__init__
+madgraph.various.lhe_parser.EventFile.__init__
+madgraph.various.lhe_parser.Particle.__init__
+madgraph.various.misc.BackRead.__init__
+madgraph.various.misc.open_file.__init__
+madgraph.various.process_checks.MatrixElementEvaluator.__init__
+madgraph.various.rambo.DoubleFortranList.__init__
+madgraph.various.rambo.FortranList.__init__
+madgraph.various.sum_html.Combine_results.__init__
+madgraph.various.sum_html.OneResult.__init__
+models.build_restriction_lib.Category.__init__
+models.build_restriction_lib.Rule.__init__
+models.check_param_card.Block.__init__
+models.check_param_card.ParamCard.__init__
+models.check_param_card.ParamCardRule.__init__
+models.check_param_card.Parameter.__init__
+models.import_ufo.OrganizeModelExpression.__init__
+models.import_ufo.UFOMG5Converter.__init__
+models.model_reader.Alphas_Runner.__init__
+models.write_param_card.ParamCardWriter.__init__" class="py-name" href="#" onclick="return doclink('link-55', '__init__', 'link-50');">__init__</a></tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">,</tt> <tt class="py-name">cmd_int</tt><tt class="py-op">,</tt> <tt class="py-name">running_dir</tt><tt class="py-op">,</tt> <tt class="py-string">'./Cards'</tt><tt class="py-op">,</tt> <tt class="py-op">**</tt><tt class="py-name">option</tt><tt class="py-op">)</tt> </tt>
+<a name="L159"></a><tt class="py-lineno">159</tt>  <tt class="py-line">        <tt class="py-comment">#self.executable = os.path.join('.', 'bin','generate_events')</tt> </tt>
+<a name="L160"></a><tt class="py-lineno">160</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">pythia</tt> <tt class="py-op">=</tt> <tt class="py-name">cmd_int</tt><tt class="py-op">.</tt><tt class="py-name">options</tt><tt class="py-op">[</tt><tt class="py-string">'pythia-pgs_path'</tt><tt class="py-op">]</tt> </tt>
+<a name="L161"></a><tt class="py-lineno">161</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">delphes</tt> <tt class="py-op">=</tt> <tt class="py-name">cmd_int</tt><tt class="py-op">.</tt><tt class="py-name">options</tt><tt class="py-op">[</tt><tt class="py-string">'delphes_path'</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> </tt>
+<a name="L162"></a><tt class="py-lineno">162</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">options</tt> <tt class="py-op">=</tt> <tt class="py-name">cmd_int</tt><tt class="py-op">.</tt><tt class="py-name">options</tt> </tt>
+<a name="L163"></a><tt class="py-lineno">163</tt>  <tt class="py-line"> </tt>
+<a name="L164"></a><tt class="py-lineno">164</tt>  <tt class="py-line">        <tt class="py-keyword">assert</tt> <tt class="py-name">hasattr</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">,</tt> <tt class="py-string">'cluster'</tt><tt class="py-op">)</tt> </tt>
+<a name="L165"></a><tt class="py-lineno">165</tt>  <tt class="py-line">        <tt class="py-keyword">assert</tt> <tt class="py-name">hasattr</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">,</tt> <tt class="py-string">'multicore'</tt><tt class="py-op">)</tt> </tt>
+<a name="L166"></a><tt class="py-lineno">166</tt>  <tt class="py-line">        <tt class="py-keyword">assert</tt> <tt class="py-name">hasattr</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">,</tt> <tt class="py-string">'name'</tt><tt class="py-op">)</tt> </tt>
+<a name="L167"></a><tt class="py-lineno">167</tt>  <tt class="py-line">        <tt class="py-keyword">assert</tt> <tt class="py-name">hasattr</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">,</tt> <tt class="py-string">'shell'</tt><tt class="py-op">)</tt> </tt>
+<a name="L168"></a><tt class="py-lineno">168</tt>  <tt class="py-line"> </tt>
+<a name="L169"></a><tt class="py-lineno">169</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">unit</tt> <tt class="py-op">=</tt> <tt class="py-name">unit</tt> </tt>
+<a name="L170"></a><tt class="py-lineno">170</tt>  <tt class="py-line">         </tt>
+<a name="L171"></a><tt class="py-lineno">171</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-56" class="py-name" targets="Module madgraph.various.cluster=madgraph.various.cluster-module.html"><a title="madgraph.various.cluster" class="py-name" href="#" onclick="return doclink('link-56', 'cluster', 'link-56');">cluster</a></tt><tt class="py-op">:</tt> </tt>
+<a name="L172"></a><tt class="py-lineno">172</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-57" class="py-name"><a title="madgraph.various.cluster" class="py-name" href="#" onclick="return doclink('link-57', 'cluster', 'link-56');">cluster</a></tt> <tt class="py-op">=</tt> <tt class="py-number">1</tt> </tt>
+<a name="L173"></a><tt class="py-lineno">173</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">multicore</tt><tt class="py-op">:</tt> </tt>
+<a name="L174"></a><tt class="py-lineno">174</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-58" class="py-name"><a title="madgraph.various.cluster" class="py-name" href="#" onclick="return doclink('link-58', 'cluster', 'link-56');">cluster</a></tt> <tt class="py-op">=</tt> <tt class="py-number">2</tt> </tt>
+<a name="L175"></a><tt class="py-lineno">175</tt>  <tt class="py-line">         </tt>
+<a name="L176"></a><tt class="py-lineno">176</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">cards</tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-op">]</tt> </tt>
+<a name="L177"></a><tt class="py-lineno">177</tt>  <tt class="py-line"> </tt>
+<a name="L178"></a><tt class="py-lineno">178</tt>  <tt class="py-line">        <tt class="py-comment"># Assign a valid run name if not put in options</tt> </tt>
+<a name="L179"></a><tt class="py-lineno">179</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-59" class="py-name" targets="Variable madgraph.various.cluster.Cluster.name=madgraph.various.cluster.Cluster-class.html#name,Variable madgraph.various.cluster.CondorCluster.name=madgraph.various.cluster.CondorCluster-class.html#name,Variable madgraph.various.cluster.GECluster.name=madgraph.various.cluster.GECluster-class.html#name,Variable madgraph.various.cluster.LSFCluster.name=madgraph.various.cluster.LSFCluster-class.html#name,Variable madgraph.various.cluster.PBSCluster.name=madgraph.various.cluster.PBSCluster-class.html#name,Variable madgraph.various.cluster.SGECluster.name=madgraph.various.cluster.SGECluster-class.html#name,Variable madgraph.various.cluster.SLURMCluster.name=madgraph.various.cluster.SLURMCluster-class.html#name"><a title="madgraph.various.cluster.Cluster.name
+madgraph.various.cluster.CondorCluster.name
+madgraph.various.cluster.GECluster.name
+madgraph.various.cluster.LSFCluster.name
+madgraph.various.cluster.PBSCluster.name
+madgraph.various.cluster.SGECluster.name
+madgraph.various.cluster.SLURMCluster.name" class="py-name" href="#" onclick="return doclink('link-59', 'name', 'link-59');">name</a></tt> <tt class="py-op">==</tt> <tt class="py-string">''</tt><tt class="py-op">:</tt> </tt>
+<a name="L180"></a><tt class="py-lineno">180</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-60" class="py-name"><a title="madgraph.various.cluster.Cluster.name
+madgraph.various.cluster.CondorCluster.name
+madgraph.various.cluster.GECluster.name
+madgraph.various.cluster.LSFCluster.name
+madgraph.various.cluster.PBSCluster.name
+madgraph.various.cluster.SGECluster.name
+madgraph.various.cluster.SLURMCluster.name" class="py-name" href="#" onclick="return doclink('link-60', 'name', 'link-59');">name</a></tt> <tt class="py-op">=</tt> <tt class="py-name">me_cmd</tt><tt class="py-op">.</tt><tt id="link-61" class="py-name" targets="Class madgraph.interface.madevent_interface.MadEventCmd=madgraph.interface.madevent_interface.MadEventCmd-class.html"><a title="madgraph.interface.madevent_interface.MadEventCmd" class="py-name" href="#" onclick="return doclink('link-61', 'MadEventCmd', 'link-61');">MadEventCmd</a></tt><tt class="py-op">.</tt><tt id="link-62" class="py-name" targets="Static Method madgraph.interface.madevent_interface.MadEventCmd.find_available_run_name()=madgraph.interface.madevent_interface.MadEventCmd-class.html#find_available_run_name"><a title="madgraph.interface.madevent_interface.MadEventCmd.find_available_run_name" class="py-name" href="#" onclick="return doclink('link-62', 'find_available_run_name', 'link-62');">find_available_run_name</a></tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">running_dir</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L181"></a><tt class="py-lineno">181</tt>  <tt class="py-line">     </tt>
+<a name="MELauncher.launch_program"></a><div id="MELauncher.launch_program-def"><a name="L182"></a><tt class="py-lineno">182</tt> <a class="py-toggle" href="#" id="MELauncher.launch_program-toggle" onclick="return toggle('MELauncher.launch_program');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="madgraph.interface.launch_ext_program.MELauncher-class.html#launch_program">launch_program</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="MELauncher.launch_program-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="MELauncher.launch_program-expanded"><a name="L183"></a><tt class="py-lineno">183</tt>  <tt class="py-line">        <tt class="py-docstring">"""launch the main program"""</tt> </tt>
+<a name="L184"></a><tt class="py-lineno">184</tt>  <tt class="py-line">         </tt>
+<a name="L185"></a><tt class="py-lineno">185</tt>  <tt class="py-line">        <tt class="py-comment"># Check for number of cores if multicore mode</tt> </tt>
+<a name="L186"></a><tt class="py-lineno">186</tt>  <tt class="py-line">        <tt class="py-name">mode</tt> <tt class="py-op">=</tt> <tt id="link-63" class="py-name"><a title="str" class="py-name" href="#" onclick="return doclink('link-63', 'str', 'link-40');">str</a></tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-64" class="py-name"><a title="madgraph.various.cluster" class="py-name" href="#" onclick="return doclink('link-64', 'cluster', 'link-56');">cluster</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L187"></a><tt class="py-lineno">187</tt>  <tt class="py-line">        <tt class="py-name">nb_node</tt> <tt class="py-op">=</tt> <tt class="py-number">1</tt> </tt>
+<a name="L188"></a><tt class="py-lineno">188</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">mode</tt> <tt class="py-op">==</tt> <tt class="py-string">"2"</tt><tt class="py-op">:</tt> </tt>
+<a name="L189"></a><tt class="py-lineno">189</tt>  <tt class="py-line">            <tt class="py-keyword">import</tt> <tt class="py-name">multiprocessing</tt> </tt>
+<a name="L190"></a><tt class="py-lineno">190</tt>  <tt class="py-line">            <tt class="py-name">max_node</tt> <tt class="py-op">=</tt> <tt class="py-name">multiprocessing</tt><tt class="py-op">.</tt><tt class="py-name">cpu_count</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L191"></a><tt class="py-lineno">191</tt>  <tt class="py-line">            <tt class="py-keyword">if</tt> <tt class="py-name">max_node</tt> <tt class="py-op">==</tt> <tt class="py-number">1</tt><tt class="py-op">:</tt> </tt>
+<a name="L192"></a><tt class="py-lineno">192</tt>  <tt class="py-line">                <tt id="link-65" class="py-name"><a title="aloha.aloha_parsers.logger
+aloha.create_aloha.logger
+madgraph.core.base_objects.logger
+madgraph.core.diagram_generation.logger
+madgraph.core.helas_objects.logger
+madgraph.interface.extended_cmd.logger
+madgraph.interface.launch_ext_program.logger
+madgraph.interface.madevent_interface.logger
+madgraph.interface.madgraph_interface.logger
+madgraph.interface.master_interface.logger
+madgraph.iolibs.export_cpp.logger
+madgraph.iolibs.export_python.logger
+madgraph.iolibs.export_v4.logger
+madgraph.iolibs.files.logger
+madgraph.iolibs.group_subprocs.logger
+madgraph.iolibs.import_v4.logger
+madgraph.iolibs.save_model.logger
+madgraph.iolibs.ufo_expression_parsers.logger
+madgraph.various.banner.logger
+madgraph.various.cluster.logger
+madgraph.various.combine_runs.logger
+madgraph.various.diagram_symmetry.logger
+madgraph.various.misc.logger
+madgraph.various.process_checks.logger
+madgraph.various.sum_html.logger
+models.check_param_card.logger
+models.import_ufo.logger
+models.model_reader.logger" class="py-name" href="#" onclick="return doclink('link-65', 'logger', 'link-22');">logger</a></tt><tt class="py-op">.</tt><tt class="py-name">warning</tt><tt class="py-op">(</tt><tt class="py-string">'Only one core is detected on your computer! Pass in single machine'</tt><tt class="py-op">)</tt> </tt>
+<a name="L193"></a><tt class="py-lineno">193</tt>  <tt class="py-line">                <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-66" class="py-name"><a title="madgraph.various.cluster" class="py-name" href="#" onclick="return doclink('link-66', 'cluster', 'link-56');">cluster</a></tt> <tt class="py-op">=</tt> <tt class="py-number">0</tt> </tt>
+<a name="L194"></a><tt class="py-lineno">194</tt>  <tt class="py-line">                <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-67" class="py-name"><a title="madgraph.interface.launch_ext_program.ExtLauncher.launch_program
+madgraph.interface.launch_ext_program.MELauncher.launch_program
+madgraph.interface.launch_ext_program.Pythia8Launcher.launch_program
+madgraph.interface.launch_ext_program.SALauncher.launch_program" class="py-name" href="#" onclick="return doclink('link-67', 'launch_program', 'link-31');">launch_program</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L195"></a><tt class="py-lineno">195</tt>  <tt class="py-line">                <tt class="py-keyword">return</tt> </tt>
+<a name="L196"></a><tt class="py-lineno">196</tt>  <tt class="py-line">            <tt class="py-keyword">elif</tt> <tt class="py-name">max_node</tt> <tt class="py-op">==</tt> <tt class="py-number">2</tt><tt class="py-op">:</tt> </tt>
+<a name="L197"></a><tt class="py-lineno">197</tt>  <tt class="py-line">                <tt class="py-name">nb_node</tt> <tt class="py-op">=</tt> <tt class="py-number">2</tt> </tt>
+<a name="L198"></a><tt class="py-lineno">198</tt>  <tt class="py-line">            <tt class="py-keyword">elif</tt> <tt class="py-keyword">not</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-68" class="py-name"><a title="madgraph.interface.launch_ext_program.ExtLauncher.force" class="py-name" href="#" onclick="return doclink('link-68', 'force', 'link-25');">force</a></tt><tt class="py-op">:</tt> </tt>
+<a name="L199"></a><tt class="py-lineno">199</tt>  <tt class="py-line">                <tt class="py-name">nb_node</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-69" class="py-name"><a title="madgraph.interface.extended_cmd.Cmd.ask
+madgraph.interface.launch_ext_program.ExtLauncher.ask" class="py-name" href="#" onclick="return doclink('link-69', 'ask', 'link-37');">ask</a></tt><tt class="py-op">(</tt><tt class="py-string">'How many core do you want to use?'</tt><tt class="py-op">,</tt> <tt class="py-name">max_node</tt><tt class="py-op">,</tt> <tt class="py-name">range</tt><tt class="py-op">(</tt><tt class="py-number">2</tt><tt class="py-op">,</tt><tt class="py-name">max_node</tt><tt class="py-op">+</tt><tt class="py-number">1</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L200"></a><tt class="py-lineno">200</tt>  <tt class="py-line">            <tt class="py-keyword">else</tt><tt class="py-op">:</tt> </tt>
+<a name="L201"></a><tt class="py-lineno">201</tt>  <tt class="py-line">                <tt class="py-name">nb_node</tt><tt class="py-op">=</tt><tt class="py-name">max_node</tt> </tt>
+<a name="L202"></a><tt class="py-lineno">202</tt>  <tt class="py-line">                 </tt>
+<a name="L203"></a><tt class="py-lineno">203</tt>  <tt class="py-line">        <tt class="py-keyword">import</tt> <tt id="link-70" class="py-name"><a title="madgraph" class="py-name" href="#" onclick="return doclink('link-70', 'madgraph', 'link-0');">madgraph</a></tt><tt class="py-op">.</tt><tt id="link-71" class="py-name"><a title="madgraph.interface" class="py-name" href="#" onclick="return doclink('link-71', 'interface', 'link-5');">interface</a></tt><tt class="py-op">.</tt><tt id="link-72" class="py-name"><a title="madgraph.interface.madevent_interface" class="py-name" href="#" onclick="return doclink('link-72', 'madevent_interface', 'link-9');">madevent_interface</a></tt> <tt class="py-keyword">as</tt> <tt class="py-name">ME</tt> </tt>
+<a name="L204"></a><tt class="py-lineno">204</tt>  <tt class="py-line">         </tt>
+<a name="L205"></a><tt class="py-lineno">205</tt>  <tt class="py-line">        <tt class="py-name">stdout_level</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">cmd_int</tt><tt class="py-op">.</tt><tt class="py-name">options</tt><tt class="py-op">[</tt><tt class="py-string">'stdout_level'</tt><tt class="py-op">]</tt> </tt>
+<a name="L206"></a><tt class="py-lineno">206</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">shell</tt><tt class="py-op">:</tt> </tt>
+<a name="L207"></a><tt class="py-lineno">207</tt>  <tt class="py-line">            <tt class="py-name">usecmd</tt> <tt class="py-op">=</tt> <tt class="py-name">ME</tt><tt class="py-op">.</tt><tt id="link-73" class="py-name" targets="Class madgraph.interface.madevent_interface.MadEventCmdShell=madgraph.interface.madevent_interface.MadEventCmdShell-class.html"><a title="madgraph.interface.madevent_interface.MadEventCmdShell" class="py-name" href="#" onclick="return doclink('link-73', 'MadEventCmdShell', 'link-73');">MadEventCmdShell</a></tt><tt class="py-op">(</tt><tt class="py-name">me_dir</tt><tt class="py-op">=</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">running_dir</tt><tt class="py-op">,</tt> <tt class="py-name">options</tt><tt class="py-op">=</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">options</tt><tt class="py-op">)</tt> </tt>
+<a name="L208"></a><tt class="py-lineno">208</tt>  <tt class="py-line">        <tt class="py-keyword">else</tt><tt class="py-op">:</tt> </tt>
+<a name="L209"></a><tt class="py-lineno">209</tt>  <tt class="py-line">            <tt class="py-name">usecmd</tt> <tt class="py-op">=</tt> <tt class="py-name">ME</tt><tt class="py-op">.</tt><tt id="link-74" class="py-name"><a title="madgraph.interface.madevent_interface.MadEventCmd" class="py-name" href="#" onclick="return doclink('link-74', 'MadEventCmd', 'link-61');">MadEventCmd</a></tt><tt class="py-op">(</tt><tt class="py-name">me_dir</tt><tt class="py-op">=</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">running_dir</tt><tt class="py-op">,</tt> <tt class="py-name">options</tt><tt class="py-op">=</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">options</tt><tt class="py-op">)</tt> </tt>
+<a name="L210"></a><tt class="py-lineno">210</tt>  <tt class="py-line">            <tt class="py-name">usecmd</tt><tt class="py-op">.</tt><tt id="link-75" class="py-name" targets="Method madgraph.interface.madevent_interface.MadEventCmd.pass_in_web_mode()=madgraph.interface.madevent_interface.MadEventCmd-class.html#pass_in_web_mode"><a title="madgraph.interface.madevent_interface.MadEventCmd.pass_in_web_mode" class="py-name" href="#" onclick="return doclink('link-75', 'pass_in_web_mode', 'link-75');">pass_in_web_mode</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L211"></a><tt class="py-lineno">211</tt>  <tt class="py-line">        <tt class="py-comment">#Check if some configuration were overwritten by a command. If so use it    </tt> </tt>
+<a name="L212"></a><tt class="py-lineno">212</tt>  <tt class="py-line">        <tt class="py-name">set_cmd</tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-name">l</tt> <tt class="py-keyword">for</tt> <tt class="py-name">l</tt> <tt class="py-keyword">in</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">cmd_int</tt><tt class="py-op">.</tt><tt id="link-76" class="py-name" targets="Variable madgraph.interface.tutorial_text.history=madgraph.interface.tutorial_text-module.html#history"><a title="madgraph.interface.tutorial_text.history" class="py-name" href="#" onclick="return doclink('link-76', 'history', 'link-76');">history</a></tt> <tt class="py-keyword">if</tt> <tt class="py-name">l</tt><tt class="py-op">.</tt><tt class="py-name">strip</tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt class="py-name">startswith</tt><tt class="py-op">(</tt><tt class="py-string">'set'</tt><tt class="py-op">)</tt><tt class="py-op">]</tt> </tt>
+<a name="L213"></a><tt class="py-lineno">213</tt>  <tt class="py-line">        <tt class="py-keyword">for</tt> <tt class="py-name">line</tt> <tt class="py-keyword">in</tt> <tt class="py-name">set_cmd</tt><tt class="py-op">:</tt> </tt>
+<a name="L214"></a><tt class="py-lineno">214</tt>  <tt class="py-line">            <tt class="py-keyword">try</tt><tt class="py-op">:</tt> </tt>
+<a name="L215"></a><tt class="py-lineno">215</tt>  <tt class="py-line">                <tt class="py-name">usecmd</tt><tt class="py-op">.</tt><tt id="link-77" class="py-name" targets="Method madgraph.interface.madevent_interface.AskforEditCard.do_set()=madgraph.interface.madevent_interface.AskforEditCard-class.html#do_set,Method madgraph.interface.madevent_interface.MadEventCmd.do_set()=madgraph.interface.madevent_interface.MadEventCmd-class.html#do_set,Method madgraph.interface.madgraph_interface.MadGraphCmd.do_set()=madgraph.interface.madgraph_interface.MadGraphCmd-class.html#do_set,Method madgraph.interface.master_interface.Switcher.do_set()=madgraph.interface.master_interface.Switcher-class.html#do_set"><a title="madgraph.interface.madevent_interface.AskforEditCard.do_set
+madgraph.interface.madevent_interface.MadEventCmd.do_set
+madgraph.interface.madgraph_interface.MadGraphCmd.do_set
+madgraph.interface.master_interface.Switcher.do_set" class="py-name" href="#" onclick="return doclink('link-77', 'do_set', 'link-77');">do_set</a></tt><tt class="py-op">(</tt><tt class="py-name">line</tt><tt class="py-op">[</tt><tt class="py-number">3</tt><tt class="py-op">:</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> <tt class="py-name">log</tt><tt class="py-op">=</tt><tt class="py-name">False</tt><tt class="py-op">)</tt> </tt>
+<a name="L216"></a><tt class="py-lineno">216</tt>  <tt class="py-line">            <tt class="py-keyword">except</tt><tt class="py-op">:</tt> </tt>
+<a name="L217"></a><tt class="py-lineno">217</tt>  <tt class="py-line">                <tt class="py-keyword">pass</tt> </tt>
+<a name="L218"></a><tt class="py-lineno">218</tt>  <tt class="py-line">        <tt class="py-name">usecmd</tt><tt class="py-op">.</tt><tt id="link-78" class="py-name"><a title="madgraph.interface.madevent_interface.AskforEditCard.do_set
+madgraph.interface.madevent_interface.MadEventCmd.do_set
+madgraph.interface.madgraph_interface.MadGraphCmd.do_set
+madgraph.interface.master_interface.Switcher.do_set" class="py-name" href="#" onclick="return doclink('link-78', 'do_set', 'link-77');">do_set</a></tt><tt class="py-op">(</tt><tt class="py-string">'stdout_level %s'</tt>  <tt class="py-op">%</tt> <tt class="py-name">stdout_level</tt><tt class="py-op">,</tt><tt class="py-name">log</tt><tt class="py-op">=</tt><tt class="py-name">False</tt><tt class="py-op">)</tt> </tt>
+<a name="L219"></a><tt class="py-lineno">219</tt>  <tt class="py-line">        <tt class="py-comment">#ensure that the logger level </tt> </tt>
+<a name="L220"></a><tt class="py-lineno">220</tt>  <tt class="py-line">        <tt id="link-79" class="py-name" targets="Method madgraph.interface.madevent_interface.GridPackCmd.launch()=madgraph.interface.madevent_interface.GridPackCmd-class.html#launch,Variable madgraph.interface.tutorial_text.launch=madgraph.interface.tutorial_text-module.html#launch"><a title="madgraph.interface.madevent_interface.GridPackCmd.launch
+madgraph.interface.tutorial_text.launch" class="py-name" href="#" onclick="return doclink('link-79', 'launch', 'link-79');">launch</a></tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">cmd_int</tt><tt class="py-op">.</tt><tt id="link-80" class="py-name" targets="Method madgraph.interface.extended_cmd.Cmd.define_child_cmd_interface()=madgraph.interface.extended_cmd.Cmd-class.html#define_child_cmd_interface"><a title="madgraph.interface.extended_cmd.Cmd.define_child_cmd_interface" class="py-name" href="#" onclick="return doclink('link-80', 'define_child_cmd_interface', 'link-80');">define_child_cmd_interface</a></tt><tt class="py-op">(</tt> </tt>
+<a name="L221"></a><tt class="py-lineno">221</tt>  <tt class="py-line">                     <tt class="py-name">usecmd</tt><tt class="py-op">,</tt> <tt id="link-81" class="py-name"><a title="madgraph.interface" class="py-name" href="#" onclick="return doclink('link-81', 'interface', 'link-5');">interface</a></tt><tt class="py-op">=</tt><tt class="py-name">False</tt><tt class="py-op">)</tt> </tt>
+<a name="L222"></a><tt class="py-lineno">222</tt>  <tt class="py-line">        <tt class="py-comment">#launch.me_dir = self.running_dir</tt> </tt>
+<a name="L223"></a><tt class="py-lineno">223</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">unit</tt> <tt class="py-op">==</tt> <tt class="py-string">'pb'</tt><tt class="py-op">:</tt> </tt>
+<a name="L224"></a><tt class="py-lineno">224</tt>  <tt class="py-line">            <tt class="py-name">command</tt> <tt class="py-op">=</tt> <tt class="py-string">'generate_events %s'</tt> <tt class="py-op">%</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-82" class="py-name"><a title="madgraph.various.cluster.Cluster.name
+madgraph.various.cluster.CondorCluster.name
+madgraph.various.cluster.GECluster.name
+madgraph.various.cluster.LSFCluster.name
+madgraph.various.cluster.PBSCluster.name
+madgraph.various.cluster.SGECluster.name
+madgraph.various.cluster.SLURMCluster.name" class="py-name" href="#" onclick="return doclink('link-82', 'name', 'link-59');">name</a></tt> </tt>
+<a name="L225"></a><tt class="py-lineno">225</tt>  <tt class="py-line">        <tt class="py-keyword">else</tt><tt class="py-op">:</tt> </tt>
+<a name="L226"></a><tt class="py-lineno">226</tt>  <tt class="py-line">            <tt class="py-name">warning_text</tt> <tt class="py-op">=</tt> <tt class="py-string">'''\</tt> </tt>
+<a name="L227"></a><tt class="py-lineno">227</tt>  <tt class="py-line"><tt class="py-string">This command will create a new param_card with the computed width. </tt> </tt>
+<a name="L228"></a><tt class="py-lineno">228</tt>  <tt class="py-line"><tt class="py-string">This param_card makes sense only if you include all processes for</tt> </tt>
+<a name="L229"></a><tt class="py-lineno">229</tt>  <tt class="py-line"><tt class="py-string">the computation of the width.'''</tt> </tt>
+<a name="L230"></a><tt class="py-lineno">230</tt>  <tt class="py-line">            <tt id="link-83" class="py-name"><a title="aloha.aloha_parsers.logger
+aloha.create_aloha.logger
+madgraph.core.base_objects.logger
+madgraph.core.diagram_generation.logger
+madgraph.core.helas_objects.logger
+madgraph.interface.extended_cmd.logger
+madgraph.interface.launch_ext_program.logger
+madgraph.interface.madevent_interface.logger
+madgraph.interface.madgraph_interface.logger
+madgraph.interface.master_interface.logger
+madgraph.iolibs.export_cpp.logger
+madgraph.iolibs.export_python.logger
+madgraph.iolibs.export_v4.logger
+madgraph.iolibs.files.logger
+madgraph.iolibs.group_subprocs.logger
+madgraph.iolibs.import_v4.logger
+madgraph.iolibs.save_model.logger
+madgraph.iolibs.ufo_expression_parsers.logger
+madgraph.various.banner.logger
+madgraph.various.cluster.logger
+madgraph.various.combine_runs.logger
+madgraph.various.diagram_symmetry.logger
+madgraph.various.misc.logger
+madgraph.various.process_checks.logger
+madgraph.various.sum_html.logger
+models.check_param_card.logger
+models.import_ufo.logger
+models.model_reader.logger" class="py-name" href="#" onclick="return doclink('link-83', 'logger', 'link-22');">logger</a></tt><tt class="py-op">.</tt><tt class="py-name">warning</tt><tt class="py-op">(</tt><tt class="py-name">warning_text</tt><tt class="py-op">)</tt> </tt>
+<a name="L231"></a><tt class="py-lineno">231</tt>  <tt class="py-line"> </tt>
+<a name="L232"></a><tt class="py-lineno">232</tt>  <tt class="py-line">            <tt class="py-name">command</tt> <tt class="py-op">=</tt> <tt class="py-string">'calculate_decay_widths %s'</tt> <tt class="py-op">%</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-84" class="py-name"><a title="madgraph.various.cluster.Cluster.name
+madgraph.various.cluster.CondorCluster.name
+madgraph.various.cluster.GECluster.name
+madgraph.various.cluster.LSFCluster.name
+madgraph.various.cluster.PBSCluster.name
+madgraph.various.cluster.SGECluster.name
+madgraph.various.cluster.SLURMCluster.name" class="py-name" href="#" onclick="return doclink('link-84', 'name', 'link-59');">name</a></tt> </tt>
+<a name="L233"></a><tt class="py-lineno">233</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">mode</tt> <tt class="py-op">==</tt> <tt class="py-string">"1"</tt><tt class="py-op">:</tt> </tt>
+<a name="L234"></a><tt class="py-lineno">234</tt>  <tt class="py-line">            <tt class="py-name">command</tt> <tt class="py-op">+=</tt> <tt class="py-string">" --cluster"</tt> </tt>
+<a name="L235"></a><tt class="py-lineno">235</tt>  <tt class="py-line">        <tt class="py-keyword">elif</tt> <tt class="py-name">mode</tt> <tt class="py-op">==</tt> <tt class="py-string">"2"</tt><tt class="py-op">:</tt> </tt>
+<a name="L236"></a><tt class="py-lineno">236</tt>  <tt class="py-line">            <tt class="py-name">command</tt> <tt class="py-op">+=</tt> <tt class="py-string">" --nb_core=%s"</tt> <tt class="py-op">%</tt> <tt class="py-name">nb_node</tt> </tt>
+<a name="L237"></a><tt class="py-lineno">237</tt>  <tt class="py-line">         </tt>
+<a name="L238"></a><tt class="py-lineno">238</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-85" class="py-name"><a title="madgraph.interface.launch_ext_program.ExtLauncher.force" class="py-name" href="#" onclick="return doclink('link-85', 'force', 'link-25');">force</a></tt><tt class="py-op">:</tt> </tt>
+<a name="L239"></a><tt class="py-lineno">239</tt>  <tt class="py-line">            <tt class="py-name">command</tt><tt class="py-op">+=</tt> <tt class="py-string">" -f"</tt> </tt>
+<a name="L240"></a><tt class="py-lineno">240</tt>  <tt class="py-line">         </tt>
+<a name="L241"></a><tt class="py-lineno">241</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">laststep</tt><tt class="py-op">:</tt> </tt>
+<a name="L242"></a><tt class="py-lineno">242</tt>  <tt class="py-line">            <tt class="py-name">command</tt> <tt class="py-op">+=</tt> <tt class="py-string">' --laststep=%s'</tt> <tt class="py-op">%</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">laststep</tt> </tt>
+<a name="L243"></a><tt class="py-lineno">243</tt>  <tt class="py-line">         </tt>
+<a name="L244"></a><tt class="py-lineno">244</tt>  <tt class="py-line">        <tt class="py-keyword">try</tt><tt class="py-op">:</tt> </tt>
+<a name="L245"></a><tt class="py-lineno">245</tt>  <tt class="py-line">            <tt class="py-name">os</tt><tt class="py-op">.</tt><tt id="link-86" class="py-name" targets="Method madgraph.various.cluster.Cluster.remove()=madgraph.various.cluster.Cluster-class.html#remove,Method madgraph.various.cluster.CondorCluster.remove()=madgraph.various.cluster.CondorCluster-class.html#remove,Method madgraph.various.cluster.GECluster.remove()=madgraph.various.cluster.GECluster-class.html#remove,Method madgraph.various.cluster.LSFCluster.remove()=madgraph.various.cluster.LSFCluster-class.html#remove,Method madgraph.various.cluster.PBSCluster.remove()=madgraph.various.cluster.PBSCluster-class.html#remove,Method madgraph.various.cluster.SGECluster.remove()=madgraph.various.cluster.SGECluster-class.html#remove,Method madgraph.various.cluster.SLURMCluster.remove()=madgraph.various.cluster.SLURMCluster-class.html#remove,Method madgraph.various.gen_crossxhtml.RunResults.remove()=madgraph.various.gen_crossxhtml.RunResults-class.html#remove,Method models.check_param_card.Block.remove()=models.check_param_card.Block-class.html#remove"><a title="madgraph.various.cluster.Cluster.remove
+madgraph.various.cluster.CondorCluster.remove
+madgraph.various.cluster.GECluster.remove
+madgraph.various.cluster.LSFCluster.remove
+madgraph.various.cluster.PBSCluster.remove
+madgraph.various.cluster.SGECluster.remove
+madgraph.various.cluster.SLURMCluster.remove
+madgraph.various.gen_crossxhtml.RunResults.remove
+models.check_param_card.Block.remove" class="py-name" href="#" onclick="return doclink('link-86', 'remove', 'link-86');">remove</a></tt><tt class="py-op">(</tt><tt class="py-string">'ME5_debug'</tt><tt class="py-op">)</tt> </tt>
+<a name="L246"></a><tt class="py-lineno">246</tt>  <tt class="py-line">        <tt class="py-keyword">except</tt><tt class="py-op">:</tt> </tt>
+<a name="L247"></a><tt class="py-lineno">247</tt>  <tt class="py-line">           <tt class="py-keyword">pass</tt> </tt>
+<a name="L248"></a><tt class="py-lineno">248</tt>  <tt class="py-line">        <tt id="link-87" class="py-name"><a title="madgraph.interface.madevent_interface.GridPackCmd.launch
+madgraph.interface.tutorial_text.launch" class="py-name" href="#" onclick="return doclink('link-87', 'launch', 'link-79');">launch</a></tt><tt class="py-op">.</tt><tt id="link-88" class="py-name" targets="Method madgraph.interface.extended_cmd.Cmd.run_cmd()=madgraph.interface.extended_cmd.Cmd-class.html#run_cmd"><a title="madgraph.interface.extended_cmd.Cmd.run_cmd" class="py-name" href="#" onclick="return doclink('link-88', 'run_cmd', 'link-88');">run_cmd</a></tt><tt class="py-op">(</tt><tt class="py-name">command</tt><tt class="py-op">)</tt> </tt>
+<a name="L249"></a><tt class="py-lineno">249</tt>  <tt class="py-line">        <tt id="link-89" class="py-name"><a title="madgraph.interface.madevent_interface.GridPackCmd.launch
+madgraph.interface.tutorial_text.launch" class="py-name" href="#" onclick="return doclink('link-89', 'launch', 'link-79');">launch</a></tt><tt class="py-op">.</tt><tt id="link-90" class="py-name"><a title="madgraph.interface.extended_cmd.Cmd.run_cmd" class="py-name" href="#" onclick="return doclink('link-90', 'run_cmd', 'link-88');">run_cmd</a></tt><tt class="py-op">(</tt><tt class="py-string">'quit'</tt><tt class="py-op">)</tt> </tt>
+<a name="L250"></a><tt class="py-lineno">250</tt>  <tt class="py-line">         </tt>
+<a name="L251"></a><tt class="py-lineno">251</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">path</tt><tt class="py-op">.</tt><tt class="py-name">exists</tt><tt class="py-op">(</tt><tt class="py-string">'ME5_debug'</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L252"></a><tt class="py-lineno">252</tt>  <tt class="py-line">            <tt class="py-keyword">return</tt> <tt class="py-name">True</tt> </tt>
+<a name="L253"></a><tt class="py-lineno">253</tt>  <tt class="py-line">         </tt>
+<a name="L254"></a><tt class="py-lineno">254</tt>  <tt class="py-line">        <tt class="py-comment"># Display the cross-section to the screen</tt> </tt>
+<a name="L255"></a><tt class="py-lineno">255</tt>  <tt class="py-line">        <tt class="py-name">path</tt> <tt class="py-op">=</tt> <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">path</tt><tt class="py-op">.</tt><tt class="py-name">join</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">running_dir</tt><tt class="py-op">,</tt> <tt class="py-string">'SubProcesses'</tt><tt class="py-op">,</tt> <tt class="py-string">'results.dat'</tt><tt class="py-op">)</tt>  </tt>
+<a name="L256"></a><tt class="py-lineno">256</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-keyword">not</tt> <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">path</tt><tt class="py-op">.</tt><tt class="py-name">exists</tt><tt class="py-op">(</tt><tt class="py-name">path</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L257"></a><tt class="py-lineno">257</tt>  <tt class="py-line">            <tt id="link-91" class="py-name"><a title="aloha.aloha_parsers.logger
+aloha.create_aloha.logger
+madgraph.core.base_objects.logger
+madgraph.core.diagram_generation.logger
+madgraph.core.helas_objects.logger
+madgraph.interface.extended_cmd.logger
+madgraph.interface.launch_ext_program.logger
+madgraph.interface.madevent_interface.logger
+madgraph.interface.madgraph_interface.logger
+madgraph.interface.master_interface.logger
+madgraph.iolibs.export_cpp.logger
+madgraph.iolibs.export_python.logger
+madgraph.iolibs.export_v4.logger
+madgraph.iolibs.files.logger
+madgraph.iolibs.group_subprocs.logger
+madgraph.iolibs.import_v4.logger
+madgraph.iolibs.save_model.logger
+madgraph.iolibs.ufo_expression_parsers.logger
+madgraph.various.banner.logger
+madgraph.various.cluster.logger
+madgraph.various.combine_runs.logger
+madgraph.various.diagram_symmetry.logger
+madgraph.various.misc.logger
+madgraph.various.process_checks.logger
+madgraph.various.sum_html.logger
+models.check_param_card.logger
+models.import_ufo.logger
+models.model_reader.logger" class="py-name" href="#" onclick="return doclink('link-91', 'logger', 'link-22');">logger</a></tt><tt class="py-op">.</tt><tt class="py-name">error</tt><tt class="py-op">(</tt><tt class="py-string">'Generation failed (no results.dat file found)'</tt><tt class="py-op">)</tt> </tt>
+<a name="L258"></a><tt class="py-lineno">258</tt>  <tt class="py-line">            <tt class="py-keyword">return</tt> </tt>
+<a name="L259"></a><tt class="py-lineno">259</tt>  <tt class="py-line">        <tt class="py-name">fsock</tt> <tt class="py-op">=</tt> <tt id="link-92" class="py-name" targets="Variable madgraph.interface.tutorial_text.open=madgraph.interface.tutorial_text-module.html#open,Method madgraph.iolibs.export_v4.UFO_model_to_mg4.open()=madgraph.iolibs.export_v4.UFO_model_to_mg4-class.html#open"><a title="madgraph.interface.tutorial_text.open
+madgraph.iolibs.export_v4.UFO_model_to_mg4.open" class="py-name" href="#" onclick="return doclink('link-92', 'open', 'link-92');">open</a></tt><tt class="py-op">(</tt><tt class="py-name">path</tt><tt class="py-op">)</tt> </tt>
+<a name="L260"></a><tt class="py-lineno">260</tt>  <tt class="py-line">        <tt class="py-name">line</tt> <tt class="py-op">=</tt> <tt class="py-name">fsock</tt><tt class="py-op">.</tt><tt id="link-93" class="py-name" targets="Method madgraph.interface.extended_cmd.CmdFile.readline()=madgraph.interface.extended_cmd.CmdFile-class.html#readline,Method madgraph.various.misc.BackRead.readline()=madgraph.various.misc.BackRead-class.html#readline"><a title="madgraph.interface.extended_cmd.CmdFile.readline
+madgraph.various.misc.BackRead.readline" class="py-name" href="#" onclick="return doclink('link-93', 'readline', 'link-93');">readline</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L261"></a><tt class="py-lineno">261</tt>  <tt class="py-line">        <tt class="py-name">cross</tt><tt class="py-op">,</tt> <tt class="py-name">error</tt> <tt class="py-op">=</tt> <tt class="py-name">line</tt><tt class="py-op">.</tt><tt id="link-94" class="py-name" targets="Method aloha.aloha_lib.AddVariable.split()=aloha.aloha_lib.AddVariable-class.html#split,Method aloha.aloha_lib.LorentzObjectRepresentation.split()=aloha.aloha_lib.LorentzObjectRepresentation-class.html#split,Method aloha.aloha_lib.MultVariable.split()=aloha.aloha_lib.MultVariable-class.html#split,Method madgraph.various.banner.Banner.split()=madgraph.various.banner.Banner-class.html#split"><a title="aloha.aloha_lib.AddVariable.split
+aloha.aloha_lib.LorentzObjectRepresentation.split
+aloha.aloha_lib.MultVariable.split
+madgraph.various.banner.Banner.split" class="py-name" href="#" onclick="return doclink('link-94', 'split', 'link-94');">split</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">:</tt><tt class="py-number">2</tt><tt class="py-op">]</tt> </tt>
+<a name="L262"></a><tt class="py-lineno">262</tt>  <tt class="py-line">         </tt>
+<a name="L263"></a><tt class="py-lineno">263</tt>  <tt class="py-line">        <tt id="link-95" class="py-name"><a title="aloha.aloha_parsers.logger
+aloha.create_aloha.logger
+madgraph.core.base_objects.logger
+madgraph.core.diagram_generation.logger
+madgraph.core.helas_objects.logger
+madgraph.interface.extended_cmd.logger
+madgraph.interface.launch_ext_program.logger
+madgraph.interface.madevent_interface.logger
+madgraph.interface.madgraph_interface.logger
+madgraph.interface.master_interface.logger
+madgraph.iolibs.export_cpp.logger
+madgraph.iolibs.export_python.logger
+madgraph.iolibs.export_v4.logger
+madgraph.iolibs.files.logger
+madgraph.iolibs.group_subprocs.logger
+madgraph.iolibs.import_v4.logger
+madgraph.iolibs.save_model.logger
+madgraph.iolibs.ufo_expression_parsers.logger
+madgraph.various.banner.logger
+madgraph.various.cluster.logger
+madgraph.various.combine_runs.logger
+madgraph.various.diagram_symmetry.logger
+madgraph.various.misc.logger
+madgraph.various.process_checks.logger
+madgraph.various.sum_html.logger
+models.check_param_card.logger
+models.import_ufo.logger
+models.model_reader.logger" class="py-name" href="#" onclick="return doclink('link-95', 'logger', 'link-22');">logger</a></tt><tt class="py-op">.</tt><tt class="py-name">info</tt><tt class="py-op">(</tt><tt class="py-string">'more information in %s'</tt>  </tt>
+<a name="L264"></a><tt class="py-lineno">264</tt>  <tt class="py-line">                                 <tt class="py-op">%</tt> <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">path</tt><tt class="py-op">.</tt><tt class="py-name">join</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">running_dir</tt><tt class="py-op">,</tt> <tt class="py-string">'index.html'</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+</div></div><a name="L265"></a><tt class="py-lineno">265</tt>  <tt class="py-line">                 </tt>
+<a name="L266"></a><tt class="py-lineno">266</tt>  <tt class="py-line"> </tt>
+<a name="Pythia8Launcher"></a><div id="Pythia8Launcher-def"><a name="L267"></a><tt class="py-lineno">267</tt> <a class="py-toggle" href="#" id="Pythia8Launcher-toggle" onclick="return toggle('Pythia8Launcher');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="madgraph.interface.launch_ext_program.Pythia8Launcher-class.html">Pythia8Launcher</a><tt class="py-op">(</tt><tt class="py-base-class">ExtLauncher</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Pythia8Launcher-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="Pythia8Launcher-expanded"><a name="L268"></a><tt class="py-lineno">268</tt>  <tt class="py-line">    <tt class="py-docstring">"""A class to launch Pythia8 run"""</tt> </tt>
+<a name="L269"></a><tt class="py-lineno">269</tt>  <tt class="py-line">     </tt>
+<a name="Pythia8Launcher.__init__"></a><div id="Pythia8Launcher.__init__-def"><a name="L270"></a><tt class="py-lineno">270</tt> <a class="py-toggle" href="#" id="Pythia8Launcher.__init__-toggle" onclick="return toggle('Pythia8Launcher.__init__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="madgraph.interface.launch_ext_program.Pythia8Launcher-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">running_dir</tt><tt class="py-op">,</tt> <tt class="py-param">cmd_int</tt><tt class="py-op">,</tt> <tt class="py-op">**</tt><tt class="py-param">option</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Pythia8Launcher.__init__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Pythia8Launcher.__init__-expanded"><a name="L271"></a><tt class="py-lineno">271</tt>  <tt class="py-line">        <tt class="py-docstring">""" initialize launching Pythia 8"""</tt> </tt>
+<a name="L272"></a><tt class="py-lineno">272</tt>  <tt class="py-line"> </tt>
+<a name="L273"></a><tt class="py-lineno">273</tt>  <tt class="py-line">        <tt class="py-name">running_dir</tt> <tt class="py-op">=</tt> <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">path</tt><tt class="py-op">.</tt><tt class="py-name">join</tt><tt class="py-op">(</tt><tt class="py-name">running_dir</tt><tt class="py-op">,</tt> <tt class="py-string">'examples'</tt><tt class="py-op">)</tt> </tt>
+<a name="L274"></a><tt class="py-lineno">274</tt>  <tt class="py-line">        <tt id="link-96" class="py-name"><a title="madgraph.interface.launch_ext_program.ExtLauncher" class="py-name" href="#" onclick="return doclink('link-96', 'ExtLauncher', 'link-49');">ExtLauncher</a></tt><tt class="py-op">.</tt><tt id="link-97" class="py-name"><a title="aloha.aloha_lib.AddVariable.__init__
+aloha.aloha_lib.Computation.__init__
+aloha.aloha_lib.IndicesIterator.__init__
+aloha.aloha_lib.LorentzObject.__init__
+aloha.aloha_lib.LorentzObjectRepresentation.__init__
+aloha.aloha_lib.MultContainer.__init__
+aloha.aloha_lib.MultVariable.__init__
+aloha.aloha_lib.SplitCoefficient.__init__
+aloha.aloha_object.DenominatorPropagator.__init__
+aloha.aloha_object.L_C.__init__
+aloha.aloha_object.L_Coup.__init__
+aloha.aloha_object.L_Epsilon.__init__
+aloha.aloha_object.L_FCT.__init__
+aloha.aloha_object.L_Gamma.__init__
+aloha.aloha_object.L_Gamma5.__init__
+aloha.aloha_object.L_Identity.__init__
+aloha.aloha_object.L_Mass.__init__
+aloha.aloha_object.L_Metric.__init__
+aloha.aloha_object.L_OverMass2.__init__
+aloha.aloha_object.L_P.__init__
+aloha.aloha_object.L_PSlash.__init__
+aloha.aloha_object.L_ProjM.__init__
+aloha.aloha_object.L_ProjP.__init__
+aloha.aloha_object.L_Scalar.__init__
+aloha.aloha_object.L_Sigma.__init__
+aloha.aloha_object.L_Spin2.__init__
+aloha.aloha_object.L_Spin3Half.__init__
+aloha.aloha_object.L_Spinor.__init__
+aloha.aloha_object.L_Vector.__init__
+aloha.aloha_object.L_Width.__init__
+aloha.aloha_parsers.UFOExpressionParser.__init__
+aloha.aloha_writers.ALOHAWriterForFortranLoop.__init__
+aloha.aloha_writers.ALOHAWriterForFortranLoopQP.__init__
+aloha.aloha_writers.ALOHAWriterForFortranQP.__init__
+aloha.aloha_writers.WriteALOHA.__init__
+aloha.create_aloha.AbstractALOHAModel.__init__
+aloha.create_aloha.AbstractRoutine.__init__
+aloha.create_aloha.AbstractRoutineBuilder.__init__
+aloha.create_aloha.CombineRoutineBuilder.__init__
+aloha.template_files.wavefunctions.WaveFunction.__init__
+madgraph.core.base_objects.ModelVariable.__init__
+madgraph.core.base_objects.ParamCardVariable.__init__
+madgraph.core.base_objects.PhysicsObject.__init__
+madgraph.core.base_objects.PhysicsObjectList.__init__
+madgraph.core.base_objects.VertexList.__init__
+madgraph.core.color_algebra.ColorString.__init__
+madgraph.core.color_algebra.Epsilon.__init__
+madgraph.core.color_algebra.EpsilonBar.__init__
+madgraph.core.color_algebra.K6.__init__
+madgraph.core.color_algebra.K6Bar.__init__
+madgraph.core.color_algebra.T.__init__
+madgraph.core.color_algebra.T6.__init__
+madgraph.core.color_algebra.f.__init__
+madgraph.core.color_amp.ColorBasis.__init__
+madgraph.core.color_amp.ColorMatrix.__init__
+madgraph.core.diagram_generation.Amplitude.__init__
+madgraph.core.diagram_generation.DecayChainAmplitude.__init__
+madgraph.core.diagram_generation.DiagramTag.__init__
+madgraph.core.diagram_generation.DiagramTagChainLink.__init__
+madgraph.core.diagram_generation.MultiProcess.__init__
+madgraph.core.drawing.DiagramDrawer.__init__
+madgraph.core.drawing.DrawOption.__init__
+madgraph.core.drawing.FeynmanDiagram.__init__
+madgraph.core.drawing.FeynmanLine.__init__
+madgraph.core.drawing.VertexPoint.__init__
+madgraph.core.helas_objects.HelasAmplitude.__init__
+madgraph.core.helas_objects.HelasDecayChainProcess.__init__
+madgraph.core.helas_objects.HelasMatrixElement.__init__
+madgraph.core.helas_objects.HelasMultiProcess.__init__
+madgraph.core.helas_objects.HelasWavefunction.__init__
+madgraph.interface.coloring_logging.ColorFormatter.__init__
+madgraph.interface.extended_cmd.Cmd.__init__
+madgraph.interface.extended_cmd.CmdFile.__init__
+madgraph.interface.extended_cmd.SmartQuestion.__init__
+madgraph.interface.launch_ext_program.ExtLauncher.__init__
+madgraph.interface.launch_ext_program.MELauncher.__init__
+madgraph.interface.launch_ext_program.Pythia8Launcher.__init__
+madgraph.interface.launch_ext_program.SALauncher.__init__
+madgraph.interface.madevent_interface.AskforEditCard.__init__
+madgraph.interface.madevent_interface.CmdExtended.__init__
+madgraph.interface.madevent_interface.GridPackCmd.__init__
+madgraph.interface.madevent_interface.MadEventCmd.__init__
+madgraph.interface.madgraph_interface.CmdExtended.__init__
+madgraph.interface.madgraph_interface.MadGraphCmd.__init__
+madgraph.interface.master_interface.MasterCmdWeb.__init__
+madgraph.interface.master_interface.Switcher.__init__
+madgraph.iolibs.drawing_eps.MultiEpsDiagramDrawer.__init__
+madgraph.iolibs.export_cpp.ProcessExporterCPP.__init__
+madgraph.iolibs.export_cpp.ProcessExporterPythia8.__init__
+madgraph.iolibs.export_cpp.UFOModelConverterCPP.__init__
+madgraph.iolibs.export_python.ProcessExporterPython.__init__
+madgraph.iolibs.export_v4.ProcessExporterFortran.__init__
+madgraph.iolibs.export_v4.UFO_model_to_mg4.__init__
+madgraph.iolibs.file_writers.FileWriter.__init__
+madgraph.iolibs.gen_infohtml.make_info_html.__init__
+madgraph.iolibs.helas_call_writers.HelasCallWriter.__init__
+madgraph.iolibs.import_v4.ProcCardv4Reader.__init__
+madgraph.iolibs.import_v4.ProcessInfo.__init__
+madgraph.iolibs.ufo_expression_parsers.UFOExpressionParser.__init__
+madgraph.various.banner.Banner.__init__
+madgraph.various.banner.RunCard.__init__
+madgraph.various.cluster.Cluster.__init__
+madgraph.various.combine_runs.CombineRuns.__init__
+madgraph.various.gen_crossxhtml.AllResults.__init__
+madgraph.various.gen_crossxhtml.OneTagResults.__init__
+madgraph.various.gen_crossxhtml.RunResults.__init__
+madgraph.various.lhe_parser.Event.__init__
+madgraph.various.lhe_parser.EventFile.__init__
+madgraph.various.lhe_parser.Particle.__init__
+madgraph.various.misc.BackRead.__init__
+madgraph.various.misc.open_file.__init__
+madgraph.various.process_checks.MatrixElementEvaluator.__init__
+madgraph.various.rambo.DoubleFortranList.__init__
+madgraph.various.rambo.FortranList.__init__
+madgraph.various.sum_html.Combine_results.__init__
+madgraph.various.sum_html.OneResult.__init__
+models.build_restriction_lib.Category.__init__
+models.build_restriction_lib.Rule.__init__
+models.check_param_card.Block.__init__
+models.check_param_card.ParamCard.__init__
+models.check_param_card.ParamCardRule.__init__
+models.check_param_card.Parameter.__init__
+models.import_ufo.OrganizeModelExpression.__init__
+models.import_ufo.UFOMG5Converter.__init__
+models.model_reader.Alphas_Runner.__init__
+models.write_param_card.ParamCardWriter.__init__" class="py-name" href="#" onclick="return doclink('link-97', '__init__', 'link-50');">__init__</a></tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">,</tt> <tt class="py-name">cmd_int</tt><tt class="py-op">,</tt> <tt class="py-name">running_dir</tt><tt class="py-op">,</tt> <tt class="py-string">'.'</tt><tt class="py-op">,</tt> <tt class="py-op">**</tt><tt class="py-name">option</tt><tt class="py-op">)</tt> </tt>
+<a name="L275"></a><tt class="py-lineno">275</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">cards</tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-op">]</tt> </tt>
+</div><a name="L276"></a><tt class="py-lineno">276</tt>  <tt class="py-line">     </tt>
+<a name="Pythia8Launcher.prepare_run"></a><div id="Pythia8Launcher.prepare_run-def"><a name="L277"></a><tt class="py-lineno">277</tt> <a class="py-toggle" href="#" id="Pythia8Launcher.prepare_run-toggle" onclick="return toggle('Pythia8Launcher.prepare_run');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="madgraph.interface.launch_ext_program.Pythia8Launcher-class.html#prepare_run">prepare_run</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Pythia8Launcher.prepare_run-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Pythia8Launcher.prepare_run-expanded"><a name="L278"></a><tt class="py-lineno">278</tt>  <tt class="py-line">        <tt class="py-docstring">""" ask for pythia-pgs/delphes run """</tt> </tt>
+<a name="L279"></a><tt class="py-lineno">279</tt>  <tt class="py-line"> </tt>
+<a name="L280"></a><tt class="py-lineno">280</tt>  <tt class="py-line">        <tt class="py-comment"># Find all main_model_process.cc files</tt> </tt>
+<a name="L281"></a><tt class="py-lineno">281</tt>  <tt class="py-line">        <tt class="py-name">date_file_list</tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-op">]</tt> </tt>
+<a name="L282"></a><tt class="py-lineno">282</tt>  <tt class="py-line">        <tt class="py-keyword">for</tt> <tt class="py-name">file</tt> <tt class="py-keyword">in</tt> <tt class="py-name">glob</tt><tt class="py-op">.</tt><tt class="py-name">glob</tt><tt class="py-op">(</tt><tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">path</tt><tt class="py-op">.</tt><tt class="py-name">join</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">running_dir</tt><tt class="py-op">,</tt><tt class="py-string">'main_*_*.cc'</tt><tt class="py-op">)</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L283"></a><tt class="py-lineno">283</tt>  <tt class="py-line">            <tt class="py-comment"># retrieves the stats for the current file as a tuple</tt> </tt>
+<a name="L284"></a><tt class="py-lineno">284</tt>  <tt class="py-line">            <tt class="py-comment"># (mode, ino, dev, nlink, uid, gid, size, atime, mtime, ctime)</tt> </tt>
+<a name="L285"></a><tt class="py-lineno">285</tt>  <tt class="py-line">            <tt class="py-comment"># the tuple element mtime at index 8 is the last-modified-date</tt> </tt>
+<a name="L286"></a><tt class="py-lineno">286</tt>  <tt class="py-line">            <tt class="py-name">stats</tt> <tt class="py-op">=</tt> <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">stat</tt><tt class="py-op">(</tt><tt class="py-name">file</tt><tt class="py-op">)</tt> </tt>
+<a name="L287"></a><tt class="py-lineno">287</tt>  <tt class="py-line">            <tt class="py-comment"># create tuple (year yyyy, month(1-12), day(1-31), hour(0-23), minute(0-59), second(0-59),</tt> </tt>
+<a name="L288"></a><tt class="py-lineno">288</tt>  <tt class="py-line">            <tt class="py-comment"># weekday(0-6, 0 is monday), Julian day(1-366), daylight flag(-1,0 or 1)) from seconds since epoch</tt> </tt>
+<a name="L289"></a><tt class="py-lineno">289</tt>  <tt class="py-line">            <tt class="py-comment"># note:  this tuple can be sorted properly by date and time</tt> </tt>
+<a name="L290"></a><tt class="py-lineno">290</tt>  <tt class="py-line">            <tt class="py-name">lastmod_date</tt> <tt class="py-op">=</tt> <tt class="py-name">time</tt><tt class="py-op">.</tt><tt class="py-name">localtime</tt><tt class="py-op">(</tt><tt class="py-name">stats</tt><tt class="py-op">[</tt><tt class="py-number">8</tt><tt class="py-op">]</tt><tt class="py-op">)</tt> </tt>
+<a name="L291"></a><tt class="py-lineno">291</tt>  <tt class="py-line">            <tt class="py-name">date_file_list</tt><tt class="py-op">.</tt><tt id="link-98" class="py-name" targets="Method madgraph.core.base_objects.PhysicsObjectList.append()=madgraph.core.base_objects.PhysicsObjectList-class.html#append,Method models.check_param_card.Block.append()=models.check_param_card.Block-class.html#append,Method models.check_param_card.ParamCard.append()=models.check_param_card.ParamCard-class.html#append"><a title="madgraph.core.base_objects.PhysicsObjectList.append
+models.check_param_card.Block.append
+models.check_param_card.ParamCard.append" class="py-name" href="#" onclick="return doclink('link-98', 'append', 'link-98');">append</a></tt><tt class="py-op">(</tt><tt class="py-op">(</tt><tt class="py-name">lastmod_date</tt><tt class="py-op">,</tt> <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">path</tt><tt class="py-op">.</tt><tt id="link-99" class="py-name"><a title="aloha.aloha_lib.AddVariable.split
+aloha.aloha_lib.LorentzObjectRepresentation.split
+aloha.aloha_lib.MultVariable.split
+madgraph.various.banner.Banner.split" class="py-name" href="#" onclick="return doclink('link-99', 'split', 'link-94');">split</a></tt><tt class="py-op">(</tt><tt class="py-name">file</tt><tt class="py-op">)</tt><tt class="py-op">[</tt><tt class="py-op">-</tt><tt class="py-number">1</tt><tt class="py-op">]</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L292"></a><tt class="py-lineno">292</tt>  <tt class="py-line"> </tt>
+<a name="L293"></a><tt class="py-lineno">293</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-keyword">not</tt> <tt class="py-name">date_file_list</tt><tt class="py-op">:</tt> </tt>
+<a name="L294"></a><tt class="py-lineno">294</tt>  <tt class="py-line">            <tt class="py-keyword">raise</tt> <tt id="link-100" class="py-name"><a title="madgraph.MadGraph5Error" class="py-name" href="#" onclick="return doclink('link-100', 'MadGraph5Error', 'link-17');">MadGraph5Error</a></tt><tt class="py-op">,</tt> <tt class="py-string">'No Pythia output found'</tt> </tt>
+<a name="L295"></a><tt class="py-lineno">295</tt>  <tt class="py-line">        <tt class="py-comment"># Sort files according to date with newest first</tt> </tt>
+<a name="L296"></a><tt class="py-lineno">296</tt>  <tt class="py-line">        <tt class="py-name">date_file_list</tt><tt class="py-op">.</tt><tt id="link-101" class="py-name" targets="Method aloha.aloha_lib.MultVariable.sort()=aloha.aloha_lib.MultVariable-class.html#sort"><a title="aloha.aloha_lib.MultVariable.sort" class="py-name" href="#" onclick="return doclink('link-101', 'sort', 'link-101');">sort</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L297"></a><tt class="py-lineno">297</tt>  <tt class="py-line">        <tt class="py-name">date_file_list</tt><tt class="py-op">.</tt><tt class="py-name">reverse</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L298"></a><tt class="py-lineno">298</tt>  <tt class="py-line">        <tt id="link-102" class="py-name"><a title="madgraph.iolibs.files" class="py-name" href="#" onclick="return doclink('link-102', 'files', 'link-2');">files</a></tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt id="link-103" class="py-name" targets="Class madgraph.core.color_algebra.d=madgraph.core.color_algebra.d-class.html,Variable models.model_reader.Alphas_Runner.d=models.model_reader.Alphas_Runner-class.html#d"><a title="madgraph.core.color_algebra.d
+models.model_reader.Alphas_Runner.d" class="py-name" href="#" onclick="return doclink('link-103', 'd', 'link-103');">d</a></tt><tt class="py-op">[</tt><tt class="py-number">1</tt><tt class="py-op">]</tt> <tt class="py-keyword">for</tt> <tt id="link-104" class="py-name"><a title="madgraph.core.color_algebra.d
+models.model_reader.Alphas_Runner.d" class="py-name" href="#" onclick="return doclink('link-104', 'd', 'link-103');">d</a></tt> <tt class="py-keyword">in</tt> <tt class="py-name">date_file_list</tt><tt class="py-op">]</tt> </tt>
+<a name="L299"></a><tt class="py-lineno">299</tt>  <tt class="py-line">         </tt>
+<a name="L300"></a><tt class="py-lineno">300</tt>  <tt class="py-line">        <tt class="py-name">answer</tt> <tt class="py-op">=</tt> <tt class="py-string">''</tt> </tt>
+<a name="L301"></a><tt class="py-lineno">301</tt>  <tt class="py-line">        <tt class="py-name">answer</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-105" class="py-name"><a title="madgraph.interface.extended_cmd.Cmd.ask
+madgraph.interface.launch_ext_program.ExtLauncher.ask" class="py-name" href="#" onclick="return doclink('link-105', 'ask', 'link-37');">ask</a></tt><tt class="py-op">(</tt><tt class="py-string">'Select a main file to run:'</tt><tt class="py-op">,</tt> <tt id="link-106" class="py-name"><a title="madgraph.iolibs.files" class="py-name" href="#" onclick="return doclink('link-106', 'files', 'link-2');">files</a></tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> <tt id="link-107" class="py-name"><a title="madgraph.iolibs.files" class="py-name" href="#" onclick="return doclink('link-107', 'files', 'link-2');">files</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L302"></a><tt class="py-lineno">302</tt>  <tt class="py-line"> </tt>
+<a name="L303"></a><tt class="py-lineno">303</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">cards</tt><tt class="py-op">.</tt><tt id="link-108" class="py-name"><a title="madgraph.core.base_objects.PhysicsObjectList.append
+models.check_param_card.Block.append
+models.check_param_card.ParamCard.append" class="py-name" href="#" onclick="return doclink('link-108', 'append', 'link-98');">append</a></tt><tt class="py-op">(</tt><tt class="py-name">answer</tt><tt class="py-op">)</tt> </tt>
+<a name="L304"></a><tt class="py-lineno">304</tt>  <tt class="py-line">     </tt>
+<a name="L305"></a><tt class="py-lineno">305</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-109" class="py-name"><a title="madgraph.interface.launch_ext_program.ExtLauncher.executable" class="py-name" href="#" onclick="return doclink('link-109', 'executable', 'link-24');">executable</a></tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">cards</tt><tt class="py-op">[</tt><tt class="py-op">-</tt><tt class="py-number">1</tt><tt class="py-op">]</tt><tt class="py-op">.</tt><tt id="link-110" class="py-name" targets="Method aloha.aloha_lib.AddVariable.replace()=aloha.aloha_lib.AddVariable-class.html#replace,Method aloha.aloha_lib.MultVariable.replace()=aloha.aloha_lib.MultVariable-class.html#replace"><a title="aloha.aloha_lib.AddVariable.replace
+aloha.aloha_lib.MultVariable.replace" class="py-name" href="#" onclick="return doclink('link-110', 'replace', 'link-110');">replace</a></tt><tt class="py-op">(</tt><tt class="py-string">".cc"</tt><tt class="py-op">,</tt><tt class="py-string">""</tt><tt class="py-op">)</tt> </tt>
+<a name="L306"></a><tt class="py-lineno">306</tt>  <tt class="py-line"> </tt>
+<a name="L307"></a><tt class="py-lineno">307</tt>  <tt class="py-line">        <tt class="py-comment"># Assign a valid run name if not put in options</tt> </tt>
+<a name="L308"></a><tt class="py-lineno">308</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-111" class="py-name"><a title="madgraph.various.cluster.Cluster.name
+madgraph.various.cluster.CondorCluster.name
+madgraph.various.cluster.GECluster.name
+madgraph.various.cluster.LSFCluster.name
+madgraph.various.cluster.PBSCluster.name
+madgraph.various.cluster.SGECluster.name
+madgraph.various.cluster.SLURMCluster.name" class="py-name" href="#" onclick="return doclink('link-111', 'name', 'link-59');">name</a></tt> <tt class="py-op">==</tt> <tt class="py-string">''</tt><tt class="py-op">:</tt> </tt>
+<a name="L309"></a><tt class="py-lineno">309</tt>  <tt class="py-line">            <tt class="py-keyword">for</tt> <tt class="py-name">i</tt> <tt class="py-keyword">in</tt> <tt class="py-name">range</tt><tt class="py-op">(</tt><tt class="py-number">1000</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L310"></a><tt class="py-lineno">310</tt>  <tt class="py-line">                <tt class="py-name">path</tt> <tt class="py-op">=</tt> <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">path</tt><tt class="py-op">.</tt><tt class="py-name">join</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">running_dir</tt><tt class="py-op">,</tt> <tt class="py-string">''</tt><tt class="py-op">,</tt> </tt>
+<a name="L311"></a><tt class="py-lineno">311</tt>  <tt class="py-line">                                    <tt class="py-string">'%s_%02i.log'</tt> <tt class="py-op">%</tt> <tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-112" class="py-name"><a title="madgraph.interface.launch_ext_program.ExtLauncher.executable" class="py-name" href="#" onclick="return doclink('link-112', 'executable', 'link-24');">executable</a></tt><tt class="py-op">,</tt> <tt class="py-name">i</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L312"></a><tt class="py-lineno">312</tt>  <tt class="py-line">                <tt class="py-keyword">if</tt> <tt class="py-keyword">not</tt> <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">path</tt><tt class="py-op">.</tt><tt class="py-name">exists</tt><tt class="py-op">(</tt><tt class="py-name">path</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L313"></a><tt class="py-lineno">313</tt>  <tt class="py-line">                    <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-113" class="py-name"><a title="madgraph.various.cluster.Cluster.name
+madgraph.various.cluster.CondorCluster.name
+madgraph.various.cluster.GECluster.name
+madgraph.various.cluster.LSFCluster.name
+madgraph.various.cluster.PBSCluster.name
+madgraph.various.cluster.SGECluster.name
+madgraph.various.cluster.SLURMCluster.name" class="py-name" href="#" onclick="return doclink('link-113', 'name', 'link-59');">name</a></tt> <tt class="py-op">=</tt> <tt class="py-string">'%s_%02i.log'</tt> <tt class="py-op">%</tt> <tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-114" class="py-name"><a title="madgraph.interface.launch_ext_program.ExtLauncher.executable" class="py-name" href="#" onclick="return doclink('link-114', 'executable', 'link-24');">executable</a></tt><tt class="py-op">,</tt> <tt class="py-name">i</tt><tt class="py-op">)</tt> </tt>
+<a name="L314"></a><tt class="py-lineno">314</tt>  <tt class="py-line">                    <tt class="py-keyword">break</tt> </tt>
+<a name="L315"></a><tt class="py-lineno">315</tt>  <tt class="py-line">         </tt>
+<a name="L316"></a><tt class="py-lineno">316</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-115" class="py-name"><a title="madgraph.various.cluster.Cluster.name
+madgraph.various.cluster.CondorCluster.name
+madgraph.various.cluster.GECluster.name
+madgraph.various.cluster.LSFCluster.name
+madgraph.various.cluster.PBSCluster.name
+madgraph.various.cluster.SGECluster.name
+madgraph.various.cluster.SLURMCluster.name" class="py-name" href="#" onclick="return doclink('link-115', 'name', 'link-59');">name</a></tt> <tt class="py-op">==</tt> <tt class="py-string">''</tt><tt class="py-op">:</tt> </tt>
+<a name="L317"></a><tt class="py-lineno">317</tt>  <tt class="py-line">            <tt class="py-keyword">raise</tt> <tt id="link-116" class="py-name"><a title="madgraph.MadGraph5Error" class="py-name" href="#" onclick="return doclink('link-116', 'MadGraph5Error', 'link-17');">MadGraph5Error</a></tt><tt class="py-op">,</tt> <tt class="py-string">'too many runs in this directory'</tt> </tt>
+<a name="L318"></a><tt class="py-lineno">318</tt>  <tt class="py-line"> </tt>
+<a name="L319"></a><tt class="py-lineno">319</tt>  <tt class="py-line">        <tt class="py-comment"># Find all exported models</tt> </tt>
+<a name="L320"></a><tt class="py-lineno">320</tt>  <tt class="py-line">        <tt id="link-117" class="py-name" targets="Package models=models-module.html"><a title="models" class="py-name" href="#" onclick="return doclink('link-117', 'models', 'link-117');">models</a></tt> <tt class="py-op">=</tt> <tt class="py-name">glob</tt><tt class="py-op">.</tt><tt class="py-name">glob</tt><tt class="py-op">(</tt><tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">path</tt><tt class="py-op">.</tt><tt class="py-name">join</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">running_dir</tt><tt class="py-op">,</tt><tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">path</tt><tt class="py-op">.</tt><tt class="py-name">pardir</tt><tt class="py-op">,</tt> </tt>
+<a name="L321"></a><tt class="py-lineno">321</tt>  <tt class="py-line">                                        <tt class="py-string">"Processes_*"</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L322"></a><tt class="py-lineno">322</tt>  <tt class="py-line">        <tt id="link-118" class="py-name"><a title="models" class="py-name" href="#" onclick="return doclink('link-118', 'models', 'link-117');">models</a></tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">path</tt><tt class="py-op">.</tt><tt id="link-119" class="py-name"><a title="aloha.aloha_lib.AddVariable.split
+aloha.aloha_lib.LorentzObjectRepresentation.split
+aloha.aloha_lib.MultVariable.split
+madgraph.various.banner.Banner.split" class="py-name" href="#" onclick="return doclink('link-119', 'split', 'link-94');">split</a></tt><tt class="py-op">(</tt><tt class="py-name">m</tt><tt class="py-op">)</tt><tt class="py-op">[</tt><tt class="py-op">-</tt><tt class="py-number">1</tt><tt class="py-op">]</tt><tt class="py-op">.</tt><tt id="link-120" class="py-name"><a title="aloha.aloha_lib.AddVariable.replace
+aloha.aloha_lib.MultVariable.replace" class="py-name" href="#" onclick="return doclink('link-120', 'replace', 'link-110');">replace</a></tt><tt class="py-op">(</tt><tt class="py-string">"Processes_"</tt><tt class="py-op">,</tt><tt class="py-string">""</tt><tt class="py-op">)</tt> <tt class="py-keyword">for</tt> <tt class="py-name">m</tt> <tt class="py-keyword">in</tt> <tt id="link-121" class="py-name"><a title="models" class="py-name" href="#" onclick="return doclink('link-121', 'models', 'link-117');">models</a></tt><tt class="py-op">]</tt> </tt>
+<a name="L323"></a><tt class="py-lineno">323</tt>  <tt class="py-line">        <tt class="py-comment"># Extract model name from executable</tt> </tt>
+<a name="L324"></a><tt class="py-lineno">324</tt>  <tt class="py-line">        <tt id="link-122" class="py-name"><a title="models" class="py-name" href="#" onclick="return doclink('link-122', 'models', 'link-117');">models</a></tt><tt class="py-op">.</tt><tt id="link-123" class="py-name"><a title="aloha.aloha_lib.MultVariable.sort" class="py-name" href="#" onclick="return doclink('link-123', 'sort', 'link-101');">sort</a></tt><tt class="py-op">(</tt><tt id="link-124" class="py-name"><a title="madgraph.iolibs.file_writers.CPPWriter.key" class="py-name" href="#" onclick="return doclink('link-124', 'key', 'link-26');">key</a></tt><tt class="py-op">=</tt><tt class="py-name">len</tt><tt class="py-op">)</tt> </tt>
+<a name="L325"></a><tt class="py-lineno">325</tt>  <tt class="py-line">        <tt id="link-125" class="py-name"><a title="models" class="py-name" href="#" onclick="return doclink('link-125', 'models', 'link-117');">models</a></tt><tt class="py-op">.</tt><tt class="py-name">reverse</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L326"></a><tt class="py-lineno">326</tt>  <tt class="py-line">        <tt class="py-name">model_dir</tt> <tt class="py-op">=</tt> <tt class="py-string">""</tt> </tt>
+<a name="L327"></a><tt class="py-lineno">327</tt>  <tt class="py-line">        <tt class="py-keyword">for</tt> <tt class="py-name">model</tt> <tt class="py-keyword">in</tt> <tt id="link-126" class="py-name"><a title="models" class="py-name" href="#" onclick="return doclink('link-126', 'models', 'link-117');">models</a></tt><tt class="py-op">:</tt> </tt>
+<a name="L328"></a><tt class="py-lineno">328</tt>  <tt class="py-line">            <tt class="py-keyword">if</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-127" class="py-name"><a title="madgraph.interface.launch_ext_program.ExtLauncher.executable" class="py-name" href="#" onclick="return doclink('link-127', 'executable', 'link-24');">executable</a></tt><tt class="py-op">.</tt><tt id="link-128" class="py-name"><a title="aloha.aloha_lib.AddVariable.replace
+aloha.aloha_lib.MultVariable.replace" class="py-name" href="#" onclick="return doclink('link-128', 'replace', 'link-110');">replace</a></tt><tt class="py-op">(</tt><tt class="py-string">"main_"</tt><tt class="py-op">,</tt> <tt class="py-string">""</tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt class="py-name">startswith</tt><tt class="py-op">(</tt><tt class="py-name">model</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L329"></a><tt class="py-lineno">329</tt>  <tt class="py-line">                <tt class="py-name">model_dir</tt> <tt class="py-op">=</tt> <tt class="py-string">"Processes_%s"</tt> <tt class="py-op">%</tt> <tt class="py-name">model</tt> </tt>
+<a name="L330"></a><tt class="py-lineno">330</tt>  <tt class="py-line">                <tt class="py-keyword">break</tt> </tt>
+<a name="L331"></a><tt class="py-lineno">331</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">model_dir</tt><tt class="py-op">:</tt> </tt>
+<a name="L332"></a><tt class="py-lineno">332</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">model</tt> <tt class="py-op">=</tt> <tt class="py-name">model</tt> </tt>
+<a name="L333"></a><tt class="py-lineno">333</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">model_dir</tt> <tt class="py-op">=</tt> <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">path</tt><tt class="py-op">.</tt><tt class="py-name">realpath</tt><tt class="py-op">(</tt><tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">path</tt><tt class="py-op">.</tt><tt class="py-name">join</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">running_dir</tt><tt class="py-op">,</tt> </tt>
+<a name="L334"></a><tt class="py-lineno">334</tt>  <tt class="py-line">                                                           <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">path</tt><tt class="py-op">.</tt><tt class="py-name">pardir</tt><tt class="py-op">,</tt> </tt>
+<a name="L335"></a><tt class="py-lineno">335</tt>  <tt class="py-line">                                                           <tt class="py-name">model_dir</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L336"></a><tt class="py-lineno">336</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">cards</tt><tt class="py-op">.</tt><tt id="link-129" class="py-name"><a title="madgraph.core.base_objects.PhysicsObjectList.append
+models.check_param_card.Block.append
+models.check_param_card.ParamCard.append" class="py-name" href="#" onclick="return doclink('link-129', 'append', 'link-98');">append</a></tt><tt class="py-op">(</tt><tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">path</tt><tt class="py-op">.</tt><tt class="py-name">join</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">model_dir</tt><tt class="py-op">,</tt> </tt>
+<a name="L337"></a><tt class="py-lineno">337</tt>  <tt class="py-line">                                           <tt class="py-string">"param_card_%s.dat"</tt> <tt class="py-op">%</tt> <tt class="py-name">model</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L338"></a><tt class="py-lineno">338</tt>  <tt class="py-line">         </tt>
+<a name="Pythia8Launcher.launch_program"></a><div id="Pythia8Launcher.launch_program-def"><a name="L339"></a><tt class="py-lineno">339</tt> <a class="py-toggle" href="#" id="Pythia8Launcher.launch_program-toggle" onclick="return toggle('Pythia8Launcher.launch_program');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="madgraph.interface.launch_ext_program.Pythia8Launcher-class.html#launch_program">launch_program</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Pythia8Launcher.launch_program-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Pythia8Launcher.launch_program-expanded"><a name="L340"></a><tt class="py-lineno">340</tt>  <tt class="py-line">        <tt class="py-docstring">"""launch the main program"""</tt> </tt>
+<a name="L341"></a><tt class="py-lineno">341</tt>  <tt class="py-line"> </tt>
+<a name="L342"></a><tt class="py-lineno">342</tt>  <tt class="py-line">        <tt class="py-comment"># Make pythia8</tt> </tt>
+<a name="L343"></a><tt class="py-lineno">343</tt>  <tt class="py-line">        <tt class="py-keyword">print</tt> <tt class="py-string">"Running make for pythia8 directory"</tt> </tt>
+<a name="L344"></a><tt class="py-lineno">344</tt>  <tt class="py-line">        <tt id="link-130" class="py-name"><a title="madgraph.various.misc" class="py-name" href="#" onclick="return doclink('link-130', 'misc', 'link-12');">misc</a></tt><tt class="py-op">.</tt><tt id="link-131" class="py-name"><a title="madgraph.interface.extended_cmd.Cmd.compile
+madgraph.various.misc.compile" class="py-name" href="#" onclick="return doclink('link-131', 'compile', 'link-52');">compile</a></tt><tt class="py-op">(</tt><tt class="py-name">cwd</tt><tt class="py-op">=</tt><tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">path</tt><tt class="py-op">.</tt><tt class="py-name">join</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">running_dir</tt><tt class="py-op">,</tt> <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">path</tt><tt class="py-op">.</tt><tt class="py-name">pardir</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> <tt class="py-name">mode</tt><tt class="py-op">=</tt><tt class="py-string">'cpp'</tt><tt class="py-op">)</tt> </tt>
+<a name="L345"></a><tt class="py-lineno">345</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">model_dir</tt><tt class="py-op">:</tt> </tt>
+<a name="L346"></a><tt class="py-lineno">346</tt>  <tt class="py-line">            <tt class="py-keyword">print</tt> <tt class="py-string">"Running make in %s"</tt> <tt class="py-op">%</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">model_dir</tt> </tt>
+<a name="L347"></a><tt class="py-lineno">347</tt>  <tt class="py-line">            <tt id="link-132" class="py-name"><a title="madgraph.various.misc" class="py-name" href="#" onclick="return doclink('link-132', 'misc', 'link-12');">misc</a></tt><tt class="py-op">.</tt><tt id="link-133" class="py-name"><a title="madgraph.interface.extended_cmd.Cmd.compile
+madgraph.various.misc.compile" class="py-name" href="#" onclick="return doclink('link-133', 'compile', 'link-52');">compile</a></tt><tt class="py-op">(</tt><tt class="py-name">cwd</tt><tt class="py-op">=</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">model_dir</tt><tt class="py-op">,</tt> <tt class="py-name">mode</tt><tt class="py-op">=</tt><tt class="py-string">'cpp'</tt><tt class="py-op">)</tt> </tt>
+<a name="L348"></a><tt class="py-lineno">348</tt>  <tt class="py-line">        <tt class="py-comment"># Finally run make for executable</tt> </tt>
+<a name="L349"></a><tt class="py-lineno">349</tt>  <tt class="py-line">        <tt class="py-name">makefile</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-134" class="py-name"><a title="madgraph.interface.launch_ext_program.ExtLauncher.executable" class="py-name" href="#" onclick="return doclink('link-134', 'executable', 'link-24');">executable</a></tt><tt class="py-op">.</tt><tt id="link-135" class="py-name"><a title="aloha.aloha_lib.AddVariable.replace
+aloha.aloha_lib.MultVariable.replace" class="py-name" href="#" onclick="return doclink('link-135', 'replace', 'link-110');">replace</a></tt><tt class="py-op">(</tt><tt class="py-string">"main_"</tt><tt class="py-op">,</tt><tt class="py-string">"Makefile_"</tt><tt class="py-op">)</tt> </tt>
+<a name="L350"></a><tt class="py-lineno">350</tt>  <tt class="py-line">        <tt class="py-keyword">print</tt> <tt class="py-string">"Running make with %s"</tt> <tt class="py-op">%</tt> <tt class="py-name">makefile</tt> </tt>
+<a name="L351"></a><tt class="py-lineno">351</tt>  <tt class="py-line">        <tt id="link-136" class="py-name"><a title="madgraph.various.misc" class="py-name" href="#" onclick="return doclink('link-136', 'misc', 'link-12');">misc</a></tt><tt class="py-op">.</tt><tt id="link-137" class="py-name"><a title="madgraph.interface.extended_cmd.Cmd.compile
+madgraph.various.misc.compile" class="py-name" href="#" onclick="return doclink('link-137', 'compile', 'link-52');">compile</a></tt><tt class="py-op">(</tt><tt class="py-name">arg</tt><tt class="py-op">=</tt><tt class="py-op">[</tt><tt class="py-string">'-f'</tt><tt class="py-op">,</tt> <tt class="py-name">makefile</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> <tt class="py-name">cwd</tt><tt class="py-op">=</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">running_dir</tt><tt class="py-op">,</tt> <tt class="py-name">mode</tt><tt class="py-op">=</tt><tt class="py-string">'cpp'</tt><tt class="py-op">)</tt> </tt>
+<a name="L352"></a><tt class="py-lineno">352</tt>  <tt class="py-line">         </tt>
+<a name="L353"></a><tt class="py-lineno">353</tt>  <tt class="py-line">        <tt class="py-keyword">print</tt> <tt class="py-string">"Running "</tt> <tt class="py-op">+</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-138" class="py-name"><a title="madgraph.interface.launch_ext_program.ExtLauncher.executable" class="py-name" href="#" onclick="return doclink('link-138', 'executable', 'link-24');">executable</a></tt> </tt>
+<a name="L354"></a><tt class="py-lineno">354</tt>  <tt class="py-line">         </tt>
+<a name="L355"></a><tt class="py-lineno">355</tt>  <tt class="py-line">        <tt id="link-139" class="py-name" targets="Variable madgraph.interface.tutorial_text.output=madgraph.interface.tutorial_text-module.html#output,Method madgraph.various.gen_crossxhtml.AllResults.output()=madgraph.various.gen_crossxhtml.AllResults-class.html#output,Variable madgraph.various.lhe_parser.output=madgraph.various.lhe_parser-module.html#output"><a title="madgraph.interface.tutorial_text.output
+madgraph.various.gen_crossxhtml.AllResults.output
+madgraph.various.lhe_parser.output" class="py-name" href="#" onclick="return doclink('link-139', 'output', 'link-139');">output</a></tt> <tt class="py-op">=</tt> <tt id="link-140" class="py-name"><a title="madgraph.interface.tutorial_text.open
+madgraph.iolibs.export_v4.UFO_model_to_mg4.open" class="py-name" href="#" onclick="return doclink('link-140', 'open', 'link-92');">open</a></tt><tt class="py-op">(</tt><tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">path</tt><tt class="py-op">.</tt><tt class="py-name">join</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">running_dir</tt><tt class="py-op">,</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-141" class="py-name"><a title="madgraph.various.cluster.Cluster.name
+madgraph.various.cluster.CondorCluster.name
+madgraph.various.cluster.GECluster.name
+madgraph.various.cluster.LSFCluster.name
+madgraph.various.cluster.PBSCluster.name
+madgraph.various.cluster.SGECluster.name
+madgraph.various.cluster.SLURMCluster.name" class="py-name" href="#" onclick="return doclink('link-141', 'name', 'link-59');">name</a></tt><tt class="py-op">)</tt><tt class="py-op">,</tt> <tt class="py-string">'w'</tt><tt class="py-op">)</tt> </tt>
+<a name="L356"></a><tt class="py-lineno">356</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-keyword">not</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-142" class="py-name"><a title="madgraph.interface.launch_ext_program.ExtLauncher.executable" class="py-name" href="#" onclick="return doclink('link-142', 'executable', 'link-24');">executable</a></tt><tt class="py-op">.</tt><tt class="py-name">startswith</tt><tt class="py-op">(</tt><tt class="py-string">'./'</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L357"></a><tt class="py-lineno">357</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-143" class="py-name"><a title="madgraph.interface.launch_ext_program.ExtLauncher.executable" class="py-name" href="#" onclick="return doclink('link-143', 'executable', 'link-24');">executable</a></tt> <tt class="py-op">=</tt> <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">path</tt><tt class="py-op">.</tt><tt class="py-name">join</tt><tt class="py-op">(</tt><tt class="py-string">"."</tt><tt class="py-op">,</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-144" class="py-name"><a title="madgraph.interface.launch_ext_program.ExtLauncher.executable" class="py-name" href="#" onclick="return doclink('link-144', 'executable', 'link-24');">executable</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L358"></a><tt class="py-lineno">358</tt>  <tt class="py-line">        <tt class="py-name">subprocess</tt><tt class="py-op">.</tt><tt id="link-145" class="py-name"><a title="madgraph.various.misc.call" class="py-name" href="#" onclick="return doclink('link-145', 'call', 'link-32');">call</a></tt><tt class="py-op">(</tt><tt class="py-op">[</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-146" class="py-name"><a title="madgraph.interface.launch_ext_program.ExtLauncher.executable" class="py-name" href="#" onclick="return doclink('link-146', 'executable', 'link-24');">executable</a></tt><tt class="py-op">]</tt><tt class="py-op">,</tt> <tt class="py-name">stdout</tt> <tt class="py-op">=</tt> <tt id="link-147" class="py-name"><a title="madgraph.interface.tutorial_text.output
+madgraph.various.gen_crossxhtml.AllResults.output
+madgraph.various.lhe_parser.output" class="py-name" href="#" onclick="return doclink('link-147', 'output', 'link-139');">output</a></tt><tt class="py-op">,</tt> <tt class="py-name">stderr</tt> <tt class="py-op">=</tt> <tt id="link-148" class="py-name"><a title="madgraph.interface.tutorial_text.output
+madgraph.various.gen_crossxhtml.AllResults.output
+madgraph.various.lhe_parser.output" class="py-name" href="#" onclick="return doclink('link-148', 'output', 'link-139');">output</a></tt><tt class="py-op">,</tt> </tt>
+<a name="L359"></a><tt class="py-lineno">359</tt>  <tt class="py-line">                        <tt class="py-name">cwd</tt><tt class="py-op">=</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">running_dir</tt><tt class="py-op">)</tt> </tt>
+<a name="L360"></a><tt class="py-lineno">360</tt>  <tt class="py-line">         </tt>
+<a name="L361"></a><tt class="py-lineno">361</tt>  <tt class="py-line">        <tt class="py-comment"># Display the cross-section to the screen</tt> </tt>
+<a name="L362"></a><tt class="py-lineno">362</tt>  <tt class="py-line">        <tt class="py-name">path</tt> <tt class="py-op">=</tt> <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">path</tt><tt class="py-op">.</tt><tt class="py-name">join</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">running_dir</tt><tt class="py-op">,</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-149" class="py-name"><a title="madgraph.various.cluster.Cluster.name
+madgraph.various.cluster.CondorCluster.name
+madgraph.various.cluster.GECluster.name
+madgraph.various.cluster.LSFCluster.name
+madgraph.various.cluster.PBSCluster.name
+madgraph.various.cluster.SGECluster.name
+madgraph.various.cluster.SLURMCluster.name" class="py-name" href="#" onclick="return doclink('link-149', 'name', 'link-59');">name</a></tt><tt class="py-op">)</tt>  </tt>
+<a name="L363"></a><tt class="py-lineno">363</tt>  <tt class="py-line">        <tt class="py-name">pydoc</tt><tt class="py-op">.</tt><tt class="py-name">pager</tt><tt class="py-op">(</tt><tt id="link-150" class="py-name"><a title="madgraph.interface.tutorial_text.open
+madgraph.iolibs.export_v4.UFO_model_to_mg4.open" class="py-name" href="#" onclick="return doclink('link-150', 'open', 'link-92');">open</a></tt><tt class="py-op">(</tt><tt class="py-name">path</tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt id="link-151" class="py-name" targets="Method models.check_param_card.ParamCard.read()=models.check_param_card.ParamCard-class.html#read"><a title="models.check_param_card.ParamCard.read" class="py-name" href="#" onclick="return doclink('link-151', 'read', 'link-151');">read</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L364"></a><tt class="py-lineno">364</tt>  <tt class="py-line"> </tt>
+<a name="L365"></a><tt class="py-lineno">365</tt>  <tt class="py-line">        <tt class="py-keyword">print</tt> <tt class="py-string">"Output of the run is found at "</tt> <tt class="py-op">+</tt> \ </tt>
+<a name="L366"></a><tt class="py-lineno">366</tt>  <tt class="py-line">              <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">path</tt><tt class="py-op">.</tt><tt class="py-name">realpath</tt><tt class="py-op">(</tt><tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">path</tt><tt class="py-op">.</tt><tt class="py-name">join</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">running_dir</tt><tt class="py-op">,</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-152" class="py-name"><a title="madgraph.various.cluster.Cluster.name
+madgraph.various.cluster.CondorCluster.name
+madgraph.various.cluster.GECluster.name
+madgraph.various.cluster.LSFCluster.name
+madgraph.various.cluster.PBSCluster.name
+madgraph.various.cluster.SGECluster.name
+madgraph.various.cluster.SLURMCluster.name" class="py-name" href="#" onclick="return doclink('link-152', 'name', 'link-59');">name</a></tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+</div></div><a name="L367"></a><tt class="py-lineno">367</tt>  <tt class="py-line"> </tt>
+<a name="L368"></a><tt class="py-lineno">368</tt>  <tt class="py-line"><tt class="py-comment"># old compatibility shortcut</tt> </tt>
+<a name="L369"></a><tt class="py-lineno">369</tt>  <tt class="py-line"><tt id="link-153" class="py-name"><a title="madgraph.various.misc.open_file" class="py-name" href="#" onclick="return doclink('link-153', 'open_file', 'link-34');">open_file</a></tt> <tt class="py-op">=</tt> <tt id="link-154" class="py-name"><a title="madgraph.various.misc" class="py-name" href="#" onclick="return doclink('link-154', 'misc', 'link-12');">misc</a></tt><tt class="py-op">.</tt><tt id="link-155" class="py-name"><a title="madgraph.various.misc.open_file" class="py-name" href="#" onclick="return doclink('link-155', 'open_file', 'link-34');">open_file</a></tt> </tt>
+<a name="L370"></a><tt class="py-lineno">370</tt>  <tt class="py-line"> </tt><script type="text/javascript">
+<!--
+expandto(location.href);
+// -->
+</script>
+</pre>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Fri Jun 21 10:41:29 2013
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

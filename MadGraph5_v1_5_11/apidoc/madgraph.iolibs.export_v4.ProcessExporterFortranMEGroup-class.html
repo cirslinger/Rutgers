@@ -1,0 +1,583 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>madgraph.iolibs.export_v4.ProcessExporterFortranMEGroup</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="madgraph-module.html">Package&nbsp;madgraph</a> ::
+        <a href="madgraph.iolibs-module.html">Package&nbsp;iolibs</a> ::
+        <a href="madgraph.iolibs.export_v4-module.html">Module&nbsp;export_v4</a> ::
+        Class&nbsp;ProcessExporterFortranMEGroup
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="madgraph.iolibs.export_v4.ProcessExporterFortranMEGroup-class.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS DESCRIPTION ==================== -->
+<h1 class="epydoc">Class ProcessExporterFortranMEGroup</h1><p class="nomargin-top"><span class="codelink"><a href="madgraph.iolibs.export_v4-pysrc.html#ProcessExporterFortranMEGroup">source&nbsp;code</a></span></p>
+<pre class="base-tree">
+            object --+        
+                     |        
+<a href="madgraph.iolibs.export_v4.ProcessExporterFortran-class.html">ProcessExporterFortran</a> --+    
+                         |    
+  <a href="madgraph.iolibs.export_v4.ProcessExporterFortranME-class.html">ProcessExporterFortranME</a> --+
+                             |
+                            <strong class="uidshort">ProcessExporterFortranMEGroup</strong>
+</pre>
+
+<hr />
+<p>Class to take care of exporting a set of matrix elements to MadEvent 
+  subprocess group format.</p>
+
+<!-- ==================== INSTANCE METHODS ==================== -->
+<a name="section-InstanceMethods"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Instance Methods</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-InstanceMethods"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="madgraph.iolibs.export_v4.ProcessExporterFortranMEGroup-class.html#generate_subprocess_directory_v4" class="summary-sig-name">generate_subprocess_directory_v4</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">subproc_group</span>,
+        <span class="summary-sig-arg">fortran_model</span>,
+        <span class="summary-sig-arg">group_number</span>)</span><br />
+      Generate the Pn directory for a subprocess group in MadEvent, 
+      including the necessary matrix_N.f files, configs.inc and various 
+      other helper files</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="madgraph.iolibs.export_v4-pysrc.html#ProcessExporterFortranMEGroup.generate_subprocess_directory_v4">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="write_super_auto_dsig_file"></a><span class="summary-sig-name">write_super_auto_dsig_file</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">writer</span>,
+        <span class="summary-sig-arg">subproc_group</span>)</span><br />
+      Write the auto_dsig.f file selecting between the subprocesses in 
+      subprocess group mode</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="madgraph.iolibs.export_v4-pysrc.html#ProcessExporterFortranMEGroup.write_super_auto_dsig_file">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="write_mirrorprocs"></a><span class="summary-sig-name">write_mirrorprocs</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">writer</span>,
+        <span class="summary-sig-arg">subproc_group</span>)</span><br />
+      Write the mirrorprocs.inc file determining which processes have IS 
+      mirror process in subprocess group mode.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="madgraph.iolibs.export_v4-pysrc.html#ProcessExporterFortranMEGroup.write_mirrorprocs">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="madgraph.iolibs.export_v4.ProcessExporterFortranMEGroup-class.html#write_coloramps_file" class="summary-sig-name">write_coloramps_file</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">writer</span>,
+        <span class="summary-sig-arg">diagrams_for_config</span>,
+        <span class="summary-sig-arg">maxflows</span>,
+        <span class="summary-sig-arg">matrix_elements</span>)</span><br />
+      Write the coloramps.inc file for MadEvent in Subprocess group mode</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="madgraph.iolibs.export_v4-pysrc.html#ProcessExporterFortranMEGroup.write_coloramps_file">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="madgraph.iolibs.export_v4.ProcessExporterFortranMEGroup-class.html#write_config_subproc_map_file" class="summary-sig-name">write_config_subproc_map_file</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">writer</span>,
+        <span class="summary-sig-arg">config_subproc_map</span>)</span><br />
+      Write the config_subproc_map.inc file for subprocess groups</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="madgraph.iolibs.export_v4-pysrc.html#ProcessExporterFortranMEGroup.write_config_subproc_map_file">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="madgraph.iolibs.export_v4.ProcessExporterFortranMEGroup-class.html#write_configs_file" class="summary-sig-name">write_configs_file</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">writer</span>,
+        <span class="summary-sig-arg">subproc_group</span>,
+        <span class="summary-sig-arg">diagrams_for_config</span>)</span><br />
+      Write the configs.inc file with topology information for a subprocess
+      group.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="madgraph.iolibs.export_v4-pysrc.html#ProcessExporterFortranMEGroup.write_configs_file">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="madgraph.iolibs.export_v4.ProcessExporterFortranMEGroup-class.html#write_run_config_file" class="summary-sig-name">write_run_config_file</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">writer</span>)</span><br />
+      Write the run_configs.inc file for MadEvent</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="madgraph.iolibs.export_v4-pysrc.html#ProcessExporterFortranMEGroup.write_run_config_file">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="madgraph.iolibs.export_v4.ProcessExporterFortranMEGroup-class.html#write_leshouche_file" class="summary-sig-name">write_leshouche_file</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">writer</span>,
+        <span class="summary-sig-arg">subproc_group</span>)</span><br />
+      Write the leshouche.inc file for MG4</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="madgraph.iolibs.export_v4-pysrc.html#ProcessExporterFortranMEGroup.write_leshouche_file">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="madgraph.iolibs.export_v4.ProcessExporterFortranME-class.html">ProcessExporterFortranME</a></code></b>:
+      <code><a href="madgraph.iolibs.export_v4.ProcessExporterFortranME-class.html#convert_model_to_mg4">convert_model_to_mg4</a></code>,
+      <code><a href="madgraph.iolibs.export_v4.ProcessExporterFortranME-class.html#copy_python_file">copy_python_file</a></code>,
+      <code><a href="madgraph.iolibs.export_v4.ProcessExporterFortranME-class.html#copy_v4template">copy_v4template</a></code>,
+      <code><a href="madgraph.iolibs.export_v4.ProcessExporterFortranME-class.html#export_model_files">export_model_files</a></code>,
+      <code><a href="madgraph.iolibs.export_v4.ProcessExporterFortranME-class.html#finalize_v4_directory">finalize_v4_directory</a></code>,
+      <code><a href="madgraph.iolibs.export_v4.ProcessExporterFortranME-class.html#get_leshouche_lines">get_leshouche_lines</a></code>,
+      <code><a href="madgraph.iolibs.export_v4.ProcessExporterFortranME-class.html#write_auto_dsig_file">write_auto_dsig_file</a></code>,
+      <code><a href="madgraph.iolibs.export_v4.ProcessExporterFortranME-class.html#write_colors_file">write_colors_file</a></code>,
+      <code><a href="madgraph.iolibs.export_v4.ProcessExporterFortranME-class.html#write_combine_events">write_combine_events</a></code>,
+      <code><a href="madgraph.iolibs.export_v4.ProcessExporterFortranME-class.html#write_configs_file_from_diagrams">write_configs_file_from_diagrams</a></code>,
+      <code><a href="madgraph.iolibs.export_v4.ProcessExporterFortranME-class.html#write_decayBW_file">write_decayBW_file</a></code>,
+      <code><a href="madgraph.iolibs.export_v4.ProcessExporterFortranME-class.html#write_default_mg_sym_file">write_default_mg_sym_file</a></code>,
+      <code><a href="madgraph.iolibs.export_v4.ProcessExporterFortranME-class.html#write_dname_file">write_dname_file</a></code>,
+      <code><a href="madgraph.iolibs.export_v4.ProcessExporterFortranME-class.html#write_driver">write_driver</a></code>,
+      <code><a href="madgraph.iolibs.export_v4.ProcessExporterFortranME-class.html#write_iproc_file">write_iproc_file</a></code>,
+      <code><a href="madgraph.iolibs.export_v4.ProcessExporterFortranME-class.html#write_matrix_element_v4">write_matrix_element_v4</a></code>,
+      <code><a href="madgraph.iolibs.export_v4.ProcessExporterFortranME-class.html#write_maxamps_file">write_maxamps_file</a></code>,
+      <code><a href="madgraph.iolibs.export_v4.ProcessExporterFortranME-class.html#write_maxconfigs_file">write_maxconfigs_file</a></code>,
+      <code><a href="madgraph.iolibs.export_v4.ProcessExporterFortranME-class.html#write_maxparticles_file">write_maxparticles_file</a></code>,
+      <code><a href="madgraph.iolibs.export_v4.ProcessExporterFortranME-class.html#write_mg_sym_file">write_mg_sym_file</a></code>,
+      <code><a href="madgraph.iolibs.export_v4.ProcessExporterFortranME-class.html#write_ncombs_file">write_ncombs_file</a></code>,
+      <code><a href="madgraph.iolibs.export_v4.ProcessExporterFortranME-class.html#write_processes_file">write_processes_file</a></code>,
+      <code><a href="madgraph.iolibs.export_v4.ProcessExporterFortranME-class.html#write_props_file">write_props_file</a></code>,
+      <code><a href="madgraph.iolibs.export_v4.ProcessExporterFortranME-class.html#write_subproc">write_subproc</a></code>,
+      <code><a href="madgraph.iolibs.export_v4.ProcessExporterFortranME-class.html#write_symfact_file">write_symfact_file</a></code>,
+      <code><a href="madgraph.iolibs.export_v4.ProcessExporterFortranME-class.html#write_symmetry">write_symmetry</a></code>,
+      <code><a href="madgraph.iolibs.export_v4.ProcessExporterFortranME-class.html#write_symperms_file">write_symperms_file</a></code>,
+      <code><a href="madgraph.iolibs.export_v4.ProcessExporterFortranME-class.html#write_symswap_file">write_symswap_file</a></code>
+      </p>
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="madgraph.iolibs.export_v4.ProcessExporterFortran-class.html">ProcessExporterFortran</a></code></b>:
+      <code><a href="madgraph.iolibs.export_v4.ProcessExporterFortran-class.html#__init__">__init__</a></code>,
+      <code><a href="madgraph.iolibs.export_v4.ProcessExporterFortran-class.html#coeff">coeff</a></code>,
+      <code><a href="madgraph.iolibs.export_v4.ProcessExporterFortran-class.html#export_helas">export_helas</a></code>,
+      <code><a href="madgraph.iolibs.export_v4.ProcessExporterFortran-class.html#get_JAMP_lines">get_JAMP_lines</a></code>,
+      <code><a href="madgraph.iolibs.export_v4.ProcessExporterFortran-class.html#get_amp2_lines">get_amp2_lines</a></code>,
+      <code><a href="madgraph.iolibs.export_v4.ProcessExporterFortran-class.html#get_color_data_lines">get_color_data_lines</a></code>,
+      <code><a href="madgraph.iolibs.export_v4.ProcessExporterFortran-class.html#get_den_factor_line">get_den_factor_line</a></code>,
+      <code><a href="madgraph.iolibs.export_v4.ProcessExporterFortran-class.html#get_helicity_lines">get_helicity_lines</a></code>,
+      <code><a href="madgraph.iolibs.export_v4.ProcessExporterFortran-class.html#get_ic_line">get_ic_line</a></code>,
+      <code><a href="madgraph.iolibs.export_v4.ProcessExporterFortran-class.html#get_icolamp_lines">get_icolamp_lines</a></code>,
+      <code><a href="madgraph.iolibs.export_v4.ProcessExporterFortran-class.html#get_mg5_info_lines">get_mg5_info_lines</a></code>,
+      <code><a href="madgraph.iolibs.export_v4.ProcessExporterFortran-class.html#get_pdf_lines">get_pdf_lines</a></code>,
+      <code><a href="madgraph.iolibs.export_v4.ProcessExporterFortran-class.html#get_process_info_lines">get_process_info_lines</a></code>,
+      <code><a href="madgraph.iolibs.export_v4.ProcessExporterFortran-class.html#make_model_symbolic_link">make_model_symbolic_link</a></code>,
+      <code><a href="madgraph.iolibs.export_v4.ProcessExporterFortran-class.html#replace_make_opt_compiler">replace_make_opt_compiler</a></code>,
+      <code><a href="madgraph.iolibs.export_v4.ProcessExporterFortran-class.html#set_compiler">set_compiler</a></code>,
+      <code><a href="madgraph.iolibs.export_v4.ProcessExporterFortran-class.html#write_nexternal_file">write_nexternal_file</a></code>,
+      <code><a href="madgraph.iolibs.export_v4.ProcessExporterFortran-class.html#write_ngraphs_file">write_ngraphs_file</a></code>,
+      <code><a href="madgraph.iolibs.export_v4.ProcessExporterFortran-class.html#write_pmass_file">write_pmass_file</a></code>,
+      <code><a href="madgraph.iolibs.export_v4.ProcessExporterFortran-class.html#write_procdef_mg5">write_procdef_mg5</a></code>,
+      <code><a href="madgraph.iolibs.export_v4.ProcessExporterFortran-class.html#write_source_makefile">write_source_makefile</a></code>
+      </p>
+    <p class="indent-wrapped-lines"><b>Inherited from <code>object</code></b>:
+      <code>__delattr__</code>,
+      <code>__format__</code>,
+      <code>__getattribute__</code>,
+      <code>__hash__</code>,
+      <code>__new__</code>,
+      <code>__reduce__</code>,
+      <code>__reduce_ex__</code>,
+      <code>__repr__</code>,
+      <code>__setattr__</code>,
+      <code>__sizeof__</code>,
+      <code>__str__</code>,
+      <code>__subclasshook__</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS VARIABLES ==================== -->
+<a name="section-ClassVariables"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Class Variables</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-ClassVariables"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="matrix_file"></a><span class="summary-name">matrix_file</span> = <code title="'matrix_madevent_group_v4.inc'"><code class="variable-quote">'</code><code class="variable-string">matrix_madevent_group_v4.inc</code><code class="variable-quote">'</code></code>
+    </td>
+  </tr>
+</table>
+<!-- ==================== PROPERTIES ==================== -->
+<a name="section-Properties"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Properties</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-Properties"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code>object</code></b>:
+      <code>__class__</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== METHOD DETAILS ==================== -->
+<a name="section-MethodDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Method Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-MethodDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="generate_subprocess_directory_v4"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">generate_subprocess_directory_v4</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">subproc_group</span>,
+        <span class="sig-arg">fortran_model</span>,
+        <span class="sig-arg">group_number</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="madgraph.iolibs.export_v4-pysrc.html#ProcessExporterFortranMEGroup.generate_subprocess_directory_v4">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Generate the Pn directory for a subprocess group in MadEvent, 
+  including the necessary matrix_N.f files, configs.inc and various other 
+  helper files</p>
+  <dl class="fields">
+    <dt>Overrides:
+        <a href="madgraph.iolibs.export_v4.ProcessExporterFortran-class.html#generate_subprocess_directory_v4">ProcessExporterFortran.generate_subprocess_directory_v4</a>
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="write_coloramps_file"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">write_coloramps_file</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">writer</span>,
+        <span class="sig-arg">diagrams_for_config</span>,
+        <span class="sig-arg">maxflows</span>,
+        <span class="sig-arg">matrix_elements</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="madgraph.iolibs.export_v4-pysrc.html#ProcessExporterFortranMEGroup.write_coloramps_file">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Write the coloramps.inc file for MadEvent in Subprocess group mode</p>
+  <dl class="fields">
+    <dt>Overrides:
+        <a href="madgraph.iolibs.export_v4.ProcessExporterFortranME-class.html#write_coloramps_file">ProcessExporterFortranME.write_coloramps_file</a>
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="write_config_subproc_map_file"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">write_config_subproc_map_file</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">writer</span>,
+        <span class="sig-arg">config_subproc_map</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="madgraph.iolibs.export_v4-pysrc.html#ProcessExporterFortranMEGroup.write_config_subproc_map_file">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Write the config_subproc_map.inc file for subprocess groups</p>
+  <dl class="fields">
+    <dt>Overrides:
+        <a href="madgraph.iolibs.export_v4.ProcessExporterFortranME-class.html#write_config_subproc_map_file">ProcessExporterFortranME.write_config_subproc_map_file</a>
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="write_configs_file"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">write_configs_file</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">writer</span>,
+        <span class="sig-arg">subproc_group</span>,
+        <span class="sig-arg">diagrams_for_config</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="madgraph.iolibs.export_v4-pysrc.html#ProcessExporterFortranMEGroup.write_configs_file">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Write the configs.inc file with topology information for a subprocess 
+  group. Use the first subprocess with a diagram for each 
+  configuration.</p>
+  <dl class="fields">
+    <dt>Overrides:
+        <a href="madgraph.iolibs.export_v4.ProcessExporterFortranME-class.html#write_configs_file">ProcessExporterFortranME.write_configs_file</a>
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="write_run_config_file"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">write_run_config_file</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">writer</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="madgraph.iolibs.export_v4-pysrc.html#ProcessExporterFortranMEGroup.write_run_config_file">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Write the run_configs.inc file for MadEvent</p>
+  <dl class="fields">
+    <dt>Overrides:
+        <a href="madgraph.iolibs.export_v4.ProcessExporterFortranME-class.html#write_run_config_file">ProcessExporterFortranME.write_run_config_file</a>
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="write_leshouche_file"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">write_leshouche_file</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">writer</span>,
+        <span class="sig-arg">subproc_group</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="madgraph.iolibs.export_v4-pysrc.html#ProcessExporterFortranMEGroup.write_leshouche_file">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Write the leshouche.inc file for MG4</p>
+  <dl class="fields">
+    <dt>Overrides:
+        <a href="madgraph.iolibs.export_v4.ProcessExporterFortranME-class.html#write_leshouche_file">ProcessExporterFortranME.write_leshouche_file</a>
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Fri Jun 21 10:41:22 2013
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

@@ -1,0 +1,441 @@
+   h1f = new TH1F("h1f","Test random numbers",200,0,10);
+   h1f->SetFillColor(45);
+   h1f->FillRandom("sqroot",10000);
+   h1f->Draw();
+   c1->Update();
+   //
+   // Open a ROOT file and save the formula, function and histogram
+   //
+   TFile myfile("fillrandom.root","RECREATE");
+   form1->Write();
+   sqroot->Write();
+   h1f->Write();
+   gBenchmark->Show("fillrandom");
+}
+q.
+.q
+ TCanvas *c1 = new TCanvas("c1","The FillRandom example",200,10,700,900);
+end
+?
+sqroot = new TF1("sqroot","x*gaus(0) + [3]*form1",0,10);
+   c1->SetFillColor(18);
+   pad1 = new TPad("pad1","The pad with the function",0.05,0.50,0.95,0.95,21);
+   pad2 = new TPad("pad2","The pad with the histogram",0.05,0.05,0.95,0.45,21);
+   pad1->Draw();
+   pad2->Draw();
+   pad1->cd();
+   gBenchmark->Start("fillrandom");
+   //
+   // A function (any dimension) or a formula may reference
+   // an already defined formula
+   //
+   form1 = new TFormula("form1","abs(sin(x)/x)");
+   sqroot = new TF1("sqroot","x*gaus(0) + [3]*form1",0,10);
+   sqroot->SetParameters(10,4,1,20);
+   pad1->SetGridx();
+   pad1->SetGridy();
+   pad1->GetFrame()->SetFillColor(42);
+   pad1->GetFrame()->SetBorderMode(-1);
+   pad1->GetFrame()->SetBorderSize(5);
+   sqroot->SetLineColor(4);
+   sqroot->SetLineWidth(6);
+   sqroot->Draw();
+   lfunction = new TPaveLabel(5,39,9.8,46,"The sqroot function");
+   lfunction->SetFillColor(41);
+   lfunction->Draw();
+   c1->Update();
+   //
+   // Create a one dimensional histogram (one float per bin)
+   // and fill it following the distribution in function sqroot.
+   //
+   pad2->cd();
+   pad2->GetFrame()->SetFillColor(42);
+   pad2->GetFrame()->SetBorderMode(-1);
+   pad2->GetFrame()->SetBorderSize(5);
+   h1f = new TH1F("h1f","Test random numbers",200,0,10);
+   h1f->SetFillColor(45);
+   h1f->FillRandom("sqroot",10000);
+   h1f->Draw();
+   c1->Update();
+   //
+   // Open a ROOT file and save the formula, function and histogram
+   //
+   TFile myfile("fillrandom.root","RECREATE");
+   form1->Write();
+   sqroot->Write();
+   h1f->Write();
+   gBenchmark->Show("fillrandom");
+}
+ fillrandom.C:1
+ fillrandom.C:2
+ fillrandom.C:3
+ fillrandom.C:4
+ fillrandom.C:5
+ fillrandom.C:6
+ fillrandom.C:7
+ fillrandom.C:8
+ fillrandom.C:9
+ fillrandom.C:10
+ fillrandom.C:11
+ fillrandom.C:12
+ fillrandom.C:13
+ fillrandom.C:14
+ fillrandom.C:15
+ fillrandom.C:16
+ fillrandom.C:17
+ fillrandom.C:18
+ fillrandom.C:19
+ fillrandom.C:20
+ fillrandom.C:21
+ fillrandom.C:22
+ fillrandom.C:23
+ fillrandom.C:24
+ fillrandom.C:25
+ fillrandom.C:26
+ fillrandom.C:27
+ fillrandom.C:28
+ fillrandom.C:29
+ fillrandom.C:30
+ fillrandom.C:31
+ fillrandom.C:32
+ fillrandom.C:33
+ fillrandom.C:34
+ fillrandom.C:35
+ fillrandom.C:36
+ fillrandom.C:37
+ fillrandom.C:38
+ fillrandom.C:39
+ fillrandom.C:40
+ fillrandom.C:41
+ fillrandom.C:42
+ fillrandom.C:43
+ fillrandom.C:44
+ fillrandom.C:45
+ fillrandom.C:46
+ fillrandom.C:47
+ fillrandom.C:48
+ fillrandom.C:49
+ fillrandom.C:50
+ fillrandom.C:51
+ fillrandom.C:52
+ fillrandom.C:53
+ fillrandom.C:54
+ fillrandom.C:55
+ fillrandom.C:56
+TH1F *my_hist = new TH1F("my_hist", "My First Histogram", 100, 2,200)
+my_hist->Draw()
+;
+my_hist->Fill(50);
+my_hist->Fill(100,3)
+;
+my_hist->Draw();
+.q
+TH1F *ny_hist = new TH1F ("my_hist", "My First Histogram", 100, 2 ,200);
+my_hist->Draw()
+;
+*** DISPLAY not set, setting it to pool-108-5-129-96.nwrknj.fios.verizon.net:0.0
+?
+pwd
+ls
+debug
+pwd.
+ls.
+q.
+.q
+.pwd
+->
+TH1F *my_hist = new TH1F(my_hist, My First Histogram, 
+100, 2, 200
+)my_hist->Draw();
+)my_hist->Draw();
+my_hist->Draw();
+TH1F *my_hist = new TH1F(my_hist, My First Histogram, 
+100, 2, 200
+);
+)TH1F *my_hist = new TH1F(my_hist, My First Histogram, 
+100, 2, 200
+.q
+TH1F *my_hist = new TH1F ("my_hist", "WORDS HERE", 100,2,200) ;
+my_hist->Draw();
+root [2] .q
+TH1F *hist = new TH1F("hist", "histogram", 5,2,10);
+hist->Draw();
+hist->Fill(2);
+hist->Fill(5,3);
+hist->Draw();
+hist->SetLineColor(2);
+hist->Draw();
+hist->Write();
+hist
+hist->Write("newName");
+hist->Fill(0)
+hist->Write("newName");
+?
+.pwd
+.which hist
+.L hist
+hist
+.X hist
+.q
+irslinger
+TH1F *histo = new TH1F("histo", "HISTOGRAM",100,2,200);
+histo->Draw()
+-Y
+histo->SetDirectory(0);
+histo->Fill(50);
+histo->Fill(100,3);
+histo->Draw();
+histo->SetLineColor(2);
+histo->Draw();
+TFile f("histos.root","new:);
+@
+histo->Write();
+c1
+c1->Write()
+.q
+23+5
+TH1F *h1 = new TH1F ("h1", "Histogram", 50, 2, 100);
+h1.Draw();
+h1.Draw();
+TH1F* h1=(TH1F*) gDirectory->Get("Histogram");
+h1
+.?
+int b = 0;
+int xl=0;
+int xh=100;
+c1->SaveAs("myimage.C");
+TFile f("h1.root");
+Tfile f("myimage.C");
+TFile f("c1.root");
+h1
+c1
+myimage.C
+.q
+.q
+display
+.display
+.?
+.q
+.q
+anvas::SaveSource>: C++ Macro file: myimage.C has been generated
+.q
+.q
+TH1F *my_hist = new TH1F("my_hist", "My First Histogram", 100, 2, 200);
+my_hist.Draw();
+my_hist.Draw();
+TH1F *h1 = new TH1F("h1", "My Second Histogram!", 100, 0, 100);
+h1.Draw();
+h1.Fill(50);
+h1.Fill(99,3);
+h1.Draw();
+TH1F *h1 = new TH1F("h1", "My Second Histogram!", 100, 0, 100);
+h1.Draw();
+h1.Fill(50);
+h1.Fill(99,3);
+h1.Draw();
+TH1F *h1 = new TH1F("h1", "My Second Histogram!", 100, 0, 100);
+h1.Draw();
+.q
+TF1 *f1 = new TF1("f1", "gaus", 0 , 3);
+myfunc->SetParameters(10.,1.5,0.5);
+f1->SetParameters(10.,1.5,0.5);
+TH1F *h2 = new TH1F ("h2", "Histo From Gaus", 50,0,3);
+h2->FillRandom("f1",10000);
+h2->Draw();
+.q
+canvas
+.q
+TH1F *h1("h1","CHRIS YOU SUCK", 10, 0 , 50);
+TH1F *h1 = new TH1F ("h1","CHRIS YOU SUCK", 10, 0 , 50);
+h1.Draw()
+TH1F *h1 = new TH1F ("h1","CHRIS YOU SUCK", 10, 0 , 50);
+h1.Draw()
+.q
+.q
+draw()
+.q
+.q
+.q
+.q
+.q
+.q
+.w
+.q
+.q
+.q
+.q
+TH1F *h0 = new TH1F ("h0", "Gauss Histogram", 100, 2, 200);
+h0.Draw();
+TF1 *f0 = new TF1("f0", "gaus", 0 , 3);
+f0.SetParameters(10.1.5,0.5);
+f0.Draw()
+h0.FillRandom("f0",10000);
+h0.Draw()
+.q
+TH1F *h1 = new TH1F ("h1", "Histo from gaus", 50, 0, 3);
+h1.FillRandom("h1",10000);
+h1.FillRandom("f0", 10000);
+TF1 *f0 = new TF1("f0", "gaus", 0 , 3);
+f0.SetParameters(10.1.5,0.5);
+f0.Draw()
+h1.FillRandom("f0", 10000);
+h1.Draw();
+.q
+TF1 *f0 = new TF1("f0", "gaus", 0 , 3);
+f0.SetParameters(10.,1.5,0.5);
+f0.Draw()
+TH1F *h1 = new TH1F ("h1", "Histo from gaus", 50, 0, 3);
+h1.FillRandom("f0", 10000);
+h1.Draw();
+h1.FillRandom("f0", 10000);
+h1.Draw();
+h1.FillRandom("f0", 10000);
+h1.Draw();
+h1.FillRandom("f0", 10000);
+h1.Draw();
+h1.FillRandom("f0", 10000);
+h1.Draw();
+.q
+TH1F *h1 = new TH11F("h1", "Hi Kristen", 100, 2, 200);
+TH1F *h1 = new TH1F("h1", "Hi Kristen", 100, 2, 200);
+h1.Draw();
+.q
+TH1F *hist_1 = new TH1F("hist_1", "My first histo", 100, 2, 200);
+hist_1.Draw();
+.q
+hist_1.Draw();
+TH1F *hist_1 = new TH1F("hist_1", "My first histo", 100, 2, 200);
+hist_1.Draw();
+hist_1.Draw();
+.q
+.q
+TFile *_file0 = TFile::Open("TEST_MultiJet_v1.root")
+.ls
+cutplot->Draw()
+.q
+.q
+.q
+.q
+.q
+TFile *_file0 = TFile::Open("TEST_MultiJet_v1.root")
+.ls
+cutplot->Draw()
+cd ..
+cd ~
+.ls
+massresdiff_1;1->Draw()
+tree->Draw()
+massresplot->Draw()
+massresplot.Draw()
+massrankplot.Draw()
+drdiffonerankplot.Draw()
+tree.draw()
+drdiffonerankplot.Draw()
+ls
+.q
+TFile *_file0 = TFile::Open("TEST_MultiJet_v1.root")
+.ls
+cutplot.Draw()
+.q
+TFile *_file0 = TFile::Open("ana_muplus.root")
+ls
+.ls
+tt.Draw()
+.q
+TFile *_file0 = TFile::Open("trkHitInfo.root")
+ls
+.ls
+.q
+TFile *_file0 = TFile::Open("TestnewLCPF.root")
+ls
+.ls
+.q
+TFile *_file0 = TFile::Open("TEST_MultiJet_v1.root")
+.ls
+cutplot.Draw()
+.q
+.q
+TFile *_file0 = TFile::Open("TEST_MultiJet_v1.root")
+.ls
+cutplot.Draw()
+.q
+.q
+.ls
+.ls
+Cutplot.Draw()
+.q
+TFile *_file0 = TFile::Open("TEST_MultiJet_v1.root")
+.ls
+cutplot.Draw()
+.q
+.ls
+.pwd
+.q
+TH3F *H3 = new TH3F("H3", "3D-Hist",100, 0., 100., 100, 0., 100., 100, 0. 100.";
+TH3F *H3 = new TH3F("H3", "3D-Hist",100, 0., 100., 100, 0., 100., 100, 0. 100.");
+TH1F *H1 = new TH1F("H1", "1D-Hist",100, 0., 100.");
+@
+TH1F *H1 = new TH1F("H1", "1D-Hist",100, 0., 100.");
+.q
+@
+.q
+TH1F *H1 = new TH1F("H1", "1D-Hist",100, 0., 100.");
+.q
+ls
+.ls
+TH1F = *h=new TH1F("h","1-D Histo",100,0,100);
+TH1F *hist_1 = new TH1F("hist_1", "My first histo", 100, 2, 200);
+TH1F  *h=new TH1F("h","1-D Histo",100,0,100);
+h.Draw();
+gstyle->SetOptStat(111111111);
+gstyle->SetOptStat(1111111);
+gStyle->SetOptStat(111111111);
+h.Draw();
+pt = new TPaveText(0.20,0.7,0.5,0.87, "NDC");
+pt.Draw();
+pt2 = new TPaveText(0.20,0.7,0.5,0.87, "NDC");
+pt2.Draw();
+h->GetXaxis()->SetTitle("Label of x axis");
+h->GetYaxis()->SetTitle("Label of y axis");
+.q
+TFile *_file0 = TFile::Open("TEST_MultiJet_v1.root")
+.q
+.q
+.q
+.q
+.q
+TFile *_file0 = TFile::Open("TEST_MultiJet_v1.root")
+.ls
+cutplot.Draw();
+.ls
+.q
+TH1F *h50 = new TH1F("testing","Histogram Test",100,0,100);
+h50.Draw();
+.q
+.q
+TFile *_file0 = TFile::Open("PATtuplem50")
+.pwd
+.ls
+.?
+.q
+TFile *_file0 = TFile::Open("PATtuplem50.root")
+.q
+TFile *_file0 = TFile::Open("200RPVSttojj1_mc.root")
+gSystem->Load("libFWCoreFWLite.so");
+AutoLibraryLoader::enable();
+TBrowser b
+ls.
+.ls
+.q
+TFile *_file0 = TFile::Open("200RPVSttojj22_mc.root")
+.ls
+TTree events
+gSystem->Load("libFWCoreFWLite.so");
+AutoLibraryLoader::enable();
+TBrowser b
+TFile *_file0 = TFile::Open("200RPVSttojj22_mc.root")
+TFile *_file0 = TFile::Open("200RPVSttojj22_mc.root")
+gSystem->Load("libFWCoreFWLite.so");
+AutoLibraryLoader::enable();
+TBrowser b
+.q

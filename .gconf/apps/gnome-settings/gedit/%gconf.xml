@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<gconf>
+        <entry name="history-gedit2_search_for_entry" mtime="1396898435" type="list" ltype="string">
+                <li type="string">
+                        <stringvalue>/home/gomez/mySpace/Stops/st_jj/AOD/stop_UDD312_50/</stringvalue>
+                </li>
+                <li type="string">
+                        <stringvalue>stop_UDD312_50_PU_532</stringvalue>
+                </li>
+        </entry>
+        <entry name="history-gedit2_replace_with_entry" mtime="1396898435" type="list" ltype="string">
+                <li type="string">
+                        <stringvalue>testm200_PU_532/cms/clseitz-2/IrslingerBoosted/MadGraph5_v1_5_11/src/CMSSW_5_3_2_patch4/src/jetSubsSimulation/testm200/aodsim/\n</stringvalue>
+                </li>
+                <li type="string">
+                        <stringvalue>testm200_PU_532</stringvalue>
+                </li>
+        </entry>
+</gconf>

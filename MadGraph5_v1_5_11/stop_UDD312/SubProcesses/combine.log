@@ -1,0 +1,13 @@
+ A PDF is used, so alpha_s(MZ) is going to be modified
+ Old value of alpha_s from param_card:   0.117600001394749     
+ New value of alpha_s from PDF cteq6l1:  0.130000000000000     
+ Results.dat xsec =    488780.000000000       abs xsec =    488780.000000000     
+ Found            2  subprocesses
+ SubProcess/Channel     kept   read   xsec 
+P0_gg_ululx_ul_qq_ulx_qq/G1/     129     390 0.158E+06
+P0_gg_ululx_ul_qq_ulx_qq/G2/     355     809 0.434E+06
+P0_gg_ululx_ul_qq_ulx_qq/G3/     355     809 0.434E+06
+P0_qq_ululx_ul_qq_ulx_qq/G1/     372    1210 0.455E+06
+ Found          102  events writing first          100
+ Unweighting selected          100  events.
+Truncated  0.00% of cross section

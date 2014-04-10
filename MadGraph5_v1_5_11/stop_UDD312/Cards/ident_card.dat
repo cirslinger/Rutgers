@@ -1,0 +1,621 @@
+ccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
+c      written by the UFO converter
+ccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
+
+dsqmix 1 3 RRd13
+
+dsqmix 1 6 RRd16
+
+dsqmix 2 3 RRd23
+
+dsqmix 2 6 RRd26
+
+dsqmix 3 5 RRd35
+
+dsqmix 4 4 RRd44
+
+dsqmix 5 2 RRd52
+
+dsqmix 6 1 RRd61
+
+fralpha 1 alp
+
+hmix 1 RMUH
+
+hmix 2 tb
+
+hmix 4 MA2
+
+imvckm 1 3 ICKM13
+
+imvckm 2 1 ICKM21
+
+imvckm 2 2 ICKM22
+
+imvckm 3 1 ICKM31
+
+imvckm 3 2 ICKM32
+
+msd2 1 1 RmD211
+
+msd2 2 2 RmD222
+
+msd2 3 3 RmD233
+
+mse2 1 1 RmE211
+
+mse2 2 2 RmE222
+
+mse2 3 3 RmE233
+
+msl2 1 1 RmL211
+
+msl2 2 2 RmL222
+
+msl2 3 3 RmL233
+
+msoft 1 RMx1
+
+msoft 2 RMx2
+
+msoft 3 RMx3
+
+msoft 21 mHd2
+
+msoft 22 mHu2
+
+msq2 1 1 RmQ211
+
+msq2 2 2 RmQ222
+
+msq2 3 3 RmQ233
+
+msu2 1 1 RmU211
+
+msu2 2 2 RmU222
+
+msu2 3 3 RmU233
+
+nmix 1 1 RNN11
+
+nmix 1 2 RNN12
+
+nmix 1 3 RNN13
+
+nmix 1 4 RNN14
+
+nmix 2 1 RNN21
+
+nmix 2 2 RNN22
+
+nmix 2 3 RNN23
+
+nmix 2 4 RNN24
+
+nmix 3 1 RNN31
+
+nmix 3 2 RNN32
+
+nmix 3 3 RNN33
+
+nmix 3 4 RNN34
+
+nmix 4 1 RNN41
+
+nmix 4 2 RNN42
+
+nmix 4 3 RNN43
+
+nmix 4 4 RNN44
+
+rvlamlle 1 2 1 RLLE121
+
+rvlamlle 1 2 2 RLLE122
+
+rvlamlle 1 2 3 RLLE123
+
+rvlamlle 1 3 1 RLLE131
+
+rvlamlle 1 3 2 RLLE132
+
+rvlamlle 1 3 3 RLLE133
+
+rvlamlle 2 1 1 RLLE211
+
+rvlamlle 2 1 2 RLLE212
+
+rvlamlle 2 1 3 RLLE213
+
+rvlamlle 2 3 1 RLLE231
+
+rvlamlle 2 3 2 RLLE232
+
+rvlamlle 2 3 3 RLLE233
+
+rvlamlle 3 1 1 RLLE311
+
+rvlamlle 3 1 2 RLLE312
+
+rvlamlle 3 1 3 RLLE313
+
+rvlamlle 3 2 1 RLLE321
+
+rvlamlle 3 2 2 RLLE322
+
+rvlamlle 3 2 3 RLLE323
+
+rvlamlqd 1 1 1 RLQD111
+
+rvlamlqd 1 1 2 RLQD112
+
+rvlamlqd 1 1 3 RLQD113
+
+rvlamlqd 1 2 1 RLQD121
+
+rvlamlqd 1 2 2 RLQD122
+
+rvlamlqd 1 2 3 RLQD123
+
+rvlamlqd 1 3 1 RLQD131
+
+rvlamlqd 1 3 2 RLQD132
+
+rvlamlqd 1 3 3 RLQD133
+
+rvlamlqd 2 1 1 RLQD211
+
+rvlamlqd 2 1 2 RLQD212
+
+rvlamlqd 2 1 3 RLQD213
+
+rvlamlqd 2 2 1 RLQD221
+
+rvlamlqd 2 2 2 RLQD222
+
+rvlamlqd 2 2 3 RLQD223
+
+rvlamlqd 2 3 1 RLQD231
+
+rvlamlqd 2 3 2 RLQD232
+
+rvlamlqd 2 3 3 RLQD233
+
+rvlamlqd 3 1 1 RLQD311
+
+rvlamlqd 3 1 2 RLQD312
+
+rvlamlqd 3 1 3 RLQD313
+
+rvlamlqd 3 2 1 RLQD321
+
+rvlamlqd 3 2 2 RLQD322
+
+rvlamlqd 3 2 3 RLQD323
+
+rvlamlqd 3 3 1 RLQD331
+
+rvlamlqd 3 3 2 RLQD332
+
+rvlamlqd 3 3 3 RLQD333
+
+rvlamudd 1 1 2 RLDD112
+
+rvlamudd 1 1 3 RLDD113
+
+rvlamudd 1 2 1 RLDD121
+
+rvlamudd 1 2 3 RLDD123
+
+rvlamudd 1 3 1 RLDD131
+
+rvlamudd 1 3 2 RLDD132
+
+rvlamudd 2 1 2 RLDD212
+
+rvlamudd 2 1 3 RLDD213
+
+rvlamudd 2 2 1 RLDD221
+
+rvlamudd 2 2 3 RLDD223
+
+rvlamudd 2 3 1 RLDD231
+
+rvlamudd 2 3 2 RLDD232
+
+rvlamudd 3 1 2 RLDD312
+
+rvlamudd 3 1 3 RLDD313
+
+rvlamudd 3 2 1 RLDD321
+
+rvlamudd 3 2 3 RLDD323
+
+rvlamudd 3 3 1 RLDD331
+
+rvlamudd 3 3 2 RLDD332
+
+rvtlle 1 2 1 RTLE121
+
+rvtlle 1 2 2 RTLE122
+
+rvtlle 1 2 3 RTLE123
+
+rvtlle 1 3 1 RTLE131
+
+rvtlle 1 3 2 RTLE132
+
+rvtlle 1 3 3 RTLE133
+
+rvtlle 2 1 1 RTLE211
+
+rvtlle 2 1 2 RTLE212
+
+rvtlle 2 1 3 RTLE213
+
+rvtlle 2 3 1 RTLE231
+
+rvtlle 2 3 2 RTLE232
+
+rvtlle 2 3 3 RTLE233
+
+rvtlle 3 1 1 RTLE311
+
+rvtlle 3 1 2 RTLE312
+
+rvtlle 3 1 3 RTLE313
+
+rvtlle 3 2 1 RTLE321
+
+rvtlle 3 2 2 RTLE322
+
+rvtlle 3 2 3 RTLE323
+
+rvtlqd 1 1 1 RTQD111
+
+rvtlqd 1 1 2 RTQD112
+
+rvtlqd 1 1 3 RTQD113
+
+rvtlqd 1 2 1 RTQD121
+
+rvtlqd 1 2 2 RTQD122
+
+rvtlqd 1 2 3 RTQD123
+
+rvtlqd 1 3 1 RTQD131
+
+rvtlqd 1 3 2 RTQD132
+
+rvtlqd 1 3 3 RTQD133
+
+rvtlqd 2 1 1 RTQD211
+
+rvtlqd 2 1 2 RTQD212
+
+rvtlqd 2 1 3 RTQD213
+
+rvtlqd 2 2 1 RTQD221
+
+rvtlqd 2 2 2 RTQD222
+
+rvtlqd 2 2 3 RTQD223
+
+rvtlqd 2 3 1 RTQD231
+
+rvtlqd 2 3 2 RTQD232
+
+rvtlqd 2 3 3 RTQD233
+
+rvtlqd 3 1 1 RTQD311
+
+rvtlqd 3 1 2 RTQD312
+
+rvtlqd 3 1 3 RTQD313
+
+rvtlqd 3 2 1 RTQD321
+
+rvtlqd 3 2 2 RTQD322
+
+rvtlqd 3 2 3 RTQD323
+
+rvtlqd 3 3 1 RTQD331
+
+rvtlqd 3 3 2 RTQD332
+
+rvtlqd 3 3 3 RTQD333
+
+rvtudd 1 1 2 RTDD112
+
+rvtudd 1 1 3 RTDD113
+
+rvtudd 1 2 1 RTDD121
+
+rvtudd 1 2 3 RTDD123
+
+rvtudd 1 3 1 RTDD131
+
+rvtudd 1 3 2 RTDD132
+
+rvtudd 2 1 2 RTDD212
+
+rvtudd 2 1 3 RTDD213
+
+rvtudd 2 2 1 RTDD221
+
+rvtudd 2 2 3 RTDD223
+
+rvtudd 2 3 1 RTDD231
+
+rvtudd 2 3 2 RTDD232
+
+rvtudd 3 1 2 RTDD312
+
+rvtudd 3 1 3 RTDD313
+
+rvtudd 3 2 1 RTDD321
+
+rvtudd 3 2 3 RTDD323
+
+rvtudd 3 3 1 RTDD331
+
+rvtudd 3 3 2 RTDD332
+
+selmix 1 3 RRl13
+
+selmix 1 6 RRl16
+
+selmix 2 5 RRl25
+
+selmix 3 4 RRl34
+
+selmix 4 1 RRl41
+
+selmix 5 2 RRl52
+
+selmix 6 3 RRl63
+
+selmix 6 6 RRl66
+
+sminputs 1 aEWM1
+
+sminputs 3 aS
+
+snumix 1 3 RRn13
+
+snumix 2 2 RRn22
+
+snumix 3 1 RRn31
+
+td 1 1 Rtd11
+
+td 2 2 Rtd22
+
+td 3 3 Rtd33
+
+te 1 1 Rte11
+
+te 2 2 Rte22
+
+te 3 3 Rte33
+
+tu 1 1 Rtu11
+
+tu 2 2 Rtu22
+
+tu 3 3 Rtu33
+
+umix 1 1 RUU11
+
+umix 1 2 RUU12
+
+umix 2 1 RUU21
+
+umix 2 2 RUU22
+
+upmns 1 1 RMNS11
+
+upmns 2 2 RMNS22
+
+upmns 3 3 RMNS33
+
+usqmix 1 3 RRu13
+
+usqmix 1 6 RRu16
+
+usqmix 2 3 RRu23
+
+usqmix 2 6 RRu26
+
+usqmix 3 5 RRu35
+
+usqmix 4 4 RRu44
+
+usqmix 5 1 RRu51
+
+usqmix 6 2 RRu62
+
+vckm 1 1 RCKM11
+
+vckm 1 2 RCKM12
+
+vckm 1 3 RCKM13
+
+vckm 2 1 RCKM21
+
+vckm 2 2 RCKM22
+
+vckm 2 3 RCKM23
+
+vckm 3 1 RCKM31
+
+vckm 3 2 RCKM32
+
+vckm 3 3 RCKM33
+
+vmix 1 1 RVV11
+
+vmix 1 2 RVV12
+
+vmix 2 1 RVV21
+
+vmix 2 2 RVV22
+
+yd 1 1 Ryd11
+
+yd 2 2 Ryd22
+
+yd 3 3 Ryd33
+
+ye 1 1 Rye11
+
+ye 2 2 Rye22
+
+ye 3 3 Rye33
+
+yu 1 1 Ryu11
+
+yu 2 2 Ryu22
+
+yu 3 3 Ryu33
+
+mass 23 MZ
+
+mass 24 MW
+
+mass 1000022 Mneu1
+
+mass 1000023 Mneu2
+
+mass 1000025 Mneu3
+
+mass 1000035 Mneu4
+
+mass 1000024 Mch1
+
+mass 1000037 Mch2
+
+mass 1000021 Mgo
+
+mass 25 MH01
+
+mass 35 MH02
+
+mass 36 MA0
+
+mass 37 MH
+
+mass 15 Mta
+
+mass 6 MT
+
+mass 5 MB
+
+mass 1000012 Msn1
+
+mass 1000014 Msn2
+
+mass 1000016 Msn3
+
+mass 1000011 Msl1
+
+mass 1000013 Msl2
+
+mass 1000015 Msl3
+
+mass 2000011 Msl4
+
+mass 2000013 Msl5
+
+mass 2000015 Msl6
+
+mass 1000002 Msu1
+
+mass 1000004 Msu2
+
+mass 1000006 Msu3
+
+mass 2000002 Msu4
+
+mass 2000004 Msu5
+
+mass 2000006 Msu6
+
+mass 1000001 Msd1
+
+mass 1000003 Msd2
+
+mass 1000005 Msd3
+
+mass 2000001 Msd4
+
+mass 2000003 Msd5
+
+mass 2000005 Msd6
+
+decay 23 WZ
+
+decay 24 WW
+
+decay 1000023 Wneu2
+
+decay 1000025 Wneu3
+
+decay 1000035 Wneu4
+
+decay 1000024 Wch1
+
+decay 1000037 Wch2
+
+decay 1000021 Wgo
+
+decay 25 WH01
+
+decay 35 WH02
+
+decay 36 WA0
+
+decay 37 WH
+
+decay 6 WT
+
+decay 1000012 Wsn1
+
+decay 1000014 Wsn2
+
+decay 1000016 Wsn3
+
+decay 1000011 Wsl1
+
+decay 1000013 Wsl2
+
+decay 1000015 Wsl3
+
+decay 2000011 Wsl4
+
+decay 2000013 Wsl5
+
+decay 2000015 Wsl6
+
+decay 1000002 Wsu1
+
+decay 1000004 Wsu2
+
+decay 1000006 Wsu3
+
+decay 2000002 Wsu4
+
+decay 2000004 Wsu5
+
+decay 2000006 Wsu6
+
+decay 1000001 Wsd1
+
+decay 1000003 Wsd2
+
+decay 1000005 Wsd3
+
+decay 2000001 Wsd4
+
+decay 2000003 Wsd5
+
+decay 2000005 Wsd6

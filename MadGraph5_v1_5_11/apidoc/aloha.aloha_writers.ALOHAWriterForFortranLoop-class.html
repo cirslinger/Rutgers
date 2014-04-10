@@ -1,0 +1,521 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>aloha.aloha_writers.ALOHAWriterForFortranLoop</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="aloha-module.html">Package&nbsp;aloha</a> ::
+        <a href="aloha.aloha_writers-module.html">Module&nbsp;aloha_writers</a> ::
+        Class&nbsp;ALOHAWriterForFortranLoop
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="aloha.aloha_writers.ALOHAWriterForFortranLoop-class.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS DESCRIPTION ==================== -->
+<h1 class="epydoc">Class ALOHAWriterForFortranLoop</h1><p class="nomargin-top"><span class="codelink"><a href="aloha.aloha_writers-pysrc.html#ALOHAWriterForFortranLoop">source&nbsp;code</a></span></p>
+<pre class="base-tree">
+       <a href="aloha.aloha_writers.WriteALOHA-class.html">WriteALOHA</a> --+    
+                    |    
+<a href="aloha.aloha_writers.ALOHAWriterForFortran-class.html">ALOHAWriterForFortran</a> --+
+                        |
+                       <strong class="uidshort">ALOHAWriterForFortranLoop</strong>
+</pre>
+
+<dl><dt>Known Subclasses:</dt>
+<dd>
+      <ul class="subclass-list">
+<li><a href="aloha.aloha_writers.ALOHAWriterForFortranLoopQP-class.html">ALOHAWriterForFortranLoopQP</a></li>  </ul>
+</dd></dl>
+
+<hr />
+<p>routines for writing out Fortran</p>
+
+<!-- ==================== NESTED CLASSES ==================== -->
+<a name="section-NestedClasses"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Nested Classes</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-NestedClasses"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="aloha.aloha_writers.ALOHAWriterForFortran-class.html">ALOHAWriterForFortran</a></code></b>:
+      <code><a href="madgraph.iolibs.file_writers.FortranWriter-class.html">writer</a></code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== INSTANCE METHODS ==================== -->
+<a name="section-InstanceMethods"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Instance Methods</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-InstanceMethods"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="aloha.aloha_writers.ALOHAWriterForFortranLoop-class.html#__init__" class="summary-sig-name">__init__</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">abstract_routine</span>,
+        <span class="summary-sig-arg">dirpath</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="aloha.aloha_writers-pysrc.html#ALOHAWriterForFortranLoop.__init__">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="aloha.aloha_writers.ALOHAWriterForFortranLoop-class.html#define_expression" class="summary-sig-name">define_expression</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      Define the functions in a 100% way</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="aloha.aloha_writers-pysrc.html#ALOHAWriterForFortranLoop.define_expression">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="aloha.aloha_writers.ALOHAWriterForFortranLoop-class.html#get_declaration_txt" class="summary-sig-name">get_declaration_txt</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      Prototype for how to write the declaration of variable</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="aloha.aloha_writers-pysrc.html#ALOHAWriterForFortranLoop.get_declaration_txt">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="aloha.aloha_writers.ALOHAWriterForFortranLoop-class.html#define_argument_list" class="summary-sig-name">define_argument_list</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">couplings</span>=<span class="summary-sig-default">None</span>)</span><br />
+      define a list with the string of object required as incoming argument</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="aloha.aloha_writers-pysrc.html#ALOHAWriterForFortranLoop.define_argument_list">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="aloha.aloha_writers.ALOHAWriterForFortranLoop-class.html#get_momenta_txt" class="summary-sig-name">get_momenta_txt</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      Define the Header of the ortran file.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="aloha.aloha_writers-pysrc.html#ALOHAWriterForFortranLoop.get_momenta_txt">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="get_loop_argument"></a><span class="summary-sig-name">get_loop_argument</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">key</span>)</span><br />
+      return the position for the argument in the HELAS convention</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="aloha.aloha_writers-pysrc.html#ALOHAWriterForFortranLoop.get_loop_argument">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="aloha.aloha_writers.ALOHAWriterForFortranLoop-class.html#get_header_txt" class="summary-sig-name">get_header_txt</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">name</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">couplings</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">**opt</span>)</span><br />
+      Define the Header of the fortran file.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="aloha.aloha_writers-pysrc.html#ALOHAWriterForFortranLoop.get_header_txt">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="aloha.aloha_writers.ALOHAWriterForFortran-class.html">ALOHAWriterForFortran</a></code></b>:
+      <code><a href="aloha.aloha_writers.ALOHAWriterForFortran-class.html#change_number_format">change_number_format</a></code>,
+      <code><a href="aloha.aloha_writers.ALOHAWriterForFortran-class.html#change_var_format">change_var_format</a></code>,
+      <code><a href="aloha.aloha_writers.ALOHAWriterForFortran-class.html#define_symmetry">define_symmetry</a></code>,
+      <code><a href="aloha.aloha_writers.ALOHAWriterForFortran-class.html#get_fct_format">get_fct_format</a></code>,
+      <code><a href="aloha.aloha_writers.ALOHAWriterForFortran-class.html#get_foot_txt">get_foot_txt</a></code>,
+      <code><a href="aloha.aloha_writers.ALOHAWriterForFortran-class.html#get_one_momenta_def">get_one_momenta_def</a></code>,
+      <code><a href="aloha.aloha_writers.ALOHAWriterForFortran-class.html#shift_indices">shift_indices</a></code>,
+      <code><a href="aloha.aloha_writers.ALOHAWriterForFortran-class.html#write_combined">write_combined</a></code>
+      </p>
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="aloha.aloha_writers.WriteALOHA-class.html">WriteALOHA</a></code></b>:
+      <code><a href="aloha.aloha_writers.WriteALOHA-class.html#define_content">define_content</a></code>,
+      <code><a href="aloha.aloha_writers.WriteALOHA-class.html#get_P_sign">get_P_sign</a></code>,
+      <code><a href="aloha.aloha_writers.WriteALOHA-class.html#get_momentum_conservation_sign">get_momentum_conservation_sign</a></code>,
+      <code><a href="aloha.aloha_writers.WriteALOHA-class.html#make_call_list">make_call_list</a></code>,
+      <code><a href="aloha.aloha_writers.WriteALOHA-class.html#make_declaration_list">make_declaration_list</a></code>,
+      <code><a href="aloha.aloha_writers.WriteALOHA-class.html#pass_to_HELAS">pass_to_HELAS</a></code>,
+      <code><a href="aloha.aloha_writers.WriteALOHA-class.html#write">write</a></code>,
+      <code><a href="aloha.aloha_writers.WriteALOHA-class.html#write_MultContainer">write_MultContainer</a></code>,
+      <code><a href="aloha.aloha_writers.WriteALOHA-class.html#write_MultVariable">write_MultVariable</a></code>,
+      <code><a href="aloha.aloha_writers.WriteALOHA-class.html#write_indices_part">write_indices_part</a></code>,
+      <code><a href="aloha.aloha_writers.WriteALOHA-class.html#write_obj">write_obj</a></code>,
+      <code><a href="aloha.aloha_writers.WriteALOHA-class.html#write_obj_Add">write_obj_Add</a></code>,
+      <code><a href="aloha.aloha_writers.WriteALOHA-class.html#write_variable">write_variable</a></code>,
+      <code><a href="aloha.aloha_writers.WriteALOHA-class.html#write_variable_id">write_variable_id</a></code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS VARIABLES ==================== -->
+<a name="section-ClassVariables"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Class Variables</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-ClassVariables"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="aloha.aloha_writers.ALOHAWriterForFortran-class.html">ALOHAWriterForFortran</a></code></b>:
+      <code><a href="aloha.aloha_writers.ALOHAWriterForFortran-class.html#extension">extension</a></code>,
+      <code><a href="aloha.aloha_writers.ALOHAWriterForFortran-class.html#format">format</a></code>,
+      <code><a href="aloha.aloha_writers.ALOHAWriterForFortran-class.html#type2def">type2def</a></code>
+      </p>
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="aloha.aloha_writers.WriteALOHA-class.html">WriteALOHA</a></code></b>:
+      <code><a href="aloha.aloha_writers.WriteALOHA-class.html#power_symbol">power_symbol</a></code>,
+      <code><a href="aloha.aloha_writers.WriteALOHA-class.html#type_to_size">type_to_size</a></code>,
+      <code><a href="aloha.aloha_writers.WriteALOHA-class.html#type_to_variable">type_to_variable</a></code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== METHOD DETAILS ==================== -->
+<a name="section-MethodDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Method Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-MethodDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="__init__"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">__init__</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">abstract_routine</span>,
+        <span class="sig-arg">dirpath</span>)</span>
+    <br /><em class="fname">(Constructor)</em>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="aloha.aloha_writers-pysrc.html#ALOHAWriterForFortranLoop.__init__">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  
+  <dl class="fields">
+    <dt>Overrides:
+        <a href="aloha.aloha_writers.WriteALOHA-class.html#__init__">WriteALOHA.__init__</a>
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="define_expression"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">define_expression</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="aloha.aloha_writers-pysrc.html#ALOHAWriterForFortranLoop.define_expression">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Define the functions in a 100% way</p>
+  <dl class="fields">
+    <dt>Overrides:
+        <a href="aloha.aloha_writers.ALOHAWriterForFortran-class.html#define_expression">ALOHAWriterForFortran.define_expression</a>
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="get_declaration_txt"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">get_declaration_txt</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="aloha.aloha_writers-pysrc.html#ALOHAWriterForFortranLoop.get_declaration_txt">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Prototype for how to write the declaration of variable</p>
+  <dl class="fields">
+    <dt>Overrides:
+        <a href="aloha.aloha_writers.WriteALOHA-class.html#get_declaration_txt">WriteALOHA.get_declaration_txt</a>
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="define_argument_list"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">define_argument_list</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">couplings</span>=<span class="sig-default">None</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="aloha.aloha_writers-pysrc.html#ALOHAWriterForFortranLoop.define_argument_list">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>define a list with the string of object required as incoming 
+  argument</p>
+  <dl class="fields">
+    <dt>Overrides:
+        <a href="aloha.aloha_writers.WriteALOHA-class.html#define_argument_list">WriteALOHA.define_argument_list</a>
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="get_momenta_txt"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">get_momenta_txt</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="aloha.aloha_writers-pysrc.html#ALOHAWriterForFortranLoop.get_momenta_txt">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Define the Header of the ortran file. This include</p>
+  <ul>
+    <li>
+      momentum conservation
+    </li>
+    <li>
+      definition of the impulsion
+    </li>
+  </ul>
+  <dl class="fields">
+    <dt>Overrides:
+        <a href="aloha.aloha_writers.WriteALOHA-class.html#get_momenta_txt">WriteALOHA.get_momenta_txt</a>
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="get_header_txt"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">get_header_txt</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">name</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">couplings</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">**opt</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="aloha.aloha_writers-pysrc.html#ALOHAWriterForFortranLoop.get_header_txt">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Define the Header of the fortran file. This include</p>
+  <ul>
+    <li>
+      function tag
+    </li>
+    <li>
+      definition of variable
+    </li>
+  </ul>
+  <dl class="fields">
+    <dt>Overrides:
+        <a href="aloha.aloha_writers.WriteALOHA-class.html#get_header_txt">WriteALOHA.get_header_txt</a>
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Fri Jun 21 10:41:21 2013
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

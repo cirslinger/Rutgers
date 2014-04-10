@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>madgraph.interface.coloring_logging</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="madgraph-module.html">Package&nbsp;madgraph</a> ::
+        <a href="madgraph.interface-module.html">Package&nbsp;interface</a> ::
+        Module&nbsp;coloring_logging
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="madgraph.interface.coloring_logging-pysrc.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<h1 class="epydoc">Source Code for <a href="madgraph.interface.coloring_logging-module.html">Module madgraph.interface.coloring_logging</a></h1>
+<pre class="py-src">
+<a name="L1"></a><tt class="py-lineno"> 1</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">logging</tt> </tt>
+<a name="L2"></a><tt class="py-lineno"> 2</tt>  <tt class="py-line"> </tt>
+<a name="L3"></a><tt class="py-lineno"> 3</tt>  <tt class="py-line"><tt id="link-0" class="py-name" targets="Variable madgraph.interface.coloring_logging.BLACK=madgraph.interface.coloring_logging-module.html#BLACK"><a title="madgraph.interface.coloring_logging.BLACK" class="py-name" href="#" onclick="return doclink('link-0', 'BLACK', 'link-0');">BLACK</a></tt><tt class="py-op">,</tt> <tt id="link-1" class="py-name" targets="Variable madgraph.interface.coloring_logging.RED=madgraph.interface.coloring_logging-module.html#RED"><a title="madgraph.interface.coloring_logging.RED" class="py-name" href="#" onclick="return doclink('link-1', 'RED', 'link-1');">RED</a></tt><tt class="py-op">,</tt> <tt id="link-2" class="py-name" targets="Variable madgraph.interface.coloring_logging.GREEN=madgraph.interface.coloring_logging-module.html#GREEN"><a title="madgraph.interface.coloring_logging.GREEN" class="py-name" href="#" onclick="return doclink('link-2', 'GREEN', 'link-2');">GREEN</a></tt><tt class="py-op">,</tt> <tt id="link-3" class="py-name" targets="Variable madgraph.interface.coloring_logging.YELLOW=madgraph.interface.coloring_logging-module.html#YELLOW"><a title="madgraph.interface.coloring_logging.YELLOW" class="py-name" href="#" onclick="return doclink('link-3', 'YELLOW', 'link-3');">YELLOW</a></tt><tt class="py-op">,</tt> <tt id="link-4" class="py-name" targets="Variable madgraph.interface.coloring_logging.BLUE=madgraph.interface.coloring_logging-module.html#BLUE"><a title="madgraph.interface.coloring_logging.BLUE" class="py-name" href="#" onclick="return doclink('link-4', 'BLUE', 'link-4');">BLUE</a></tt><tt class="py-op">,</tt> <tt id="link-5" class="py-name" targets="Variable madgraph.interface.coloring_logging.MAGENTA=madgraph.interface.coloring_logging-module.html#MAGENTA"><a title="madgraph.interface.coloring_logging.MAGENTA" class="py-name" href="#" onclick="return doclink('link-5', 'MAGENTA', 'link-5');">MAGENTA</a></tt><tt class="py-op">,</tt> <tt id="link-6" class="py-name" targets="Variable madgraph.interface.coloring_logging.CYAN=madgraph.interface.coloring_logging-module.html#CYAN"><a title="madgraph.interface.coloring_logging.CYAN" class="py-name" href="#" onclick="return doclink('link-6', 'CYAN', 'link-6');">CYAN</a></tt><tt class="py-op">,</tt> <tt id="link-7" class="py-name" targets="Variable madgraph.interface.coloring_logging.WHITE=madgraph.interface.coloring_logging-module.html#WHITE"><a title="madgraph.interface.coloring_logging.WHITE" class="py-name" href="#" onclick="return doclink('link-7', 'WHITE', 'link-7');">WHITE</a></tt> <tt class="py-op">=</tt> <tt class="py-name">range</tt><tt class="py-op">(</tt><tt class="py-number">8</tt><tt class="py-op">)</tt> </tt>
+<a name="L4"></a><tt class="py-lineno"> 4</tt>  <tt class="py-line"> </tt>
+<a name="L5"></a><tt class="py-lineno"> 5</tt>  <tt class="py-line"><tt id="link-8" class="py-name" targets="Variable madgraph.interface.coloring_logging.COLORS=madgraph.interface.coloring_logging-module.html#COLORS"><a title="madgraph.interface.coloring_logging.COLORS" class="py-name" href="#" onclick="return doclink('link-8', 'COLORS', 'link-8');">COLORS</a></tt> <tt class="py-op">=</tt> <tt class="py-op">{</tt> </tt>
+<a name="L6"></a><tt class="py-lineno"> 6</tt>  <tt class="py-line">    <tt class="py-string">'WARNING'</tt>  <tt class="py-op">:</tt> <tt id="link-9" class="py-name"><a title="madgraph.interface.coloring_logging.BLUE" class="py-name" href="#" onclick="return doclink('link-9', 'BLUE', 'link-4');">BLUE</a></tt><tt class="py-op">,</tt> </tt>
+<a name="L7"></a><tt class="py-lineno"> 7</tt>  <tt class="py-line">    <tt class="py-string">'INFO'</tt>     <tt class="py-op">:</tt> <tt id="link-10" class="py-name"><a title="madgraph.interface.coloring_logging.BLACK" class="py-name" href="#" onclick="return doclink('link-10', 'BLACK', 'link-0');">BLACK</a></tt><tt class="py-op">,</tt> </tt>
+<a name="L8"></a><tt class="py-lineno"> 8</tt>  <tt class="py-line">    <tt class="py-string">'DEBUG'</tt>    <tt class="py-op">:</tt> <tt id="link-11" class="py-name"><a title="madgraph.interface.coloring_logging.GREEN" class="py-name" href="#" onclick="return doclink('link-11', 'GREEN', 'link-2');">GREEN</a></tt><tt class="py-op">,</tt> </tt>
+<a name="L9"></a><tt class="py-lineno"> 9</tt>  <tt class="py-line">    <tt class="py-string">'CRITICAL'</tt> <tt class="py-op">:</tt> <tt id="link-12" class="py-name"><a title="madgraph.interface.coloring_logging.RED" class="py-name" href="#" onclick="return doclink('link-12', 'RED', 'link-1');">RED</a></tt><tt class="py-op">,</tt> </tt>
+<a name="L10"></a><tt class="py-lineno">10</tt>  <tt class="py-line">    <tt class="py-string">'ERROR'</tt>    <tt class="py-op">:</tt> <tt id="link-13" class="py-name"><a title="madgraph.interface.coloring_logging.RED" class="py-name" href="#" onclick="return doclink('link-13', 'RED', 'link-1');">RED</a></tt><tt class="py-op">,</tt> </tt>
+<a name="L11"></a><tt class="py-lineno">11</tt>  <tt class="py-line">    <tt class="py-string">'RED'</tt>      <tt class="py-op">:</tt> <tt id="link-14" class="py-name"><a title="madgraph.interface.coloring_logging.RED" class="py-name" href="#" onclick="return doclink('link-14', 'RED', 'link-1');">RED</a></tt><tt class="py-op">,</tt> </tt>
+<a name="L12"></a><tt class="py-lineno">12</tt>  <tt class="py-line">    <tt class="py-string">'GREEN'</tt>    <tt class="py-op">:</tt> <tt id="link-15" class="py-name"><a title="madgraph.interface.coloring_logging.GREEN" class="py-name" href="#" onclick="return doclink('link-15', 'GREEN', 'link-2');">GREEN</a></tt><tt class="py-op">,</tt> </tt>
+<a name="L13"></a><tt class="py-lineno">13</tt>  <tt class="py-line">    <tt class="py-string">'YELLOW'</tt>   <tt class="py-op">:</tt> <tt id="link-16" class="py-name"><a title="madgraph.interface.coloring_logging.YELLOW" class="py-name" href="#" onclick="return doclink('link-16', 'YELLOW', 'link-3');">YELLOW</a></tt><tt class="py-op">,</tt> </tt>
+<a name="L14"></a><tt class="py-lineno">14</tt>  <tt class="py-line">    <tt class="py-string">'BLUE'</tt>     <tt class="py-op">:</tt> <tt id="link-17" class="py-name"><a title="madgraph.interface.coloring_logging.BLUE" class="py-name" href="#" onclick="return doclink('link-17', 'BLUE', 'link-4');">BLUE</a></tt><tt class="py-op">,</tt> </tt>
+<a name="L15"></a><tt class="py-lineno">15</tt>  <tt class="py-line">    <tt class="py-string">'MAGENTA'</tt>  <tt class="py-op">:</tt> <tt id="link-18" class="py-name"><a title="madgraph.interface.coloring_logging.MAGENTA" class="py-name" href="#" onclick="return doclink('link-18', 'MAGENTA', 'link-5');">MAGENTA</a></tt><tt class="py-op">,</tt> </tt>
+<a name="L16"></a><tt class="py-lineno">16</tt>  <tt class="py-line">    <tt class="py-string">'CYAN'</tt>     <tt class="py-op">:</tt> <tt id="link-19" class="py-name"><a title="madgraph.interface.coloring_logging.CYAN" class="py-name" href="#" onclick="return doclink('link-19', 'CYAN', 'link-6');">CYAN</a></tt><tt class="py-op">,</tt> </tt>
+<a name="L17"></a><tt class="py-lineno">17</tt>  <tt class="py-line">    <tt class="py-string">'WHITE'</tt>    <tt class="py-op">:</tt> <tt id="link-20" class="py-name"><a title="madgraph.interface.coloring_logging.WHITE" class="py-name" href="#" onclick="return doclink('link-20', 'WHITE', 'link-7');">WHITE</a></tt><tt class="py-op">,</tt> </tt>
+<a name="L18"></a><tt class="py-lineno">18</tt>  <tt class="py-line"><tt class="py-op">}</tt> </tt>
+<a name="L19"></a><tt class="py-lineno">19</tt>  <tt class="py-line"> </tt>
+<a name="L20"></a><tt class="py-lineno">20</tt>  <tt class="py-line"><tt id="link-21" class="py-name" targets="Variable madgraph.interface.coloring_logging.RESET_SEQ=madgraph.interface.coloring_logging-module.html#RESET_SEQ"><a title="madgraph.interface.coloring_logging.RESET_SEQ" class="py-name" href="#" onclick="return doclink('link-21', 'RESET_SEQ', 'link-21');">RESET_SEQ</a></tt> <tt class="py-op">=</tt> <tt class="py-string">"\033[0m"</tt> </tt>
+<a name="L21"></a><tt class="py-lineno">21</tt>  <tt class="py-line"><tt id="link-22" class="py-name" targets="Variable madgraph.interface.coloring_logging.COLOR_SEQ=madgraph.interface.coloring_logging-module.html#COLOR_SEQ"><a title="madgraph.interface.coloring_logging.COLOR_SEQ" class="py-name" href="#" onclick="return doclink('link-22', 'COLOR_SEQ', 'link-22');">COLOR_SEQ</a></tt> <tt class="py-op">=</tt> <tt class="py-string">"\033[1;%dm"</tt> </tt>
+<a name="L22"></a><tt class="py-lineno">22</tt>  <tt class="py-line"><tt id="link-23" class="py-name" targets="Variable madgraph.interface.coloring_logging.BOLD_SEQ=madgraph.interface.coloring_logging-module.html#BOLD_SEQ"><a title="madgraph.interface.coloring_logging.BOLD_SEQ" class="py-name" href="#" onclick="return doclink('link-23', 'BOLD_SEQ', 'link-23');">BOLD_SEQ</a></tt>  <tt class="py-op">=</tt> <tt class="py-string">"\033[1m"</tt> </tt>
+<a name="L23"></a><tt class="py-lineno">23</tt>  <tt class="py-line"> </tt>
+<a name="ColorFormatter"></a><div id="ColorFormatter-def"><a name="L24"></a><tt class="py-lineno">24</tt> <a class="py-toggle" href="#" id="ColorFormatter-toggle" onclick="return toggle('ColorFormatter');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="madgraph.interface.coloring_logging.ColorFormatter-class.html">ColorFormatter</a><tt class="py-op">(</tt><tt class="py-base-class">logging</tt><tt class="py-op">.</tt><tt class="py-base-class">Formatter</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ColorFormatter-collapsed" style="display:none;" pad="++" indent="++++"></div><div id="ColorFormatter-expanded"><a name="L25"></a><tt class="py-lineno">25</tt>  <tt class="py-line"> </tt>
+<a name="ColorFormatter.__init__"></a><div id="ColorFormatter.__init__-def"><a name="L26"></a><tt class="py-lineno">26</tt> <a class="py-toggle" href="#" id="ColorFormatter.__init__-toggle" onclick="return toggle('ColorFormatter.__init__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="madgraph.interface.coloring_logging.ColorFormatter-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-op">*</tt><tt class="py-param">args</tt><tt class="py-op">,</tt> <tt class="py-op">**</tt><tt class="py-param">kwargs</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ColorFormatter.__init__-collapsed" style="display:none;" pad="++" indent="++++++++"></div><div id="ColorFormatter.__init__-expanded"><a name="L27"></a><tt class="py-lineno">27</tt>  <tt class="py-line">        <tt class="py-comment"># can't do super(...) here because Formatter is an old school class</tt> </tt>
+<a name="L28"></a><tt class="py-lineno">28</tt>  <tt class="py-line">        <tt class="py-name">logging</tt><tt class="py-op">.</tt><tt class="py-name">Formatter</tt><tt class="py-op">.</tt><tt id="link-24" class="py-name" targets="Method aloha.aloha_lib.AddVariable.__init__()=aloha.aloha_lib.AddVariable-class.html#__init__,Method aloha.aloha_lib.Computation.__init__()=aloha.aloha_lib.Computation-class.html#__init__,Method aloha.aloha_lib.IndicesIterator.__init__()=aloha.aloha_lib.IndicesIterator-class.html#__init__,Method aloha.aloha_lib.LorentzObject.__init__()=aloha.aloha_lib.LorentzObject-class.html#__init__,Method aloha.aloha_lib.LorentzObjectRepresentation.__init__()=aloha.aloha_lib.LorentzObjectRepresentation-class.html#__init__,Method aloha.aloha_lib.MultContainer.__init__()=aloha.aloha_lib.MultContainer-class.html#__init__,Method aloha.aloha_lib.MultVariable.__init__()=aloha.aloha_lib.MultVariable-class.html#__init__,Method aloha.aloha_lib.SplitCoefficient.__init__()=aloha.aloha_lib.SplitCoefficient-class.html#__init__,Method aloha.aloha_object.DenominatorPropagator.__init__()=aloha.aloha_object.DenominatorPropagator-class.html#__init__,Method aloha.aloha_object.L_C.__init__()=aloha.aloha_object.L_C-class.html#__init__,Method aloha.aloha_object.L_Coup.__init__()=aloha.aloha_object.L_Coup-class.html#__init__,Method aloha.aloha_object.L_Epsilon.__init__()=aloha.aloha_object.L_Epsilon-class.html#__init__,Method aloha.aloha_object.L_FCT.__init__()=aloha.aloha_object.L_FCT-class.html#__init__,Method aloha.aloha_object.L_Gamma.__init__()=aloha.aloha_object.L_Gamma-class.html#__init__,Method aloha.aloha_object.L_Gamma5.__init__()=aloha.aloha_object.L_Gamma5-class.html#__init__,Method aloha.aloha_object.L_Identity.__init__()=aloha.aloha_object.L_Identity-class.html#__init__,Method aloha.aloha_object.L_Mass.__init__()=aloha.aloha_object.L_Mass-class.html#__init__,Method aloha.aloha_object.L_Metric.__init__()=aloha.aloha_object.L_Metric-class.html#__init__,Method aloha.aloha_object.L_OverMass2.__init__()=aloha.aloha_object.L_OverMass2-class.html#__init__,Method aloha.aloha_object.L_P.__init__()=aloha.aloha_object.L_P-class.html#__init__,Method aloha.aloha_object.L_PSlash.__init__()=aloha.aloha_object.L_PSlash-class.html#__init__,Method aloha.aloha_object.L_ProjM.__init__()=aloha.aloha_object.L_ProjM-class.html#__init__,Method aloha.aloha_object.L_ProjP.__init__()=aloha.aloha_object.L_ProjP-class.html#__init__,Method aloha.aloha_object.L_Scalar.__init__()=aloha.aloha_object.L_Scalar-class.html#__init__,Method aloha.aloha_object.L_Sigma.__init__()=aloha.aloha_object.L_Sigma-class.html#__init__,Method aloha.aloha_object.L_Spin2.__init__()=aloha.aloha_object.L_Spin2-class.html#__init__,Method aloha.aloha_object.L_Spin3Half.__init__()=aloha.aloha_object.L_Spin3Half-class.html#__init__,Method aloha.aloha_object.L_Spinor.__init__()=aloha.aloha_object.L_Spinor-class.html#__init__,Method aloha.aloha_object.L_Vector.__init__()=aloha.aloha_object.L_Vector-class.html#__init__,Method aloha.aloha_object.L_Width.__init__()=aloha.aloha_object.L_Width-class.html#__init__,Method aloha.aloha_parsers.UFOExpressionParser.__init__()=aloha.aloha_parsers.UFOExpressionParser-class.html#__init__,Method aloha.aloha_writers.ALOHAWriterForFortranLoop.__init__()=aloha.aloha_writers.ALOHAWriterForFortranLoop-class.html#__init__,Method aloha.aloha_writers.ALOHAWriterForFortranLoopQP.__init__()=aloha.aloha_writers.ALOHAWriterForFortranLoopQP-class.html#__init__,Method aloha.aloha_writers.ALOHAWriterForFortranQP.__init__()=aloha.aloha_writers.ALOHAWriterForFortranQP-class.html#__init__,Method aloha.aloha_writers.WriteALOHA.__init__()=aloha.aloha_writers.WriteALOHA-class.html#__init__,Method aloha.create_aloha.AbstractALOHAModel.__init__()=aloha.create_aloha.AbstractALOHAModel-class.html#__init__,Method aloha.create_aloha.AbstractRoutine.__init__()=aloha.create_aloha.AbstractRoutine-class.html#__init__,Method aloha.create_aloha.AbstractRoutineBuilder.__init__()=aloha.create_aloha.AbstractRoutineBuilder-class.html#__init__,Method aloha.create_aloha.CombineRoutineBuilder.__init__()=aloha.create_aloha.CombineRoutineBuilder-class.html#__init__,Method aloha.template_files.wavefunctions.WaveFunction.__init__()=aloha.template_files.wavefunctions.WaveFunction-class.html#__init__,Method madgraph.core.base_objects.ModelVariable.__init__()=madgraph.core.base_objects.ModelVariable-class.html#__init__,Method madgraph.core.base_objects.ParamCardVariable.__init__()=madgraph.core.base_objects.ParamCardVariable-class.html#__init__,Method madgraph.core.base_objects.PhysicsObject.__init__()=madgraph.core.base_objects.PhysicsObject-class.html#__init__,Method madgraph.core.base_objects.PhysicsObjectList.__init__()=madgraph.core.base_objects.PhysicsObjectList-class.html#__init__,Method madgraph.core.base_objects.VertexList.__init__()=madgraph.core.base_objects.VertexList-class.html#__init__,Method madgraph.core.color_algebra.ColorString.__init__()=madgraph.core.color_algebra.ColorString-class.html#__init__,Method madgraph.core.color_algebra.Epsilon.__init__()=madgraph.core.color_algebra.Epsilon-class.html#__init__,Method madgraph.core.color_algebra.EpsilonBar.__init__()=madgraph.core.color_algebra.EpsilonBar-class.html#__init__,Method madgraph.core.color_algebra.K6.__init__()=madgraph.core.color_algebra.K6-class.html#__init__,Method madgraph.core.color_algebra.K6Bar.__init__()=madgraph.core.color_algebra.K6Bar-class.html#__init__,Method madgraph.core.color_algebra.T.__init__()=madgraph.core.color_algebra.T-class.html#__init__,Method madgraph.core.color_algebra.T6.__init__()=madgraph.core.color_algebra.T6-class.html#__init__,Method madgraph.core.color_algebra.f.__init__()=madgraph.core.color_algebra.f-class.html#__init__,Method madgraph.core.color_amp.ColorBasis.__init__()=madgraph.core.color_amp.ColorBasis-class.html#__init__,Method madgraph.core.color_amp.ColorMatrix.__init__()=madgraph.core.color_amp.ColorMatrix-class.html#__init__,Method madgraph.core.diagram_generation.Amplitude.__init__()=madgraph.core.diagram_generation.Amplitude-class.html#__init__,Method madgraph.core.diagram_generation.DecayChainAmplitude.__init__()=madgraph.core.diagram_generation.DecayChainAmplitude-class.html#__init__,Method madgraph.core.diagram_generation.DiagramTag.__init__()=madgraph.core.diagram_generation.DiagramTag-class.html#__init__,Method madgraph.core.diagram_generation.DiagramTagChainLink.__init__()=madgraph.core.diagram_generation.DiagramTagChainLink-class.html#__init__,Method madgraph.core.diagram_generation.MultiProcess.__init__()=madgraph.core.diagram_generation.MultiProcess-class.html#__init__,Method madgraph.core.drawing.DiagramDrawer.__init__()=madgraph.core.drawing.DiagramDrawer-class.html#__init__,Method madgraph.core.drawing.DrawOption.__init__()=madgraph.core.drawing.DrawOption-class.html#__init__,Method madgraph.core.drawing.FeynmanDiagram.__init__()=madgraph.core.drawing.FeynmanDiagram-class.html#__init__,Method madgraph.core.drawing.FeynmanLine.__init__()=madgraph.core.drawing.FeynmanLine-class.html#__init__,Method madgraph.core.drawing.VertexPoint.__init__()=madgraph.core.drawing.VertexPoint-class.html#__init__,Method madgraph.core.helas_objects.HelasAmplitude.__init__()=madgraph.core.helas_objects.HelasAmplitude-class.html#__init__,Method madgraph.core.helas_objects.HelasDecayChainProcess.__init__()=madgraph.core.helas_objects.HelasDecayChainProcess-class.html#__init__,Method madgraph.core.helas_objects.HelasMatrixElement.__init__()=madgraph.core.helas_objects.HelasMatrixElement-class.html#__init__,Method madgraph.core.helas_objects.HelasMultiProcess.__init__()=madgraph.core.helas_objects.HelasMultiProcess-class.html#__init__,Method madgraph.core.helas_objects.HelasWavefunction.__init__()=madgraph.core.helas_objects.HelasWavefunction-class.html#__init__,Method madgraph.interface.coloring_logging.ColorFormatter.__init__()=madgraph.interface.coloring_logging.ColorFormatter-class.html#__init__,Method madgraph.interface.extended_cmd.Cmd.__init__()=madgraph.interface.extended_cmd.Cmd-class.html#__init__,Method madgraph.interface.extended_cmd.CmdFile.__init__()=madgraph.interface.extended_cmd.CmdFile-class.html#__init__,Method madgraph.interface.extended_cmd.SmartQuestion.__init__()=madgraph.interface.extended_cmd.SmartQuestion-class.html#__init__,Method madgraph.interface.launch_ext_program.ExtLauncher.__init__()=madgraph.interface.launch_ext_program.ExtLauncher-class.html#__init__,Method madgraph.interface.launch_ext_program.MELauncher.__init__()=madgraph.interface.launch_ext_program.MELauncher-class.html#__init__,Method madgraph.interface.launch_ext_program.Pythia8Launcher.__init__()=madgraph.interface.launch_ext_program.Pythia8Launcher-class.html#__init__,Method madgraph.interface.launch_ext_program.SALauncher.__init__()=madgraph.interface.launch_ext_program.SALauncher-class.html#__init__,Method madgraph.interface.madevent_interface.AskforEditCard.__init__()=madgraph.interface.madevent_interface.AskforEditCard-class.html#__init__,Method madgraph.interface.madevent_interface.CmdExtended.__init__()=madgraph.interface.madevent_interface.CmdExtended-class.html#__init__,Method madgraph.interface.madevent_interface.GridPackCmd.__init__()=madgraph.interface.madevent_interface.GridPackCmd-class.html#__init__,Method madgraph.interface.madevent_interface.MadEventCmd.__init__()=madgraph.interface.madevent_interface.MadEventCmd-class.html#__init__,Method madgraph.interface.madgraph_interface.CmdExtended.__init__()=madgraph.interface.madgraph_interface.CmdExtended-class.html#__init__,Method madgraph.interface.madgraph_interface.MadGraphCmd.__init__()=madgraph.interface.madgraph_interface.MadGraphCmd-class.html#__init__,Method madgraph.interface.master_interface.MasterCmdWeb.__init__()=madgraph.interface.master_interface.MasterCmdWeb-class.html#__init__,Method madgraph.interface.master_interface.Switcher.__init__()=madgraph.interface.master_interface.Switcher-class.html#__init__,Method madgraph.iolibs.drawing_eps.MultiEpsDiagramDrawer.__init__()=madgraph.iolibs.drawing_eps.MultiEpsDiagramDrawer-class.html#__init__,Method madgraph.iolibs.export_cpp.ProcessExporterCPP.__init__()=madgraph.iolibs.export_cpp.ProcessExporterCPP-class.html#__init__,Method madgraph.iolibs.export_cpp.ProcessExporterPythia8.__init__()=madgraph.iolibs.export_cpp.ProcessExporterPythia8-class.html#__init__,Method madgraph.iolibs.export_cpp.UFOModelConverterCPP.__init__()=madgraph.iolibs.export_cpp.UFOModelConverterCPP-class.html#__init__,Method madgraph.iolibs.export_python.ProcessExporterPython.__init__()=madgraph.iolibs.export_python.ProcessExporterPython-class.html#__init__,Method madgraph.iolibs.export_v4.ProcessExporterFortran.__init__()=madgraph.iolibs.export_v4.ProcessExporterFortran-class.html#__init__,Method madgraph.iolibs.export_v4.UFO_model_to_mg4.__init__()=madgraph.iolibs.export_v4.UFO_model_to_mg4-class.html#__init__,Method madgraph.iolibs.file_writers.FileWriter.__init__()=madgraph.iolibs.file_writers.FileWriter-class.html#__init__,Method madgraph.iolibs.gen_infohtml.make_info_html.__init__()=madgraph.iolibs.gen_infohtml.make_info_html-class.html#__init__,Method madgraph.iolibs.helas_call_writers.HelasCallWriter.__init__()=madgraph.iolibs.helas_call_writers.HelasCallWriter-class.html#__init__,Method madgraph.iolibs.import_v4.ProcCardv4Reader.__init__()=madgraph.iolibs.import_v4.ProcCardv4Reader-class.html#__init__,Method madgraph.iolibs.import_v4.ProcessInfo.__init__()=madgraph.iolibs.import_v4.ProcessInfo-class.html#__init__,Method madgraph.iolibs.ufo_expression_parsers.UFOExpressionParser.__init__()=madgraph.iolibs.ufo_expression_parsers.UFOExpressionParser-class.html#__init__,Method madgraph.various.banner.Banner.__init__()=madgraph.various.banner.Banner-class.html#__init__,Method madgraph.various.banner.RunCard.__init__()=madgraph.various.banner.RunCard-class.html#__init__,Method madgraph.various.cluster.Cluster.__init__()=madgraph.various.cluster.Cluster-class.html#__init__,Method madgraph.various.combine_runs.CombineRuns.__init__()=madgraph.various.combine_runs.CombineRuns-class.html#__init__,Method madgraph.various.gen_crossxhtml.AllResults.__init__()=madgraph.various.gen_crossxhtml.AllResults-class.html#__init__,Method madgraph.various.gen_crossxhtml.OneTagResults.__init__()=madgraph.various.gen_crossxhtml.OneTagResults-class.html#__init__,Method madgraph.various.gen_crossxhtml.RunResults.__init__()=madgraph.various.gen_crossxhtml.RunResults-class.html#__init__,Method madgraph.various.lhe_parser.Event.__init__()=madgraph.various.lhe_parser.Event-class.html#__init__,Method madgraph.various.lhe_parser.EventFile.__init__()=madgraph.various.lhe_parser.EventFile-class.html#__init__,Method madgraph.various.lhe_parser.Particle.__init__()=madgraph.various.lhe_parser.Particle-class.html#__init__,Method madgraph.various.misc.BackRead.__init__()=madgraph.various.misc.BackRead-class.html#__init__,Method madgraph.various.misc.open_file.__init__()=madgraph.various.misc.open_file-class.html#__init__,Method madgraph.various.process_checks.MatrixElementEvaluator.__init__()=madgraph.various.process_checks.MatrixElementEvaluator-class.html#__init__,Method madgraph.various.rambo.DoubleFortranList.__init__()=madgraph.various.rambo.DoubleFortranList-class.html#__init__,Method madgraph.various.rambo.FortranList.__init__()=madgraph.various.rambo.FortranList-class.html#__init__,Method madgraph.various.sum_html.Combine_results.__init__()=madgraph.various.sum_html.Combine_results-class.html#__init__,Method madgraph.various.sum_html.OneResult.__init__()=madgraph.various.sum_html.OneResult-class.html#__init__,Method models.build_restriction_lib.Category.__init__()=models.build_restriction_lib.Category-class.html#__init__,Method models.build_restriction_lib.Rule.__init__()=models.build_restriction_lib.Rule-class.html#__init__,Method models.check_param_card.Block.__init__()=models.check_param_card.Block-class.html#__init__,Method models.check_param_card.ParamCard.__init__()=models.check_param_card.ParamCard-class.html#__init__,Method models.check_param_card.ParamCardRule.__init__()=models.check_param_card.ParamCardRule-class.html#__init__,Method models.check_param_card.Parameter.__init__()=models.check_param_card.Parameter-class.html#__init__,Method models.import_ufo.OrganizeModelExpression.__init__()=models.import_ufo.OrganizeModelExpression-class.html#__init__,Method models.import_ufo.UFOMG5Converter.__init__()=models.import_ufo.UFOMG5Converter-class.html#__init__,Method models.model_reader.Alphas_Runner.__init__()=models.model_reader.Alphas_Runner-class.html#__init__,Method models.write_param_card.ParamCardWriter.__init__()=models.write_param_card.ParamCardWriter-class.html#__init__"><a title="aloha.aloha_lib.AddVariable.__init__
+aloha.aloha_lib.Computation.__init__
+aloha.aloha_lib.IndicesIterator.__init__
+aloha.aloha_lib.LorentzObject.__init__
+aloha.aloha_lib.LorentzObjectRepresentation.__init__
+aloha.aloha_lib.MultContainer.__init__
+aloha.aloha_lib.MultVariable.__init__
+aloha.aloha_lib.SplitCoefficient.__init__
+aloha.aloha_object.DenominatorPropagator.__init__
+aloha.aloha_object.L_C.__init__
+aloha.aloha_object.L_Coup.__init__
+aloha.aloha_object.L_Epsilon.__init__
+aloha.aloha_object.L_FCT.__init__
+aloha.aloha_object.L_Gamma.__init__
+aloha.aloha_object.L_Gamma5.__init__
+aloha.aloha_object.L_Identity.__init__
+aloha.aloha_object.L_Mass.__init__
+aloha.aloha_object.L_Metric.__init__
+aloha.aloha_object.L_OverMass2.__init__
+aloha.aloha_object.L_P.__init__
+aloha.aloha_object.L_PSlash.__init__
+aloha.aloha_object.L_ProjM.__init__
+aloha.aloha_object.L_ProjP.__init__
+aloha.aloha_object.L_Scalar.__init__
+aloha.aloha_object.L_Sigma.__init__
+aloha.aloha_object.L_Spin2.__init__
+aloha.aloha_object.L_Spin3Half.__init__
+aloha.aloha_object.L_Spinor.__init__
+aloha.aloha_object.L_Vector.__init__
+aloha.aloha_object.L_Width.__init__
+aloha.aloha_parsers.UFOExpressionParser.__init__
+aloha.aloha_writers.ALOHAWriterForFortranLoop.__init__
+aloha.aloha_writers.ALOHAWriterForFortranLoopQP.__init__
+aloha.aloha_writers.ALOHAWriterForFortranQP.__init__
+aloha.aloha_writers.WriteALOHA.__init__
+aloha.create_aloha.AbstractALOHAModel.__init__
+aloha.create_aloha.AbstractRoutine.__init__
+aloha.create_aloha.AbstractRoutineBuilder.__init__
+aloha.create_aloha.CombineRoutineBuilder.__init__
+aloha.template_files.wavefunctions.WaveFunction.__init__
+madgraph.core.base_objects.ModelVariable.__init__
+madgraph.core.base_objects.ParamCardVariable.__init__
+madgraph.core.base_objects.PhysicsObject.__init__
+madgraph.core.base_objects.PhysicsObjectList.__init__
+madgraph.core.base_objects.VertexList.__init__
+madgraph.core.color_algebra.ColorString.__init__
+madgraph.core.color_algebra.Epsilon.__init__
+madgraph.core.color_algebra.EpsilonBar.__init__
+madgraph.core.color_algebra.K6.__init__
+madgraph.core.color_algebra.K6Bar.__init__
+madgraph.core.color_algebra.T.__init__
+madgraph.core.color_algebra.T6.__init__
+madgraph.core.color_algebra.f.__init__
+madgraph.core.color_amp.ColorBasis.__init__
+madgraph.core.color_amp.ColorMatrix.__init__
+madgraph.core.diagram_generation.Amplitude.__init__
+madgraph.core.diagram_generation.DecayChainAmplitude.__init__
+madgraph.core.diagram_generation.DiagramTag.__init__
+madgraph.core.diagram_generation.DiagramTagChainLink.__init__
+madgraph.core.diagram_generation.MultiProcess.__init__
+madgraph.core.drawing.DiagramDrawer.__init__
+madgraph.core.drawing.DrawOption.__init__
+madgraph.core.drawing.FeynmanDiagram.__init__
+madgraph.core.drawing.FeynmanLine.__init__
+madgraph.core.drawing.VertexPoint.__init__
+madgraph.core.helas_objects.HelasAmplitude.__init__
+madgraph.core.helas_objects.HelasDecayChainProcess.__init__
+madgraph.core.helas_objects.HelasMatrixElement.__init__
+madgraph.core.helas_objects.HelasMultiProcess.__init__
+madgraph.core.helas_objects.HelasWavefunction.__init__
+madgraph.interface.coloring_logging.ColorFormatter.__init__
+madgraph.interface.extended_cmd.Cmd.__init__
+madgraph.interface.extended_cmd.CmdFile.__init__
+madgraph.interface.extended_cmd.SmartQuestion.__init__
+madgraph.interface.launch_ext_program.ExtLauncher.__init__
+madgraph.interface.launch_ext_program.MELauncher.__init__
+madgraph.interface.launch_ext_program.Pythia8Launcher.__init__
+madgraph.interface.launch_ext_program.SALauncher.__init__
+madgraph.interface.madevent_interface.AskforEditCard.__init__
+madgraph.interface.madevent_interface.CmdExtended.__init__
+madgraph.interface.madevent_interface.GridPackCmd.__init__
+madgraph.interface.madevent_interface.MadEventCmd.__init__
+madgraph.interface.madgraph_interface.CmdExtended.__init__
+madgraph.interface.madgraph_interface.MadGraphCmd.__init__
+madgraph.interface.master_interface.MasterCmdWeb.__init__
+madgraph.interface.master_interface.Switcher.__init__
+madgraph.iolibs.drawing_eps.MultiEpsDiagramDrawer.__init__
+madgraph.iolibs.export_cpp.ProcessExporterCPP.__init__
+madgraph.iolibs.export_cpp.ProcessExporterPythia8.__init__
+madgraph.iolibs.export_cpp.UFOModelConverterCPP.__init__
+madgraph.iolibs.export_python.ProcessExporterPython.__init__
+madgraph.iolibs.export_v4.ProcessExporterFortran.__init__
+madgraph.iolibs.export_v4.UFO_model_to_mg4.__init__
+madgraph.iolibs.file_writers.FileWriter.__init__
+madgraph.iolibs.gen_infohtml.make_info_html.__init__
+madgraph.iolibs.helas_call_writers.HelasCallWriter.__init__
+madgraph.iolibs.import_v4.ProcCardv4Reader.__init__
+madgraph.iolibs.import_v4.ProcessInfo.__init__
+madgraph.iolibs.ufo_expression_parsers.UFOExpressionParser.__init__
+madgraph.various.banner.Banner.__init__
+madgraph.various.banner.RunCard.__init__
+madgraph.various.cluster.Cluster.__init__
+madgraph.various.combine_runs.CombineRuns.__init__
+madgraph.various.gen_crossxhtml.AllResults.__init__
+madgraph.various.gen_crossxhtml.OneTagResults.__init__
+madgraph.various.gen_crossxhtml.RunResults.__init__
+madgraph.various.lhe_parser.Event.__init__
+madgraph.various.lhe_parser.EventFile.__init__
+madgraph.various.lhe_parser.Particle.__init__
+madgraph.various.misc.BackRead.__init__
+madgraph.various.misc.open_file.__init__
+madgraph.various.process_checks.MatrixElementEvaluator.__init__
+madgraph.various.rambo.DoubleFortranList.__init__
+madgraph.various.rambo.FortranList.__init__
+madgraph.various.sum_html.Combine_results.__init__
+madgraph.various.sum_html.OneResult.__init__
+models.build_restriction_lib.Category.__init__
+models.build_restriction_lib.Rule.__init__
+models.check_param_card.Block.__init__
+models.check_param_card.ParamCard.__init__
+models.check_param_card.ParamCardRule.__init__
+models.check_param_card.Parameter.__init__
+models.import_ufo.OrganizeModelExpression.__init__
+models.import_ufo.UFOMG5Converter.__init__
+models.model_reader.Alphas_Runner.__init__
+models.write_param_card.ParamCardWriter.__init__" class="py-name" href="#" onclick="return doclink('link-24', '__init__', 'link-24');">__init__</a></tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">,</tt> <tt class="py-op">*</tt><tt class="py-name">args</tt><tt class="py-op">,</tt> <tt class="py-op">**</tt><tt class="py-name">kwargs</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L29"></a><tt class="py-lineno">29</tt>  <tt class="py-line"> </tt>
+<a name="ColorFormatter.format"></a><div id="ColorFormatter.format-def"><a name="L30"></a><tt class="py-lineno">30</tt> <a class="py-toggle" href="#" id="ColorFormatter.format-toggle" onclick="return toggle('ColorFormatter.format');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="madgraph.interface.coloring_logging.ColorFormatter-class.html#format">format</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">record</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ColorFormatter.format-collapsed" style="display:none;" pad="++" indent="++++++++"></div><div id="ColorFormatter.format-expanded"><a name="L31"></a><tt class="py-lineno">31</tt>  <tt class="py-line">        <tt class="py-name">levelname</tt> <tt class="py-op">=</tt> <tt class="py-name">record</tt><tt class="py-op">.</tt><tt class="py-name">levelname</tt> </tt>
+<a name="L32"></a><tt class="py-lineno">32</tt>  <tt class="py-line">        <tt class="py-name">message</tt>   <tt class="py-op">=</tt> <tt class="py-name">logging</tt><tt class="py-op">.</tt><tt class="py-name">Formatter</tt><tt class="py-op">.</tt><tt id="link-25" class="py-name" targets="Variable aloha.aloha_writers.ALOHAWriterForFortran.format=aloha.aloha_writers.ALOHAWriterForFortran-class.html#format,Variable aloha.aloha_writers.QP.format=aloha.aloha_writers.QP-class.html#format,Method madgraph.interface.coloring_logging.ColorFormatter.format()=madgraph.interface.coloring_logging.ColorFormatter-class.html#format,Static Method madgraph.various.banner.RunCard.format()=madgraph.various.banner.RunCard-class.html#format"><a title="aloha.aloha_writers.ALOHAWriterForFortran.format
+aloha.aloha_writers.QP.format
+madgraph.interface.coloring_logging.ColorFormatter.format
+madgraph.various.banner.RunCard.format" class="py-name" href="#" onclick="return doclink('link-25', 'format', 'link-25');">format</a></tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">,</tt> <tt class="py-name">record</tt><tt class="py-op">)</tt> <tt class="py-op">+</tt> <tt id="link-26" class="py-name"><a title="madgraph.interface.coloring_logging.RESET_SEQ" class="py-name" href="#" onclick="return doclink('link-26', 'RESET_SEQ', 'link-21');">RESET_SEQ</a></tt> </tt>
+<a name="L33"></a><tt class="py-lineno">33</tt>  <tt class="py-line">        <tt class="py-keyword">for</tt> <tt class="py-name">k</tt><tt class="py-op">,</tt><tt class="py-name">v</tt> <tt class="py-keyword">in</tt> <tt id="link-27" class="py-name"><a title="madgraph.interface.coloring_logging.COLORS" class="py-name" href="#" onclick="return doclink('link-27', 'COLORS', 'link-8');">COLORS</a></tt><tt class="py-op">.</tt><tt class="py-name">items</tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L34"></a><tt class="py-lineno">34</tt>  <tt class="py-line">            <tt class="py-name">message</tt> <tt class="py-op">=</tt> <tt class="py-name">message</tt><tt class="py-op">.</tt><tt id="link-28" class="py-name" targets="Method aloha.aloha_lib.AddVariable.replace()=aloha.aloha_lib.AddVariable-class.html#replace,Method aloha.aloha_lib.MultVariable.replace()=aloha.aloha_lib.MultVariable-class.html#replace"><a title="aloha.aloha_lib.AddVariable.replace
+aloha.aloha_lib.MultVariable.replace" class="py-name" href="#" onclick="return doclink('link-28', 'replace', 'link-28');">replace</a></tt><tt class="py-op">(</tt><tt class="py-string">"$"</tt> <tt class="py-op">+</tt> <tt class="py-name">k</tt><tt class="py-op">,</tt>    <tt id="link-29" class="py-name"><a title="madgraph.interface.coloring_logging.COLOR_SEQ" class="py-name" href="#" onclick="return doclink('link-29', 'COLOR_SEQ', 'link-22');">COLOR_SEQ</a></tt> <tt class="py-op">%</tt> <tt class="py-op">(</tt><tt class="py-name">v</tt><tt class="py-op">+</tt><tt class="py-number">30</tt><tt class="py-op">)</tt><tt class="py-op">)</tt>\ </tt>
+<a name="L35"></a><tt class="py-lineno">35</tt>  <tt class="py-line">                         <tt class="py-op">.</tt><tt id="link-30" class="py-name"><a title="aloha.aloha_lib.AddVariable.replace
+aloha.aloha_lib.MultVariable.replace" class="py-name" href="#" onclick="return doclink('link-30', 'replace', 'link-28');">replace</a></tt><tt class="py-op">(</tt><tt class="py-string">"$BG"</tt> <tt class="py-op">+</tt> <tt class="py-name">k</tt><tt class="py-op">,</tt>  <tt id="link-31" class="py-name"><a title="madgraph.interface.coloring_logging.COLOR_SEQ" class="py-name" href="#" onclick="return doclink('link-31', 'COLOR_SEQ', 'link-22');">COLOR_SEQ</a></tt> <tt class="py-op">%</tt> <tt class="py-op">(</tt><tt class="py-name">v</tt><tt class="py-op">+</tt><tt class="py-number">40</tt><tt class="py-op">)</tt><tt class="py-op">)</tt>\ </tt>
+<a name="L36"></a><tt class="py-lineno">36</tt>  <tt class="py-line">                         <tt class="py-op">.</tt><tt id="link-32" class="py-name"><a title="aloha.aloha_lib.AddVariable.replace
+aloha.aloha_lib.MultVariable.replace" class="py-name" href="#" onclick="return doclink('link-32', 'replace', 'link-28');">replace</a></tt><tt class="py-op">(</tt><tt class="py-string">"$BG-"</tt> <tt class="py-op">+</tt> <tt class="py-name">k</tt><tt class="py-op">,</tt> <tt id="link-33" class="py-name"><a title="madgraph.interface.coloring_logging.COLOR_SEQ" class="py-name" href="#" onclick="return doclink('link-33', 'COLOR_SEQ', 'link-22');">COLOR_SEQ</a></tt> <tt class="py-op">%</tt> <tt class="py-op">(</tt><tt class="py-name">v</tt><tt class="py-op">+</tt><tt class="py-number">40</tt><tt class="py-op">)</tt><tt class="py-op">)</tt>         </tt>
+<a name="L37"></a><tt class="py-lineno">37</tt>  <tt class="py-line">         </tt>
+<a name="L38"></a><tt class="py-lineno">38</tt>  <tt class="py-line">         </tt>
+<a name="L39"></a><tt class="py-lineno">39</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">levelname</tt> <tt class="py-op">==</tt> <tt class="py-string">'INFO'</tt><tt class="py-op">:</tt> </tt>
+<a name="L40"></a><tt class="py-lineno">40</tt>  <tt class="py-line">            <tt class="py-name">message</tt>   <tt class="py-op">=</tt> <tt class="py-name">message</tt><tt class="py-op">.</tt><tt id="link-34" class="py-name"><a title="aloha.aloha_lib.AddVariable.replace
+aloha.aloha_lib.MultVariable.replace" class="py-name" href="#" onclick="return doclink('link-34', 'replace', 'link-28');">replace</a></tt><tt class="py-op">(</tt><tt class="py-string">"$RESET"</tt><tt class="py-op">,</tt> <tt class="py-string">''</tt><tt class="py-op">)</tt>\ </tt>
+<a name="L41"></a><tt class="py-lineno">41</tt>  <tt class="py-line">                           <tt class="py-op">.</tt><tt id="link-35" class="py-name"><a title="aloha.aloha_lib.AddVariable.replace
+aloha.aloha_lib.MultVariable.replace" class="py-name" href="#" onclick="return doclink('link-35', 'replace', 'link-28');">replace</a></tt><tt class="py-op">(</tt><tt class="py-string">"$BOLD"</tt><tt class="py-op">,</tt>  <tt class="py-string">''</tt><tt class="py-op">)</tt>\ </tt>
+<a name="L42"></a><tt class="py-lineno">42</tt>  <tt class="py-line">                           <tt class="py-op">.</tt><tt id="link-36" class="py-name"><a title="aloha.aloha_lib.AddVariable.replace
+aloha.aloha_lib.MultVariable.replace" class="py-name" href="#" onclick="return doclink('link-36', 'replace', 'link-28');">replace</a></tt><tt class="py-op">(</tt><tt class="py-string">"$COLOR"</tt><tt class="py-op">,</tt> <tt class="py-string">''</tt><tt class="py-op">)</tt> </tt>
+<a name="L43"></a><tt class="py-lineno">43</tt>  <tt class="py-line">            <tt class="py-keyword">return</tt> <tt class="py-name">message</tt> </tt>
+<a name="L44"></a><tt class="py-lineno">44</tt>  <tt class="py-line">        <tt class="py-keyword">else</tt><tt class="py-op">:</tt>     </tt>
+<a name="L45"></a><tt class="py-lineno">45</tt>  <tt class="py-line">            <tt class="py-name">color</tt>     <tt class="py-op">=</tt> <tt id="link-37" class="py-name"><a title="madgraph.interface.coloring_logging.COLOR_SEQ" class="py-name" href="#" onclick="return doclink('link-37', 'COLOR_SEQ', 'link-22');">COLOR_SEQ</a></tt> <tt class="py-op">%</tt> <tt class="py-op">(</tt><tt class="py-number">30</tt> <tt class="py-op">+</tt> <tt id="link-38" class="py-name"><a title="madgraph.interface.coloring_logging.COLORS" class="py-name" href="#" onclick="return doclink('link-38', 'COLORS', 'link-8');">COLORS</a></tt><tt class="py-op">[</tt><tt class="py-name">levelname</tt><tt class="py-op">]</tt><tt class="py-op">)</tt> </tt>
+<a name="L46"></a><tt class="py-lineno">46</tt>  <tt class="py-line">            <tt class="py-name">message</tt>   <tt class="py-op">=</tt> <tt class="py-name">message</tt><tt class="py-op">.</tt><tt id="link-39" class="py-name"><a title="aloha.aloha_lib.AddVariable.replace
+aloha.aloha_lib.MultVariable.replace" class="py-name" href="#" onclick="return doclink('link-39', 'replace', 'link-28');">replace</a></tt><tt class="py-op">(</tt><tt class="py-string">"$RESET"</tt><tt class="py-op">,</tt> <tt id="link-40" class="py-name"><a title="madgraph.interface.coloring_logging.RESET_SEQ" class="py-name" href="#" onclick="return doclink('link-40', 'RESET_SEQ', 'link-21');">RESET_SEQ</a></tt><tt class="py-op">)</tt>\ </tt>
+<a name="L47"></a><tt class="py-lineno">47</tt>  <tt class="py-line">                           <tt class="py-op">.</tt><tt id="link-41" class="py-name"><a title="aloha.aloha_lib.AddVariable.replace
+aloha.aloha_lib.MultVariable.replace" class="py-name" href="#" onclick="return doclink('link-41', 'replace', 'link-28');">replace</a></tt><tt class="py-op">(</tt><tt class="py-string">"$BOLD"</tt><tt class="py-op">,</tt>  <tt id="link-42" class="py-name"><a title="madgraph.interface.coloring_logging.BOLD_SEQ" class="py-name" href="#" onclick="return doclink('link-42', 'BOLD_SEQ', 'link-23');">BOLD_SEQ</a></tt><tt class="py-op">)</tt>\ </tt>
+<a name="L48"></a><tt class="py-lineno">48</tt>  <tt class="py-line">                           <tt class="py-op">.</tt><tt id="link-43" class="py-name"><a title="aloha.aloha_lib.AddVariable.replace
+aloha.aloha_lib.MultVariable.replace" class="py-name" href="#" onclick="return doclink('link-43', 'replace', 'link-28');">replace</a></tt><tt class="py-op">(</tt><tt class="py-string">"$COLOR"</tt><tt class="py-op">,</tt> <tt class="py-name">color</tt><tt class="py-op">)</tt> </tt>
+<a name="L49"></a><tt class="py-lineno">49</tt>  <tt class="py-line"> </tt>
+<a name="L50"></a><tt class="py-lineno">50</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">message</tt>  </tt>
+</div></div><a name="L51"></a><tt class="py-lineno">51</tt>  <tt class="py-line"> </tt>
+<a name="L52"></a><tt class="py-lineno">52</tt>  <tt class="py-line"><tt class="py-name">logging</tt><tt class="py-op">.</tt><tt id="link-44" class="py-name" targets="Class madgraph.interface.coloring_logging.ColorFormatter=madgraph.interface.coloring_logging.ColorFormatter-class.html"><a title="madgraph.interface.coloring_logging.ColorFormatter" class="py-name" href="#" onclick="return doclink('link-44', 'ColorFormatter', 'link-44');">ColorFormatter</a></tt> <tt class="py-op">=</tt> <tt id="link-45" class="py-name"><a title="madgraph.interface.coloring_logging.ColorFormatter" class="py-name" href="#" onclick="return doclink('link-45', 'ColorFormatter', 'link-44');">ColorFormatter</a></tt> </tt>
+<a name="L53"></a><tt class="py-lineno">53</tt>  <tt class="py-line"> </tt><script type="text/javascript">
+<!--
+expandto(location.href);
+// -->
+</script>
+</pre>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Fri Jun 21 10:41:25 2013
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

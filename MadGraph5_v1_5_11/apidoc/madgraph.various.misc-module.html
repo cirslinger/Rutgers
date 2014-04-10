@@ -1,0 +1,678 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>madgraph.various.misc</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="madgraph-module.html">Package&nbsp;madgraph</a> ::
+        <a href="madgraph.various-module.html">Package&nbsp;various</a> ::
+        Module&nbsp;misc
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="madgraph.various.misc-module.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== MODULE DESCRIPTION ==================== -->
+<h1 class="epydoc">Module misc</h1><p class="nomargin-top"><span class="codelink"><a href="madgraph.various.misc-pysrc.html">source&nbsp;code</a></span></p>
+<p>A set of functions performing routine administrative I/O tasks.</p>
+
+<!-- ==================== CLASSES ==================== -->
+<a name="section-Classes"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Classes</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-Classes"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="madgraph.various.misc.BackRead-class.html" class="summary-name">BackRead</a><br />
+      read a file returning the lines in reverse order for each call of 
+        readline() This actually just reads blocks (4096 bytes by default) 
+        of data from the end of the file and returns last line in an 
+        internal buffer.
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="madgraph.various.misc.open_file-class.html" class="summary-name">open_file</a><br />
+      a convinient class to open a file
+    </td>
+  </tr>
+</table>
+<!-- ==================== FUNCTIONS ==================== -->
+<a name="section-Functions"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Functions</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-Functions"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="parse_info_str"></a><span class="summary-sig-name">parse_info_str</span>(<span class="summary-sig-arg">fsock</span>)</span><br />
+      Parse a newline separated list of &quot;param=value&quot; as a 
+      dictionnary</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="madgraph.various.misc-pysrc.html#parse_info_str">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="madgraph.various.misc-module.html#get_pkg_info" class="summary-sig-name">get_pkg_info</a>(<span class="summary-sig-arg">info_str</span>=<span class="summary-sig-default">None</span>)</span><br />
+      Returns the current version information of the MadGraph package, as 
+      written in the VERSION text file.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="madgraph.various.misc-pysrc.html#get_pkg_info">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="get_time_info"></a><span class="summary-sig-name">get_time_info</span>()</span><br />
+      Returns the present time info for use in MG5 command history header.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="madgraph.various.misc-pysrc.html#get_time_info">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="which"></a><span class="summary-sig-name">which</span>(<span class="summary-sig-arg">program</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="madgraph.various.misc-pysrc.html#which">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="nice_representation"></a><span class="summary-sig-name">nice_representation</span>(<span class="summary-sig-arg">var</span>,
+        <span class="summary-sig-arg">nb_space</span>=<span class="summary-sig-default">0</span>)</span><br />
+      Return nice information on the current variable</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="madgraph.various.misc-pysrc.html#nice_representation">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="multiple_try"></a><span class="summary-sig-name">multiple_try</span>(<span class="summary-sig-arg">nb_try</span>=<span class="summary-sig-default">5</span>,
+        <span class="summary-sig-arg">sleep</span>=<span class="summary-sig-default">20</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="madgraph.various.misc-pysrc.html#multiple_try">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="compile"></a><span class="summary-sig-name">compile</span>(<span class="summary-sig-arg">arg</span>=<span class="summary-sig-default"><code class="variable-group">[</code><code class="variable-group">]</code></span>,
+        <span class="summary-sig-arg">cwd</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">mode</span>=<span class="summary-sig-default"><code class="variable-quote">'</code><code class="variable-string">fortran</code><code class="variable-quote">'</code></span>,
+        <span class="summary-sig-arg">nb_core</span>=<span class="summary-sig-default">1</span>,
+        <span class="summary-sig-arg">**opt</span>)</span><br />
+      compile a given directory</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="madgraph.various.misc-pysrc.html#compile">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="mod_compilator"></a><span class="summary-sig-name">mod_compilator</span>(<span class="summary-sig-arg">directory</span>,
+        <span class="summary-sig-arg">new</span>=<span class="summary-sig-default"><code class="variable-quote">'</code><code class="variable-string">gfortran</code><code class="variable-quote">'</code></span>,
+        <span class="summary-sig-arg">current</span>=<span class="summary-sig-default">None</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="madgraph.various.misc-pysrc.html#mod_compilator">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="detect_current_compiler"></a><span class="summary-sig-name">detect_current_compiler</span>(<span class="summary-sig-arg">path</span>)</span><br />
+      find the current compiler for the current directory</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="madgraph.various.misc-pysrc.html#detect_current_compiler">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="find_makefile_in_dir"></a><span class="summary-sig-name">find_makefile_in_dir</span>(<span class="summary-sig-arg">directory</span>)</span><br />
+      return a list of all file starting with makefile in the given 
+      directory</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="madgraph.various.misc-pysrc.html#find_makefile_in_dir">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="rm_old_compile_file"></a><span class="summary-sig-name">rm_old_compile_file</span>()</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="madgraph.various.misc-pysrc.html#rm_old_compile_file">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="rm_file_extension"></a><span class="summary-sig-name">rm_file_extension</span>(<span class="summary-sig-arg">ext</span>,
+        <span class="summary-sig-arg">dirname</span>,
+        <span class="summary-sig-arg">names</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="madgraph.various.misc-pysrc.html#rm_file_extension">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="check_system_error"></a><span class="summary-sig-name">check_system_error</span>(<span class="summary-sig-arg">value</span>=<span class="summary-sig-default">1</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="madgraph.various.misc-pysrc.html#check_system_error">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="madgraph.various.misc-module.html#call" class="summary-sig-name">call</a>(<span class="summary-sig-arg">arg</span>,
+        <span class="summary-sig-arg">*args</span>,
+        <span class="summary-sig-arg">**opt</span>)</span><br />
+      nice way to call an external program with nice error treatment</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="madgraph.various.misc-pysrc.html#call">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="madgraph.various.misc-module.html#Popen" class="summary-sig-name">Popen</a>(<span class="summary-sig-arg">arg</span>,
+        <span class="summary-sig-arg">*args</span>,
+        <span class="summary-sig-arg">**opt</span>)</span><br />
+      nice way to call an external program with nice error treatment</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="madgraph.various.misc-pysrc.html#Popen">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="madgraph.various.misc-module.html#mult_try_open" class="summary-sig-name">mult_try_open</a>(<span class="summary-sig-arg">*args</span>,
+        <span class="summary-sig-arg">**opt</span>)</span><br />
+      try to open a file with multiple try to ensure that filesystem is 
+      sync</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="madgraph.various.misc-pysrc.html#mult_try_open">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="madgraph.various.misc-module.html#tail" class="summary-sig-name">tail</a>(<span class="summary-sig-arg">f</span>,
+        <span class="summary-sig-arg">n</span>,
+        <span class="summary-sig-arg">offset</span>=<span class="summary-sig-default">None</span>)</span><br />
+      Reads a n lines from f with an offset of offset lines.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="madgraph.various.misc-pysrc.html#tail">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="get_last_line"></a><span class="summary-sig-name">get_last_line</span>(<span class="summary-sig-arg">fsock</span>)</span><br />
+      return the last line of a file</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="madgraph.various.misc-pysrc.html#get_last_line">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="is_executable"></a><span class="summary-sig-name">is_executable</span>(<span class="summary-sig-arg">path</span>)</span><br />
+      check if a path is executable</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="madgraph.various.misc-pysrc.html#is_executable">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+</table>
+<!-- ==================== VARIABLES ==================== -->
+<a name="section-Variables"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Variables</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-Variables"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="logger"></a><span class="summary-name">logger</span> = <code title="logging.getLogger('cmdprint.ext_program')">logging.getLogger('cmdprint.ext_program')</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="logger_stderr"></a><span class="summary-name">logger_stderr</span> = <code title="logging.getLogger('madevent.misc')">logging.getLogger('madevent.misc')</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="wait_once"></a><span class="summary-name">wait_once</span> = <code title="False">False</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="__package__"></a><span class="summary-name">__package__</span> = <code title="'madgraph.various'"><code class="variable-quote">'</code><code class="variable-string">madgraph.various</code><code class="variable-quote">'</code></code>
+    </td>
+  </tr>
+</table>
+<!-- ==================== FUNCTION DETAILS ==================== -->
+<a name="section-FunctionDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Function Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-FunctionDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="get_pkg_info"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">get_pkg_info</span>(<span class="sig-arg">info_str</span>=<span class="sig-default">None</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="madgraph.various.misc-pysrc.html#get_pkg_info">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns the current version information of the MadGraph package, as 
+  written in the VERSION text file. If the file cannot be found, a 
+  dictionary with empty values is returned. As an option, an info string 
+  can be passed to be read instead of the file content.</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="call"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">call</span>(<span class="sig-arg">arg</span>,
+        <span class="sig-arg">*args</span>,
+        <span class="sig-arg">**opt</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="madgraph.various.misc-pysrc.html#call">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>nice way to call an external program with nice error treatment</p>
+  <dl class="fields">
+    <dt>Decorators:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code>@check_system_error()</code></li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="Popen"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">Popen</span>(<span class="sig-arg">arg</span>,
+        <span class="sig-arg">*args</span>,
+        <span class="sig-arg">**opt</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="madgraph.various.misc-pysrc.html#Popen">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>nice way to call an external program with nice error treatment</p>
+  <dl class="fields">
+    <dt>Decorators:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code>@check_system_error()</code></li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="mult_try_open"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">mult_try_open</span>(<span class="sig-arg">*args</span>,
+        <span class="sig-arg">**opt</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="madgraph.various.misc-pysrc.html#mult_try_open">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>try to open a file with multiple try to ensure that filesystem is 
+  sync</p>
+  <dl class="fields">
+    <dt>Decorators:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code>@multiple_try()</code></li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="tail"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">tail</span>(<span class="sig-arg">f</span>,
+        <span class="sig-arg">n</span>,
+        <span class="sig-arg">offset</span>=<span class="sig-default">None</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="madgraph.various.misc-pysrc.html#tail">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Reads a n lines from f with an offset of offset lines.  The return 
+  value is a tuple in the form ``lines``.</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Fri Jun 21 10:41:20 2013
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

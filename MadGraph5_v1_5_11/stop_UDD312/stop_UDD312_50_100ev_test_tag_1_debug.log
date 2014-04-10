@@ -1,0 +1,92 @@
+#************************************************************
+#*                    MadGraph/MadEvent 5                   *
+#*                                                          *
+#*                *                       *                 *
+#*                  *        * *        *                   *
+#*                    * * * * 5 * * * *                     *
+#*                  *        * *        *                   *
+#*                *                       *                 *
+#*                                                          *
+#*                                                          *
+#*         VERSION 1.5.12                2013-08-21         *
+#*                                                          *
+#*    The MadGraph Development Team - Please visit us at    *
+#*    https://server06.fynu.ucl.ac.be/projects/madgraph     *
+#*                                                          *
+#************************************************************
+#*                                                          *
+#*               Command File for MadEvent                  *
+#*                                                          *
+#*     run as ./bin/madevent.py filename                    *
+#*                                                          *
+#************************************************************
+generate_events stop_UDD312_50_100ev_test --cluster -f
+Traceback (most recent call last):
+  File "/cms/gomez/Substructure/Generation/tmp/MadGraph5_v1_5_11/madgraph/interface/extended_cmd.py", line 819, in onecmd
+    return self.onecmd_orig(line, **opt)
+  File "/cms/gomez/Substructure/Generation/tmp/MadGraph5_v1_5_11/madgraph/interface/extended_cmd.py", line 812, in onecmd_orig
+    return func(arg, **opt)
+  File "/cms/gomez/Substructure/Generation/tmp/MadGraph5_v1_5_11/madgraph/interface/madevent_interface.py", line 2300, in do_generate_events
+    postcmd=False)
+  File "/cms/gomez/Substructure/Generation/tmp/MadGraph5_v1_5_11/madgraph/interface/extended_cmd.py", line 859, in exec_cmd
+    stop = Cmd.onecmd_orig(current_interface, line, **opt)
+  File "/cms/gomez/Substructure/Generation/tmp/MadGraph5_v1_5_11/madgraph/interface/extended_cmd.py", line 812, in onecmd_orig
+    return func(arg, **opt)
+  File "/cms/gomez/Substructure/Generation/tmp/MadGraph5_v1_5_11/madgraph/interface/madevent_interface.py", line 2617, in do_survey
+    self.configure_directory()
+  File "/cms/gomez/Substructure/Generation/tmp/MadGraph5_v1_5_11/madgraph/interface/madevent_interface.py", line 3961, in configure_directory
+    self.compile(arg=[name], cwd=os.path.join(self.me_dir, 'Source'))
+  File "/cms/gomez/Substructure/Generation/tmp/MadGraph5_v1_5_11/madgraph/interface/extended_cmd.py", line 922, in compile
+    return misc.compile(nb_core=self.options['nb_core'], *args, **opts)
+  File "/cms/gomez/Substructure/Generation/tmp/MadGraph5_v1_5_11/madgraph/various/misc.py", line 227, in compile
+    raise MadGraph5Error, error_text
+MadGraph5Error: A compilation Error occurs when trying to compile /cms/gomez/Substructure/Generation/tmp/MadGraph5_v1_5_11/stop_UDD312/Source.
+The compilation fails with the following output message:
+    gfortran -O -w -ffixed-line-length-132 -o ../bin/internal/gen_ximprove gen_ximprove.o ranmar.o rw_routines.o open_file.o
+    /cms/base/cmssoft/slc5_amd64_gcc462/external/gcc/4.6.2/bin/../lib/gcc/x86_64-unknown-linux-gnu/4.6.2/../../../../x86_64-unknown-linux-gnu/bin/ld: /usr/lib/../lib64/crt1.o:(.text+0x20): error: undefined reference to 'main'
+    /cms/base/cmssoft/slc5_amd64_gcc462/external/gcc/4.6.2/bin/../lib/gcc/x86_64-unknown-linux-gnu/4.6.2/../../../../x86_64-unknown-linux-gnu/bin/ld: gen_ximprove.o: in function write_gen_grid_:gen_ximprove.f(.text+0x6fa): error: undefined reference to '_gfortran_internal_malloc'
+    /cms/base/cmssoft/slc5_amd64_gcc462/external/gcc/4.6.2/bin/../lib/gcc/x86_64-unknown-linux-gnu/4.6.2/../../../../x86_64-unknown-linux-gnu/bin/ld: gen_ximprove.o: in function write_gen_grid_:gen_ximprove.f(.text+0x745): error: undefined reference to '_gfortran_copy_string'
+    /cms/base/cmssoft/slc5_amd64_gcc462/external/gcc/4.6.2/bin/../lib/gcc/x86_64-unknown-linux-gnu/4.6.2/../../../../x86_64-unknown-linux-gnu/bin/ld: gen_ximprove.o: in function write_gen_grid_:gen_ximprove.f(.text+0x74d): error: undefined reference to '_gfortran_internal_free'
+    /cms/base/cmssoft/slc5_amd64_gcc462/external/gcc/4.6.2/bin/../lib/gcc/x86_64-unknown-linux-gnu/4.6.2/../../../../x86_64-unknown-linux-gnu/bin/ld: gen_ximprove.o: in function write_gen_:gen_ximprove.f(.text+0x1eef): error: undefined reference to '_gfortran_internal_malloc'
+    /cms/base/cmssoft/slc5_amd64_gcc462/external/gcc/4.6.2/bin/../lib/gcc/x86_64-unknown-linux-gnu/4.6.2/../../../../x86_64-unknown-linux-gnu/bin/ld: gen_ximprove.o: in function write_gen_:gen_ximprove.f(.text+0x1f36): error: undefined reference to '_gfortran_copy_string'
+    /cms/base/cmssoft/slc5_amd64_gcc462/external/gcc/4.6.2/bin/../lib/gcc/x86_64-unknown-linux-gnu/4.6.2/../../../../x86_64-unknown-linux-gnu/bin/ld: gen_ximprove.o: in function write_gen_:gen_ximprove.f(.text+0x1f3e): error: undefined reference to '_gfortran_internal_free'
+    /cms/base/cmssoft/slc5_amd64_gcc462/external/gcc/4.6.2/bin/../lib/gcc/x86_64-unknown-linux-gnu/4.6.2/../../../../x86_64-unknown-linux-gnu/bin/ld: gen_ximprove.o: in function write_gen_:gen_ximprove.f(.text+0x25c4): error: undefined reference to '_gfortran_internal_malloc'
+    /cms/base/cmssoft/slc5_amd64_gcc462/external/gcc/4.6.2/bin/../lib/gcc/x86_64-unknown-linux-gnu/4.6.2/../../../../x86_64-unknown-linux-gnu/bin/ld: gen_ximprove.o: in function write_gen_:gen_ximprove.f(.text+0x260f): error: undefined reference to '_gfortran_copy_string'
+    /cms/base/cmssoft/slc5_amd64_gcc462/external/gcc/4.6.2/bin/../lib/gcc/x86_64-unknown-linux-gnu/4.6.2/../../../../x86_64-unknown-linux-gnu/bin/ld: gen_ximprove.o: in function write_gen_:gen_ximprove.f(.text+0x2617): error: undefined reference to '_gfortran_internal_free'
+    /cms/base/cmssoft/slc5_amd64_gcc462/external/gcc/4.6.2/bin/../lib/gcc/x86_64-unknown-linux-gnu/4.6.2/../../../../x86_64-unknown-linux-gnu/bin/ld: gen_ximprove.o: in function open_bash_file_:gen_ximprove.f(.text+0x3acd): error: undefined reference to '_gfortran_copy_string'
+    /cms/base/cmssoft/slc5_amd64_gcc462/external/gcc/4.6.2/bin/../lib/gcc/x86_64-unknown-linux-gnu/4.6.2/../../../../x86_64-unknown-linux-gnu/bin/ld: gen_ximprove.o: in function MAIN__:gen_ximprove.f(.text+0x4aa2): error: undefined reference to '_gfortran_set_std'
+    /cms/base/cmssoft/slc5_amd64_gcc462/external/gcc/4.6.2/bin/../lib/gcc/x86_64-unknown-linux-gnu/4.6.2/../../../../x86_64-unknown-linux-gnu/bin/ld: rw_routines.o: in function load_para_:rw_routines.f(.text+0xe22): error: undefined reference to '_gfortran_internal_malloc'
+    /cms/base/cmssoft/slc5_amd64_gcc462/external/gcc/4.6.2/bin/../lib/gcc/x86_64-unknown-linux-gnu/4.6.2/../../../../x86_64-unknown-linux-gnu/bin/ld: rw_routines.o: in function load_para_:rw_routines.f(.text+0xe77): error: undefined reference to '_gfortran_internal_free'
+    collect2: ld returned 1 exit status
+    make: *** [../bin/internal/gen_ximprove] Error 1
+    
+Please try to fix this compilations issue and retry.
+Help might be found at https://answers.launchpad.net/madgraph5.
+If you think that this is a bug, you can report this at https://bugs.launchpad.net/madgraph5
+                              Run Options    
+                              -----------    
+               stdout_level 	:	20 (user set)
+
+                         MadEvent Options    
+                         ----------------    
+     automatic_html_opening 	:	False (user set)
+          cluster_temp_path 	:	None
+              cluster_queue 	:	None (user set)
+                    nb_core 	:	8 (user set)
+                   run_mode 	:	2
+
+                      Configuration Options    
+                      ---------------------    
+                web_browser 	:	None
+                text_editor 	:	None
+           madanalysis_path 	:	None (user set)
+               pythia8_path 	:	None (user set)
+            pythia-pgs_path 	:	None (user set)
+                    td_path 	:	None (user set)
+               delphes_path 	:	None (user set)
+                auto_update 	:	7 (user set)
+               cluster_type 	:	condor
+           fortran_compiler 	:	None (user set)
+        exrootanalysis_path 	:	None (user set)
+                 eps_viewer 	:	None
+                    timeout 	:	60

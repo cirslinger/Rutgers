@@ -1,0 +1,13 @@
+Executable = /cms/gomez/Substructure/Generation/tmp/MadGraph5_v1_5_11/stop_UDD312/SubProcesses/../bin/internal/run_combine
+                  output = /cms/gomez/Substructure/Generation/tmp/MadGraph5_v1_5_11/stop_UDD312/SubProcesses/combine.log
+                  error = /dev/null
+                  log = /dev/null
+                  
+                  environment = CONDOR_ID=$(Cluster).$(Process)
+                  Universe = vanilla
+                  notification = Error
+                  Initialdir = /cms/gomez/Substructure/Generation/tmp/MadGraph5_v1_5_11/stop_UDD312/SubProcesses
+                  
+                  getenv=True
+                  queue 1
+               

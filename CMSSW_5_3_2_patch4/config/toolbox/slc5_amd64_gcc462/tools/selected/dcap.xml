@@ -1,0 +1,8 @@
+<tool name="dcap" version="2.47.5.0">
+  <lib name="dcap"/>
+  <client>
+    <environment name="DCAP_BASE" default="/cms/base/cmssoft/slc5_amd64_gcc462/external/dcap/2.47.5.0"/>
+    <environment name="LIBDIR" default="$DCAP_BASE/lib"/>
+    <environment name="INCLUDE" default="$DCAP_BASE/include"/>
+  </client>
+</tool>

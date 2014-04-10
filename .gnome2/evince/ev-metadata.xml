@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<metadata>
+  <document uri="file:///users/h2/irslinger/folder/folder.pdf" atime="1392394465">
+    <entry key="sidebar_page" type="gchararray" value="links"/>
+    <entry key="window_width" type="gint" value="600"/>
+    <entry key="window_x" type="gint" value="111"/>
+    <entry key="window_height" type="gint" value="600"/>
+    <entry key="window_y" type="gint" value="13"/>
+  </document>
+  <document uri="file:///cms/data25/irslinger/MadGraph5_v1_5_11/madanalysis5/histos1/PDF/main.pdf" atime="1395931354">
+    <entry key="sidebar_page" type="gchararray" value="links"/>
+    <entry key="page" type="gint" value="5"/>
+    <entry key="presentation" type="gboolean" value="1"/>
+  </document>
+  <document uri="file:///cms/data25/irslinger/MadGraph5_v1_5_11/modanalysis5/PDF/main.pdf" atime="1395887738">
+    <entry key="sidebar_page" type="gchararray" value="links"/>
+    <entry key="window_width" type="gint" value="1099"/>
+    <entry key="page" type="gint" value="2"/>
+    <entry key="window_x" type="gint" value="4"/>
+    <entry key="window_height" type="gint" value="764"/>
+    <entry key="window_y" type="gint" value="0"/>
+  </document>
+  <document uri="file:///cms/data25/irslinger/MadGraph5_v1_5_11/madanalysis5/histos/PDF/main.pdf" atime="1395932704">
+    <entry key="sidebar_page" type="gchararray" value="links"/>
+    <entry key="sizing_mode" type="gchararray" value="free"/>
+    <entry key="window_maximized" type="gboolean" value="0"/>
+    <entry key="window_width" type="gint" value="600"/>
+    <entry key="page" type="gint" value="22"/>
+    <entry key="fullscreen" type="gboolean" value="0"/>
+    <entry key="zoom" type="gdouble" value="1.000000"/>
+    <entry key="presentation" type="gboolean" value="1"/>
+    <entry key="window_x" type="gint" value="192"/>
+    <entry key="window_height" type="gint" value="600"/>
+    <entry key="window_y" type="gint" value="43"/>
+  </document>
+  <document uri="file:///cms/clseitz-2/IrslingerBoosted/MadGraph5_v1_5_11/madanalysis5/histos/PDF/main.pdf" atime="1396535937">
+    <entry key="sidebar_page" type="gchararray" value="links"/>
+    <entry key="page" type="gint" value="2"/>
+    <entry key="presentation" type="gboolean" value="1"/>
+  </document>
+  <document uri="last-used-value" atime="1396536104">
+    <entry key="sidebar_page" type="gchararray" value="links"/>
+    <entry key="sizing_mode" type="gchararray" value="free"/>
+    <entry key="window_maximized" type="gboolean" value="0"/>
+    <entry key="window_width" type="gint" value="600"/>
+    <entry key="page" type="gint" value="2"/>
+    <entry key="fullscreen" type="gboolean" value="0"/>
+    <entry key="zoom" type="gdouble" value="1.000000"/>
+    <entry key="presentation" type="gboolean" value="1"/>
+    <entry key="window_x" type="gint" value="4"/>
+    <entry key="window_height" type="gint" value="600"/>
+    <entry key="window_y" type="gint" value="0"/>
+  </document>
+</metadata>

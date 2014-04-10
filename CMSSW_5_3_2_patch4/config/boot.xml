@@ -1,0 +1,7 @@
+<project name="CMSSW" version="CMSSW_5_3_2_patch4">
+  <config dir="config"/>
+  <toolbox dir="file:/cms/base/cmssoft/slc5_amd64_gcc462/cms/cmssw-patch-tool-conf/2.0-cms7"/>
+  <base url="file:/cms/base/cmssoft/BUILD/slc5_amd64_gcc462/cms/cmssw-patch/CMSSW_5_3_2_patch4/">
+    <download url="file:config" name="config"/>
+  </base>
+</project>

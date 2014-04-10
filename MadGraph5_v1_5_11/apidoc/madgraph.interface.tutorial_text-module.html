@@ -1,0 +1,710 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>madgraph.interface.tutorial_text</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="madgraph-module.html">Package&nbsp;madgraph</a> ::
+        <a href="madgraph.interface-module.html">Package&nbsp;interface</a> ::
+        Module&nbsp;tutorial_text
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="madgraph.interface.tutorial_text-module.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== MODULE DESCRIPTION ==================== -->
+<h1 class="epydoc">Module tutorial_text</h1><p class="nomargin-top"><span class="codelink"><a href="madgraph.interface.tutorial_text-pysrc.html">source&nbsp;code</a></span></p>
+<!-- ==================== VARIABLES ==================== -->
+<a name="section-Variables"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Variables</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-Variables"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="madgraph.interface.tutorial_text-module.html#tutorial" class="summary-name">tutorial</a> = <code title="'''
+You have entered tutorial mode. This will introduce you to the main
+syntax options of MadGraph5.
+
+To learn more about the different options for a command, you can use
+mg5&gt;help A_CMD
+To see a list of all commands, use
+mg5&gt;help 
+..."><code class="variable-quote">'</code><code class="variable-string">\nYou have entered tutorial mode. This will introd</code><code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="madgraph.interface.tutorial_text-module.html#generate" class="summary-name">generate</a> = <code title="'''
+You have just generated a new process.
+Note that the coupling order &quot;QED=0&quot; was automatically added by MG5
+to avoid non-QCD diagrams which have negligible contribution.
+You can find more information on supported syntax by using:
+mg5&gt;help generate
+To list all defined processes, type
+mg5&gt;display processes
+..."><code class="variable-quote">'</code><code class="variable-string">\nYou have just generated a new process.\nNote tha</code><code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="madgraph.interface.tutorial_text-module.html#display_processes" class="summary-name">display_processes</a> = <code title="'''
+You have seen a list of the already defined processes.
+
+At this stage you can export your processes to different formats. In
+this tutorial, we will explain how to create a valid output for
+MadEvent. This is done simply by typing:
+mg5&gt;output MY_FIRST_MG5_RUN
+'''"><code class="variable-quote">'</code><code class="variable-string">\nYou have seen a list of the already def</code><code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="madgraph.interface.tutorial_text-module.html#add_process" class="summary-name">add_process</a> = <code title="'''
+You have added a process to your process list.
+
+At this stage you can export your processes to different formats. In
+this tutorial, we will explain how to create output for MadEvent.
+This is done simply by typing:
+mg5&gt;output MY_FIRST_MG5_RUN
+'''"><code class="variable-quote">'</code><code class="variable-string">\nYou have added a process to your process list</code><code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="madgraph.interface.tutorial_text-module.html#output" class="summary-name">output</a> = <code title="'''
+If you are following the tutorial, a directory MY_FIRST_MG5_RUN has
+been created which can be used in order to run MadEvent exactly as if
+it was coming from MG4.
+
+Additionally to the MG4 command (see MY_FIRST_MG5_RUN/README), you can\
+ also 
+generate your events/compute the cross-section from this interface:
+..."><code class="variable-quote">'</code><code class="variable-string">\nIf you are following the tutorial, a directory MY_</code><code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="madgraph.interface.tutorial_text-module.html#launch" class="summary-name">launch</a> = <code title="'''This step ends the tutorial of the basic commands of MG5. You can
+always use the help to see the options available for different
+commands. For example, if you want to know all valid output formats,
+you can enter
+mg5&gt;help output
+
+In order to close this tutorial please enter
+mg5&gt;tutorial stop
+..."><code class="variable-quote">'</code><code class="variable-string">This step ends the tutorial of the basic commands of</code><code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="madgraph.interface.tutorial_text-module.html#import_model" class="summary-name">import_model</a> = <code title="'''
+You have successfully imported a model. If you followed the tutorial
+this is the MSSM.
+
+If you want to know more information about this model you can use the
+following commands:
+mg5&gt;display particles
+mg5&gt;display interactions
+..."><code class="variable-quote">'</code><code class="variable-string">\nYou have successfully imported a model. If y</code><code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="madgraph.interface.tutorial_text-module.html#import_model_v4" class="summary-name">import_model_v4</a> = <code title="'''
+You have successfully imported a model. If you followed the tutorial
+this is the MSSM.
+
+If you want to know more information about this model you can use the
+following commands:
+mg5&gt;display particles
+mg5&gt;display interactions
+..."><code class="variable-quote">'</code><code class="variable-string">\nYou have successfully imported a model. I</code><code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="madgraph.interface.tutorial_text-module.html#customize_model" class="summary-name">customize_model</a> = <code title="'''
+The model with your customization is now loaded and you can use it as \
+any other
+model. Note that if you want to save this specific customization you c\
+an do the
+following:
+mg5&gt; customize_model --save=NAME
+the model will then be accessible by the command (assuming that you ar\
+..."><code class="variable-quote">'</code><code class="variable-string">\nThe model with your customization is now </code><code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="madgraph.interface.tutorial_text-module.html#define" class="summary-name">define</a> = <code title="'''
+You have just defined a multiparticle label.
+If you followed the tutorial, the label is &quot;v&quot;
+
+Note that some multiparticles such as as p, j, l+, l- are
+predefined. Type
+mg5&gt;display multiparticles
+to see their definitions.
+..."><code class="variable-quote">'</code><code class="variable-string">\nYou have just defined a multiparticle label.\nIf y</code><code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="madgraph.interface.tutorial_text-module.html#history" class="summary-name">history</a> = <code title="'''
+You have written a history file. If you followed the tutorial this
+should be ./my_mg5_cmd.dat. In order to load a history file and
+execute the commands in it, you can do:
+mg5&gt;import command my_mg5_cmd.dat
+or from the shell:
+./bin/mg5 my_mg5_cmd.dat
+
+..."><code class="variable-quote">'</code><code class="variable-string">\nYou have written a history file. If you followed </code><code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="madgraph.interface.tutorial_text-module.html#open_index" class="summary-name">open_index</a> = <code title="'''
+If you are following the tutorial, a directory MY_FIRST_MG5_RUN has
+been created which can be used in order to run MadEvent exactly as if
+it was coming from MG4.
+
+Additionally to the MG4 command (see MY_FIRST_MG5_RUN/README), you can\
+ also 
+generate your events/compute the cross-section from this interface:
+..."><code class="variable-quote">'</code><code class="variable-string">\nIf you are following the tutorial, a directory</code><code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="madgraph.interface.tutorial_text-module.html#open" class="summary-name">open</a> = <code title="'''
+Note that in order to open some file, you might be need to use a shell\
+ command.
+Any shell command can be launched by MG5, by running &quot;shell&quot; or
+starting the line by an exclamation mark (!).
+
+The final command of the tutorial is display diagrams. This allows you\
+ to draw and
+..."><code class="variable-quote">'</code><code class="variable-string">\nNote that in order to open some file, you might be n</code><code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="madgraph.interface.tutorial_text-module.html#display_diagrams" class="summary-name">display_diagrams</a> = <code title="'''
+This command was the last step of the tutorial. 
+Quit the tutorial by typing:
+mg5&gt;tutorial stop
+
+Thanks for using MG5.
+'''"><code class="variable-quote">'</code><code class="variable-string">\nThis command was the last step of the tu</code><code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="__package__"></a><span class="summary-name">__package__</span> = <code title="None">None</code><br />
+      hash(x)
+    </td>
+  </tr>
+</table>
+<!-- ==================== VARIABLES DETAILS ==================== -->
+<a name="section-VariablesDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Variables Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-VariablesDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="tutorial"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">tutorial</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+<code class="variable-quote">'''</code><code class="variable-string"></code>
+<code class="variable-string">You have entered tutorial mode. This will introduce you to the main</code>
+<code class="variable-string">syntax options of MadGraph5.</code>
+<code class="variable-string"></code>
+<code class="variable-string">To learn more about the different options for a command, you can use</code>
+<code class="variable-string">mg5&gt;help A_CMD</code>
+<code class="variable-string">To see a list of all commands, use</code>
+<code class="variable-string">mg5&gt;help </code>
+<code class="variable-ellipsis">...</code>
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="generate"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">generate</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+<code class="variable-quote">'''</code><code class="variable-string"></code>
+<code class="variable-string">You have just generated a new process.</code>
+<code class="variable-string">Note that the coupling order &quot;QED=0&quot; was automatically added by MG5</code>
+<code class="variable-string">to avoid non-QCD diagrams which have negligible contribution.</code>
+<code class="variable-string">You can find more information on supported syntax by using:</code>
+<code class="variable-string">mg5&gt;help generate</code>
+<code class="variable-string">To list all defined processes, type</code>
+<code class="variable-string">mg5&gt;display processes</code>
+<code class="variable-ellipsis">...</code>
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="display_processes"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">display_processes</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+<code class="variable-quote">'''</code><code class="variable-string"></code>
+<code class="variable-string">You have seen a list of the already defined processes.</code>
+<code class="variable-string"></code>
+<code class="variable-string">At this stage you can export your processes to different formats. In</code>
+<code class="variable-string">this tutorial, we will explain how to create a valid output for</code>
+<code class="variable-string">MadEvent. This is done simply by typing:</code>
+<code class="variable-string">mg5&gt;output MY_FIRST_MG5_RUN</code>
+<code class="variable-string"></code><code class="variable-quote">'''</code>
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="add_process"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">add_process</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+<code class="variable-quote">'''</code><code class="variable-string"></code>
+<code class="variable-string">You have added a process to your process list.</code>
+<code class="variable-string"></code>
+<code class="variable-string">At this stage you can export your processes to different formats. In</code>
+<code class="variable-string">this tutorial, we will explain how to create output for MadEvent.</code>
+<code class="variable-string">This is done simply by typing:</code>
+<code class="variable-string">mg5&gt;output MY_FIRST_MG5_RUN</code>
+<code class="variable-string"></code><code class="variable-quote">'''</code>
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="output"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">output</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+<code class="variable-quote">'''</code><code class="variable-string"></code>
+<code class="variable-string">If you are following the tutorial, a directory MY_FIRST_MG5_RUN has</code>
+<code class="variable-string">been created which can be used in order to run MadEvent exactly as if</code>
+<code class="variable-string">it was coming from MG4.</code>
+<code class="variable-string"></code>
+<code class="variable-string">Additionally to the MG4 command (see MY_FIRST_MG5_RUN/README), you can</code><span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+<code class="variable-string"> also </code>
+<code class="variable-string">generate your events/compute the cross-section from this interface:</code>
+<code class="variable-ellipsis">...</code>
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="launch"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">launch</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+<code class="variable-quote">'''</code><code class="variable-string">This step ends the tutorial of the basic commands of MG5. You can</code>
+<code class="variable-string">always use the help to see the options available for different</code>
+<code class="variable-string">commands. For example, if you want to know all valid output formats,</code>
+<code class="variable-string">you can enter</code>
+<code class="variable-string">mg5&gt;help output</code>
+<code class="variable-string"></code>
+<code class="variable-string">In order to close this tutorial please enter</code>
+<code class="variable-string">mg5&gt;tutorial stop</code>
+<code class="variable-ellipsis">...</code>
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="import_model"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">import_model</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+<code class="variable-quote">'''</code><code class="variable-string"></code>
+<code class="variable-string">You have successfully imported a model. If you followed the tutorial</code>
+<code class="variable-string">this is the MSSM.</code>
+<code class="variable-string"></code>
+<code class="variable-string">If you want to know more information about this model you can use the</code>
+<code class="variable-string">following commands:</code>
+<code class="variable-string">mg5&gt;display particles</code>
+<code class="variable-string">mg5&gt;display interactions</code>
+<code class="variable-ellipsis">...</code>
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="import_model_v4"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">import_model_v4</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+<code class="variable-quote">'''</code><code class="variable-string"></code>
+<code class="variable-string">You have successfully imported a model. If you followed the tutorial</code>
+<code class="variable-string">this is the MSSM.</code>
+<code class="variable-string"></code>
+<code class="variable-string">If you want to know more information about this model you can use the</code>
+<code class="variable-string">following commands:</code>
+<code class="variable-string">mg5&gt;display particles</code>
+<code class="variable-string">mg5&gt;display interactions</code>
+<code class="variable-ellipsis">...</code>
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="customize_model"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">customize_model</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+<code class="variable-quote">'''</code><code class="variable-string"></code>
+<code class="variable-string">The model with your customization is now loaded and you can use it as </code><span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+<code class="variable-string">any other</code>
+<code class="variable-string">model. Note that if you want to save this specific customization you c</code><span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+<code class="variable-string">an do the</code>
+<code class="variable-string">following:</code>
+<code class="variable-string">mg5&gt; customize_model --save=NAME</code>
+<code class="variable-string">the model will then be accessible by the command (assuming that you ar</code><span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+<code class="variable-ellipsis">...</code>
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="define"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">define</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+<code class="variable-quote">'''</code><code class="variable-string"></code>
+<code class="variable-string">You have just defined a multiparticle label.</code>
+<code class="variable-string">If you followed the tutorial, the label is &quot;v&quot;</code>
+<code class="variable-string"></code>
+<code class="variable-string">Note that some multiparticles such as as p, j, l+, l- are</code>
+<code class="variable-string">predefined. Type</code>
+<code class="variable-string">mg5&gt;display multiparticles</code>
+<code class="variable-string">to see their definitions.</code>
+<code class="variable-ellipsis">...</code>
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="history"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">history</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+<code class="variable-quote">'''</code><code class="variable-string"></code>
+<code class="variable-string">You have written a history file. If you followed the tutorial this</code>
+<code class="variable-string">should be ./my_mg5_cmd.dat. In order to load a history file and</code>
+<code class="variable-string">execute the commands in it, you can do:</code>
+<code class="variable-string">mg5&gt;import command my_mg5_cmd.dat</code>
+<code class="variable-string">or from the shell:</code>
+<code class="variable-string">./bin/mg5 my_mg5_cmd.dat</code>
+<code class="variable-string"></code>
+<code class="variable-ellipsis">...</code>
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="open_index"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">open_index</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+<code class="variable-quote">'''</code><code class="variable-string"></code>
+<code class="variable-string">If you are following the tutorial, a directory MY_FIRST_MG5_RUN has</code>
+<code class="variable-string">been created which can be used in order to run MadEvent exactly as if</code>
+<code class="variable-string">it was coming from MG4.</code>
+<code class="variable-string"></code>
+<code class="variable-string">Additionally to the MG4 command (see MY_FIRST_MG5_RUN/README), you can</code><span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+<code class="variable-string"> also </code>
+<code class="variable-string">generate your events/compute the cross-section from this interface:</code>
+<code class="variable-ellipsis">...</code>
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="open"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">open</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+<code class="variable-quote">'''</code><code class="variable-string"></code>
+<code class="variable-string">Note that in order to open some file, you might be need to use a shell</code><span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+<code class="variable-string"> command.</code>
+<code class="variable-string">Any shell command can be launched by MG5, by running &quot;shell&quot; or</code>
+<code class="variable-string">starting the line by an exclamation mark (!).</code>
+<code class="variable-string"></code>
+<code class="variable-string">The final command of the tutorial is display diagrams. This allows you</code><span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+<code class="variable-string"> to draw and</code>
+<code class="variable-ellipsis">...</code>
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="display_diagrams"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">display_diagrams</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+<code class="variable-quote">'''</code><code class="variable-string"></code>
+<code class="variable-string">This command was the last step of the tutorial. </code>
+<code class="variable-string">Quit the tutorial by typing:</code>
+<code class="variable-string">mg5&gt;tutorial stop</code>
+<code class="variable-string"></code>
+<code class="variable-string">Thanks for using MG5.</code>
+<code class="variable-string"></code><code class="variable-quote">'''</code>
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Fri Jun 21 10:41:20 2013
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

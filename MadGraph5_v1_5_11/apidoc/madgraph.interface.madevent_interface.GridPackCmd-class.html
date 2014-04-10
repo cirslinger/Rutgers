@@ -1,0 +1,620 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>madgraph.interface.madevent_interface.GridPackCmd</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="madgraph-module.html">Package&nbsp;madgraph</a> ::
+        <a href="madgraph.interface-module.html">Package&nbsp;interface</a> ::
+        <a href="madgraph.interface.madevent_interface-module.html">Module&nbsp;madevent_interface</a> ::
+        Class&nbsp;GridPackCmd
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="madgraph.interface.madevent_interface.GridPackCmd-class.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS DESCRIPTION ==================== -->
+<h1 class="epydoc">Class GridPackCmd</h1><p class="nomargin-top"><span class="codelink"><a href="madgraph.interface.madevent_interface-pysrc.html#GridPackCmd">source&nbsp;code</a></span></p>
+<pre class="base-tree">
+              object --+                
+                       |                
+   <a href="madgraph.interface.extended_cmd.CheckCmd-class.html">extended_cmd.CheckCmd</a> --+            
+                           |            
+              object --+   |            
+                       |   |            
+    <a href="madgraph.interface.extended_cmd.HelpCmd-class.html">extended_cmd.HelpCmd</a> --+            
+                           |            
+              object --+   |            
+                       |   |            
+<a href="madgraph.interface.extended_cmd.CompleteCmd-class.html">extended_cmd.CompleteCmd</a> --+            
+                           |            
+             cmd.Cmd --+   |            
+                       |   |            
+   <a href="madgraph.interface.extended_cmd.BasicCmd-class.html">extended_cmd.BasicCmd</a> --+            
+                           |            
+            <a href="madgraph.interface.extended_cmd.Cmd-class.html">extended_cmd.Cmd</a> --+        
+                               |        
+                     <a href="madgraph.interface.madevent_interface.CmdExtended-class.html">CmdExtended</a> --+    
+                                   |    
+                      object --+   |    
+                               |   |    
+                       <a href="madgraph.interface.madevent_interface.HelpToCmd-class.html">HelpToCmd</a> --+    
+                                   |    
+                  object --+       |    
+                           |       |    
+            <a href="madgraph.interface.madevent_interface.CheckValidForCmd-class.html">CheckValidForCmd</a> --+   |    
+                               |   |    
+                  <a href="madgraph.interface.madevent_interface.CompleteForCmd-class.html">CompleteForCmd</a> --+    
+                                   |    
+                         <a href="madgraph.interface.madevent_interface.MadEventCmd-class.html">MadEventCmd</a> --+
+                                       |
+                                      <strong class="uidshort">GridPackCmd</strong>
+</pre>
+
+<hr />
+<p>The command for the gridpack --Those are not suppose to be use 
+  interactively--</p>
+
+<!-- ==================== NESTED CLASSES ==================== -->
+<a name="section-NestedClasses"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Nested Classes</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-NestedClasses"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="madgraph.interface.madevent_interface.CmdExtended-class.html">CmdExtended</a></code></b>:
+      <code><a href="madgraph.MadGraph5Error-class.html">ConfigurationError</a></code>,
+      <code><a href="madgraph.InvalidCmd-class.html">InvalidCmd</a></code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== INSTANCE METHODS ==================== -->
+<a name="section-InstanceMethods"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Instance Methods</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-InstanceMethods"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="madgraph.interface.madevent_interface.GridPackCmd-class.html#__init__" class="summary-sig-name">__init__</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">me_dir</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">nb_event</span>=<span class="summary-sig-default">0</span>,
+        <span class="summary-sig-arg">seed</span>=<span class="summary-sig-default">0</span>,
+        <span class="summary-sig-arg">*completekey</span>,
+        <span class="summary-sig-arg">**stdin</span>)</span><br />
+      Initialize the command and directly run</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="madgraph.interface.madevent_interface-pysrc.html#GridPackCmd.__init__">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="launch"></a><span class="summary-sig-name">launch</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">nb_event</span>,
+        <span class="summary-sig-arg">seed</span>)</span><br />
+      launch the generation for the grid</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="madgraph.interface.madevent_interface-pysrc.html#GridPackCmd.launch">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="refine4grid"></a><span class="summary-sig-name">refine4grid</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">nb_event</span>)</span><br />
+      Special refine for gridpack run.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="madgraph.interface.madevent_interface-pysrc.html#GridPackCmd.refine4grid">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="madgraph.interface.madevent_interface.MadEventCmd-class.html">MadEventCmd</a></code></b>:
+      <code><a href="madgraph.interface.madevent_interface.MadEventCmd-class.html#add_card_to_run">add_card_to_run</a></code>,
+      <code><a href="madgraph.interface.madevent_interface.MadEventCmd-class.html#ask_edit_cards">ask_edit_cards</a></code>,
+      <code><a href="madgraph.interface.madevent_interface.MadEventCmd-class.html#ask_pythia_run_configuration">ask_pythia_run_configuration</a></code>,
+      <code><a href="madgraph.interface.madevent_interface.MadEventCmd-class.html#ask_run_configuration">ask_run_configuration</a></code>,
+      <code><a href="madgraph.interface.madevent_interface.MadEventCmd-class.html#check_nb_events">check_nb_events</a></code>,
+      <code><a href="madgraph.interface.madevent_interface.MadEventCmd-class.html#check_output_type">check_output_type</a></code>,
+      <code><a href="madgraph.interface.madevent_interface.MadEventCmd-class.html#check_param_card">check_param_card</a></code>,
+      <code><a href="madgraph.interface.madevent_interface.MadEventCmd-class.html#clean_pointless_card">clean_pointless_card</a></code>,
+      <code><a href="madgraph.interface.madevent_interface.MadEventCmd-class.html#collect_decay_widths">collect_decay_widths</a></code>,
+      <code><a href="madgraph.interface.madevent_interface.MadEventCmd-class.html#configure_directory">configure_directory</a></code>,
+      <code><a href="madgraph.interface.madevent_interface.MadEventCmd-class.html#create_plot">create_plot</a></code>,
+      <code><a href="madgraph.interface.madevent_interface.MadEventCmd-class.html#create_root_file">create_root_file</a></code>,
+      <code><a href="madgraph.interface.madevent_interface.MadEventCmd-class.html#do_EOF">do_EOF</a></code>,
+      <code><a href="madgraph.interface.madevent_interface.MadEventCmd-class.html#do_add_time_of_flight">do_add_time_of_flight</a></code>,
+      <code><a href="madgraph.interface.madevent_interface.MadEventCmd-class.html#do_banner_run">do_banner_run</a></code>,
+      <code><a href="madgraph.interface.madevent_interface.MadEventCmd-class.html#do_calculate_decay_widths">do_calculate_decay_widths</a></code>,
+      <code><a href="madgraph.interface.madevent_interface.MadEventCmd-class.html#do_combine_events">do_combine_events</a></code>,
+      <code><a href="madgraph.interface.madevent_interface.MadEventCmd-class.html#do_compute_widths">do_compute_widths</a></code>,
+      <code><a href="madgraph.interface.madevent_interface.MadEventCmd-class.html#do_create_gridpack">do_create_gridpack</a></code>,
+      <code><a href="madgraph.interface.madevent_interface.MadEventCmd-class.html#do_delphes">do_delphes</a></code>,
+      <code><a href="madgraph.interface.madevent_interface.MadEventCmd-class.html#do_display">do_display</a></code>,
+      <code><a href="madgraph.interface.madevent_interface.MadEventCmd-class.html#do_exit">do_exit</a></code>,
+      <code><a href="madgraph.interface.madevent_interface.MadEventCmd-class.html#do_generate_events">do_generate_events</a></code>,
+      <code><a href="madgraph.interface.madevent_interface.MadEventCmd-class.html#do_import">do_import</a></code>,
+      <code><a href="madgraph.interface.madevent_interface.MadEventCmd-class.html#do_launch">do_launch</a></code>,
+      <code><a href="madgraph.interface.madevent_interface.MadEventCmd-class.html#do_multi_run">do_multi_run</a></code>,
+      <code><a href="madgraph.interface.madevent_interface.MadEventCmd-class.html#do_open">do_open</a></code>,
+      <code><a href="madgraph.interface.madevent_interface.MadEventCmd-class.html#do_pgs">do_pgs</a></code>,
+      <code><a href="madgraph.interface.madevent_interface.MadEventCmd-class.html#do_plot">do_plot</a></code>,
+      <code><a href="madgraph.interface.madevent_interface.MadEventCmd-class.html#do_pythia">do_pythia</a></code>,
+      <code><a href="madgraph.interface.madevent_interface.MadEventCmd-class.html#do_quit">do_quit</a></code>,
+      <code><a href="madgraph.interface.madevent_interface.MadEventCmd-class.html#do_refine">do_refine</a></code>,
+      <code><a href="madgraph.interface.madevent_interface.MadEventCmd-class.html#do_remove">do_remove</a></code>,
+      <code><a href="madgraph.interface.madevent_interface.MadEventCmd-class.html#do_save">do_save</a></code>,
+      <code><a href="madgraph.interface.madevent_interface.MadEventCmd-class.html#do_set">do_set</a></code>,
+      <code><a href="madgraph.interface.madevent_interface.MadEventCmd-class.html#do_store_events">do_store_events</a></code>,
+      <code><a href="madgraph.interface.madevent_interface.MadEventCmd-class.html#do_survey">do_survey</a></code>,
+      <code><a href="madgraph.interface.madevent_interface.MadEventCmd-class.html#do_treatcards">do_treatcards</a></code>,
+      <code><a href="madgraph.interface.madevent_interface.MadEventCmd-class.html#find_madevent_mode">find_madevent_mode</a></code>,
+      <code><a href="madgraph.interface.madevent_interface.MadEventCmd-class.html#find_model_name">find_model_name</a></code>,
+      <code><a href="madgraph.interface.madevent_interface.MadEventCmd-class.html#get_available_tag">get_available_tag</a></code>,
+      <code><a href="madgraph.interface.madevent_interface.MadEventCmd-class.html#launch_job">launch_job</a></code>,
+      <code><a href="madgraph.interface.madevent_interface.MadEventCmd-class.html#monitor">monitor</a></code>,
+      <code><a href="madgraph.interface.madevent_interface.MadEventCmd-class.html#pass_in_web_mode">pass_in_web_mode</a></code>,
+      <code><a href="madgraph.interface.madevent_interface.MadEventCmd-class.html#post_set">post_set</a></code>,
+      <code><a href="madgraph.interface.madevent_interface.MadEventCmd-class.html#print_results_in_shell">print_results_in_shell</a></code>,
+      <code><a href="madgraph.interface.madevent_interface.MadEventCmd-class.html#save_random">save_random</a></code>,
+      <code><a href="madgraph.interface.madevent_interface.MadEventCmd-class.html#set_configuration">set_configuration</a></code>,
+      <code><a href="madgraph.interface.madevent_interface.MadEventCmd-class.html#set_run_name">set_run_name</a></code>,
+      <code><a href="madgraph.interface.madevent_interface.MadEventCmd-class.html#split_arg">split_arg</a></code>,
+      <code><a href="madgraph.interface.madevent_interface.MadEventCmd-class.html#store_result">store_result</a></code>,
+      <code><a href="madgraph.interface.madevent_interface.MadEventCmd-class.html#treat_ckkw_matching">treat_ckkw_matching</a></code>,
+      <code><a href="madgraph.interface.madevent_interface.MadEventCmd-class.html#update_random">update_random</a></code>,
+      <code><a href="madgraph.interface.madevent_interface.MadEventCmd-class.html#update_status">update_status</a></code>,
+      <code><a href="madgraph.interface.madevent_interface.MadEventCmd-class.html#update_width_in_param_card">update_width_in_param_card</a></code>
+      </p>
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="madgraph.interface.madevent_interface.CmdExtended-class.html">CmdExtended</a></code></b>:
+      <code><a href="madgraph.interface.madevent_interface.CmdExtended-class.html#add_error_log_in_html">add_error_log_in_html</a></code>,
+      <code><a href="madgraph.interface.madevent_interface.CmdExtended-class.html#get_history_header">get_history_header</a></code>,
+      <code><a href="madgraph.interface.madevent_interface.CmdExtended-class.html#nice_config_error">nice_config_error</a></code>,
+      <code><a href="madgraph.interface.madevent_interface.CmdExtended-class.html#nice_error_handling">nice_error_handling</a></code>,
+      <code><a href="madgraph.interface.madevent_interface.CmdExtended-class.html#nice_user_error">nice_user_error</a></code>,
+      <code><a href="madgraph.interface.madevent_interface.CmdExtended-class.html#postcmd">postcmd</a></code>,
+      <code><a href="madgraph.interface.madevent_interface.CmdExtended-class.html#stop_on_keyboard_stop">stop_on_keyboard_stop</a></code>
+      </p>
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="madgraph.interface.extended_cmd.Cmd-class.html">extended_cmd.Cmd</a></code></b>:
+      <code><a href="madgraph.interface.extended_cmd.Cmd-class.html#ask">ask</a></code>,
+      <code><a href="madgraph.interface.extended_cmd.Cmd-class.html#avoid_history_duplicate">avoid_history_duplicate</a></code>,
+      <code><a href="madgraph.interface.extended_cmd.Cmd-class.html#check_answer_in_input_file">check_answer_in_input_file</a></code>,
+      <code><a href="madgraph.interface.extended_cmd.Cmd-class.html#clean_history">clean_history</a></code>,
+      <code><a href="madgraph.interface.extended_cmd.Cmd-class.html#compile">compile</a></code>,
+      <code><a href="madgraph.interface.extended_cmd.Cmd-class.html#default">default</a></code>,
+      <code><a href="madgraph.interface.extended_cmd.Cmd-class.html#define_child_cmd_interface">define_child_cmd_interface</a></code>,
+      <code><a href="madgraph.interface.extended_cmd.Cmd-class.html#do_help">do_help</a></code>,
+      <code><a href="madgraph.interface.extended_cmd.Cmd-class.html#do_history">do_history</a></code>,
+      <code><a href="madgraph.interface.extended_cmd.Cmd-class.html#emptyline">emptyline</a></code>,
+      <code><a href="madgraph.interface.extended_cmd.Cmd-class.html#exec_cmd">exec_cmd</a></code>,
+      <code><a href="madgraph.interface.extended_cmd.Cmd-class.html#get_stored_line">get_stored_line</a></code>,
+      <code><a href="madgraph.interface.extended_cmd.Cmd-class.html#import_command_file">import_command_file</a></code>,
+      <code><a href="madgraph.interface.extended_cmd.Cmd-class.html#onecmd">onecmd</a></code>,
+      <code><a href="madgraph.interface.extended_cmd.Cmd-class.html#onecmd_orig">onecmd_orig</a></code>,
+      <code><a href="madgraph.interface.extended_cmd.Cmd-class.html#postloop">postloop</a></code>,
+      <code><a href="madgraph.interface.extended_cmd.Cmd-class.html#precmd">precmd</a></code>,
+      <code><a href="madgraph.interface.extended_cmd.Cmd-class.html#run_cmd">run_cmd</a></code>,
+      <code><a href="madgraph.interface.extended_cmd.Cmd-class.html#store_line">store_line</a></code>,
+      <code><a href="madgraph.interface.extended_cmd.Cmd-class.html#write_configuration">write_configuration</a></code>
+      </p>
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="madgraph.interface.extended_cmd.CheckCmd-class.html">extended_cmd.CheckCmd</a></code></b>:
+      <code><a href="madgraph.interface.extended_cmd.CheckCmd-class.html#check_history">check_history</a></code>,
+      <code><a href="madgraph.interface.extended_cmd.CheckCmd-class.html#check_save">check_save</a></code>
+      </p>
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="madgraph.interface.extended_cmd.HelpCmd-class.html">extended_cmd.HelpCmd</a></code></b>:
+      <code><a href="madgraph.interface.extended_cmd.HelpCmd-class.html#help_EOF">help_EOF</a></code>,
+      <code><a href="madgraph.interface.extended_cmd.HelpCmd-class.html#help_display">help_display</a></code>,
+      <code><a href="madgraph.interface.extended_cmd.HelpCmd-class.html#help_help">help_help</a></code>,
+      <code><a href="madgraph.interface.extended_cmd.HelpCmd-class.html#help_history">help_history</a></code>,
+      <code><a href="madgraph.interface.extended_cmd.HelpCmd-class.html#help_quit">help_quit</a></code>,
+      <code><a href="madgraph.interface.extended_cmd.HelpCmd-class.html#help_save">help_save</a></code>
+      </p>
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="madgraph.interface.extended_cmd.CompleteCmd-class.html">extended_cmd.CompleteCmd</a></code></b>:
+      <code><a href="madgraph.interface.extended_cmd.CompleteCmd-class.html#complete_display">complete_display</a></code>,
+      <code><a href="madgraph.interface.extended_cmd.CompleteCmd-class.html#complete_history">complete_history</a></code>,
+      <code><a href="madgraph.interface.extended_cmd.CompleteCmd-class.html#complete_save">complete_save</a></code>
+      </p>
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="madgraph.interface.madevent_interface.HelpToCmd-class.html">HelpToCmd</a></code></b>:
+      <code><a href="madgraph.interface.madevent_interface.HelpToCmd-class.html#help_add_time_of_flight">help_add_time_of_flight</a></code>,
+      <code><a href="madgraph.interface.madevent_interface.HelpToCmd-class.html#help_banner_run">help_banner_run</a></code>,
+      <code><a href="madgraph.interface.madevent_interface.HelpToCmd-class.html#help_calculate_decay_widths">help_calculate_decay_widths</a></code>,
+      <code><a href="madgraph.interface.madevent_interface.HelpToCmd-class.html#help_combine_events">help_combine_events</a></code>,
+      <code><a href="madgraph.interface.madevent_interface.HelpToCmd-class.html#help_compute_widths">help_compute_widths</a></code>,
+      <code><a href="madgraph.interface.madevent_interface.HelpToCmd-class.html#help_create_gridpack">help_create_gridpack</a></code>,
+      <code><a href="madgraph.interface.madevent_interface.HelpToCmd-class.html#help_delphes">help_delphes</a></code>,
+      <code><a href="madgraph.interface.madevent_interface.HelpToCmd-class.html#help_generate_events">help_generate_events</a></code>,
+      <code><a href="madgraph.interface.madevent_interface.HelpToCmd-class.html#help_import">help_import</a></code>,
+      <code><a href="madgraph.interface.madevent_interface.HelpToCmd-class.html#help_launch">help_launch</a></code>,
+      <code><a href="madgraph.interface.madevent_interface.HelpToCmd-class.html#help_multi_run">help_multi_run</a></code>,
+      <code><a href="madgraph.interface.madevent_interface.HelpToCmd-class.html#help_open">help_open</a></code>,
+      <code><a href="madgraph.interface.madevent_interface.HelpToCmd-class.html#help_pgs">help_pgs</a></code>,
+      <code><a href="madgraph.interface.madevent_interface.HelpToCmd-class.html#help_plot">help_plot</a></code>,
+      <code><a href="madgraph.interface.madevent_interface.HelpToCmd-class.html#help_pythia">help_pythia</a></code>,
+      <code><a href="madgraph.interface.madevent_interface.HelpToCmd-class.html#help_refine">help_refine</a></code>,
+      <code><a href="madgraph.interface.madevent_interface.HelpToCmd-class.html#help_remove">help_remove</a></code>,
+      <code><a href="madgraph.interface.madevent_interface.HelpToCmd-class.html#help_set">help_set</a></code>,
+      <code><a href="madgraph.interface.madevent_interface.HelpToCmd-class.html#help_store_events">help_store_events</a></code>,
+      <code><a href="madgraph.interface.madevent_interface.HelpToCmd-class.html#help_survey">help_survey</a></code>,
+      <code><a href="madgraph.interface.madevent_interface.HelpToCmd-class.html#help_treatcards">help_treatcards</a></code>,
+      <code><a href="madgraph.interface.madevent_interface.HelpToCmd-class.html#run_options_help">run_options_help</a></code>
+      </p>
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="madgraph.interface.madevent_interface.CompleteForCmd-class.html">CompleteForCmd</a></code></b>:
+      <code><a href="madgraph.interface.madevent_interface.CompleteForCmd-class.html#complete_add_time_of_flight">complete_add_time_of_flight</a></code>,
+      <code><a href="madgraph.interface.madevent_interface.CompleteForCmd-class.html#complete_banner_run">complete_banner_run</a></code>,
+      <code><a href="madgraph.interface.madevent_interface.CompleteForCmd-class.html#complete_calculate_decay_widths">complete_calculate_decay_widths</a></code>,
+      <code><a href="madgraph.interface.madevent_interface.CompleteForCmd-class.html#complete_combine_events">complete_combine_events</a></code>,
+      <code><a href="madgraph.interface.madevent_interface.CompleteForCmd-class.html#complete_create_gridpack">complete_create_gridpack</a></code>,
+      <code><a href="madgraph.interface.madevent_interface.CompleteForCmd-class.html#complete_delphes">complete_delphes</a></code>,
+      <code><a href="madgraph.interface.madevent_interface.CompleteForCmd-class.html#complete_generate_events">complete_generate_events</a></code>,
+      <code><a href="madgraph.interface.madevent_interface.CompleteForCmd-class.html#complete_launch">complete_launch</a></code>,
+      <code><a href="madgraph.interface.madevent_interface.CompleteForCmd-class.html#complete_multi_run">complete_multi_run</a></code>,
+      <code><a href="madgraph.interface.madevent_interface.CompleteForCmd-class.html#complete_open">complete_open</a></code>,
+      <code><a href="madgraph.interface.madevent_interface.CompleteForCmd-class.html#complete_pgs">complete_pgs</a></code>,
+      <code><a href="madgraph.interface.madevent_interface.CompleteForCmd-class.html#complete_plot">complete_plot</a></code>,
+      <code><a href="madgraph.interface.madevent_interface.CompleteForCmd-class.html#complete_pythia">complete_pythia</a></code>,
+      <code><a href="madgraph.interface.madevent_interface.CompleteForCmd-class.html#complete_refine">complete_refine</a></code>,
+      <code><a href="madgraph.interface.madevent_interface.CompleteForCmd-class.html#complete_remove">complete_remove</a></code>,
+      <code><a href="madgraph.interface.madevent_interface.CompleteForCmd-class.html#complete_set">complete_set</a></code>,
+      <code><a href="madgraph.interface.madevent_interface.CompleteForCmd-class.html#complete_survey">complete_survey</a></code>,
+      <code><a href="madgraph.interface.madevent_interface.CompleteForCmd-class.html#complite_store">complite_store</a></code>
+      </p>
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="madgraph.interface.madevent_interface.CheckValidForCmd-class.html">CheckValidForCmd</a></code></b>:
+      <code><a href="madgraph.interface.madevent_interface.CheckValidForCmd-class.html#check_add_time_of_flight">check_add_time_of_flight</a></code>,
+      <code><a href="madgraph.interface.madevent_interface.CheckValidForCmd-class.html#check_banner_run">check_banner_run</a></code>,
+      <code><a href="madgraph.interface.madevent_interface.CheckValidForCmd-class.html#check_calculate_decay_widths">check_calculate_decay_widths</a></code>,
+      <code><a href="madgraph.interface.madevent_interface.CheckValidForCmd-class.html#check_combine_events">check_combine_events</a></code>,
+      <code><a href="madgraph.interface.madevent_interface.CheckValidForCmd-class.html#check_compute_widths">check_compute_widths</a></code>,
+      <code><a href="madgraph.interface.madevent_interface.CheckValidForCmd-class.html#check_delphes">check_delphes</a></code>,
+      <code><a href="madgraph.interface.madevent_interface.CheckValidForCmd-class.html#check_display">check_display</a></code>,
+      <code><a href="madgraph.interface.madevent_interface.CheckValidForCmd-class.html#check_generate_events">check_generate_events</a></code>,
+      <code><a href="madgraph.interface.madevent_interface.CheckValidForCmd-class.html#check_import">check_import</a></code>,
+      <code><a href="madgraph.interface.madevent_interface.CheckValidForCmd-class.html#check_multi_run">check_multi_run</a></code>,
+      <code><a href="madgraph.interface.madevent_interface.CheckValidForCmd-class.html#check_open">check_open</a></code>,
+      <code><a href="madgraph.interface.madevent_interface.CheckValidForCmd-class.html#check_pgs">check_pgs</a></code>,
+      <code><a href="madgraph.interface.madevent_interface.CheckValidForCmd-class.html#check_plot">check_plot</a></code>,
+      <code><a href="madgraph.interface.madevent_interface.CheckValidForCmd-class.html#check_pythia">check_pythia</a></code>,
+      <code><a href="madgraph.interface.madevent_interface.CheckValidForCmd-class.html#check_refine">check_refine</a></code>,
+      <code><a href="madgraph.interface.madevent_interface.CheckValidForCmd-class.html#check_remove">check_remove</a></code>,
+      <code><a href="madgraph.interface.madevent_interface.CheckValidForCmd-class.html#check_set">check_set</a></code>,
+      <code><a href="madgraph.interface.madevent_interface.CheckValidForCmd-class.html#check_survey">check_survey</a></code>,
+      <code><a href="madgraph.interface.madevent_interface.CheckValidForCmd-class.html#check_treatcards">check_treatcards</a></code>
+      </p>
+    <p class="indent-wrapped-lines"><b>Inherited from <code>object</code></b>:
+      <code>__delattr__</code>,
+      <code>__format__</code>,
+      <code>__getattribute__</code>,
+      <code>__hash__</code>,
+      <code>__new__</code>,
+      <code>__reduce__</code>,
+      <code>__reduce_ex__</code>,
+      <code>__repr__</code>,
+      <code>__setattr__</code>,
+      <code>__sizeof__</code>,
+      <code>__str__</code>,
+      <code>__subclasshook__</code>
+      </p>
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="madgraph.interface.extended_cmd.BasicCmd-class.html">extended_cmd.BasicCmd</a></code></b>:
+      <code><a href="madgraph.interface.extended_cmd.BasicCmd-class.html#complete">complete</a></code>,
+      <code><a href="madgraph.interface.extended_cmd.BasicCmd-class.html#deal_multiple_categories">deal_multiple_categories</a></code>,
+      <code><a href="madgraph.interface.extended_cmd.BasicCmd-class.html#getTerminalSize">getTerminalSize</a></code>,
+      <code><a href="madgraph.interface.extended_cmd.BasicCmd-class.html#preloop">preloop</a></code>,
+      <code><a href="madgraph.interface.extended_cmd.BasicCmd-class.html#print_suggestions">print_suggestions</a></code>
+      </p>
+    <p class="indent-wrapped-lines"><b>Inherited from <code>cmd.Cmd</code></b>:
+      <code>cmdloop</code>,
+      <code>columnize</code>,
+      <code>complete_help</code>,
+      <code>completedefault</code>,
+      <code>completenames</code>,
+      <code>get_names</code>,
+      <code>parseline</code>,
+      <code>print_topics</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== STATIC METHODS ==================== -->
+<a name="section-StaticMethods"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Static Methods</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-StaticMethods"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="madgraph.interface.madevent_interface.MadEventCmd-class.html">MadEventCmd</a></code></b>:
+      <code><a href="madgraph.interface.madevent_interface.MadEventCmd-class.html#check_dir">check_dir</a></code>,
+      <code><a href="madgraph.interface.madevent_interface.MadEventCmd-class.html#detect_card_type">detect_card_type</a></code>,
+      <code><a href="madgraph.interface.madevent_interface.MadEventCmd-class.html#find_available_run_name">find_available_run_name</a></code>
+      </p>
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="madgraph.interface.extended_cmd.Cmd-class.html">extended_cmd.Cmd</a></code></b>:
+      <code><a href="madgraph.interface.extended_cmd.Cmd-class.html#timed_input">timed_input</a></code>
+      </p>
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="madgraph.interface.extended_cmd.BasicCmd-class.html">extended_cmd.BasicCmd</a></code></b>:
+      <code><a href="madgraph.interface.extended_cmd.BasicCmd-class.html#list_completion">list_completion</a></code>,
+      <code><a href="madgraph.interface.extended_cmd.BasicCmd-class.html#path_completion">path_completion</a></code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS VARIABLES ==================== -->
+<a name="section-ClassVariables"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Class Variables</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-ClassVariables"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="madgraph.interface.madevent_interface.MadEventCmd-class.html">MadEventCmd</a></code></b>:
+      <code><a href="madgraph.interface.madevent_interface.MadEventCmd-class.html#cluster_mode">cluster_mode</a></code>,
+      <code><a href="madgraph.interface.madevent_interface.MadEventCmd-class.html#helporder">helporder</a></code>,
+      <code><a href="madgraph.interface.madevent_interface.MadEventCmd-class.html#nb_core">nb_core</a></code>,
+      <code><a href="madgraph.interface.madevent_interface.MadEventCmd-class.html#next_possibility">next_possibility</a></code>,
+      <code><a href="madgraph.interface.madevent_interface.MadEventCmd-class.html#options_configuration">options_configuration</a></code>,
+      <code><a href="madgraph.interface.madevent_interface.MadEventCmd-class.html#options_madevent">options_madevent</a></code>,
+      <code><a href="madgraph.interface.madevent_interface.MadEventCmd-class.html#options_madgraph">options_madgraph</a></code>,
+      <code><a href="madgraph.interface.madevent_interface.MadEventCmd-class.html#prompt">prompt</a></code>,
+      <code><a href="madgraph.interface.madevent_interface.MadEventCmd-class.html#queue">queue</a></code>,
+      <code><a href="madgraph.interface.madevent_interface.MadEventCmd-class.html#true">true</a></code>,
+      <code><a href="madgraph.interface.madevent_interface.MadEventCmd-class.html#web">web</a></code>
+      </p>
+    <div class="private">    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="madgraph.interface.madevent_interface.MadEventCmd-class.html">MadEventCmd</a></code></b> (private):
+      <code><a href="madgraph.interface.madevent_interface.MadEventCmd-class.html#_calculate_decay_options" onclick="show_private();">_calculate_decay_options</a></code>,
+      <code><a href="madgraph.interface.madevent_interface.MadEventCmd-class.html#_clean_mode" onclick="show_private();">_clean_mode</a></code>,
+      <code><a href="madgraph.interface.madevent_interface.MadEventCmd-class.html#_display_opts" onclick="show_private();">_display_opts</a></code>,
+      <code><a href="madgraph.interface.madevent_interface.MadEventCmd-class.html#_generate_options" onclick="show_private();">_generate_options</a></code>,
+      <code><a href="madgraph.interface.madevent_interface.MadEventCmd-class.html#_plot_mode" onclick="show_private();">_plot_mode</a></code>,
+      <code><a href="madgraph.interface.madevent_interface.MadEventCmd-class.html#_run_options" onclick="show_private();">_run_options</a></code>,
+      <code><a href="madgraph.interface.madevent_interface.MadEventCmd-class.html#_set_options" onclick="show_private();">_set_options</a></code>,
+      <code><a href="madgraph.interface.madevent_interface.MadEventCmd-class.html#_survey_options" onclick="show_private();">_survey_options</a></code>
+      </p></div>
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="madgraph.interface.madevent_interface.CmdExtended-class.html">CmdExtended</a></code></b>:
+      <code><a href="madgraph.interface.madevent_interface.CmdExtended-class.html#config_debug">config_debug</a></code>,
+      <code><a href="madgraph.interface.madevent_interface.CmdExtended-class.html#debug_output">debug_output</a></code>,
+      <code><a href="madgraph.interface.madevent_interface.CmdExtended-class.html#error_debug">error_debug</a></code>,
+      <code><a href="madgraph.interface.madevent_interface.CmdExtended-class.html#keyboard_stop_msg">keyboard_stop_msg</a></code>
+      </p>
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="madgraph.interface.extended_cmd.Cmd-class.html">extended_cmd.Cmd</a></code></b>:
+      <code><a href="madgraph.interface.extended_cmd.Cmd-class.html#history_header">history_header</a></code>
+      </p>
+    <p class="indent-wrapped-lines"><b>Inherited from <code>cmd.Cmd</code></b>:
+      <code>doc_header</code>,
+      <code>doc_leader</code>,
+      <code>identchars</code>,
+      <code>intro</code>,
+      <code>lastcmd</code>,
+      <code>misc_header</code>,
+      <code>nohelp</code>,
+      <code>ruler</code>,
+      <code>undoc_header</code>,
+      <code>use_rawinput</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== PROPERTIES ==================== -->
+<a name="section-Properties"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Properties</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-Properties"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code>object</code></b>:
+      <code>__class__</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== METHOD DETAILS ==================== -->
+<a name="section-MethodDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Method Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-MethodDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="__init__"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">__init__</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">me_dir</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">nb_event</span>=<span class="sig-default">0</span>,
+        <span class="sig-arg">seed</span>=<span class="sig-default">0</span>,
+        <span class="sig-arg">*completekey</span>,
+        <span class="sig-arg">**stdin</span>)</span>
+    <br /><em class="fname">(Constructor)</em>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="madgraph.interface.madevent_interface-pysrc.html#GridPackCmd.__init__">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Initialize the command and directly run</p>
+  <dl class="fields">
+    <dt>Overrides:
+        cmd.Cmd.__init__
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Fri Jun 21 10:41:22 2013
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

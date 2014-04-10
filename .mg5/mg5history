@@ -1,0 +1,12 @@
+quit
+import model RPVMSSM_UFO
+define j = q u c d s u~ c~ d~ s~ b b~
+define j = g u c d s u~ c~ d~ s~ b b~
+generate p p > ul ul~, ul > d~ s~, ul~ > d s
+output tmp_stop_UDD312
+quit
+import model RPVMSSM_UFO
+define j = g u c d s u~ c~ d~ s~ b b~
+generate p p > ul ul~, ul > d~ s~, ul~ > d s
+output IrslingerMGtest1
+quit

@@ -1,0 +1,782 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>madgraph.iolibs.export_v4.ProcessExporterFortran</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="madgraph-module.html">Package&nbsp;madgraph</a> ::
+        <a href="madgraph.iolibs-module.html">Package&nbsp;iolibs</a> ::
+        <a href="madgraph.iolibs.export_v4-module.html">Module&nbsp;export_v4</a> ::
+        Class&nbsp;ProcessExporterFortran
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="madgraph.iolibs.export_v4.ProcessExporterFortran-class.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS DESCRIPTION ==================== -->
+<h1 class="epydoc">Class ProcessExporterFortran</h1><p class="nomargin-top"><span class="codelink"><a href="madgraph.iolibs.export_v4-pysrc.html#ProcessExporterFortran">source&nbsp;code</a></span></p>
+<pre class="base-tree">
+object --+
+         |
+        <strong class="uidshort">ProcessExporterFortran</strong>
+</pre>
+
+<dl><dt>Known Subclasses:</dt>
+<dd>
+      <ul class="subclass-list">
+<li><a href="madgraph.iolibs.export_v4.ProcessExporterFortranME-class.html">ProcessExporterFortranME</a></li><li>, <a href="madgraph.iolibs.export_v4.ProcessExporterFortranSA-class.html">ProcessExporterFortranSA</a></li>  </ul>
+</dd></dl>
+
+<hr />
+<p>Class to take care of exporting a set of matrix elements to Fortran 
+  (v4) format.</p>
+
+<!-- ==================== INSTANCE METHODS ==================== -->
+<a name="section-InstanceMethods"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Instance Methods</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-InstanceMethods"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="madgraph.iolibs.export_v4.ProcessExporterFortran-class.html#__init__" class="summary-sig-name">__init__</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">mgme_dir</span>=<span class="summary-sig-default"><code class="variable-quote">'</code><code class="variable-string"></code><code class="variable-quote">'</code></span>,
+        <span class="summary-sig-arg">dir_path</span>=<span class="summary-sig-default"><code class="variable-quote">'</code><code class="variable-string"></code><code class="variable-quote">'</code></span>,
+        <span class="summary-sig-arg">opt</span>=<span class="summary-sig-default">None</span>)</span><br />
+      Initiate the ProcessExporterFortran with directory information</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="madgraph.iolibs.export_v4-pysrc.html#ProcessExporterFortran.__init__">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="copy_v4template"></a><span class="summary-sig-name">copy_v4template</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">modelname</span>)</span><br />
+      create the directory run_name as a copy of the MadEvent Template, and
+      clean the directory</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="madgraph.iolibs.export_v4-pysrc.html#ProcessExporterFortran.copy_v4template">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="write_procdef_mg5"></a><span class="summary-sig-name">write_procdef_mg5</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">file_pos</span>,
+        <span class="summary-sig-arg">modelname</span>,
+        <span class="summary-sig-arg">process_str</span>)</span><br />
+      write an equivalent of the MG4 proc_card in order that all the 
+      Madevent Perl script of MadEvent4 are still working properly for pure
+      MG5 run.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="madgraph.iolibs.export_v4-pysrc.html#ProcessExporterFortran.write_procdef_mg5">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="finalize_v4_directory"></a><span class="summary-sig-name">finalize_v4_directory</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">matrix_elements</span>,
+        <span class="summary-sig-arg">history</span>=<span class="summary-sig-default"><code class="variable-quote">'</code><code class="variable-string"></code><code class="variable-quote">'</code></span>,
+        <span class="summary-sig-arg">makejpg</span>=<span class="summary-sig-default">False</span>,
+        <span class="summary-sig-arg">online</span>=<span class="summary-sig-default">False</span>,
+        <span class="summary-sig-arg">compiler</span>=<span class="summary-sig-default"><code class="variable-quote">'</code><code class="variable-string">g77</code><code class="variable-quote">'</code></span>)</span><br />
+      Function to finalize v4 directory, for inheritance.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="madgraph.iolibs.export_v4-pysrc.html#ProcessExporterFortran.finalize_v4_directory">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="write_matrix_element_v4"></a><span class="summary-sig-name">write_matrix_element_v4</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      Function to write a matrix.f file, for inheritance.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="madgraph.iolibs.export_v4-pysrc.html#ProcessExporterFortran.write_matrix_element_v4">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="export_model_files"></a><span class="summary-sig-name">export_model_files</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">model_path</span>)</span><br />
+      Configure the files/link of the process according to the model</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="madgraph.iolibs.export_v4-pysrc.html#ProcessExporterFortran.export_model_files">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="make_model_symbolic_link"></a><span class="summary-sig-name">make_model_symbolic_link</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      Make the copy/symbolic links</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="madgraph.iolibs.export_v4-pysrc.html#ProcessExporterFortran.make_model_symbolic_link">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="export_helas"></a><span class="summary-sig-name">export_helas</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">helas_path</span>)</span><br />
+      Configure the files/link of the process according to the model</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="madgraph.iolibs.export_v4-pysrc.html#ProcessExporterFortran.export_helas">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="generate_subprocess_directory_v4"></a><span class="summary-sig-name">generate_subprocess_directory_v4</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">matrix_element</span>,
+        <span class="summary-sig-arg">fortran_model</span>,
+        <span class="summary-sig-arg">me_number</span>)</span><br />
+      Routine to generate a subprocess directory (for inheritance)</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="madgraph.iolibs.export_v4-pysrc.html#ProcessExporterFortran.generate_subprocess_directory_v4">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="write_source_makefile"></a><span class="summary-sig-name">write_source_makefile</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">writer</span>)</span><br />
+      Write the nexternal.inc file for MG4</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="madgraph.iolibs.export_v4-pysrc.html#ProcessExporterFortran.write_source_makefile">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="write_nexternal_file"></a><span class="summary-sig-name">write_nexternal_file</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">writer</span>,
+        <span class="summary-sig-arg">nexternal</span>,
+        <span class="summary-sig-arg">ninitial</span>)</span><br />
+      Write the nexternal.inc file for MG4</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="madgraph.iolibs.export_v4-pysrc.html#ProcessExporterFortran.write_nexternal_file">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="write_pmass_file"></a><span class="summary-sig-name">write_pmass_file</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">writer</span>,
+        <span class="summary-sig-arg">matrix_element</span>)</span><br />
+      Write the pmass.inc file for MG4</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="madgraph.iolibs.export_v4-pysrc.html#ProcessExporterFortran.write_pmass_file">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="madgraph.iolibs.export_v4.ProcessExporterFortran-class.html#write_ngraphs_file" class="summary-sig-name">write_ngraphs_file</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">writer</span>,
+        <span class="summary-sig-arg">nconfigs</span>)</span><br />
+      Write the ngraphs.inc file for MG4.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="madgraph.iolibs.export_v4-pysrc.html#ProcessExporterFortran.write_ngraphs_file">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="convert_model_to_mg4"></a><span class="summary-sig-name">convert_model_to_mg4</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">model</span>,
+        <span class="summary-sig-arg">wanted_lorentz</span>=<span class="summary-sig-default"><code class="variable-group">[</code><code class="variable-group">]</code></span>,
+        <span class="summary-sig-arg">wanted_couplings</span>=<span class="summary-sig-default"><code class="variable-group">[</code><code class="variable-group">]</code></span>)</span><br />
+      Create a full valid MG4 model from a MG5 model (coming from UFO)</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="madgraph.iolibs.export_v4-pysrc.html#ProcessExporterFortran.convert_model_to_mg4">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="get_mg5_info_lines"></a><span class="summary-sig-name">get_mg5_info_lines</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      Return info lines for MG5, suitable to place at beginning of Fortran 
+      files</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="madgraph.iolibs.export_v4-pysrc.html#ProcessExporterFortran.get_mg5_info_lines">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="get_process_info_lines"></a><span class="summary-sig-name">get_process_info_lines</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">matrix_element</span>)</span><br />
+      Return info lines describing the processes for this matrix element</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="madgraph.iolibs.export_v4-pysrc.html#ProcessExporterFortran.get_process_info_lines">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="get_helicity_lines"></a><span class="summary-sig-name">get_helicity_lines</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">matrix_element</span>)</span><br />
+      Return the Helicity matrix definition lines for this matrix element</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="madgraph.iolibs.export_v4-pysrc.html#ProcessExporterFortran.get_helicity_lines">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="get_ic_line"></a><span class="summary-sig-name">get_ic_line</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">matrix_element</span>)</span><br />
+      Return the IC definition line coming after helicities, required by 
+      switchmom in madevent</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="madgraph.iolibs.export_v4-pysrc.html#ProcessExporterFortran.get_ic_line">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="madgraph.iolibs.export_v4.ProcessExporterFortran-class.html#get_color_data_lines" class="summary-sig-name">get_color_data_lines</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">matrix_element</span>,
+        <span class="summary-sig-arg">n</span>=<span class="summary-sig-default">6</span>)</span><br />
+      Return the color matrix definition lines for this matrix element.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="madgraph.iolibs.export_v4-pysrc.html#ProcessExporterFortran.get_color_data_lines">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="get_den_factor_line"></a><span class="summary-sig-name">get_den_factor_line</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">matrix_element</span>)</span><br />
+      Return the denominator factor line for this matrix element</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="madgraph.iolibs.export_v4-pysrc.html#ProcessExporterFortran.get_den_factor_line">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="get_icolamp_lines"></a><span class="summary-sig-name">get_icolamp_lines</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">mapconfigs</span>,
+        <span class="summary-sig-arg">matrix_element</span>,
+        <span class="summary-sig-arg">num_matrix_element</span>)</span><br />
+      Return the ICOLAMP matrix, showing which JAMPs contribute to which 
+      configs (diagrams).</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="madgraph.iolibs.export_v4-pysrc.html#ProcessExporterFortran.get_icolamp_lines">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="get_amp2_lines"></a><span class="summary-sig-name">get_amp2_lines</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">matrix_element</span>,
+        <span class="summary-sig-arg">config_map</span>=<span class="summary-sig-default"><code class="variable-group">[</code><code class="variable-group">]</code></span>)</span><br />
+      Return the amp2(i) = sum(amp for diag(i))^2 lines</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="madgraph.iolibs.export_v4-pysrc.html#ProcessExporterFortran.get_amp2_lines">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="get_JAMP_lines"></a><span class="summary-sig-name">get_JAMP_lines</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">matrix_element</span>)</span><br />
+      Return the JAMP = sum(fermionfactor * AMP(i)) lines</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="madgraph.iolibs.export_v4-pysrc.html#ProcessExporterFortran.get_JAMP_lines">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="get_pdf_lines"></a><span class="summary-sig-name">get_pdf_lines</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">matrix_element</span>,
+        <span class="summary-sig-arg">ninitial</span>,
+        <span class="summary-sig-arg">subproc_group</span>=<span class="summary-sig-default">False</span>)</span><br />
+      Generate the PDF lines for the auto_dsig.f file</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="madgraph.iolibs.export_v4-pysrc.html#ProcessExporterFortran.get_pdf_lines">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="coeff"></a><span class="summary-sig-name">coeff</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">ff_number</span>,
+        <span class="summary-sig-arg">frac</span>,
+        <span class="summary-sig-arg">is_imaginary</span>,
+        <span class="summary-sig-arg">Nc_power</span>,
+        <span class="summary-sig-arg">Nc_value</span>=<span class="summary-sig-default">3</span>)</span><br />
+      Returns a nicely formatted string for the coefficients in JAMP lines</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="madgraph.iolibs.export_v4-pysrc.html#ProcessExporterFortran.coeff">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="set_compiler"></a><span class="summary-sig-name">set_compiler</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">default_compiler</span>)</span><br />
+      Set compiler based on what's available on the system</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="madgraph.iolibs.export_v4-pysrc.html#ProcessExporterFortran.set_compiler">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="replace_make_opt_compiler"></a><span class="summary-sig-name">replace_make_opt_compiler</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">compiler</span>,
+        <span class="summary-sig-arg">root_dir</span>=<span class="summary-sig-default"><code class="variable-quote">'</code><code class="variable-string"></code><code class="variable-quote">'</code></span>)</span><br />
+      Set FC=compiler in Source/make_opts</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="madgraph.iolibs.export_v4-pysrc.html#ProcessExporterFortran.replace_make_opt_compiler">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code>object</code></b>:
+      <code>__delattr__</code>,
+      <code>__format__</code>,
+      <code>__getattribute__</code>,
+      <code>__hash__</code>,
+      <code>__new__</code>,
+      <code>__reduce__</code>,
+      <code>__reduce_ex__</code>,
+      <code>__repr__</code>,
+      <code>__setattr__</code>,
+      <code>__sizeof__</code>,
+      <code>__str__</code>,
+      <code>__subclasshook__</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== PROPERTIES ==================== -->
+<a name="section-Properties"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Properties</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-Properties"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code>object</code></b>:
+      <code>__class__</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== METHOD DETAILS ==================== -->
+<a name="section-MethodDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Method Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-MethodDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="__init__"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">__init__</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">mgme_dir</span>=<span class="sig-default"><code class="variable-quote">'</code><code class="variable-string"></code><code class="variable-quote">'</code></span>,
+        <span class="sig-arg">dir_path</span>=<span class="sig-default"><code class="variable-quote">'</code><code class="variable-string"></code><code class="variable-quote">'</code></span>,
+        <span class="sig-arg">opt</span>=<span class="sig-default">None</span>)</span>
+    <br /><em class="fname">(Constructor)</em>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="madgraph.iolibs.export_v4-pysrc.html#ProcessExporterFortran.__init__">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Initiate the ProcessExporterFortran with directory information</p>
+  <dl class="fields">
+    <dt>Overrides:
+        object.__init__
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="write_ngraphs_file"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">write_ngraphs_file</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">writer</span>,
+        <span class="sig-arg">nconfigs</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="madgraph.iolibs.export_v4-pysrc.html#ProcessExporterFortran.write_ngraphs_file">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Write the ngraphs.inc file for MG4. Needs input from 
+  write_configs_file.</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="get_color_data_lines"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">get_color_data_lines</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">matrix_element</span>,
+        <span class="sig-arg">n</span>=<span class="sig-default">6</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="madgraph.iolibs.export_v4-pysrc.html#ProcessExporterFortran.get_color_data_lines">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Return the color matrix definition lines for this matrix element. 
+  Split rows in chunks of size n.</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Fri Jun 21 10:41:22 2013
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

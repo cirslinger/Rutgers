@@ -1,0 +1,2 @@
+      LOGICAL ICOLAMP(3,1,1)
+      DATA(ICOLAMP(I,1,1),I=1,3)/.TRUE.,.FALSE.,.FALSE./

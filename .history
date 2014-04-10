@@ -1,0 +1,384 @@
+#+1396324673
+fd ..
+#+1396389706
+vi cshrc
+#+1396389906
+ls ..
+#+1396389964
+cd
+#+1396390394
+crab
+#+1396390714
+echo $SHELL
+#+1396405863
+cd include/
+#+1396447401
+vi .bashrc
+#+1396447637
+./bashrc
+#+1396447640
+.bashrc
+#+1396468701
+cat .bashrc
+#+1396481350
+ls -l .globus/
+#+1396481362
+cd .globus/
+#+1396481422
+chmod ugo-w userkey.pem
+#+1396481429
+chmod go-r userkey.pem
+#+1396481431
+ls -l .
+#+1396481467
+source /uscmst1/prod/grid/gLite_SL5.csh
+#+1396535698
+cat .cshrc
+#+1396535883
+cd /cms/clseitz-2
+#+1396535886
+cd IrslingerBoosted/
+#+1396535886
+; ls
+#+1396535898
+cd madanalysis5/
+#+1396535903
+cd histos
+#+1396535907
+cd PDF/
+#+1396535916
+evince main.pdf
+#+1396536058
+cd SubProcesses/
+#+1396536089
+cd P0_gg_ululx_ul_qq_ulx_qq/
+#+1396536102
+evince matrix11.jpg
+#+1396544588
+scramv1 arch
+#+1396576857
+cd src/CMSSW_5_3_3
+#+1396576873
+cd src/TopQuarkAnalysis/TopPairBSM/test/
+#+1396576879
+cd ../../../..
+#+1396633564
+cd Ir
+#+1396633620
+cd IrslingerMGtest1/Events/IrslingerMGtest1/
+#+1396633936
+cmsenv
+#+1396634091
+cd MadGraph5_v1_5_11/cd /cms/clseitz-2/IrslingerBoosted/MadGraph5_v1_5_11/IrslingerMGtest1/Events/IrslingerMGtest1/
+#+1396634101
+cd /cms/clseitz-2/IrslingerBoosted/MadGraph5_v1_5_11/IrslingerMGtest1/Events/IrslingerMGtest1/
+#+1396634210
+vi /cms/clseitz-2/IrslingerBoosted/MadGraph5_v1_5_11/IrslingerMGtest1/Events/IrslingerMGtest1/unweighted_events.lhe
+#+1396634599
+cd /cms/data25/irslinger/MadGraph5_v1_5_11/src/CMSSW_5_3_2_patch4/src/jetSubsSimulation/
+#+1396634608
+vi stufftoprocess.txt
+#+1396634663
+cd IrslingerMGtest1/
+#+1396634664
+cd Events/
+#+1396634684
+cd ../..
+#+1396634714
+cmsRUn setup.sh
+#+1396634719
+cmsRun setup.sh
+#+1396634769
+mkdir testm50
+#+1396634793
+mkdir lhe
+#+1396634802
+./setup.sh
+#+1396634821
+vi setup.sh
+#+1396634883
+mkdir condorlogs
+#+1396634888
+source SUBALL.sh
+#+1396635083
+condor.q
+#+1396635088
+condor .q
+#+1396635092
+condor -q
+#+1396635094
+condor q
+#+1396635106
+cd testm50/
+#+1396635127
+vi testm50_1_100_985041_99.stdlog
+#+1396635170
+vi testm50_1_13_985040_12.stdout
+#+1396704521
+cd cseitz-2
+#+1396708308
+LS
+#+1396711235
+cd templates/
+#+1396712440
+lls
+#+1396712446
+vi condor_template.jdl
+#+1396712475
+vi run_template.sh
+#+1396714236
+cd ../../../../..
+#+1396714255
+cd test
+#+1396714259
+cd test50
+#+1396714263
+cd <
+#+1396714382
+ks
+#+1396716784
+cd clseitz-2/
+#+1396796041
+cd clseitz-2
+#+1396796047
+cd kahn/
+#+1396796056
+cd morris/
+#+1396796078
+cd..
+#+1396796084
+cd ~
+#+1396816463
+cd /cms
+#+1396816466
+cd data25
+#+1396816942
+bash
+#+1396967447
+cd src
+#+1396967572
+cd 200RPVSttojj
+#+1396967580
+cd 200RPVSttojj_0.stderr
+#+1396967713
+vi 200RPVSttojj_1.stderr
+#+1396967768
+cat 200RPVSttojj_0.stdout
+#+1396968257
+cd src/jetSubsSimulation/
+#+1396968284
+cd vi genanalyzer_cfg.py
+#+1396969161
+cd testm200_PU_532_32_aodsim.root
+#+1396969754
+cd aodsim/testm200/
+#+1396969783
+edmDumpEventContent testm200_PU_532_44_aodsim.root
+#+1396970299
+SCRAMV1 list
+#+1396971917
+src/
+#+1396972011
+du -h
+#+1396973038
+cd src/CMSSW_5_3_2_patch4/src/jetSubsSimulation/
+#+1396973041
+cd GenAnalyzer/
+#+1396973044
+vi genanalyzer_cfg.py
+#+1396973201
+vi GenAnalyzer.cc
+#+1396973314
+cd condorlogs/
+#+1396973332
+cat testm200_1_13_980274_12.stdout
+#+1396973340
+cat testm200_1_13_980274_12.stderr
+#+1396973358
+cat testm200_1_13_980274_1.stderr
+#+1396973361
+cat testm200_1_13_980274_01.stderr
+#+1396973376
+cat testm200_1_13_980274_0.stderr
+#+1396973405
+cat testm200_1_1_980274_1.stderr
+#+1396973410
+cat testm200_1_1_980274_2.stderr
+#+1396973413
+cat testm200_1_1_980274_0.stderr
+#+1396973418
+cat testm200_1_2_980274_0.stderr
+#+1396973422
+cat testm200_1_3_980274_0.stderr
+#+1396978029
+kls
+#+1396979550
+cd TopQuarkAnalysis/TopPairBSM/test/
+#+1396979595
+vi 200RPVSttojj_9.stderr
+#+1396979657
+cat 200RPVSttojj_9.stderr
+#+1396991634
+vi .cshrc
+#+1396991692
+cd /cms/clseitz-2/IrslingerBoosted/MadGraph5_v1_5_11/src/CMSSW_5_3_6/
+#+1396991730
+cd CMSSW_5_3_6/src/TopQuarkAnalysis/TopPairBSM/test/
+#+1396991741
+cat 200RPVSttojj_0.stderr
+#+1397073934
+cd /cms/clseitz-2/IrslingerBoosted/MadGraph5_v1_5_11/src/CMSSW_5_3_2_patch4/src/jetSubsSimulation/
+#+1397073940
+vi condor.jdl
+#+1397073966
+vi my_run.sh
+#+1397145229
+cd /cms/clseitz-2/IrslingerBoosted/
+#+1397145232
+cd MadGraph5_v1_5_11/
+#+1397145446
+cd src/CMSSW_5_3_6/src/TopQuarkAnalysis/TopPairBSM/test/
+#+1397146033
+ls ../../../../
+#+1397146046
+ls ../../../../../
+#+1397146048
+ls ../../../../../../
+#+1397146055
+ls ../../../../../../CMSSW_5_3_2_patch4/src/
+#+1397146057
+ls ../../../../../../CMSSW_5_3_2_patch4/src/jetSubsSimulation/
+#+1397146107
+cat 200RPVSttojj_1.stderr
+#+1397146113
+cat 200RPVSttojj_1.stdout
+#+1397146129
+cat 200RPVSttojj_1.condorlog
+#+1397146191
+cd ../../..
+#+1397146192
+; s
+#+1397146238
+vi condorPATtuple.jdl
+#+1397146315
+tail 200RPVSttojj_*stderr
+#+1397146349
+ls -a
+#+1397146401
+cp condorPATtuple.jdl condorPATtuple1.jdl
+#+1397146407
+vi condorPATtuple1.jdl
+#+1397146461
+vi 200RPVSttojj_0.stderr
+#+1397146539
+vi 200RPVSttojj_junk.py
+#+1397146585
+cat condorPATtuple.jdl
+#+1397146633
+cmsRun 200RPVSttojj_junk.py inputFiles=file:/cms/clseitz-2/IrslingerBoosted/MadGraph5_v1_5_11/src/CMSSW_5_3_2_patch4/src/jetSubsSimulation/testm200/aodsim/testm200//testm200_PU_532_100_aodsim.root,file:/cms/clseitz-2/IrslingerBoosted/MadGraph5_v1_5_11/src/CMSSW_5_3_2_patch4/src/jetSubsSimulation/testm200/aodsim/testm200//testm200_PU_532_22_aodsim.root,file:/cms/clseitz-2/IrslingerBoosted/MadGraph5_v1_5_11/src/CMSSW_5_3_2_patch4/src/jetSubsSimulation/testm200/aodsim/testm200//testm200_PU_532_23_aodsim.root,file:/cms/clseitz-2/IrslingerBoosted/MadGraph5_v1_5_11/src/CMSSW_5_3_2_patch4/src/jetSubsSimulation/testm200/aodsim/testm200//testm200_PU_532_24_aodsim.root,file:/cms/clseitz-2/IrslingerBoosted/MadGraph5_v1_5_11/src/CMSSW_5_3_2_patch4/src/jetSubsSimulation/testm200/aodsim/testm200//testm200_PU_532_25_aodsim.root,file:/cms/clseitz-2/IrslingerBoosted/MadGraph5_v1_5_11/src/CMSSW_5_3_2_patch4/src/jetSubsSimulation/testm200/aodsim/testm200//testm200_PU_532_26_aodsim.root,file:/cms/clseitz-2/IrslingerBoosted/MadGraph5_v1_5_11/src/CMSSW_5_3_2_patch4/src/jetSubsSimulation/testm200/aodsim/testm200//testm200_PU_532_27_aodsim.root outputFiles='file:/cms/clseitz-2/IrslingerBoosted/MadGraph5_v1_5_11/src/CMSSW_5_3_6/src/TopQuarkAnalysis/TopPairBSM/test/patTuples/200RPVSttojj/200RPVSttojj_0_PAT.root'
+#+1397146673
+cmsRun 200RPVSttojj_junk.py inputFiles=file:/cms/clseitz-2/IrslingerBoosted/MadGraph5_v1_5_11/src/CMSSW_5_3_2_patch4/src/jetSubsSimulation/testm200/aodsim/testm200//testm200_PU_532_100_aodsim.root,file:/cms/clseitz-2/IrslingerBoosted/MadGraph5_v1_5_11/src/CMSSW_5_3_2_patch4/src/jetSubsSimulation/testm200/aodsim/testm200//testm200_PU_532_22_aodsim.root,file:/cms/clseitz-2/IrslingerBoosted/MadGraph5_v1_5_11/src/CMSSW_5_3_2_patch4/src/jetSubsSimulation/testm200/aodsim/testm200//testm200_PU_532_23_aodsim.root,file:/cms/clseitz-2/IrslingerBoosted/MadGraph5_v1_5_11/src/CMSSW_5_3_2_patch4/src/jetSubsSimulation/testm200/aodsim/testm200//testm200_PU_532_24_aodsim.root,file:/cms/clseitz-2/IrslingerBoosted/MadGraph5_v1_5_11/src/CMSSW_5_3_2_patch4/src/jetSubsSimulation/testm200/aodsim/testm200//testm200_PU_532_25_aodsim.root,file:/cms/clseitz-2/IrslingerBoosted/MadGraph5_v1_5_11/src/CMSSW_5_3_2_patch4/src/jetSubsSimulation/testm200/aodsim/testm200//testm200_PU_532_26_aodsim.root,file:/cms/clseitz-2/IrslingerBoosted/MadGraph5_v1_5_11/src/CMSSW_5_3_2_patch4/src/jetSubsSimulation/testm200/aodsim/testm200//testm200_PU_532_27_aodsim.root outputFiles=file:/cms/clseitz-2/IrslingerBoosted/MadGraph5_v1_5_11/src/CMSSW_5_3_6/src/TopQuarkAnalysis/TopPairBSM/test/patTuples/200RPVSttojj/200RPVSttojj_0_PAT.root
+#+1397146733
+vi ../createJobs.sh
+#+1397146785
+cmsRun 200RPVSttojj_junk.py inputFiles=file:/cms/clseitz-2/IrslingerBoosted/MadGraph5_v1_5_11/src/CMSSW_5_3_2_patch4/src/jetSubsSimulation/testm200/aodsim/testm200//testm200_PU_532_100_aodsim.root,file:/cms/clseitz-2/IrslingerBoosted/MadGraph5_v1_5_11/src/CMSSW_5_3_2_patch4/src/jetSubsSimulation/testm200/aodsim/testm200//testm200_PU_532_22_aodsim.root,file:/cms/clseitz-2/IrslingerBoosted/MadGraph5_v1_5_11/src/CMSSW_5_3_2_patch4/src/jetSubsSimulation/testm200/aodsim/testm200//testm200_PU_532_23_aodsim.root,file:/cms/clseitz-2/IrslingerBoosted/MadGraph5_v1_5_11/src/CMSSW_5_3_2_patch4/src/jetSubsSimulation/testm200/aodsim/testm200//testm200_PU_532_24_aodsim.root,file:/cms/clseitz-2/IrslingerBoosted/MadGraph5_v1_5_11/src/CMSSW_5_3_2_patch4/src/jetSubsSimulation/testm200/aodsim/testm200//testm200_PU_532_25_aodsim.root,file:/cms/clseitz-2/IrslingerBoosted/MadGraph5_v1_5_11/src/CMSSW_5_3_2_patch4/src/jetSubsSimulation/testm200/aodsim/testm200//testm200_PU_532_26_aodsim.root,file:/cms/clseitz-2/IrslingerBoosted/MadGraph5_v1_5_11/src/CMSSW_5_3_2_patch4/src/jetSubsSimulation/testm200/aodsim/testm200//testm200_PU_532_27_aodsim.root outputFile=file:/cms/clseitz-2/IrslingerBoosted/MadGraph5_v1_5_11/src/CMSSW_5_3_6/src/TopQuarkAnalysis/TopPairBSM/test/patTuples/200RPVSttojj/200RPVSttojj_0_PAT.root
+#+1397146821
+vi runCondorPATtuple.sh
+#+1397146887
+./runCondorPATtuple.sh inputFiles=file:/cms/clseitz-2/IrslingerBoosted/MadGraph5_v1_5_11/src/CMSSW_5_3_2_patch4/src/jetSubsSimulation/testm200/aodsim/testm200//testm200_PU_532_100_aodsim.root,file:/cms/clseitz-2/IrslingerBoosted/MadGraph5_v1_5_11/src/CMSSW_5_3_2_patch4/src/jetSubsSimulation/testm200/aodsim/testm200//testm200_PU_532_22_aodsim.root,file:/cms/clseitz-2/IrslingerBoosted/MadGraph5_v1_5_11/src/CMSSW_5_3_2_patch4/src/jetSubsSimulation/testm200/aodsim/testm200//testm200_PU_532_23_aodsim.root,file:/cms/clseitz-2/IrslingerBoosted/MadGraph5_v1_5_11/src/CMSSW_5_3_2_patch4/src/jetSubsSimulation/testm200/aodsim/testm200//testm200_PU_532_24_aodsim.root,file:/cms/clseitz-2/IrslingerBoosted/MadGraph5_v1_5_11/src/CMSSW_5_3_2_patch4/src/jetSubsSimulation/testm200/aodsim/testm200//testm200_PU_532_25_aodsim.root,file:/cms/clseitz-2/IrslingerBoosted/MadGraph5_v1_5_11/src/CMSSW_5_3_2_patch4/src/jetSubsSimulation/testm200/aodsim/testm200//testm200_PU_532_26_aodsim.root,file:/cms/clseitz-2/IrslingerBoosted/MadGraph5_v1_5_11/src/CMSSW_5_3_2_patch4/src/jetSubsSimulation/testm200/aodsim/testm200//testm200_PU_532_27_aodsim.root outputFile=file:/cms/clseitz-2/IrslingerBoosted/MadGraph5_v1_5_11/src/CMSSW_5_3_6/src/TopQuarkAnalysis/TopPairBSM/test/patTuples/200RPVSttojj/200RPVSttojj_0_PAT.root
+#+1397147046
+rm -rf 200RPVSttojj_0_PAT.root
+#+1397147125
+vi condorPATtupleChnaged.jdl
+#+1397147261
+condor_rm irslinger
+#+1397147276
+vi createJobs2.sh
+#+1397147396
+./createJobs2.sh
+#+1397147482
+condor_q khan
+#+1397147487
+condor_q khaa
+#+1397147891
+condor_q kahn
+#+1397150783
+fermilab
+#+1397157632
+cd 200RPVSttojj/200RPVSttojj_9.condorlog
+#+1397157637
+cat 200RPVSttojj/200RPVSttojj_9.condorlog
+#+1397161134
+home
+#+1397161389
+pwd
+#+1397161399
+cd t
+#+1397161402
+cd TopPairBSM/
+#+1397161403
+cd test/
+#+1397161447
+cd patTuples/
+#+1397161464
+cat 200RPVSttojj_0.condorlog
+#+1397162216
+cd /cms/clseitz-2/IrslingerBoosted/MadGraph5_v1_5_11/src/CMSSW_5_3_6/src/TopQuarkAnalysis/TopPairBSM/test/
+#+1397162317
+vi createJobs.sh
+#+1397162334
+rm -rf 200RPVSttojj/
+#+1397162341
+./createJobs.sh
+#+1397162351
+vi 200RPVSttojj/
+#+1397162371
+vi 200RPVSttojj_0.condorlog
+#+1397162634
+condoe_q
+#+1397162638
+condor_q
+#+1397162656
+:q
+#+1397162667
+cd patTuples/200RPVSttojj/
+#+1397162677
+cd 200RPVSttojj/
+#+1397162688
+cd 50RPVSttojj
+#+1397162699
+cd .
+#+1397162714
+cd /cms/clseitz-2/IrslingerBoosted/MadGraph5_v1_5_11/
+#+1397162719
+cd src/CMSSW_5_3_
+#+1397162749
+vi testm200
+#+1397162760
+cd CMSSW_5_3_2_patch4/
+#+1397162762
+cd src/
+#+1397162764
+cd jetSubsSimulation/
+#+1397162768
+cd PATtuples/
+#+1397162778
+cd testm200
+#+1397162781
+cd aodsim/
+#+1397162784
+cd testm200/
+#+1397162814
+cd info/
+#+1397162818
+cd lhe/
+#+1397162838
+condor_q irslinger
+#+1397162840
+cd ..
+#+1397162849
+ls
+#+1397163096
+dlkflsdkfds
+#+1397163097
+exit
